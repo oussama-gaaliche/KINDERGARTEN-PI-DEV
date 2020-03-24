@@ -26,7 +26,6 @@ public class Enfant implements Serializable {
 	private Date dateNaissance;
 	private Niveau niveau;
 	private Classe classe;
-	private String home;
 	
 	@ManyToOne(cascade = CascadeType.ALL) 
 	User user;
