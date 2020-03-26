@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -25,7 +26,8 @@ public class Publicity implements Serializable{
 	private float priceSponsoring;
 	private String image;
 	
-	@ManyToOne(cascade = CascadeType.ALL) 
+	
+	@ManyToOne
 	User user;
 
 	public int getId() {
@@ -33,7 +35,7 @@ public class Publicity implements Serializable{
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.id =  id;
 	}
 
 	public String getProductName() {
@@ -98,6 +100,28 @@ public class Publicity implements Serializable{
 		this.image = image;
 		this.user = user;
 	}
+
+	
+
+	@Override
+	public String toString() {
+		return "Publicity [id=" + id + ", productName=" + productName + ", category=" + category + ", priceSponsoring="
+				+ priceSponsoring + ", image=" + image + ", user=" + user + "]";
+	}
+
+	public Publicity() {
+		super();
+	}
+
+	public Publicity(int id, String productName, String category, float priceSponsoring, String image) {
+		super();
+		this.id = id;
+		this.productName = productName;
+		this.category = category;
+		this.priceSponsoring = priceSponsoring;
+		this.image = image;
+	}
+
 	
 	
 	
