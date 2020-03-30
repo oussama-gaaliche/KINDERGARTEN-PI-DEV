@@ -29,6 +29,8 @@ public class Enfant implements Serializable {
 	
 	@ManyToOne(cascade = CascadeType.ALL) 
 	User user;
+	@ManyToOne(cascade = CascadeType.ALL) 
+	Jardin jardin;
 	
 
 }
