@@ -29,7 +29,7 @@ public class UserController {
 	
 	@Autowired
   private BCryptPasswordEncoder passwordEncoder;
-	@PreAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/adduser")
 	public String addUser(@RequestBody User user){
 		String pwd=user.getPassword();
