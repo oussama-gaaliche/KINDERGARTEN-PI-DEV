@@ -1,7 +1,10 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,7 +12,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
@@ -55,7 +58,6 @@ public class User implements Serializable {
 	private Long numtel;
 	@Column(name = "status")
 	private String status;
-	
 	
 
 
@@ -183,7 +185,9 @@ public class User implements Serializable {
 	public void setRoles(String roles) {
 		this.roles = roles;
 	}
-
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	private Set<Facture> factures;
 	
 	
 }
