@@ -3,7 +3,8 @@ package tn.esprit.spring.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
+import java.util.List;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -60,6 +61,7 @@ public class User implements Serializable {
 	private Long numtel;
 	@Column(name = "status")
 	private String status;
+
 	private int nbrsig;
 	@Temporal (TemporalType.DATE)
 	private Date dateInscription;
@@ -67,7 +69,7 @@ public class User implements Serializable {
 	@JsonIgnore
 	@Column(name = "score")
 	private float score;
-	
+
 //	@OneToMany(mappedBy="userReciver",cascade = CascadeType.ALL)
 //	private List<Follow> follows;
 	
@@ -99,7 +101,8 @@ public class User implements Serializable {
 
 	private String roles;
 	private boolean active;
-	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	private Set<Facture> factures;
 	public User() {
 		super();
 	}
@@ -238,12 +241,17 @@ public class User implements Serializable {
 	public void setRoles(String roles) {
 		this.roles = roles;
 	}
+
 	public int getNbrsig() {
 		return nbrsig;
 	}
 	public void setNbrsig(int nbrsig) {
 		this.nbrsig = nbrsig;
 	}
+
+
+	
+	
 
 	
 	

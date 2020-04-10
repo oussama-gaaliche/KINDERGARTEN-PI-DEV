@@ -22,12 +22,18 @@ public class Enfant implements Serializable {
 	private Long id;
 	private String nom;
 	private String prenom;
+	@Enumerated(EnumType.STRING)
+	private Etat etat;
+	private boolean abonnée;
 	@Temporal (TemporalType.DATE)
 	private Date dateNaissance;
+
 	@Enumerated(EnumType.STRING)
 	private Niveau niveau;
 	@ManyToOne 
 	private Classe classe;
+
+	
 	
 	@ManyToOne(cascade = CascadeType.ALL) 
 	User user;
@@ -81,11 +87,11 @@ public class Enfant implements Serializable {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public Date getDateNaissance() {
-		return dateNaissance;
+	public Etat getEtat() {
+		return etat;
 	}
-	public void setDateNaissance(Date dateNaissance) {
-		this.dateNaissance = dateNaissance;
+	public void setEtat(Etat etat) {
+		this.etat = etat;
 	}
 	public Niveau  getNiveau() {
 		return niveau;
@@ -113,6 +119,18 @@ public class Enfant implements Serializable {
 	public void setJardin(Jardin jardin) {
 		this.jardin = jardin;
 	}
-	
+
+	public boolean isAbonnée() {
+		return abonnée;
+	}
+	public void setAbonnée(boolean abonnée) {
+		this.abonnée = abonnée;
+	}
+	public Date getDateNaissance() {
+		return dateNaissance;
+	}
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
 
 }
