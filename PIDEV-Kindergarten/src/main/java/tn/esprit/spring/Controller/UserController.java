@@ -70,6 +70,8 @@ public class UserController {
 		String pwd=user.getPassword();
 		String encryptpwd= passwordEncoder.encode(pwd);
 		user.setPassword(encryptpwd);
+		user.setScore(0);
+		user.setDateInscription(new Date());
 		user.setActive(false);
 		
 		userRepository.save(user);
