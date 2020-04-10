@@ -211,8 +211,8 @@ public class UserController {
 	
  
     @GetMapping("/loggedUsers")
-    public Model getLoggedUsers(Locale locale, Model model) {
-      return  model.addAttribute("users", activeUserStore.getUsers());
-        
+    public String getLoggedUsers(Locale locale, Model model) {
+        model.addAttribute("users", activeUserStore.getUsers());
+        return "users";
     }
 	}

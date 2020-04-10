@@ -1,12 +1,12 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,6 +24,7 @@ public class Enfant implements Serializable {
 	private String prenom;
 	@Temporal (TemporalType.DATE)
 	private Date dateNaissance;
+	@Enumerated(EnumType.STRING)
 	private Niveau niveau;
 	@ManyToOne 
 	private Classe classe;
