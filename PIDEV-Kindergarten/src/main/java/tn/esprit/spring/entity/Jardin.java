@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name = "jardin")
@@ -20,6 +21,7 @@ public class Jardin implements Serializable {
 	private String adresse;
 	@ManyToOne(cascade = CascadeType.ALL) 
 	User user;
+	
 	
 	public Jardin() {
 		super();

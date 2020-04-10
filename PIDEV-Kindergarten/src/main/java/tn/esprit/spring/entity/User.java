@@ -1,19 +1,24 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
@@ -55,9 +60,39 @@ public class User implements Serializable {
 	private Long numtel;
 	@Column(name = "status")
 	private String status;
+	private int nbrsig;
+	@Temporal (TemporalType.DATE)
+	private Date dateInscription;
+	
+	@JsonIgnore
+	@Column(name = "score")
+	private float score;
+	
+//	@OneToMany(mappedBy="userReciver",cascade = CascadeType.ALL)
+//	private List<Follow> follows;
+	
+	public Date getDateInscription() {
+		return dateInscription;
+	}
+	public void setDateInscription(Date dateInscription) {
+		this.dateInscription = dateInscription;
+	}
+	public float getScore() {
+		return score;
+	}
+	public void setScore(float score) {
+		this.score = score;
+	}
+	public List<Message> getMessages() {
+		return messages;
+	}
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
+	}
+	@OneToMany(mappedBy="userReciver",cascade = CascadeType.ALL)
+	private List<Message> messages;
 	
 	
-
 
 	@Transient
 	private String passwordConfirm;
@@ -97,6 +132,26 @@ public class User implements Serializable {
 	}
 	
 	
+	public User(@NotEmpty(message = "Please provide your first name") String username,
+			@NotEmpty(message = "Please provide your first name") String nom,
+			@NotEmpty(message = "Please provide your last name") String prenom, String password,
+			@Email(message = "Please provide a valid e-mail") @NotEmpty(message = "Please provide an e-mail") String email,
+			Long numtel, String status, int nbrsig, List<Message> messages, String passwordConfirm, String roles,
+			boolean active) {
+		super();
+		this.username = username;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.password = password;
+		this.email = email;
+		this.numtel = numtel;
+		this.status = status;
+		this.nbrsig = nbrsig;
+		this.messages = messages;
+		this.passwordConfirm = passwordConfirm;
+		this.roles = roles;
+		this.active = active;
+	}
 	public User(String username,String password,String email,String roles) {
 		super();
 		this.username = username;
@@ -182,6 +237,12 @@ public class User implements Serializable {
 	}
 	public void setRoles(String roles) {
 		this.roles = roles;
+	}
+	public int getNbrsig() {
+		return nbrsig;
+	}
+	public void setNbrsig(int nbrsig) {
+		this.nbrsig = nbrsig;
 	}
 
 	
