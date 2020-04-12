@@ -2,7 +2,7 @@ package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -12,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,7 +21,7 @@ public class Article implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long id_article;
 	private String reference;
 	@Enumerated(EnumType.STRING)
 	private FamilleArticles famille;
@@ -32,29 +31,67 @@ public class Article implements Serializable {
 	private int qteMin;
 	private int qteMax;
 	@Enumerated(EnumType.STRING)
-	private Etat etat;
+	private EtatArticle etat;
 	private int remise;
-	private double venteHT;
-	private double venteTTC;
-	private double achatHT;
-	private double achatTTC;
+	private float venteHT;
+	private float venteTTC;
+	private float achatHT;
+	private float achatTTC;
 	@Enumerated(EnumType.STRING)
 	private TVA tva;
-	private Facture facture;
+	// A discuter !!!!!!!!!(un article ne possede une facture que après vente)
 	@ManyToMany(cascade = CascadeType.ALL)
-	private Set<Facture> factures;
+	private List<Facture> facture;
+
+	public Article() {
+		super();
+	}
+	@Override
+	public String toString() {
+		return "Article [id_article=" + id_article + ", reference=" + reference + ", famille=" + famille
+				+ ", description=" + description + ", nom=" + nom + ", qteStock=" + qteStock + ", qteMin=" + qteMin
+				+ ", qteMax=" + qteMax + ", etat=" + etat + ", remise=" + remise + ", venteHT=" + venteHT
+				+ ", venteTTC=" + venteTTC + ", achatHT=" + achatHT + ", achatTTC=" + achatTTC + ", tva=" + tva
+				+  "]";
+	}
+	public Article(Long id_article, String reference, FamilleArticles famille, String description, String nom,
+			int qteStock, int qteMin, int qteMax, EtatArticle etat, int remise, float venteHT, float venteTTC,
+			float achatHT, float achatTTC, TVA tva) {
+		super();
+		this.id_article = id_article;
+		this.reference = reference;
+		this.famille = famille;
+		this.description = description;
+		this.nom = nom;
+		this.qteStock = qteStock;
+		this.qteMin = qteMin;
+		this.qteMax = qteMax;
+		this.etat = etat;
+		this.remise = remise;
+		this.venteHT = venteHT;
+		this.venteTTC = venteTTC;
+		this.achatHT = achatHT;
+		this.achatTTC = achatTTC;
+		this.tva = tva;
+	}
 	
-	public Set<Facture> getFactures() {
-		return factures;
+	public Long getId_article() {
+		return id_article;
 	}
-	public void setFactures(Set<Facture> factures) {
-		this.factures = factures;
+	public void setId_article(Long id_article) {
+		this.id_article = id_article;
 	}
-	public Long getId() {
-		return id;
+	public EtatArticle getEtat() {
+		return etat;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setEtat(EtatArticle etat) {
+		this.etat = etat;
+	}
+	public TVA getTva() {
+		return tva;
+	}
+	public void setTva(TVA tva) {
+		this.tva = tva;
 	}
 	public String getReference() {
 		return reference;
@@ -98,48 +135,45 @@ public class Article implements Serializable {
 	public void setQteMax(int qteMax) {
 		this.qteMax = qteMax;
 	}
-	public Etat getEtat() {
-		return etat;
-	}
-	public void setEtat(Etat etat) {
-		this.etat = etat;
-	}
 	public int getRemise() {
 		return remise;
 	}
 	public void setRemise(int remise) {
 		this.remise = remise;
 	}
-	public double getVenteHT() {
+	
+	public float getVenteHT() {
 		return venteHT;
 	}
-	public void setVenteHT(double venteHT) {
+
+	public void setVenteHT(float venteHT) {
 		this.venteHT = venteHT;
 	}
-	public double getVenteTTC() {
+
+	public float getVenteTTC() {
 		return venteTTC;
 	}
-	public void setVenteTTC(double venteTTC) {
+
+	public void setVenteTTC(float venteTTC) {
 		this.venteTTC = venteTTC;
 	}
-	public double getAchatHT() {
+
+	public float getAchatHT() {
 		return achatHT;
 	}
-	public void setAchatHT(double achatHT) {
+
+	public void setAchatHT(float achatHT) {
 		this.achatHT = achatHT;
 	}
-	public double getAchatTTC() {
+
+	public float getAchatTTC() {
 		return achatTTC;
 	}
-	public void setAchatTTC(double achatTTC) {
+
+	public void setAchatTTC(float achatTTC) {
 		this.achatTTC = achatTTC;
 	}
-	public TVA getTVA() {
-		return tva;
-	}
-	public void setTVA(TVA tva) {
-		tva = tva;
-	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
