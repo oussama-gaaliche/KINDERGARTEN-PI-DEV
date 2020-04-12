@@ -1,7 +1,7 @@
 package tn.esprit.spring.Configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 import org.springframework.context.annotation.Configuration;
@@ -10,10 +10,13 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.session.SessionRegistry;
+import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.session.HttpSessionEventPublisher;
 
 
 
@@ -58,7 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/").authenticated().anyRequest().permitAll().and().formLogin().successHandler(authenticationSuccessHandler);	
 		
 		
-
+		 // http.sessionManagement().maximumSessions(1).sessionRegistry(sessionRegistry());
 		/*http.sessionManagement()
 				.maximumSessions(1)
 				.maxSessionsPreventsLogin(true)
@@ -70,5 +73,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public BCryptPasswordEncoder encodePWD(){
 		return new BCryptPasswordEncoder();
 	}
+	
+	@Bean
+	public ActiveUserStore activeUserStore(){
+	    return new ActiveUserStore();
+	}
+	   
+
+//	    @Bean
+//	    public SessionRegistry sessionRegistry() {
+//	        return new SessionRegistryImpl();
+//	    }
+//
+//	    @Bean
+//	    public ServletListenerRegistrationBean<HttpSessionEventPublisher> httpSessionEventPublisher() {
+//	        return new ServletListenerRegistrationBean<HttpSessionEventPublisher>(new HttpSessionEventPublisher());
+//	    }
 	
 }

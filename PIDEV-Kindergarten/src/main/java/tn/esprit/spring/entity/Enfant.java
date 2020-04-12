@@ -1,9 +1,7 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -29,6 +27,48 @@ public class Enfant implements Serializable {
 	private boolean abonnée;
 	@Temporal (TemporalType.DATE)
 	private Date dateNaissance;
+
+	@Enumerated(EnumType.STRING)
+	private Niveau niveau;
+	@ManyToOne 
+	private Classe classe;
+
+	
+	
+	@ManyToOne(cascade = CascadeType.ALL) 
+	User user;
+	@ManyToOne 
+	Jardin jardin;
+	public Enfant() {
+		super();
+	}
+	
+	public Enfant(String nom, String prenom, Date dateNaissance, Niveau  niveau, Classe  classe, User user
+			) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.niveau = niveau;
+		this.classe = classe;
+		this.user = user;
+		
+	}
+	
+
+	public Enfant(Long id, String nom, String prenom, Date dateNaissance, Niveau  niveau, Classe  classe, User user
+			) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.niveau = niveau;
+		this.classe = classe;
+		this.user = user;
+		
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -53,6 +93,33 @@ public class Enfant implements Serializable {
 	public void setEtat(Etat etat) {
 		this.etat = etat;
 	}
+	public Niveau  getNiveau() {
+		return niveau;
+	}
+	public void setNiveau(Niveau  niveau) {
+		this.niveau = niveau;
+	}
+	public Classe  getClasse() {
+		return classe;
+	}
+	public void setClasse(Classe  classe) {
+		this.classe = classe;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Jardin getJardin() {
+		return jardin;
+	}
+
+	public void setJardin(Jardin jardin) {
+		this.jardin = jardin;
+	}
+
 	public boolean isAbonnée() {
 		return abonnée;
 	}
@@ -65,7 +132,5 @@ public class Enfant implements Serializable {
 	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
-	
-	
 
 }
