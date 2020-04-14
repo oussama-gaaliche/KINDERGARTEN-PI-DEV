@@ -1,18 +1,15 @@
 package tn.esprit.spring.batch;
 
+
+
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
-
 import tn.esprit.spring.entity.Article;
 @Component
-public class Processor implements ItemProcessor<Article, Article> {
-	private Processor(){
-		
-	}
+public class ArticleItemProcessor implements ItemProcessor<Article, Article> {
+	
 	@Override
 	public Article process(Article article) throws Exception {
-		article.getQteStock();
-		return null;
+		return article;
 	}
-
 }

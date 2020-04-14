@@ -1,69 +1,106 @@
 package tn.esprit.spring.Configuration;
 
-import javax.annotation.Resource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.file.FlatFileItemReader;
-import org.springframework.batch.item.file.LineMapper;
-import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
-import org.springframework.batch.item.file.mapping.DefaultLineMapper;
-import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.batch.item.database.JdbcCursorItemReader;
+import org.springframework.batch.item.file.FlatFileItemWriter;
+import org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor;
+import org.springframework.batch.item.file.transform.DelimitedLineAggregator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import tn.esprit.spring.batch.ArticleItemProcessor;
 import tn.esprit.spring.entity.Article;
 
 @Configuration
+@EnableBatchProcessing
 public class SpringBatchConfig {
+	@Autowired
+	public DataSource dataSource;
+	@Autowired
+	public JobBuilderFactory jobBuilderFactory;
+	@Autowired
+	public StepBuilderFactory stepBuilderFactory;
 	
-	@Bean
-	public Job job(JobBuilderFactory jobBuilderFactory,
-			StepBuilderFactory stepBuilderFactory,
-			org.springframework.batch.item.ItemReader<Article> itemReader,
-			ItemProcessor<Article, Article> itemProcessor,
-			ItemWriter<Article> itemWriter){
-		Step step = stepBuilderFactory.get("ETL-file-load")
-				.<Article, Article>chunk(100)
-				.reader(itemReader)
-				.processor(itemProcessor)
-				.writer(itemWriter)
-				.build();
-		return jobBuilderFactory.get("ETL-Load")
-		.incrementer(new RunIdIncrementer())
-		.start(step )
-		.build();
+	public DataSource dataSource(){
+		final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		System.out.println("in data source driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/kindergarten");
+		System.out.println("in data source url");
+		dataSource.setUsername("root");
+		dataSource.setPassword("");
+		return dataSource;
 	}
 	
 	@Bean
-	public FlatFileItemReader<Article> fileItemReader(@Value("${input}") org.springframework.core.io.Resource resource){
-		FlatFileItemReader<Article> flatFileItemReader = new FlatFileItemReader<>();
-		flatFileItemReader.setResource((org.springframework.core.io.Resource) resource);
-		flatFileItemReader.setName("CSV-Reader");
-		flatFileItemReader.setLinesToSkip(1);
-		flatFileItemReader.setLineMapper(lineMapper());
-		return flatFileItemReader;
-		
-		
+	public JdbcCursorItemReader<Article> reader(){
+		JdbcCursorItemReader<Article> reader = new JdbcCursorItemReader<Article>();
+		reader.setDataSource(dataSource);
+		reader.setSql("select id_article,nom from article;");
+		reader.setRowMapper(new ArticleRowMapper());
+		return reader;
+		  
 	}
+	
+	public class ArticleRowMapper implements RowMapper<Article>{
 
-	private LineMapper<Article> lineMapper() {
-		DefaultLineMapper<Article> defaultLineMapper = new DefaultLineMapper<>();
-		DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
+		@Override
+		public Article mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Article article=new Article();
+			article.setId_article(rs.getLong("id_article"));
+			article.setNom(rs.getString("nom"));
+			return article;
+		}
 		
-		lineTokenizer.setDelimiter(",");
-		lineTokenizer.setStrict(false);
-		lineTokenizer.setNames(new String[]{"id_article","nom","qte_stock"});
-		BeanWrapperFieldSetMapper<Article> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
-		fieldSetMapper.setTargetType(Article.class);
-		defaultLineMapper.setLineTokenizer(lineTokenizer);
-		defaultLineMapper.setFieldSetMapper(fieldSetMapper);
-		return defaultLineMapper;
+	}
+	
+	public ArticleItemProcessor processor(){
+		return new ArticleItemProcessor();
+	}
+	
+	@Bean
+	public FlatFileItemWriter<Article> writer(){
+		FlatFileItemWriter<Article> writer = new FlatFileItemWriter<Article>();
+		writer.setResource(new ClassPathResource("article.csv"));
+		writer.setLineAggregator(new DelimitedLineAggregator<Article>(){{
+			setDelimiter(",");
+			setFieldExtractor(new BeanWrapperFieldExtractor<Article>(){{
+				setNames(new String[] {"id_article","nom"});
+			}});
+		}});
+		return writer;
+	}
+	
+	@Bean
+	public Step step1(){
+		return stepBuilderFactory.get("step1")
+				.<Article, Article>chunk(100)
+				.reader(reader())
+				.processor(processor())
+				.writer(writer())
+				.build();
+	}
+	
+	@Bean
+	public Job exportArticleJob(){
+		return  jobBuilderFactory.get("exportArticleJob")
+				.incrementer(new RunIdIncrementer())
+				.flow(step1())
+				.end()
+				.build();
 	}
 }
