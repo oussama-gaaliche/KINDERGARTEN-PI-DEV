@@ -18,6 +18,12 @@ public class ParticipationPK  implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
+	public ParticipationPK(long iduserr, int idEventt) {
+		super();
+		this.iduserr = iduserr;
+		this.idEventt = idEventt;
+	}
+
 	public long getIduserr() {
 		return iduserr;
 	}
