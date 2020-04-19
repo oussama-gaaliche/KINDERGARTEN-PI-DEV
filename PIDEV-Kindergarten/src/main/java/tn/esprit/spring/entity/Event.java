@@ -87,6 +87,8 @@ private static final long serialVersionUID = 1L;
 	private Etat_event etat_event;
 	@OneToOne
 	private Salle salle;
+	@OneToOne
+	private FactureEvent facture;
 	@JsonIgnore
     @ManyToOne
 	User Userseventmaker;
@@ -251,6 +253,54 @@ private static final long serialVersionUID = 1L;
 
 	public void setEtat_event(Etat_event etat_event) {
 		this.etat_event = etat_event;
+	}
+
+	public Salle getSalle() {
+		return salle;
+	}
+
+	public void setSalle(Salle salle) {
+		this.salle = salle;
+	}
+
+	public FactureEvent getFacture() {
+		return facture;
+	}
+
+	public void setFacture(FactureEvent facture) {
+		this.facture = facture;
+	}
+
+	public User getUserseventmaker() {
+		return Userseventmaker;
+	}
+
+	public void setUserseventmaker(User userseventmaker) {
+		Userseventmaker = userseventmaker;
+	}
+
+	public List<Participation> getParticipations() {
+		return participations;
+	}
+
+	public void setParticipations(List<Participation> participations) {
+		this.participations = participations;
+	}
+
+	public List<Evaluation> getEvaluations() {
+		return evaluations;
+	}
+
+	public void setEvaluations(List<Evaluation> evaluations) {
+		this.evaluations = evaluations;
+	}
+
+	public List<Reservation_Stock_Interne> getReservation_stock_interne() {
+		return reservation_stock_interne;
+	}
+
+	public void setReservation_stock_interne(List<Reservation_Stock_Interne> reservation_stock_interne) {
+		this.reservation_stock_interne = reservation_stock_interne;
 	}
 	
 	
