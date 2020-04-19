@@ -69,6 +69,12 @@ public class User implements Serializable {
 	@JsonIgnore
 	@Column(name = "score")
 	private float score;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="Userseventmaker")
+	private List<Event> eventm;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user_participation")
+	private  List<Participation> participations;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user_evaluation")
+	private  List<Evaluation> evaluations;
 
 //	@OneToMany(mappedBy="userReciver",cascade = CascadeType.ALL)
 //	private List<Follow> follows;
