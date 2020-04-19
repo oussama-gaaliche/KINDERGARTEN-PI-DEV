@@ -139,6 +139,19 @@ public class Stock_interne implements Serializable {
 		return result;
 	}
 
+	public Stock_interne(int id, String name, String description, int quantité, int firstquantite,
+			StockCategory stockcategory, String photo, List<Reservation_Stock_Interne> reservation_stock_interne) {
+		super();
+		this.id = id;
+		Name = name;
+		this.description = description;
+		this.quantité = quantité;
+		this.firstquantite = firstquantite;
+		this.stockcategory = stockcategory;
+		this.photo = photo;
+		this.reservation_stock_interne = reservation_stock_interne;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

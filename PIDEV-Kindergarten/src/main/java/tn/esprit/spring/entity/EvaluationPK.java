@@ -20,6 +20,12 @@ public class EvaluationPK  implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
+	public EvaluationPK(long iduser, int idEvent) {
+		super();
+		this.iduser = iduser;
+		this.idEvent = idEvent;
+	}
+
 	public long getIduser() {
 		return iduser;
 	}
