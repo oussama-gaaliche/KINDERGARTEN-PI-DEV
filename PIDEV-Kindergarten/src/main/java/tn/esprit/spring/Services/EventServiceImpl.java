@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.Controller.HomeController;
 import tn.esprit.spring.Repository.EventRepository;
 import tn.esprit.spring.Repository.FactureEventRepository;
 import tn.esprit.spring.Repository.FactureRepository;
@@ -40,7 +41,7 @@ public class EventServiceImpl implements IEventService{
 	public void addevent(Event e) {
 		FactureEvent facture = new FactureEvent();
 		  
-	     User userManagedEntity = userrepository.findById((long) 1).get();
+	     User userManagedEntity = userrepository.findUserByUsername(HomeController.connectedUser);
  
 	    e.setUserseventmaker(userManagedEntity);
 	   	e.setNbr_participants(0);
@@ -56,7 +57,7 @@ public class EventServiceImpl implements IEventService{
 
 	@Override
 	public Event updateEvent(Event e) {
-		 User userManagedEntity = userrepository.findById((long) 1).get();
+		  User userManagedEntity = userrepository.findUserByUsername(HomeController.connectedUser);
 		    e.setUserseventmaker(userManagedEntity);
 
 		return eventrepository.save(e);
@@ -64,14 +65,16 @@ public class EventServiceImpl implements IEventService{
 
 	@Override
 	public void deleteEvent(int id) {
+		  User userManagedEntity = userrepository.findUserByUsername(HomeController.connectedUser);
 		eventrepository.deleteById(id);
 		
 	}
 
 	@Override
 	public Event retrieveEvent(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		 User userManagedEntity = userrepository.findUserByUsername(HomeController.connectedUser);
+		Event e = eventrepository.findById((id)).orElse(null);
+		return e;
 	}
 
 }
