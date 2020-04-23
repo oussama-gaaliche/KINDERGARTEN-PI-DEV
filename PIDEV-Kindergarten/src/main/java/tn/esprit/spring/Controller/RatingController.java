@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.Services.RatingService;
 import tn.esprit.spring.entity.Rating;
-
+//commit
 @RestController
 public class RatingController {
 	@Autowired

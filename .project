@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>KINDERGARTEN-PI-DEV</name>
+=======
+	<name>git_KINDERGARTEN-PI-DEV</name>
+>>>>>>> branch 'master' of https://github.com/gaaliche22/KINDERGARTEN-PI-DEV.git
 	<comment></comment>
 	<projects>
 	</projects>

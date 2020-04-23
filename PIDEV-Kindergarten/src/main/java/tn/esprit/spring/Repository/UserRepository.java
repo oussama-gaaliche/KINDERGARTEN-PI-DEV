@@ -15,8 +15,9 @@ import tn.esprit.spring.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 	Optional<User> findByUsername(String username);
-//	@Modifying
-//    @Transactional
-//    @Query("UPDATE user u SET u.active=:etat where e.id=:employeId and e.roles like 'RESPONSABLE'")
-//    public void ValidResponsable(@Param("etat")Boolean etat, @Param("employeId")long employeId);
+	User findUserByUsername(String username);
+	 @Modifying
+	    @Transactional
+	    @Query("UPDATE User u SET u.nbrsig =u.nbrsig+1,u.active=0 WHERE (select count(f) from Friend f where (f.user1=:id or f.user2=:id) and f.idsign!=:id and f.sigblock=true and f.verifsig=false)>1 and(id=:id)")
+	    public void BannedUser(@Param("id")Long id);
 }

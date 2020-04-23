@@ -1,12 +1,14 @@
 package tn.esprit.spring;
 
-import org.junit.jupiter.api.Test;
+import java.text.ParseException;
+
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
+import tn.esprit.spring.Services.ArticleServiceImpl;
 import tn.esprit.spring.Services.PublicityServiceImpl;
 
 
@@ -16,18 +18,14 @@ public class PidevKindergartenApplicationTests {
 
 	@Autowired 
 	PublicityServiceImpl ps; 
-	
+	@Autowired 
+
+	ArticleServiceImpl as;
 
 	@Test
-	public void contextLoads() {
+	public void contextLoads() throws ParseException {
 
-		//User u = new User( (long) 6 , "mma", "aa", new Date (2020-03-24) );
-		
-				//us.addUser(u);
-				//us.retrieveAllUsers();
-				ps.deletePublicity(1);
-				//us.updateUser(u);
-		
+
 		
 		
 

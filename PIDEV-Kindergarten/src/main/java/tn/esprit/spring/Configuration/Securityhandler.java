@@ -20,7 +20,7 @@ public class Securityhandler implements AuthenticationSuccessHandler {
         if (roles.contains("PARENT")) {
             response.sendRedirect("/parent");
         }
-        if (roles.contains("RESPONABLE")) {
+        if (roles.contains("RESPONSABLE")) {
             response.sendRedirect("/responsable");
         }
         if (roles.contains("ENSEIGNANT")) {
