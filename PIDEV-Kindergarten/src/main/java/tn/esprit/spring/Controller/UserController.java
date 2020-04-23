@@ -39,7 +39,7 @@ public class UserController {
 		userRepository.save(user);
 		return " added user succes";
 	}
-	@PreAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/edit/{id}")
 	public String ValidateuserwithAdmin(@PathVariable("id") long id, Model model) {
 		String a;
@@ -56,6 +56,7 @@ public class UserController {
 	    
 	}
 	//@PreAuthorize("hasRole('PARENT'")
+	@GetMapping("/editparent/{id}")
 	public String ValidateuserwithResponsable(@PathVariable("id") long id, Model model) {
 		String a;
 	    User user = userRepository.findById(id)

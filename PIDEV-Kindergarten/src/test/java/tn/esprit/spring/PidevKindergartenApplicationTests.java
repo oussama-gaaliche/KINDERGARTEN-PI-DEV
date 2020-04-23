@@ -12,7 +12,7 @@ import tn.esprit.spring.Services.PublicityServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class PidevKindergartenApplicationTests {
+public class PidevKindergartenApplicationTests {
 
 	@Autowired 
 	PublicityServiceImpl ps; 
@@ -21,7 +21,12 @@ class PidevKindergartenApplicationTests {
 	@Test
 	public void contextLoads() {
 
+		//User u = new User( (long) 6 , "mma", "aa", new Date (2020-03-24) );
 		
+				//us.addUser(u);
+				//us.retrieveAllUsers();
+				ps.deletePublicity(1);
+				//us.updateUser(u);
 		
 		
 		
