@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Favourite Page With Tabs</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
+
+	<!-- Main Font -->
+	<script src="js/libs/webfontloader.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+
+</head>
+<body class="page-has-left-panels page-has-right-panels">
+
+{{> preloaders/preloader-main }}
+
+{{> headers-navigations/left-panel }}
+
+{{> headers-navigations/left-panel-responsive }}
+
+{{> headers-navigations/right-panel }}
+
+{{> headers-navigations/right-panel-responsive }}
+
+{{> headers-navigations/header-BP page-title="favourite page" }}
+
+{{> headers-navigations/header-BP-responsive }}
+
+<div class="header-spacer"></div>
+
+{{> headers-navigations/top-header-favourite-tabs }}
+
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div class="tab-pane active" id="home" role="tabpanel">
+		<div class="container">
+			<div class="row">
+				<div class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-sm-12 col-12">
+					<div id="newsfeed-items-grid">
+						<div class="ui-block">
+
+							{{> posts/posts21-BP }}
+
+							{{> comments/comment-list4 }}
+
+							<a href="#" class="more-comments">View more comments <span>+</span></a>
+
+							{{> forms/comment-form }}
+
+						</div>
+
+						<div class="ui-block">
+							{{> posts/posts22-BP }}
+						</div>
+
+						<div class="ui-block">
+							{{> posts/posts23-BP }}
+						</div>
+					</div>
+					<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+				</div>
+
+				<div class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12">
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Page Intro</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+						<div class="ui-block-content">
+							{{> widgets/w-personal-info6 }}
+
+							{{> widgets/w-socials }}
+						</div>
+					</div>
+
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Location</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+
+						{{> widgets/w-contacts }}
+					</div>
+
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Faved this Page</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+						<div class="ui-block-content">
+							{{> widgets/w-faved-pages2 }}
+						</div>
+					</div>
+
+
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Twitter Feed</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+
+						{{> widgets/w-twitter1 }}
+					</div>
+				</div>
+
+				<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12">
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Last Photos</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+						<div class="ui-block-content">
+							{{> widgets/w-last-photo1 }}
+						</div>
+					</div>
+
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Green Goo’s Playlist</h6>
+							<a href="#" class="more">
+						<span class="c-green">
+							<svg class="olymp-remove-playlist-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-remove-playlist-icon"></use></svg>
+						</span>
+							</a>
+						</div>
+
+						{{> widgets/w-playlist }}
+
+					</div>
+
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Green Goo's Poll</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+						<div class="ui-block-content">
+							{{> widgets/w-pool }}
+
+							<a href="#" class="btn btn-md-2 btn-border-think custom-color c-grey full-width">Vote Now!</a>
+						</div>
+					</div>
+
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Last Videos</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+						<div class="ui-block-content">
+							{{> widgets/w-last-video }}
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="tab-pane" id="about" role="tabpanel">
+		<div class="container">
+			<div class="row">
+				<div class="col col-xl-9 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
+					<div class="ui-block responsive-flex">
+						<div class="ui-block-title">
+							<div class="h6 title">Green Goo’s Favers (5630)</div>
+							<form class="w-search">
+								<div class="form-group with-button">
+									<input class="form-control" type="text" placeholder="Search Friends...">
+									<button>
+										<svg class="olymp-magnifying-glass-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+									</button>
+								</div>
+							</form>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="ui-block">
+								{{> friend-items/friend-item9 }}
+							</div>
+						</div>
+						<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="ui-block">
+								{{> friend-items/friend-item10 }}
+							</div>
+						</div>
+						<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="ui-block">
+								{{> friend-items/friend-item11 }}
+							</div>
+						</div>
+						<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="ui-block">
+								{{> friend-items/friend-item12 }}
+							</div>
+						</div>
+						<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="ui-block">
+								{{> friend-items/friend-item13 }}
+							</div>
+						</div>
+						<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="ui-block">
+								{{> friend-items/friend-item14 }}
+							</div>
+						</div>
+						<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="ui-block">
+								{{> friend-items/friend-item15 }}
+							</div>
+						</div>
+						<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="ui-block">
+								{{> friend-items/friend-item16 }}
+							</div>
+						</div>
+						<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="ui-block">
+								{{> friend-items/friend-item17 }}
+							</div>
+						</div>
+
+					</div>
+
+					<nav aria-label="Page navigation">
+						<ul class="pagination justify-content-center">
+							<li class="page-item disabled">
+								<a class="page-link" href="#" tabindex="-1">Previous</a>
+							</li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item"><a class="page-link" href="#">...</a></li>
+							<li class="page-item"><a class="page-link" href="#">12</a></li>
+							<li class="page-item">
+								<a class="page-link" href="#">Next</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="col col-xl-3 order-xl-1 col-lg-12 order-lg-2 col-md-12 col-sm-12 col-12">
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">About Green Goo</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+						<div class="ui-block-content">
+							{{> widgets/w-personal-info7 }}
+						</div>
+					</div>
+
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Social Networks</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+						<div class="ui-block-content">
+							{{> widgets/w-socials }}
+						</div>
+					</div>
+
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<h6 class="title">Additional Info</h6>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+						<div class="ui-block-content">
+							{{> widgets/w-personal-info8 }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="tab-pane" id="statistics" role="tabpanel">
+		<div class="container">
+			<div class="row">
+				<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+					<div class="ui-block">
+						<div class="ui-block-content">
+							<div class="monthly-indicator">
+								<a href="#" class="btn btn-control bg-breez">
+									<svg class="olymp-stats-arrow"><use xlink:href="svg-icons/sprites/icons.svg#olymp-stats-arrow"></use></svg>
+								</a>
+								<div class="monthly-count">
+									522.670 New Favourites
+									<span class="indicator positive"> + 78.546</span>
+									<span class="period">Last Month</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+					<div class="ui-block">
+						<div class="ui-block-content">
+							<div class="monthly-indicator">
+								<a href="#" class="btn btn-control bg-primary negative">
+									<svg class="olymp-stats-arrow"><use xlink:href="svg-icons/sprites/icons.svg#olymp-stats-arrow"></use></svg>
+								</a>
+								<div class="monthly-count">
+									208.341 New Visitors
+									<span class="indicator negative"> - 47.052</span>
+									<span class="period">Last Month</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<div class="h6 title">Single Two Bar Graphic</div>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+
+						<div class="ui-block-content">
+
+							<div class="points">
+
+						<span>
+							<span class="statistics-point bg-primary"></span>
+							Statistic 01
+						</span>
+
+								<span>
+							<span class="statistics-point bg-yellow"></span>
+							Statistic 02
+						</span>
+
+							</div>
+
+							<div class="chart-js chart-js-two-bars">
+								<canvas id="two-bars-chart" width="400" height="300"></canvas>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+					<div class="ui-block responsive-flex">
+						<div class="ui-block-title">
+							<div class="h6 title">Lines Graphic</div>
+
+							<select class="selectpicker form-control without-border">
+								<option value="LY">LAST YEAR (2016)</option>
+								<option value="2">CURRENT YEAR (2017)</option>
+							</select>
+
+							<div class="points align-right">
+
+						<span>
+							<span class="statistics-point bg-blue"></span>
+							FAVOURITES
+						</span>
+
+								<span>
+							<span class="statistics-point bg-breez"></span>
+							VISITORS
+						</span>
+
+							</div>
+
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+						</div>
+
+						<div class="ui-block-content">
+							<div class="chart-js chart-js-line-stacked">
+								<canvas id="line-stacked-chart" width="730" height="300"></canvas>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="tab-pane" id="events" role="tabpanel">
+		<div class="container">
+			<div class="row">
+				<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="ui-block">
+						<div class="ui-block-title">
+							<div class="h6 title">Green Goo’s Events</div>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<div class="row">
+				<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="ui-block">
+
+						<div class="ui-block-title ui-block-title-small">
+							<h6 class="title">UPCOMING EVENTS 2016</h6>
+						</div>
+
+						{{> event-items/event-item-table1}}
+
+						<div class="ui-block-title ui-block-title-small">
+							<h6 class="title">PAST EVENTS</h6>
+						</div>
+
+						<div class="no-past-events">
+							<svg class="olymp-month-calendar-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-month-calendar-icon"></use></svg>
+							<span>There are no past events <br/>to show</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{{> windows-popup/playlist-popup}}
+
+{{> windows-popup/update-header-photo}}
+
+{{> windows-popup/choose-from-my-photo}}
+
+{{> back-to-top}}
+
+{{> windows-popup/window-chat-responsive}}
+
+
+<!-- JS Scripts -->
+<script src="js/jQuery/jquery-3.4.1.js"></script>
+<script src="js/libs/jquery.appear.js"></script>
+<script src="js/libs/jquery.mousewheel.js"></script>
+<script src="js/libs/perfect-scrollbar.js"></script>
+<script src="js/libs/jquery.matchHeight.js"></script>
+<script src="js/libs/svgxuse.js"></script>
+<script src="js/libs/imagesloaded.pkgd.js"></script>
+<script src="js/libs/Headroom.js"></script>
+<script src="js/libs/velocity.js"></script>
+<script src="js/libs/ScrollMagic.js"></script>
+<script src="js/libs/jquery.waypoints.js"></script>
+<script src="js/libs/jquery.countTo.js"></script>
+<script src="js/libs/popper.min.js"></script>
+<script src="js/libs/material.min.js"></script>
+<script src="js/libs/bootstrap-select.js"></script>
+<script src="js/libs/smooth-scroll.js"></script>
+<script src="js/libs/selectize.js"></script>
+<script src="js/libs/swiper.jquery.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/daterangepicker.js"></script>
+<script src="js/libs/fullcalendar.js"></script>
+<script src="js/libs/isotope.pkgd.js"></script>
+<script src="js/libs/ajax-pagination.js"></script>
+<script src="js/libs/Chart.js"></script>
+<script src="js/libs/chartjs-plugin-deferred.js"></script>
+<script src="js/libs/circle-progress.js"></script>
+<script src="js/libs/loader.js"></script>
+<script src="js/libs/run-chart.js"></script>
+<script src="js/libs/jquery.magnific-popup.js"></script>
+<script src="js/libs/jquery.gifplayer.js"></script>
+<script src="js/libs/mediaelement-and-player.js"></script>
+<script src="js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="js/libs/ion.rangeSlider.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/libs-init/libs-init.js"></script>
+<script defer src="fonts/fontawesome-all.js"></script>
+
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

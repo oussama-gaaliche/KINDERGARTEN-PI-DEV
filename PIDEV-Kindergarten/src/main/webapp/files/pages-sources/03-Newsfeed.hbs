@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Newsfeed</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Main Font -->
+	<script src="js/libs/webfontloader.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
+
+
+</head>
+<body class="page-has-left-panels page-has-right-panels">
+
+{{> preloaders/preloader-main }}
+
+{{> headers-navigations/left-panel }}
+
+{{> headers-navigations/left-panel-responsive }}
+
+{{> headers-navigations/right-panel }}
+
+{{> headers-navigations/right-panel-responsive }}
+
+{{> headers-navigations/header-BP page-title="Newsfeed" }}
+
+{{> headers-navigations/header-BP-responsive }}
+
+<div class="header-spacer"></div>
+
+
+<div class="container">
+	<div class="row">
+
+		<!-- Main Content -->
+
+		<main class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
+
+			<div class="ui-block">
+				{{> forms/news-feed-form}}
+			</div>
+
+			<div id="newsfeed-items-grid">
+
+				<div class="ui-block">
+					{{> posts/posts5-BP}}
+				</div>
+
+				<div class="ui-block">
+
+					{{> posts/posts6-BP}}
+					{{> comments/comment-list2}}
+
+					<a href="#" class="more-comments">View more comments <span>+</span></a>
+
+					{{> forms/comment-form}}
+
+				</div>
+
+				<div class="ui-block">
+					{{> posts/posts7-BP}}
+				</div>
+
+				<div class="ui-block">
+					{{> posts/posts8-BP}}
+				</div>
+
+				<div class="ui-block">
+					{{> posts/posts9-BP}}
+				</div>
+
+			</div>
+
+			<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+		</main>
+
+		<!-- ... end Main Content -->
+
+
+		<!-- Left Sidebar -->
+
+		<aside class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				{{> widgets/w-weather}}
+			</div>
+
+			<div class="ui-block">
+				{{> widgets/w-calendar}}
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Pages You May Like</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				{{> widgets/w-friend-pages-added}}
+
+			</div>
+		</aside>
+
+		<!-- ... end Left Sidebar -->
+
+
+		<!-- Right Sidebar -->
+
+		<aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12">
+
+			<div class="ui-block">
+				{{> widgets/w-birthsday-alert}}
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Friend Suggestions</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				{{> widgets/w-friend-pages-added-suggestions}}
+
+			</div>
+
+			<div class="ui-block">
+
+				<div class="ui-block-title">
+					<h6 class="title">Activity Feed</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				{{> widgets/w-activity-feed}}
+
+			</div>
+
+
+			<div class="ui-block">
+
+				{{> widgets/w-action}}
+
+			</div>
+
+		</aside>
+
+		<!-- ... end Right Sidebar -->
+
+	</div>
+</div>
+
+
+{{> windows-popup/update-header-photo}}
+
+{{> windows-popup/choose-from-my-photo}}
+
+{{> back-to-top}}
+
+{{> windows-popup/window-chat-responsive}}
+
+<!-- JS Scripts -->
+<script src="js/jQuery/jquery-3.4.1.js"></script>
+<script src="js/libs/jquery.appear.js"></script>
+<script src="js/libs/jquery.mousewheel.js"></script>
+<script src="js/libs/perfect-scrollbar.js"></script>
+<script src="js/libs/jquery.matchHeight.js"></script>
+<script src="js/libs/svgxuse.js"></script>
+<script src="js/libs/imagesloaded.pkgd.js"></script>
+<script src="js/libs/Headroom.js"></script>
+<script src="js/libs/velocity.js"></script>
+<script src="js/libs/ScrollMagic.js"></script>
+<script src="js/libs/jquery.waypoints.js"></script>
+<script src="js/libs/jquery.countTo.js"></script>
+<script src="js/libs/popper.min.js"></script>
+<script src="js/libs/material.min.js"></script>
+<script src="js/libs/bootstrap-select.js"></script>
+<script src="js/libs/smooth-scroll.js"></script>
+<script src="js/libs/selectize.js"></script>
+<script src="js/libs/swiper.jquery.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/daterangepicker.js"></script>
+<script src="js/libs/fullcalendar.js"></script>
+<script src="js/libs/isotope.pkgd.js"></script>
+<script src="js/libs/ajax-pagination.js"></script>
+<script src="js/libs/Chart.js"></script>
+<script src="js/libs/chartjs-plugin-deferred.js"></script>
+<script src="js/libs/circle-progress.js"></script>
+<script src="js/libs/loader.js"></script>
+<script src="js/libs/run-chart.js"></script>
+<script src="js/libs/jquery.magnific-popup.js"></script>
+<script src="js/libs/jquery.gifplayer.js"></script>
+<script src="js/libs/mediaelement-and-player.js"></script>
+<script src="js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="js/libs/ion.rangeSlider.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/libs-init/libs-init.js"></script>
+<script defer src="fonts/fontawesome-all.js"></script>
+
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

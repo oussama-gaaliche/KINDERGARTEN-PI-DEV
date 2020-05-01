@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Manage Widgets</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
+
+	<!-- Main Font -->
+	<script src="js/libs/webfontloader.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+
+
+</head>
+
+<body class="page-has-left-panels page-has-right-panels">
+
+{{> preloaders/preloader-main }}
+
+{{> headers-navigations/left-panel }}
+
+{{> headers-navigations/left-panel-responsive }}
+
+{{> headers-navigations/right-panel }}
+
+{{> headers-navigations/right-panel-responsive }}
+
+{{> headers-navigations/header-BP page-title="manage widgets" }}
+
+{{> headers-navigations/header-BP-responsive }}
+
+<div class="header-spacer header-spacer-small"></div>
+
+{{> headers-navigations/main-header-account
+	stunning-title="Customize your Profile!"
+	stunning-text="Welcome to your account dashboard! Here you’ll find everything you need to change your profile
+	information, settings, read notifications and requests, view your latest messages, change your pasword and much
+	more! Also you can create or manage your own favourite page, have fun!"
+}}
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<div class="h6 title">Available Widgets</div>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Profile Intro
+						</label>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Last Photos
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Location
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							My Badges
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Blog Posts
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Spotify Playlist
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							My Friends
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Favourite Pages
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Twitter Feed
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Latest Videos
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							My Poll
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block responsive-flex">
+				<div class="ui-block-title">
+					<div class="h6 title">Profile Customization</div>
+
+					<div class="align-right">
+
+						<a href="#" class="btn btn-md-2 btn-border-think custom-color c-grey">Back to Preset Settings</a>
+
+						<a href="#" class="btn btn-primary btn-md-2">Save all Changes</a>
+
+					</div>
+
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Main Content Widgets -->
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Profile Intro</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#edit-widget-profile">Edit Widget</a>
+							</li>
+
+							<li>
+								<a href="#">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">My Badges</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="#">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Spotify Playlist</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="#">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Twitter Feed</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="#">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="empty-area">
+
+			</div>
+		</div>
+
+		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+			<article class="hentry post empty-post">
+
+				<div class="empty-post-content">
+					<div class="title">Your Post Updates Space</div>
+					<span>Al your posts will go here</span>
+				</div>
+
+				<div class="control-block-button post-control-button">
+
+					<a href="#" class="btn btn-control">
+
+					</a>
+
+					<a href="#" class="btn btn-control">
+
+					</a>
+
+					<a href="#" class="btn btn-control">
+
+					</a>
+
+				</div>
+
+			</article>
+		</div>
+
+		<div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Last Photos</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="#">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Blog Posts</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#edit-widget-blog-post">Edit Widget</a>
+							</li>
+							<li>
+								<a href="#">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">My Friends</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="#">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Favourite Pages</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="#">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">My Poll</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#edit-widget-pool">Edit Widget</a>
+							</li>
+							<li>
+								<a href="#">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="empty-area">
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ... end Main Content Widgets -->
+
+
+
+
+{{> windows-popup/edit-widget-twitter}}
+
+{{> windows-popup/edit-widget-profile}}
+
+{{> windows-popup/edit-widget-blog-post}}
+
+{{> windows-popup/edit-widget-pool}}
+
+{{> windows-popup/window-chat-responsive}}
+
+{{> back-to-top}}
+
+
+<!-- JS Scripts -->
+<script src="js/jQuery/jquery-3.4.1.js"></script>
+<script src="js/libs/jquery.appear.js"></script>
+<script src="js/libs/jquery.mousewheel.js"></script>
+<script src="js/libs/perfect-scrollbar.js"></script>
+<script src="js/libs/jquery.matchHeight.js"></script>
+<script src="js/libs/svgxuse.js"></script>
+<script src="js/libs/imagesloaded.pkgd.js"></script>
+<script src="js/libs/Headroom.js"></script>
+<script src="js/libs/velocity.js"></script>
+<script src="js/libs/ScrollMagic.js"></script>
+<script src="js/libs/jquery.waypoints.js"></script>
+<script src="js/libs/jquery.countTo.js"></script>
+<script src="js/libs/popper.min.js"></script>
+<script src="js/libs/material.min.js"></script>
+<script src="js/libs/bootstrap-select.js"></script>
+<script src="js/libs/smooth-scroll.js"></script>
+<script src="js/libs/selectize.js"></script>
+<script src="js/libs/swiper.jquery.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/daterangepicker.js"></script>
+<script src="js/libs/fullcalendar.js"></script>
+<script src="js/libs/isotope.pkgd.js"></script>
+<script src="js/libs/ajax-pagination.js"></script>
+<script src="js/libs/Chart.js"></script>
+<script src="js/libs/chartjs-plugin-deferred.js"></script>
+<script src="js/libs/circle-progress.js"></script>
+<script src="js/libs/loader.js"></script>
+<script src="js/libs/run-chart.js"></script>
+<script src="js/libs/jquery.magnific-popup.js"></script>
+<script src="js/libs/jquery.gifplayer.js"></script>
+<script src="js/libs/mediaelement-and-player.js"></script>
+<script src="js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="js/libs/ion.rangeSlider.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/libs-init/libs-init.js"></script>
+<script defer src="fonts/fontawesome-all.js"></script>
+
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

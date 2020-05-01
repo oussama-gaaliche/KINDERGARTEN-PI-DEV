@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Forums Open Topic</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
+
+	<!-- Main Font -->
+	<script src="js/libs/webfontloader.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+
+</head>
+
+<body class="page-has-left-panels page-has-right-panels">
+
+{{> preloaders/preloader-main }}
+
+{{> headers-navigations/left-panel }}
+
+{{> headers-navigations/left-panel-responsive }}
+
+{{> headers-navigations/right-panel }}
+
+{{> headers-navigations/right-panel-responsive }}
+
+{{> headers-navigations/header-BP page-title="FORUMS" }}
+
+{{> headers-navigations/header-BP-responsive }}
+
+<div class="header-spacer header-spacer-small"></div>
+
+{{> headers-navigations/main-header-groups
+	stunning-title="Welcome to the Forums!"
+	stunning-text="Here in the forums you’ll be able to easily create and manage categories and topics to share with the
+	 community! We included some of the most used topics, like music, comics, movies, and community, each one with a cool
+	 and customizable illustration so you can have fun with them!"
+}}
+
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block responsive-flex">
+				<div class="ui-block-title">
+					<div class="h6 title">The Robot’s Dungeon</div>
+					<form class="w-search">
+						<div class="form-group with-button">
+							<input class="form-control" type="text" placeholder="Search the forums...">
+							<button>
+								<svg class="olymp-magnifying-glass-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+
+			<div class="ui-block responsive-flex">
+				<div class="ui-block-title">
+					<i class="icon fa fa-star c-yellow" aria-hidden="true"></i>
+					<div class="h6 title">This year’s ComixCon will have the best presentations</div>
+				</div>
+
+				{{> forums/open-topic-table}}
+
+			</div>
+
+			{{> page-navigation/pagination}}
+
+		</div>
+
+		<div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Featured Topics</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-featured-topics }}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Recent Topics</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-recent-topics }}
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+{{> windows-popup/window-chat-responsive}}
+
+{{> back-to-top}}
+
+
+<!-- JS Scripts -->
+<script src="js/jQuery/jquery-3.4.1.js"></script>
+<script src="js/libs/jquery.appear.js"></script>
+<script src="js/libs/jquery.mousewheel.js"></script>
+<script src="js/libs/perfect-scrollbar.js"></script>
+<script src="js/libs/jquery.matchHeight.js"></script>
+<script src="js/libs/svgxuse.js"></script>
+<script src="js/libs/imagesloaded.pkgd.js"></script>
+<script src="js/libs/Headroom.js"></script>
+<script src="js/libs/velocity.js"></script>
+<script src="js/libs/ScrollMagic.js"></script>
+<script src="js/libs/jquery.waypoints.js"></script>
+<script src="js/libs/jquery.countTo.js"></script>
+<script src="js/libs/popper.min.js"></script>
+<script src="js/libs/material.min.js"></script>
+<script src="js/libs/bootstrap-select.js"></script>
+<script src="js/libs/smooth-scroll.js"></script>
+<script src="js/libs/selectize.js"></script>
+<script src="js/libs/swiper.jquery.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/daterangepicker.js"></script>
+<script src="js/libs/fullcalendar.js"></script>
+<script src="js/libs/isotope.pkgd.js"></script>
+<script src="js/libs/ajax-pagination.js"></script>
+<script src="js/libs/Chart.js"></script>
+<script src="js/libs/chartjs-plugin-deferred.js"></script>
+<script src="js/libs/circle-progress.js"></script>
+<script src="js/libs/loader.js"></script>
+<script src="js/libs/run-chart.js"></script>
+<script src="js/libs/jquery.magnific-popup.js"></script>
+<script src="js/libs/jquery.gifplayer.js"></script>
+<script src="js/libs/mediaelement-and-player.js"></script>
+<script src="js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="js/libs/ion.rangeSlider.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/libs-init/libs-init.js"></script>
+<script defer src="fonts/fontawesome-all.js"></script>
+
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Components - Forms</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
+
+	<!-- Main Font -->
+	<script src="js/libs/webfontloader.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+
+</head>
+<body>
+
+{{> preloaders/preloader-main }}
+
+<div class="container">
+	<div class="row">
+		<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+			<h2 class="presentation-margin">Form Elements</h2>
+
+			<div class="ui-block">
+
+				<div class="ui-block-content">
+					<div class="row">
+						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Default Input</label>
+								<input class="form-control" type="text" placeholder="">
+							</div>
+							<div class="form-group label-floating has-success">
+								<label class="control-label">Success Input</label>
+								<input type="text" class="form-control form-control-success">
+							</div>
+							<div class="form-group label-floating has-error">
+								<label class="control-label">Error Input</label>
+								<input type="text" class="form-control form-control-danger">
+							</div>
+							<fieldset disabled>
+								<div class="form-group has-disabled">
+									<input type="text" class="form-control" placeholder="Disabled input">
+								</div>
+							</fieldset>
+
+							<label class="control-label">Dropdown Field</label>
+							<fieldset class="form-group">
+								<select class="selectpicker form-control">
+									<option value="AL">Alabama</option>
+									<option value="2">Oklahoma</option>
+									<option value="WY">Wyoming</option>
+								</select>
+							</fieldset>
+
+							<h6>Completed Input V2</h6>
+							<div class="form-group">
+								<input class="form-control" type="text" placeholder="James Spiegel">
+							</div>
+
+							<div class="form-group with-icon label-floating is-empty">
+								<label class="control-label">Input with Icon</label>
+								<input class="form-control" type="text">
+								<i class="fab fa-facebook-f c-facebook" aria-hidden="true"></i>
+							</div>
+
+
+							<label class="control-label">Calendar Field</label>
+							<div class="form-group date-time-picker">
+								<input type="text" name="datetimepicker" value="10/24/1984"/>
+								<span class="input-group-addon">
+									<svg class="olymp-month-calendar-icon icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-month-calendar-icon"></use></svg>
+								</span>
+							</div>
+
+							<h6>Switch On</h6>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+
+							<div class="togglebutton">
+								<label>
+									<input type="checkbox" checked="">
+								</label>
+							</div>
+
+							<h6>Switch Off</h6>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+							<div class="togglebutton">
+								<label>
+									<input type="checkbox">
+								</label>
+							</div>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
+							<h6>Checkboxes</h6>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Unchecked
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes" checked>
+									Checked
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes" disabled>
+									Disabled Unchecked
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes" disabled checked>
+									Disabled Checked
+								</label>
+							</div>
+						</div>
+						<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
+							<h6>Radio Buttons</h6>
+
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios">
+									Radio is off
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" checked>
+									Radio is on
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadiosDisabled" disabled>
+									Disabled Radio is off
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadiosDisabled" checked disabled>
+									Disabled Radio is on
+								</label>
+							</div>
+
+						</div>
+
+						<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
+
+							<h6>Tooltips</h6>
+							<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+								Tooltip on top
+							</button>
+							<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+								Tooltip on right
+							</button>
+							<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+								Tooltip on left
+							</button>
+							<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+								Tooltip on bottom
+							</button>
+						</div>
+
+					</div>
+
+					<div class="row mb30">
+						<div class="col col-lg-12 col-12">
+							<h6>Upload Buttons</h6>
+						</div>
+						<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
+							<div class="file-upload">
+								<label for="upload" class="file-upload__label">Upload Button</label>
+								<input id="upload" class="file-upload__input" type="file" name="file-upload">
+							</div>
+						</div>
+						<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
+							<div class="file-upload">
+								<label for="upload" class="file-upload__label bg-blue">Upload Button</label>
+								<input id="upload3" class="file-upload__input" type="file" name="file-upload">
+							</div>
+						</div>
+						<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
+							<div class="file-upload">
+								<label for="upload" class="file-upload__label bg-breez">Upload Button</label>
+								<input id="upload1" class="file-upload__input" type="file" name="file-upload">
+							</div>
+						</div>
+						<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
+							<div class="file-upload">
+								<label for="upload" class="file-upload__label bg-green">Upload Button</label>
+								<input id="upload2" class="file-upload__input" type="file" name="file-upload">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col col-lg-12 col-12">
+							<h6>Quantity Input Field</h6>
+						</div>
+
+						<div class="col col-lg-3 col-md-6 col-sm-12 col-12 mb30">
+							<div class="input-group number-spinner">
+								<span class="input-group-btn data-dwn input-group-prepend">
+									<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+								</span>
+								<input type="text" class="form-control text-center" value="1" min="0" max="100">
+								<span class="input-group-btn data-up input-group-append">
+									<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+								</span>
+							</div>
+						</div>
+
+						<div class="col col-lg-3 col-md-6 col-sm-12 col-12 mb30">
+							<div class="input-group number-spinner number-spinner--secondary">
+								<span class="input-group-btn data-dwn input-group-prepend">
+									<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+								</span>
+								<input type="text" class="form-control text-center" value="-10" min="-50" max="50">
+								<span class="input-group-btn data-up input-group-append">
+									<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+								</span>
+							</div>
+						</div>
+
+						<div class="col col-lg-3 col-md-6 col-sm-12 col-12 mb30">
+							<div class="input-group number-spinner number-spinner--breez">
+								<span class="input-group-btn data-dwn input-group-prepend">
+									<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+								</span>
+								<input type="text" class="form-control text-center" value="10" min="-40" max="40">
+								<span class="input-group-btn data-up input-group-append">
+									<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+								</span>
+							</div>
+						</div>
+
+						<div class="col col-lg-3 col-md-6 col-sm-12 col-12 mb30">
+							<div class="input-group number-spinner number-spinner--green">
+								<span class="input-group-btn data-dwn input-group-prepend">
+									<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+								</span>
+								<input type="text" class="form-control text-center" value="5" min="0" max="10">
+								<span class="input-group-btn data-up input-group-append">
+									<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-xl-12 col-12">
+			<h2 class="presentation-margin">Registration Login Form</h2>
+		</div>
+
+		<div class="col col-lg-6 col-md-12 col-sm-12 col-12">
+
+			{{> forms/registration-login-form}}
+
+		</div>
+		<div class="col col-lg-6 col-md-12 col-sm-12 col-12">
+
+			{{> forms/registration-login-form}}
+
+		</div>
+
+		<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+			<h2 class="presentation-margin">News feed form</h2>
+			<div class="ui-block">
+
+				{{> forms/news-feed-form}}
+
+			</div>
+		</div>
+
+		<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+			<h2 class="presentation-margin">Comments form</h2>
+			<div  class="ui-block">
+
+				{{> forms/comment-form}}
+
+			</div>
+		</div>
+
+		<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+			<h2 class="presentation-margin">Widget form</h2>
+			<div class="ui-block">
+				<div class="ui-block-content">
+
+					{{> forms/form-weathher}}
+					<form>
+						<div class="row">
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+								<fieldset class="form-group label-floating is-select">
+									<label class="control-label">Country and Timezone</label>
+									<select class="selectpicker form-control">
+										<option value="AL">United States (UTC-8)</option>
+										<option value="2">Ontario (UTC−6)</option>
+										<option value="WY">Alberta (UTC−6)</option>
+									</select>
+								</fieldset>
+
+								<fieldset class="form-group label-floating is-select">
+									<label class="control-label">Extended Forecast Days</label>
+									<select class="selectpicker form-control">
+										<option value="AL">Show Next 7 days</option>
+										<option value="2">Show Next 10 days</option>
+										<option value="WY">Show Next 14 days</option>
+									</select>
+								</fieldset>
+
+								<a href="#" class="btn btn-secondary btn-md full-width">Restore all Attributes</a>
+							</div>
+
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+								<fieldset class="form-group label-floating is-select">
+									<label class="control-label">Temperature Unit</label>
+									<select class="selectpicker form-control">
+										<option value="AL">F° (Farenheit)</option>
+										<option value="2">C° (Celsius)</option>
+									</select>
+								</fieldset>
+
+								<div class="switcher-block">
+									<div class="h6 title">Show Extended Forecast on Widget</div>
+									<div class="togglebutton blue">
+										<label>
+											<input type="checkbox" checked="">
+										</label>
+									</div>
+								</div>
+
+								<a href="#" class="btn btn-blue btn-md full-width">Save all Changes</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+{{> back-to-top}}
+
+{{> windows-popup/restore-password}}
+
+
+<!-- JS Scripts -->
+<script src="js/jQuery/jquery-3.4.1.js"></script>
+<script src="js/libs/jquery.appear.js"></script>
+<script src="js/libs/jquery.mousewheel.js"></script>
+<script src="js/libs/perfect-scrollbar.js"></script>
+<script src="js/libs/jquery.matchHeight.js"></script>
+<script src="js/libs/svgxuse.js"></script>
+<script src="js/libs/imagesloaded.pkgd.js"></script>
+<script src="js/libs/Headroom.js"></script>
+<script src="js/libs/velocity.js"></script>
+<script src="js/libs/ScrollMagic.js"></script>
+<script src="js/libs/jquery.waypoints.js"></script>
+<script src="js/libs/jquery.countTo.js"></script>
+<script src="js/libs/popper.min.js"></script>
+<script src="js/libs/material.min.js"></script>
+<script src="js/libs/bootstrap-select.js"></script>
+<script src="js/libs/smooth-scroll.js"></script>
+<script src="js/libs/selectize.js"></script>
+<script src="js/libs/swiper.jquery.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/daterangepicker.js"></script>
+<script src="js/libs/fullcalendar.js"></script>
+<script src="js/libs/isotope.pkgd.js"></script>
+<script src="js/libs/ajax-pagination.js"></script>
+<script src="js/libs/Chart.js"></script>
+<script src="js/libs/chartjs-plugin-deferred.js"></script>
+<script src="js/libs/circle-progress.js"></script>
+<script src="js/libs/loader.js"></script>
+<script src="js/libs/run-chart.js"></script>
+<script src="js/libs/jquery.magnific-popup.js"></script>
+<script src="js/libs/jquery.gifplayer.js"></script>
+<script src="js/libs/mediaelement-and-player.js"></script>
+<script src="js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="js/libs/ion.rangeSlider.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/libs-init/libs-init.js"></script>
+<script defer src="fonts/fontawesome-all.js"></script>
+
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

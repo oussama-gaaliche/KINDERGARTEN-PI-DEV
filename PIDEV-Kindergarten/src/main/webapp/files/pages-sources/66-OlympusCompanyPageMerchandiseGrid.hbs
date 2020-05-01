@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Company Page - Merchandise Grid</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
+
+	<!-- Main Font -->
+	<script src="js/libs/webfontloader.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+
+</head>
+<body class="body-bg-white">
+
+{{> preloaders/preloader-main }}
+
+{{> stunning-headers/stunning-header-shop
+	stunning-title = 'Merchandise'
+}}
+
+
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="ui-block responsive-flex1200">
+					<div class="ui-block-title">
+
+						<div class="w-select">
+							<div class="title">Filter By:</div>
+							<fieldset class="form-group">
+								<select class="selectpicker form-control">
+									<option value="NU">All Categories</option>
+									<option value="NU">Favourite</option>
+									<option value="NU">Likes</option>
+								</select>
+							</fieldset>
+						</div>
+
+						<div class="w-select">
+							<fieldset class="form-group">
+								<select class="selectpicker form-control">
+									<option value="NU">Date (Descending)</option>
+									<option value="NU">Date (Ascending)</option>
+								</select>
+							</fieldset>
+						</div>
+
+						<div class="w-select">
+							<fieldset class="form-group">
+								<select class="selectpicker form-control">
+									<option value="AL">All Colors</option>
+									<option value="RE">Red</option>
+									<option value="GR">Green</option>
+									<option value="BL">Blue</option>
+								</select>
+							</fieldset>
+						</div>
+
+						<a href="#" class="btn btn-blue btn-md-2">Filter Products</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="pt120">
+	<div class="container">
+		<div class="row">
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+
+				{{> shop/shop-product-item1 }}
+
+			</div>
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+
+				{{> shop/shop-product-item2 }}
+
+			</div>
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+
+				{{> shop/shop-product-item3 }}
+
+			</div>
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+
+				{{> shop/shop-product-item4 }}
+
+			</div>
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+
+				{{> shop/shop-product-item5 }}
+
+			</div>
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+
+				{{> shop/shop-product-item6 }}
+
+			</div>
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+
+				{{> shop/shop-product-item7 }}
+
+			</div>
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+
+				{{> shop/shop-product-item8 }}
+
+			</div>
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+
+				{{> shop/shop-product-item9 }}
+
+			</div>
+
+			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-center pb120 pt120">
+
+				{{> page-navigation/pagination}}
+
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{{> animation-sections/call-to-action-animation}}
+
+{{> windows-popup/restore-password}}
+
+{{> windows-popup/registration-login-form-popup}}
+
+{{> footers/footer-full-width}}
+
+{{> windows-popup/window-chat-responsive}}
+
+{{> back-to-top}}
+
+
+<!-- JS Scripts -->
+<script src="js/jQuery/jquery-3.4.1.js"></script>
+<script src="js/libs/jquery.appear.js"></script>
+<script src="js/libs/jquery.mousewheel.js"></script>
+<script src="js/libs/perfect-scrollbar.js"></script>
+<script src="js/libs/jquery.matchHeight.js"></script>
+<script src="js/libs/svgxuse.js"></script>
+<script src="js/libs/imagesloaded.pkgd.js"></script>
+<script src="js/libs/Headroom.js"></script>
+<script src="js/libs/velocity.js"></script>
+<script src="js/libs/ScrollMagic.js"></script>
+<script src="js/libs/jquery.waypoints.js"></script>
+<script src="js/libs/jquery.countTo.js"></script>
+<script src="js/libs/popper.min.js"></script>
+<script src="js/libs/material.min.js"></script>
+<script src="js/libs/bootstrap-select.js"></script>
+<script src="js/libs/smooth-scroll.js"></script>
+<script src="js/libs/selectize.js"></script>
+<script src="js/libs/swiper.jquery.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/daterangepicker.js"></script>
+<script src="js/libs/fullcalendar.js"></script>
+<script src="js/libs/isotope.pkgd.js"></script>
+<script src="js/libs/ajax-pagination.js"></script>
+<script src="js/libs/Chart.js"></script>
+<script src="js/libs/chartjs-plugin-deferred.js"></script>
+<script src="js/libs/circle-progress.js"></script>
+<script src="js/libs/loader.js"></script>
+<script src="js/libs/run-chart.js"></script>
+<script src="js/libs/jquery.magnific-popup.js"></script>
+<script src="js/libs/jquery.gifplayer.js"></script>
+<script src="js/libs/mediaelement-and-player.js"></script>
+<script src="js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="js/libs/ion.rangeSlider.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/libs-init/libs-init.js"></script>
+<script defer src="fonts/fontawesome-all.js"></script>
+
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

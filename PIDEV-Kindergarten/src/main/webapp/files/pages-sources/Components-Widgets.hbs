@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Components - Widgets</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
+
+	<!-- Main Font -->
+	<script src="js/libs/webfontloader.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+
+</head>
+<body>
+
+{{> preloaders/preloader-main }}
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-12">
+			<h2 class="presentation-margin">Widgets</h2>
+		</div>
+
+		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+			<div class="ui-block">
+
+				{{> widgets/w-build-fav}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Profile Intro</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-personal-info}}
+
+					{{> widgets/w-socials}}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">James’s Badges</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-badges}}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">My Spotify Playlist</h6>
+				</div>
+
+				{{> widgets/w-playlist}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">My Spotify Playlist</h6>
+				</div>
+
+				{{> widgets/w-playlist-without-cover}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Twitter Feed</h6>
+				</div>
+
+				{{> widgets/w-twitter}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Last Videos</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-last-video}}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+
+				{{> widgets/w-create-fav-page}}
+
+			</div>
+
+			<div class="ui-block">
+
+				<div class="ui-block-title">
+					<h6 class="title">Topics</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-featured-topics}}
+
+				</div>
+
+			</div>
+
+
+		</div>
+		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Last Photos</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-last-photo}}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Last Photos</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-last-photo1}}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Blog Posts</h6>
+				</div>
+
+				{{> widgets/w-blog-posts}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Friends (86)</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-faved-pages}}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Favourite Pages</h6>
+				</div>
+
+				{{> widgets/w-friend-pages-added}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">James's Poll</h6>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-pool}}
+
+					<a href="#" class="btn btn-md-2 btn-border-think custom-color c-grey full-width">Vote Now!</a>
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Location</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				{{> widgets/w-contacts}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">List</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				<div class="ui-block-content">
+
+					{{> widgets/w-list1}}
+
+				</div>
+
+			</div>
+
+		</div>
+		<aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+			<div class="ui-block">
+
+				{{> widgets/w-weather}}
+
+			</div>
+
+			<div class="ui-block">
+
+				{{> widgets/w-calendar}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Pages You May Like</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				{{> widgets/w-friend-pages-added-suggestions}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Faved this Page</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-faved-pages2}}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Faved this Page</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-faved-pages3}}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Page Intro</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-personal-info2}}
+
+					{{> widgets/w-socials}}
+
+					{{> widgets/w-about}}
+
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Widget About</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+				<div class="ui-block-content">
+
+					{{> widgets/w-about}}
+
+				</div>
+			</div>
+
+
+		</aside>
+		<aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+
+			<div class="ui-block">
+
+				{{> widgets/w-birthsday-alert}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Friend Suggestions</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				{{> widgets/w-friend-pages-added}}
+
+			</div>
+
+			<div class="ui-block">
+
+				<div class="ui-block-title">
+					<h6 class="title">Activity Feed</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				{{> widgets/w-activity-feed}}
+
+			</div>
+
+			<div class="ui-block">
+
+				{{> widgets/w-action}}
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Twitter Feed</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				{{> widgets/w-twitter1}}
+
+			</div>
+		</aside>
+
+		<div class="col col-xl-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Extended Forecast</h6>
+				</div>
+
+				{{> sliders/slider-weather}}
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{{> back-to-top}}
+
+
+<!-- JS Scripts -->
+<script src="js/jQuery/jquery-3.4.1.js"></script>
+<script src="js/libs/jquery.appear.js"></script>
+<script src="js/libs/jquery.mousewheel.js"></script>
+<script src="js/libs/perfect-scrollbar.js"></script>
+<script src="js/libs/jquery.matchHeight.js"></script>
+<script src="js/libs/svgxuse.js"></script>
+<script src="js/libs/imagesloaded.pkgd.js"></script>
+<script src="js/libs/Headroom.js"></script>
+<script src="js/libs/velocity.js"></script>
+<script src="js/libs/ScrollMagic.js"></script>
+<script src="js/libs/jquery.waypoints.js"></script>
+<script src="js/libs/jquery.countTo.js"></script>
+<script src="js/libs/popper.min.js"></script>
+<script src="js/libs/material.min.js"></script>
+<script src="js/libs/bootstrap-select.js"></script>
+<script src="js/libs/smooth-scroll.js"></script>
+<script src="js/libs/selectize.js"></script>
+<script src="js/libs/swiper.jquery.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/daterangepicker.js"></script>
+<script src="js/libs/fullcalendar.js"></script>
+<script src="js/libs/isotope.pkgd.js"></script>
+<script src="js/libs/ajax-pagination.js"></script>
+<script src="js/libs/Chart.js"></script>
+<script src="js/libs/chartjs-plugin-deferred.js"></script>
+<script src="js/libs/circle-progress.js"></script>
+<script src="js/libs/loader.js"></script>
+<script src="js/libs/run-chart.js"></script>
+<script src="js/libs/jquery.magnific-popup.js"></script>
+<script src="js/libs/jquery.gifplayer.js"></script>
+<script src="js/libs/mediaelement-and-player.js"></script>
+<script src="js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="js/libs/ion.rangeSlider.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/libs-init/libs-init.js"></script>
+<script defer src="fonts/fontawesome-all.js"></script>
+
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

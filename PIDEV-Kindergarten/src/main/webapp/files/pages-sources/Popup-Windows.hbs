@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Company Page - Merchandise Grid</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
+
+	<!-- Main Font -->
+	<script src="js/libs/webfontloader.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+
+</head>
+<body>
+
+{{> preloaders/preloader-main }}
+
+{{> stunning-headers/stunning-header-blog1
+	stunning-title="Popup Windows"
+}}
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col col-lg-12 col-md-12 col-sm-12 offset-sm-0 col-12">
+				<div class="landing-main-content">
+					<h2 class="title">Popup Windows</h2>
+				</div>
+			</div>
+			
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item49.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#blog-post-popup" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#blog-post-popup" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Popup Blog</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item50.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#open-photo-popup-v1" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#open-photo-popup-v1" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Popup Photo V1</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item51.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#open-photo-popup-v2" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#open-photo-popup-v2" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Popup Photo V2</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item52.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#create-photo-album" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#create-photo-album" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Create Photo Album</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item53.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#create-friend-group-add-friends" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#create-friend-group-add-friends" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Add Friends</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item54.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#create-friend-group-1" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#create-friend-group-1" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Create Friend Group</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item55.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#faqs-popup" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#faqs-popup" href="#" class="full-block"></a>
+					</div>
+					<div class="title">FAQs Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item56.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-popup-target=".playlist-popup" href="#" class="js-open-popup btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-popup-target=".playlist-popup" href="#" class="js-open-popup full-block"></a>
+					</div>
+					<div class="title">Playlist Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item57.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#create-event" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#create-event" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Create Event Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item58.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#private-event" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#private-event" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Event Private Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item59.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#public-event" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#public-event" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Event Public Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item60.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#edit-widget-blog-post" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#edit-widget-blog-post" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Edit Blog Post Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item61.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#edit-widget-pool" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#edit-widget-pool" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Edit Pool Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item62.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#edit-widget-profile" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#edit-widget-profile" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Edit Widget Profile Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item63.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#edit-widget-twitter" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#edit-widget-twitter" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Edit Widget Twitter Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item64.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#fav-page-popup" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#fav-page-popup" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Create Fav Page Popup</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item65.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#choose-from-my-photo" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#choose-from-my-photo" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Choose From My Photos</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item66.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#update-header-photo" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#update-header-photo" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Update Header Photo</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item101.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#edit-my-poll-popup" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#edit-my-poll-popup" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Edit My Pool</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item102.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#popup-write-rewiev" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#popup-write-rewiev" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Write Review</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item103.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#registration-login-form-popup" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#registration-login-form-popup" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Registration Login Form</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item107.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#restore-password" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#restore-password" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Restore Password</div>
+				</div>
+			</div>
+
+			<div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="landing-item">
+					<div class="landing-item-thumb">
+						<img src="screenshots/landing-item109.jpg" alt="page">
+						<div class="overlay overlay-dark"></div>
+						<a data-toggle="modal" data-target="#main-popup-search" href="#" class="btn btn-breez btn-sm">Open Popup</a>
+						<a data-toggle="modal" data-target="#main-popup-search" href="#" class="full-block"></a>
+					</div>
+					<div class="title">Main Search</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{{> windows-popup/restore-password}}
+
+{{> windows-popup/blog-post-popup }}
+
+{{> windows-popup/open-photo-popup-v1 }}
+
+{{> windows-popup/open-photo-popup-v2 }}
+
+{{> windows-popup/create-photo-album }}
+
+{{> windows-popup/create-friend-group-add-friends }}
+
+{{> windows-popup/create-friend-group-1 }}
+
+{{> windows-popup/faqs-popup }}
+
+{{> windows-popup/playlist-popup }}
+
+{{> windows-popup/create-events }}
+
+{{> windows-popup/private-event }}
+
+{{> windows-popup/public-event }}
+
+{{> windows-popup/edit-widget-blog-post }}
+
+{{> windows-popup/edit-my-poll-popup }}
+
+{{> windows-popup/edit-widget-profile }}
+
+{{> windows-popup/edit-widget-twitter }}
+
+{{> windows-popup/fav-page-popup }}
+
+{{> windows-popup/choose-from-my-photo }}
+
+{{> windows-popup/update-header-photo }}
+
+{{> windows-popup/edit-widget-pool }}
+
+{{> windows-popup/popup-write-rewiev }}
+
+{{> windows-popup/registration-login-form-popup }}
+
+{{> windows-popup/window-chat-responsive }}
+
+{{> windows-popup/main-search-popup }}
+
+
+<!-- JS Scripts -->
+<script src="js/jQuery/jquery-3.4.1.js"></script>
+<script src="js/libs/jquery.appear.js"></script>
+<script src="js/libs/jquery.mousewheel.js"></script>
+<script src="js/libs/perfect-scrollbar.js"></script>
+<script src="js/libs/jquery.matchHeight.js"></script>
+<script src="js/libs/svgxuse.js"></script>
+<script src="js/libs/imagesloaded.pkgd.js"></script>
+<script src="js/libs/Headroom.js"></script>
+<script src="js/libs/velocity.js"></script>
+<script src="js/libs/ScrollMagic.js"></script>
+<script src="js/libs/jquery.waypoints.js"></script>
+<script src="js/libs/jquery.countTo.js"></script>
+<script src="js/libs/popper.min.js"></script>
+<script src="js/libs/material.min.js"></script>
+<script src="js/libs/bootstrap-select.js"></script>
+<script src="js/libs/smooth-scroll.js"></script>
+<script src="js/libs/selectize.js"></script>
+<script src="js/libs/swiper.jquery.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/daterangepicker.js"></script>
+<script src="js/libs/fullcalendar.js"></script>
+<script src="js/libs/isotope.pkgd.js"></script>
+<script src="js/libs/ajax-pagination.js"></script>
+<script src="js/libs/Chart.js"></script>
+<script src="js/libs/chartjs-plugin-deferred.js"></script>
+<script src="js/libs/circle-progress.js"></script>
+<script src="js/libs/loader.js"></script>
+<script src="js/libs/run-chart.js"></script>
+<script src="js/libs/jquery.magnific-popup.js"></script>
+<script src="js/libs/jquery.gifplayer.js"></script>
+<script src="js/libs/mediaelement-and-player.js"></script>
+<script src="js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="js/libs/ion.rangeSlider.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/libs-init/libs-init.js"></script>
+<script defer src="fonts/fontawesome-all.js"></script>
+
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>
