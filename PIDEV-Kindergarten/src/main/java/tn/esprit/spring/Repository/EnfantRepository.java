@@ -15,5 +15,12 @@ public interface EnfantRepository extends JpaRepository<Enfant, Long> {
 	List<Enfant> findByUser(User long1);
 	@Query("select count(e) from Enfant e where e.classe=:co")
     int findsizeofclasse(@Param("co")Classe classe);
+	@Query("SELECT e FROM Enfant e  where e.abonnée =1")
+    public List<Enfant> GetEnfantabonnée();
+	@Query("SELECT e.user FROM Enfant e "
+			+"JOIN e.user u "
+			+"WHERE e.id=:idenfant")
+	public List<User> parents(@Param("idenfant")Long idenfant);
+
 
 }

@@ -19,6 +19,8 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+import tn.esprit.spring.entity.Enfant;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -65,7 +67,15 @@ public class User implements Serializable {
 	private int nbrsig;
 	@Temporal (TemporalType.DATE)
 	private Date dateInscription;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	private Set<Enfant> Enfants;	
 	
+	public Set<Enfant> getEnfants() {
+		return Enfants;
+	}
+	public void setEnfants(Set<Enfant> enfants) {
+		Enfants = enfants;
+	}
 	@JsonIgnore
 	@Column(name = "score")
 	private float score;
