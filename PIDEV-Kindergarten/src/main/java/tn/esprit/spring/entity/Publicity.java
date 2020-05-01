@@ -1,15 +1,22 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+
+
+
+
 
 @Entity
 @Table(name="T_Publicity")
@@ -18,17 +25,30 @@ public class Publicity implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	
 	private String productName;
+	private String marque;
 	private String category;
 	private float priceSponsoring;
 	private String image;
 	
+	private float average;
+	
+	
+	
+	
 	
 	@ManyToOne
-	User user;
+	User User;
+	
+	
+
+
 
 	public int getId() {
 		return id;
@@ -71,11 +91,11 @@ public class Publicity implements Serializable{
 	}
 
 	public User getUser() {
-		return user;
+		return User;
 	}
 
 	public void setUser(User user) {
-		this.user = user;
+		this.User = user;
 	}
 
 	public static long getSerialversionuid() {
@@ -89,40 +109,73 @@ public class Publicity implements Serializable{
 		this.category = category;
 		this.priceSponsoring = priceSponsoring;
 		this.image = image;
-		this.user = user;
+		this.User = user;
 	}
 
-	public Publicity(String productName, String category, float priceSponsoring, String image, User user) {
-		super();
-		this.productName = productName;
-		this.category = category;
-		this.priceSponsoring = priceSponsoring;
-		this.image = image;
-		this.user = user;
-	}
 
 	
 
-	@Override
-	public String toString() {
-		return "Publicity [id=" + id + ", productName=" + productName + ", category=" + category + ", priceSponsoring="
-				+ priceSponsoring + ", image=" + image + ", user=" + user + "]";
-	}
+
 
 	public Publicity() {
 		super();
 	}
 
-	public Publicity(int id, String productName, String category, float priceSponsoring, String image) {
+
+
+	public String getMarque() {
+		return marque;
+	}
+
+	public void setMarque(String marque) {
+		this.marque = marque;
+	}
+
+
+
+	public Float getAverage() {
+		return average;
+	}
+
+
+
+	
+
+	public Publicity(@NotEmpty(message = "Please provide your product name") String productName, String marque,
+			String category, Float priceSponsoring, String image, float average, tn.esprit.spring.entity.User user) {
 		super();
-		this.id = id;
 		this.productName = productName;
+		this.marque = marque;
 		this.category = category;
 		this.priceSponsoring = priceSponsoring;
 		this.image = image;
+		this.average = average;
+		User = user;
+	}
+
+	public Publicity(int id, String productName, String marque, String category, float priceSponsoring, String image,
+			float average, tn.esprit.spring.entity.User user) {
+		super();
+		this.id = id;
+		this.productName = productName;
+		this.marque = marque;
+		this.category = category;
+		this.priceSponsoring = priceSponsoring;
+		this.image = image;
+		this.average = average;
+		User = user;
+	}
+
+	public void setAverage(float average) {
+		this.average = average;
 	}
 
 	
+
+
+
+
+
 	
 	
 	

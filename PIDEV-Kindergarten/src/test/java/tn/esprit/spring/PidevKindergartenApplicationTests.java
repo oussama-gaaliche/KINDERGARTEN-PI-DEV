@@ -25,8 +25,7 @@ public class PidevKindergartenApplicationTests {
 	@Test
 	public void contextLoads() throws ParseException {
 
-		as.retrieveAllArticles();
-		
+
 		
 		
 
