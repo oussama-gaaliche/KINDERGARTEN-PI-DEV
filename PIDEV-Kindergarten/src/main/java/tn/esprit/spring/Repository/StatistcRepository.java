@@ -36,7 +36,7 @@ public interface StatistcRepository extends JpaRepository<User, Long> {
 	@Query("SELECT count(*) FROM Post p where p.user.id =:userid ")  
     public int nbPostParUser(@Param ("userid") Long userid);
 	
-	@Query("SELECT count(*) FROM Participation p where p.etatParticipant='participe' and p.user.id =:userid ")  
+	@Query("SELECT count(*) FROM Participation p where p.etat='participe' and p.user_participation.id=:userid ")  
     public int nbParticipationParUser(@Param ("userid") Long userid);
 	
 	@Query("select Max(u.score), u.username from User u")  

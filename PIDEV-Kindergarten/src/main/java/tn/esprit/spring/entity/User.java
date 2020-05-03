@@ -1,5 +1,5 @@
-package tn.esprit.spring.entity;
 
+package tn.esprit.spring.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -18,14 +18,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-
-import tn.esprit.spring.entity.Enfant;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
-
-
 @Entity
 @Table(name = "user")
 public class User implements Serializable {
@@ -36,46 +29,27 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	@Column(name = "username",unique= true)
 	@NotEmpty(message = "Please provide your first name")
 	private String username;
-
-	
 	@Column(name = "nom")
 	@NotEmpty(message = "Please provide your first name")
 	private String nom;
-	
 	@Column(name = "prenom")
 	@NotEmpty(message = "Please provide your last name")
 	private String prenom;
-	
 	@Column(name = "password")
-	
-
 	private String password;
-	
 	@Column(name = "email", nullable=false, unique= true)
 	@Email(message = "Please provide a valid e-mail")
 	@NotEmpty(message="Please provide an e-mail")
 	private String email;
-	
 	private Long numtel;
 	@Column(name = "status")
 	private String status;
-
 	private int nbrsig;
 	@Temporal (TemporalType.DATE)
 	private Date dateInscription;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
-	private Set<Enfant> Enfants;	
-	
-	public Set<Enfant> getEnfants() {
-		return Enfants;
-	}
-	public void setEnfants(Set<Enfant> enfants) {
-		Enfants = enfants;
-	}
 	@JsonIgnore
 	@Column(name = "score")
 	private float score;
@@ -85,10 +59,8 @@ public class User implements Serializable {
 	private  List<Participation> participations;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user_evaluation")
 	private  List<Evaluation> evaluations;
-
 //	@OneToMany(mappedBy="userReciver",cascade = CascadeType.ALL)
 //	private List<Follow> follows;
-	
 	public Date getDateInscription() {
 		return dateInscription;
 	}
@@ -109,12 +81,13 @@ public class User implements Serializable {
 	}
 	@OneToMany(mappedBy="userReciver",cascade = CascadeType.ALL)
 	private List<Message> messages;
-	
-	
-
+	@JsonIgnore
+	@OneToMany(mappedBy="user",cascade = CascadeType.ALL)
+	private List<Enfant> enfant;
+	@OneToMany(mappedBy="User",cascade = CascadeType.ALL)
+	private List<Publicity> publicity;
 	@Transient
 	private String passwordConfirm;
-
 	private String roles;
 	private boolean active;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
@@ -135,7 +108,6 @@ public class User implements Serializable {
 		this.passwordConfirm = passwordConfirm;
 		this.roles = roles;
 	}
-	
 	public User(String username,String nom,String prenom,String password,String email,Long numtel, String status,
 			String roles) {
 		super();
@@ -147,10 +119,7 @@ public class User implements Serializable {
 		this.numtel = numtel;
 		this.status = status;
 		this.roles = roles;
-		
 	}
-	
-	
 	public User(@NotEmpty(message = "Please provide your first name") String username,
 			@NotEmpty(message = "Please provide your first name") String nom,
 			@NotEmpty(message = "Please provide your last name") String prenom, String password,
@@ -190,7 +159,6 @@ public class User implements Serializable {
 		this.passwordConfirm = passwordConfirm;
 		this.roles = roles;
 	}
-	
 	public boolean isActive() {
 		return active;
 	}
@@ -257,18 +225,10 @@ public class User implements Serializable {
 	public void setRoles(String roles) {
 		this.roles = roles;
 	}
-
 	public int getNbrsig() {
 		return nbrsig;
 	}
 	public void setNbrsig(int nbrsig) {
 		this.nbrsig = nbrsig;
 	}
-
-
-	
-	
-
-	
-	
 }
