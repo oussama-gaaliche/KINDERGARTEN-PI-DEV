@@ -1,8 +1,6 @@
 package tn.esprit.spring.entity;
-
 import java.io.Serializable;
 import java.util.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -27,23 +25,19 @@ public class Enfant implements Serializable {
 	private boolean abonnée;
 	@Temporal (TemporalType.DATE)
 	private Date dateNaissance;
-
 	@Enumerated(EnumType.STRING)
 	private Niveau niveau;
 	@ManyToOne 
 	private Classe classe;
-
-	
-	
 	@ManyToOne(cascade = CascadeType.ALL) 
 	User user;
-	@ManyToOne 
+	@ManyToOne(cascade = CascadeType.ALL)
 	Jardin jardin;
+	private String loisir;
 	public Enfant() {
 		super();
 	}
-	
-	public Enfant(String nom, String prenom, Date dateNaissance, Niveau  niveau, Classe  classe, User user
+	public Enfant(String nom, String prenom, Date dateNaissance, Niveau  niveau, Classe  classe, User user, String loisir
 			) {
 		super();
 		this.nom = nom;
@@ -52,10 +46,8 @@ public class Enfant implements Serializable {
 		this.niveau = niveau;
 		this.classe = classe;
 		this.user = user;
-		
+		this.loisir = loisir;
 	}
-	
-
 	public Enfant(Long id, String nom, String prenom, Date dateNaissance, Niveau  niveau, Classe  classe, User user
 			) {
 		super();
@@ -66,9 +58,7 @@ public class Enfant implements Serializable {
 		this.niveau = niveau;
 		this.classe = classe;
 		this.user = user;
-		
 	}
-
 	public Long getId() {
 		return id;
 	}
@@ -111,15 +101,12 @@ public class Enfant implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 	public Jardin getJardin() {
 		return jardin;
 	}
-
 	public void setJardin(Jardin jardin) {
 		this.jardin = jardin;
 	}
-
 	public boolean isAbonnée() {
 		return abonnée;
 	}
@@ -132,5 +119,10 @@ public class Enfant implements Serializable {
 	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
-
+	public String getLoisir() {
+		return loisir;
+	}
+	public void setLoisir(String loisir) {
+		this.loisir = loisir;
+	}
 }

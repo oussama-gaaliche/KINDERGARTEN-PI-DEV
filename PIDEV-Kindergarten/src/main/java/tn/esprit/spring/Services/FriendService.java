@@ -164,7 +164,7 @@ public class FriendService {
 	@Scheduled(cron="*/60 * * * * ?")
 	public void recupComptes(){
 		for(User u:allUser()){
-			if((u.isActive()==false)&&(u.getNbrsig()<2))
+			if((u.isActive()==false)&&(u.getNbrsig()<2)&&u.getStatus().equals("yes"))
 			{
 				u.setActive(true);
 				userRepository.save(u);

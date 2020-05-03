@@ -125,6 +125,7 @@ public class UserController {
 	    	}
 	    model.addAttribute("user", user);
 	    user.setActive(true);
+	    user.setStatus("yes");
 	    userRepository.save(user);
 	  
 	    }
