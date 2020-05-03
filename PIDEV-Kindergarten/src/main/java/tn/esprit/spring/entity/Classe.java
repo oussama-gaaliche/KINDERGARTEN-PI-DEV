@@ -2,12 +2,12 @@ package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +17,7 @@ public class Classe implements Serializable  {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nom;
+	@Enumerated(EnumType.STRING)
 	private Niveau niveau;
 	private int size;
 	Long jardin;

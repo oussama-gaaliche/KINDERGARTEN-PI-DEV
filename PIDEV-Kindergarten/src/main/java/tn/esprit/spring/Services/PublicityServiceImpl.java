@@ -94,7 +94,7 @@ public class PublicityServiceImpl implements IPublicityService {
 	
 	@Override
 	@Transactional
-	@Scheduled(cron="*/10 * * * * ?") 
+	//@Scheduled(cron="*/10 * * * * ?") 
 	public void updatePublicity() {
 		System.out.println("manel");
 	List<Publicity> pubs =new ArrayList<Publicity>();

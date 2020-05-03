@@ -36,7 +36,7 @@ public class PublicityController {
 		@GetMapping(value ="/retrieve-all-publicities")
 		@ResponseBody
 		public List<Publicity> getPublicities() {
-		
+	
 		return publicityService.retrieveAllPublicitiesPub();
 	    
 	} 
