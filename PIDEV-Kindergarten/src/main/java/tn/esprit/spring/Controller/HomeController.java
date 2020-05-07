@@ -31,6 +31,8 @@ public class HomeController {
 		
 		return("Welcome");
 	}
+
+	
 @GetMapping("/parent")
 	
 	public String homeUser()
