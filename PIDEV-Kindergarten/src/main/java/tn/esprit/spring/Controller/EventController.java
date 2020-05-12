@@ -100,15 +100,7 @@ public class EventController {
 		return ieventservice.getNombreEmployeJPQL();
 	}
 
-	// URL : http://localhost:8081/SpringMVC/servlet/getNombreseventsbyiduser
-	/*
-	 * @GetMapping(value = "/getNombreseventsbyiduser/{iduser}")
-	 * 
-	 * @ResponseBody public int getNombreseventsbyiduser(@PathVariable("Iduser")
-	 * int iduser) { User
-	 * user=ientrepriseservice.getEntrepriseById(identreprise); return
-	 * ieventservice.getNombresevents(iduser); }
-	 */
+
 
 	// http://localhost:8081/SpringMVC/servlet/retrieve-all-eventsordonnebydate
 	@GetMapping(value = "/retrieve-all-events_by_date")
@@ -140,6 +132,8 @@ public class EventController {
     	@ResponseBody
     	public List<Event> getAll_EventsByNom(@PathVariable("titre") String titre) {
     	return ieventservice.getAllEventByNom(titre);
+    	
+    	
     	
     	 }      
     	
