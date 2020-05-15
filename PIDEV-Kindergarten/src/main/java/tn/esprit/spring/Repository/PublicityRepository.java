@@ -21,4 +21,10 @@ public List<Publicity> listPub(@Param("id") Long id);
     public float SommeNote(@Param ("idPublicity") int idPublicity);
 	@Query("SELECT u FROM User u")
 	List <User> getUserList();
+	
+	@Query("select p.image from Publicity p where p.id=:id")
+	public byte[] getImage(@Param("id") int id);
+	
+	@Query("select p.average from Publicity p where p.id=:id")
+	public float getRating(@Param("id") int id);
 }
