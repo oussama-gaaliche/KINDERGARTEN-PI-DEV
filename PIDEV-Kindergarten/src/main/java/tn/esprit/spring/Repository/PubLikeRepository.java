@@ -14,6 +14,9 @@ public interface PubLikeRepository extends JpaRepository<LikePub, Integer> {
 	@Query("select l  from LikePub l  where ( l.user.id=:username and l.publicity.id=:username1)")
 	 public LikePub likeexist(@Param("username") Long username,@Param("username1") int username1);
 	
+	@Query("SELECT count(*) FROM LikePub lp where lp.publicity.id =:idPublicity")  
+    public int nbLike(@Param ("idPublicity") int idPublicity);
+	
 	
 	
 }

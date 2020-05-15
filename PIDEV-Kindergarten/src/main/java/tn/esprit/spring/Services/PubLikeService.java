@@ -109,5 +109,10 @@ public class PubLikeService implements IPubLikeService  {
 		PubLikeRepository.save(like);
         return "react updated";
 	}
+	
+	public int nbLike(int id)
+	{
+		return PubLikeRepository.nbLike(id);
+	}
 
 }
