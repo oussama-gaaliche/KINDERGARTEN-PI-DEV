@@ -114,5 +114,10 @@ public class PubLikeService implements IPubLikeService  {
 	{
 		return PubLikeRepository.nbLike(id);
 	}
+	
+	public int nbDisLike(int id)
+	{
+		return PubLikeRepository.nbDisLike(id);
+	}
 
 }

@@ -1,0 +1,6 @@
+gestion pub:
+ciblé
+sponsoring
+statistique:
+nombre des enfants inscris dans chaque jardin
+le jardin le plus actif sur le réseaux ( en terme de publication / en terme d'evennement)
