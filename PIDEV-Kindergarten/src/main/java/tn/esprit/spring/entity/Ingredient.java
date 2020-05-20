@@ -29,6 +29,17 @@ public class Ingredient implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public Ingredient(String nom, double prix) {
+		super();
+		this.nom = nom;
+		this.prix = prix;
+	}
+	public Ingredient(int id, String nom, double prix) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prix = prix;
+	}
 	public String getNom() {
 		return nom;
 	}
@@ -40,6 +51,10 @@ public class Ingredient implements Serializable {
 	}
 	public void setPrix(double prix) {
 		this.prix = prix;
+	}
+	public Ingredient() {
+		super();
+		
 	}
 	
 	
