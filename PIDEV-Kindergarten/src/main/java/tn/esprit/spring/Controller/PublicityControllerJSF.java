@@ -25,11 +25,14 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import tn.esprit.spring.Repository.PublicityRepository;
 import tn.esprit.spring.Repository.UserRepository;
 import tn.esprit.spring.Services.PubLikeService;
 import tn.esprit.spring.Services.PublicityServiceImpl;
-
+import tn.esprit.spring.Services.RatingService;
+import tn.esprit.spring.entity.LikePub;
 import tn.esprit.spring.entity.Publicity;
+import tn.esprit.spring.entity.Rating;
 import tn.esprit.spring.entity.User;
 
 
@@ -44,8 +47,14 @@ public class PublicityControllerJSF {
 	private UserRepository userRepository;
 	@Autowired
 	PubLikeService publikeservice;
+	@Autowired
+	RatingService ratingservice;
 
-
+	@Autowired
+	private PublicityRepository publicityRepository;
+	
+	@Autowired
+	PubLikeService pubLikeService;
 	
 	
 	private List<Publicity> publicities;
@@ -310,6 +319,18 @@ public class PublicityControllerJSF {
 		
 		return "/editpub.xhtml?faces-redirect=true";
 	}
+	//redirection vers details Front
+	public String displayPubFront(Publicity p)
+	{
+		
+	this.setProductNameEdit(p.getProductName());
+	this.setCategoryEdit(p.getCategory());
+	this.setMarqueEdit(p.getMarque());
+	this.setPriceSponsoringEdit(p.getPriceSponsoring());
+	this.setPubIdToBeUpdated(p.getId());
+		
+		return "/detailsPub.xhtml?faces-redirect=true";
+	}
 	
 	public String updatePub() 
 	{ 
@@ -391,6 +412,39 @@ public class PublicityControllerJSF {
 			User us=userRepository.findUserByUsername(HomeController.connectedUser);
 			return us.getId();
 		}
+		
+		//like
+		
+		public void addlike(int  idad){
+			
+			
+			User us=userRepository.findUserByUsername(HomeController.connectedUser);
+			
+			Publicity pub = publicityRepository.findById(idad).get();
+			
+			LikePub lp=new LikePub();
+			lp.setUser(us);
+			lp.setPublicity(pub);
+			//v.setDateCreation(new Date());
+			lp.setEtat(true);
+			
+				pubLikeService.addLike(us.getId(), idad, lp);
+             }
+		
+		//nb review par user
+		
+		public int getNbReview(int id)
+		{
+			return ratingservice.nbReview(id);
+		
+		}
+	public List<Rating> listReviwes(int id) {
+			
+			System.out.println("manel");
+			return ratingservice.retrieveAllReviews(id);
+			
+
+	}
 		
 	
 }

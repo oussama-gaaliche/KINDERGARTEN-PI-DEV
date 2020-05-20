@@ -88,5 +88,8 @@ public class PublicityController {
 	public void modifyRating() {
 		publicityService.updateRating();
 	}
+	
+	
+
 
 }

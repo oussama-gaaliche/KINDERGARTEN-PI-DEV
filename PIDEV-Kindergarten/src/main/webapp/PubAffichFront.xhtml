@@ -102,6 +102,8 @@
 <div class="row">
 			
 <div class="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+<h:panelGroup>
+<h:form>
 <c:forEach items="#{PublicityController.listPublicities() }" var="pub" >		
 <div class="ui-block">
 					<!-- Post -->
@@ -150,8 +152,10 @@
 						
 							</div>
 					
-							<a href="#" class="h3 post-title"><h:outputText value="#{pub.productName}" /> </a>
-							
+							<a href="#" class="h3 post-title">
+							<h:commandLink action="#{PublicityController.displayPubFront(pub)}"> 
+							<h:outputText value="#{pub.productName}" /> 
+							</h:commandLink></a>
 <p>Here’s a photo from last month’s photoshoot. We had a lot of fun doing it and got really
 								awesome shots for the new summer catalog.
 							</p>
@@ -161,28 +165,26 @@
 					
 								
 <div class="friends-harmonic-wrap">
-									
-<ul class="friends-harmonic">
+<a href="#" class="post-add-icon inline-items">
+
+
+				   
+						
+				
+				  <h:commandLink action="#{PublicityController.addlike(pub.id)}" class="post-add-icon inline-items" href="#" > 
+		
+										<svg class="olymp-heart-icon"><use xlink:href="#olymp-heart-icon"></use></svg>
 										
-<li>
-											<a href="#">
-												<img src="files/img/icon-chat27.png" alt="icon" />
-											</a>
-										</li>
-										
-<li>
-											<a href="#">
-												<img src="files/img/icon-chat2.png" alt="icon" />
-												
-											</a>
-										</li>
-									</ul>
+								
+						 </h:commandLink>
+								
+								<span><h:outputText value="#{PublicityController.getNbPub(pub.id)}"  class="post-add-icon inline-items" /></span>
+							</a>		
+
 									
 									
 									
-<div class="names-people-likes">
-										<h:outputText value="#{PublicityController.getNbPub(pub.id)}" />
-									</div>
+
 									
 
 								</div>
@@ -191,9 +193,9 @@
 <div class="comments-shared">
 									<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-speech-balloon-icon">
-											<xlink:use href="#olymp-speech-balloon-icon"></xlink:use>>
+											<use xlink:href="#olymp-speech-balloon-icon"></use>>
 										</svg>
-										<span>0</span>
+										<span><h:outputText value="#{PublicityController.getNbReview(pub.id)}" /></span>
 									</a>
 								</div>
 					
@@ -205,6 +207,7 @@
 					<!-- ... end Post -->
 				</div>
 				</c:forEach>
+				</h:form></h:panelGroup>
 				
 </div>
 			
