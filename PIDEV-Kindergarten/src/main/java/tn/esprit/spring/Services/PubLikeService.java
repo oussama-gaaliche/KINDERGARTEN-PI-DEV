@@ -61,7 +61,8 @@ public class PubLikeService implements IPubLikeService  {
 	public String addLike(Long iduser,int idad,LikePub likepub){
 		LikePub lp= new LikePub();
 		lp=PubLikeRepository.likeexist(iduser, idad);
-		if (lp==null){
+		if (lp==null)
+		{
 		PubLikeRepository.save(likepub);
 		return "save with succes";
 		}
@@ -107,6 +108,16 @@ public class PubLikeService implements IPubLikeService  {
 		
 		PubLikeRepository.save(like);
         return "react updated";
+	}
+	
+	public int nbLike(int id)
+	{
+		return PubLikeRepository.nbLike(id);
+	}
+	
+	public int nbDisLike(int id)
+	{
+		return PubLikeRepository.nbDisLike(id);
 	}
 
 }

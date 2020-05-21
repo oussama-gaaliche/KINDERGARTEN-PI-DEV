@@ -1,22 +1,24 @@
 package tn.esprit.spring.Services;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
+
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.Repository.PublicityRepository;
 
 import tn.esprit.spring.entity.Publicity;
-import tn.esprit.spring.entity.Rating;
-import tn.esprit.spring.entity.User;
+
 
 
 
@@ -37,6 +39,7 @@ public class PublicityServiceImpl implements IPublicityService {
 		}
 	
 	
+		
 	
 	@Override
 	public List<Publicity> retrieveAllPublicitiesPub() {
@@ -50,7 +53,7 @@ public class PublicityServiceImpl implements IPublicityService {
 	
 
 	@Override
-	public String addPublicity(Publicity p) {
+	public String addPublicity(Publicity p)  {
 		List<Publicity> publicity =new ArrayList<Publicity>();
 		publicity=PublicityRepository.findAll();
 
@@ -65,6 +68,7 @@ public class PublicityServiceImpl implements IPublicityService {
 			//else PublicityRepository.save(p);
 			
 	}	
+       
 		PublicityRepository.save(p);
 		return "la publicité est enregistré";
 		
@@ -79,6 +83,7 @@ public class PublicityServiceImpl implements IPublicityService {
 		PublicityRepository.deleteById(i);
 		
 	}
+	
 	
 
 	
@@ -136,6 +141,33 @@ public class PublicityServiceImpl implements IPublicityService {
 		
 		return u;
 	}
+	
+	@Override
+	public int addOrUpdatePub(Publicity pub) {
+		PublicityRepository.save(pub);
+	return pub.getId();
+	}
+	
+	@PersistenceContext
+	private EntityManager em;
+	public Publicity find(Long id) {
+	return em.find(Publicity.class, id);
+	}
+
+	@Override
+	public byte[] findImage(int imageId) {
+		return PublicityRepository.getImage(imageId);
+		
+	}
+	
+	
+	@Override
+	public float getRating(int id) {
+		return PublicityRepository.getRating(id);
+	
+	}
+	
+	
 	
 
 }

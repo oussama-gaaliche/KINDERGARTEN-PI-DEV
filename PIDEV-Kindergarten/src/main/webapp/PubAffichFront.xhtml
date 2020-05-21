@@ -1,0 +1,315 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+
+<div class="container">
+	
+<div class="row">
+		
+<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			
+<div class="ui-block responsive-flex1200">
+				
+<div class="ui-block-title">
+					
+<ul class="filter-icons">
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat2.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat15.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat9.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat4.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat6.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat26.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat27.png" alt="icon" />
+							</a>
+						</li>
+						
+						
+					</ul>
+					
+
+					
+<div class="w-select">
+						<fieldset class="form-group">
+							
+<div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="Date (Descending)"><span class="filter-option pull-left">Date (Descending)</span><span class="bs-caret"><span class="caret" /></span></button>
+<div class="dropdown-menu open" role="combobox">
+<ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+<li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">Date (Descending)</span><span class="glyphicon glyphicon-ok check-mark" /></a></li>
+<li data-original-index="1"><a tabindex="0" class=" dropdown-item" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Date (Ascending)</span><span class="glyphicon glyphicon-ok check-mark" /></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
+								
+<option value="NU">Date (Descending)</option>
+								
+<option value="NU">Date (Ascending)</option>
+							</select></div>
+						<span class="material-input" /></fieldset>
+					</div>
+					<a href="#" data-toggle="modal" data-target="#create-photo-album" class="btn btn-primary btn-md-2">Filter</a>
+					<form class="w-search">
+						
+<div class="form-group with-button is-empty">
+							<input class="form-control" type="text" placeholder="Search Blog Posts......" />
+							<button>
+								<svg class="[object SVGAnimatedString]">
+								<xlink:use href="#olymp-magnifying-glass-icon" /></svg>
+							</button>
+						<span class="material-input" /></div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div></div>
+<div class="container">
+		
+<div class="row">
+			
+<div class="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+<h:panelGroup>
+<h:form>
+<c:forEach items="#{PublicityController.listPublicities() }" var="pub" >		
+<div class="ui-block">
+					<!-- Post -->
+					
+					<article class="hentry blog-post blog-post-v3">
+					
+						
+<div class="post-thumb">
+							<img src="files/img/post1.jpg" alt="photo" />
+							<a href="#" class="post-category bg-blue-light">THE COMMUNITY</a>
+						</div>
+					
+						
+<div class="post-content">
+		<div class="block-price">
+										<ul class="rait-stars">
+										<c:forEach items="#{PublicityController.stars(pub.id) }" var="rating" >	
+											<li>
+												<i class="fa fa-star star-icon c-primary" aria-hidden="true"></i>
+											
+											</li>
+											</c:forEach>
+							
+									
+										<c:forEach items="#{PublicityController.starsVide(pub.id) }" var="rating" >	
+											<li>
+												
+												<i class="far fa-star star-icon" aria-hidden="true"></i>
+											</li>
+											</c:forEach>
+							
+										</ul>
+											</div>
+								
+							
+<div class="author-date">
+								by
+								<a class="h6 post__author-name fn" href="#"><h:outputText value="#{pub.marque}" /></a>
+								
+<div class="post__date">
+									<time class="published" datetime="2017-03-24T18:18">
+										- 7 hours ago
+									</time>
+									
+								</div>
+						
+							</div>
+					
+							<a href="#" class="h3 post-title">
+							<h:commandLink action="#{PublicityController.displayPubFront(pub)}"> 
+							<h:outputText value="#{pub.productName}" /> 
+							</h:commandLink></a>
+<p>Here’s a photo from last month’s photoshoot. We had a lot of fun doing it and got really
+								awesome shots for the new summer catalog.
+							</p>
+					
+							
+<div class="post-additional-info inline-items">
+					
+								
+<div class="friends-harmonic-wrap">
+<a href="#" class="post-add-icon inline-items">
+
+
+				   
+						
+				
+				  <h:commandLink action="#{PublicityController.addlike(pub.id)}" class="post-add-icon inline-items" href="#" > 
+		
+										<svg class="olymp-heart-icon"><use xlink:href="#olymp-heart-icon"></use></svg>
+										
+								
+						 </h:commandLink>
+								
+								<span><h:outputText value="#{PublicityController.getNbPub(pub.id)}"  class="post-add-icon inline-items" /></span>
+							</a>		
+
+									
+									
+									
+
+									
+
+								</div>
+					
+								
+<div class="comments-shared">
+									<a href="#" class="post-add-icon inline-items">
+									<svg class="olymp-speech-balloon-icon">
+											<use xlink:href="#olymp-speech-balloon-icon"></use>>
+										</svg>
+										<span><h:outputText value="#{PublicityController.getNbReview(pub.id)}" /></span>
+									</a>
+								</div>
+					
+							</div>
+						</div>
+					
+					</article>
+					
+					<!-- ... end Post -->
+				</div>
+				</c:forEach>
+				</h:form></h:panelGroup>
+				
+</div>
+			
+<div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+
+				<aside>
+					
+<div class="ui-block">
+						
+<div class="ui-block-title">
+							
+<h6 class="title">Featured Posts</h6>
+						</div>
+					</div>
+					
+
+					
+<div class="ui-block">
+<h:outputText value="#{PublicityController.getUserCo()}" var="user" />
+<c:forEach items="#{PublicityController.listPublicities2(PublicityController.getUserCo()) }" var="pub2" >	
+						<!-- Post -->
+						
+						<article class="hentry blog-post blog-post-v3 featured-post-item">
+						
+							
+<div class="post-thumb">
+								<img src="img/post14.jpg" alt="photo" />
+								<a href="#" class="post-category bg-blue-light">THE COMMUNITY</a>
+							</div>
+						
+							
+<div class="post-content">
+						
+								
+<div class="author-date">
+									by
+									<a class="h6 post__author-name fn" href="#"><h:outputText value="#{pub2.marque}" /></a>
+									
+<div class="post__date">
+										<time class="published" datetime="2017-03-24T18:18">
+											- 2 MONTHS ago
+										</time>
+									</div>
+								</div>
+						
+								<a href="#" class="h4 post-title">We went lookhunting in all the California bay area</a>
+						
+								
+<div class="post-additional-info inline-items">
+						
+									
+<div class="friends-harmonic-wrap">
+										
+<ul class="friends-harmonic">
+											
+<li>
+												<a href="#">
+													<img src="img/icon-chat6.png" alt="icon" />
+												</a>
+											</li>
+											
+<li>
+												<a href="#">
+													<img src="img/icon-chat7.png" alt="icon" />
+												</a>
+											</li>
+										</ul>
+										
+<div class="names-people-likes">
+											37
+										</div>
+									</div>
+						
+									
+<div class="comments-shared">
+										<a href="#" class="post-add-icon inline-items">
+											<svg class="[object SVGAnimatedString]">
+												<use xlink:href="#olymp-speech-balloon-icon" />
+											</svg>
+											<span>62</span>
+										</a>
+									</div>
+						
+								</div>
+							</div>
+						
+						</article>
+						
+						<!-- ... end Post -->
+				</c:forEach>
+					</div>
+					
+
+				
+					
+
+				</aside>
+			</div>
+		</div>
+	</div>
+
+
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="testimage" />
+	<ui:define name="content">
+	
+
+	<h:form>
+
+		
+		<h:column>
+			<h:graphicImage url="../files/assets/images/logo.png" />
+		</h:column>
+<h:column>
+	<h:graphicImage value="#{productBean.getProductImage}" />
+</h:column>
+
+
+</h:form>
+
+
+
+  
+
+		
+
+
+</ui:define>
+</ui:composition>

@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.Repository.RatingRepository;
-
+import tn.esprit.spring.entity.Publicity;
 import tn.esprit.spring.entity.Rating;
 
 @Service 
@@ -105,6 +105,25 @@ public class RatingService implements IRatingService {
 		RatingRepository.deleteById(i);
 		
 	}
+	
+	@Override
+	public int nbReview(int id) {
+		
+		return RatingRepository.nbreviews(id);
+	}
+	
+	@Override
+	public List<Rating> retrieveAllReviews(int id) {
+
+		
+		return RatingRepository.listReviews(id);
+		
+		}
+	
+	
+	
+	
+
 	
 	
 }

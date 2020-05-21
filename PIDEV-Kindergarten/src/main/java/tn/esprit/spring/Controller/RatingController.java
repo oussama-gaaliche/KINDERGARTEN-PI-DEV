@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.Services.RatingService;
+import tn.esprit.spring.entity.Publicity;
 import tn.esprit.spring.entity.Rating;
 //commit
 @RestController
@@ -44,6 +45,15 @@ public String updateNote(@PathVariable("id") int id,@PathVariable("note") float 
 	public void removeUser(@PathVariable("id") int id) {
 	ratingService.deleteRating(id);
 	 }
+	
+	
+	@GetMapping(value = "retrieve-all-ratingParPub/{id}")
+	@ResponseBody
+	public List<Rating> getPublicitiesParPub(@PathVariable("id") int id) {
+
+		return ratingService. retrieveAllReviews(id);
+
+	}
 
 }
 

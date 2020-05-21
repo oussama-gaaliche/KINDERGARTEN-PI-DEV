@@ -121,6 +121,7 @@
 			</plugin>
 		</plugins>
 	</build>
+
 	<servlet-mapping>
        <servlet-name>Faces Servlet</servlet-name>
        <url-pattern>/faces/*</url-pattern>
@@ -139,3 +140,4 @@
     <dispatcher>REQUEST</dispatcher><!-- mandatory to allow the managed bean to forward the request to the filter -->
 </filter-mapping>
 </project>
+
