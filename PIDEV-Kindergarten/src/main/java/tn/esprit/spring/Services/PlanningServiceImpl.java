@@ -37,7 +37,9 @@ public class PlanningServiceImpl implements PlanningSerivce {
 
 	@Override
 	public void DeletePlanning(int id) {
-		planningrepo.deleteById(id);
+		Planning planning =  planningrepo.findById(id).get();
+		planningrepo.delete(planning);
+		
 		
 		}
 
@@ -70,5 +72,11 @@ public class PlanningServiceImpl implements PlanningSerivce {
 	public List<User> parents(Long id) {
 	  return erepo.parents(id);
 	}
+	@Override
+	public List<Planning> Getallplan() {
+		return planningrepo.findAll();
+		
+	}
+
 
 }
