@@ -1,18 +1,15 @@
 package tn.esprit.spring.Controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import org.ocpsoft.rewrite.annotation.Join;
-import org.ocpsoft.rewrite.el.ELBeanName;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,12 +34,12 @@ import tn.esprit.spring.entity.Jardin;
 import tn.esprit.spring.entity.Message;
 import tn.esprit.spring.entity.MessageBrocker;
 import tn.esprit.spring.entity.User;
-@Scope(value = "session")
-@Controller(value ="userController")
-@ELBeanName(value = "userController")
-@Join(path = "/", to = "/Acceuil.jsf")
-//@RestController
-//@RequestMapping("/secure/rest")
+//@Scope(value = "session")
+//@Controller(value ="userController")
+//@ELBeanName(value = "userController")
+//@Join(path = "/", to = "/Acceuil.jsf")
+@RestController
+@RequestMapping("/secure/rest")
 @EnableScheduling
 public class UserController {
 	@Autowired
@@ -69,35 +66,38 @@ public class UserController {
 	FriendService friendService;
 	
 	//@PreAuthorize("hasRole('ADMIN')")
-	private User useradd;
-//	private String useradd;
-//	private String useradd;
-//	private String useradd;
-//	private String useradd;
-//	private String useradd;
-//	
-	public User getUseradd() {
-		return useradd;
-	}
-	public void setUseradd(User useradd) {
-		this.useradd = useradd;
-	}
-	//@PostMapping("/adduser")
-	String navigateTo = "null";
-	public String addUser(){
-		if(useradd.getPassword().equals(useradd.getPasswordConfirm())){
-		String pwd=useradd.getPassword();
+	
+	
+	@PostMapping("/adduser")
+	
+	public String addUser(@RequestBody User usera){
+	//	User usera=new User();
+//		usera.setNom(nom);
+//		usera.setPrenom(prenom);
+//		usera.setEmail(email);
+//		usera.setPassword(password);
+//		usera.setPasswordConfirm(passwordConfirm);
+//		
+//		usera.setUsername(username);
+//		usera.setNumtel(numtel);
+//		usera.setRoles(Roles);
+//		System.out.println("ammar§§§§§§§§§§"+usera.getNom());
+		if(usera.getPassword().equals(usera.getPasswordConfirm())){
+		String pwd=usera.getPassword();
 		String encryptpwd= passwordEncoder.encode(pwd);
-		useradd.setPassword(encryptpwd);
-		useradd.setScore(0);
-		useradd.setRoles("ADMIN");
-		useradd.setDateInscription(new Date());
-		useradd.setActive(false);
+		usera.setPassword(encryptpwd);
+		usera.setScore(0);
+		//usera.setRoles("ADMIN");
+		usera.setStatus("0");
 		
-		userRepository.save(useradd);
-		return " /test.xhtml?faces-redirect=true";
+		usera.setDateInscription(new Date());
+		usera.setActive(false);
+		usera.setImage("fg");
+		userRepository.save(usera);
+		
+		return "";
 		}
-		return"verify mot de passe";
+		return "";
 	}
 	//@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/edit/{id}")
@@ -237,5 +237,19 @@ public class UserController {
     public String getLoggedUsers(Locale locale, Model model) {
         model.addAttribute("users", activeUserStore.getUsers());
         return "users";
+    }
+    public String addImage() {
+    	System.out.println("oussama!!!!!!!!!!!!!!!");
+//    	myImage.write("C:\\Users\\Oussama\\git\\KINDERGARTEN-PI-DEV\\PIDEV-Kindergarten\\src\\main\\webapp\\files\\userImage\\"+myImage.getSubmittedFileName());		 		 
+//		 File oldFile=new File("C:\\Users\\Oussama\\git\\KINDERGARTEN-PI-DEV\\PIDEV-Kindergarten\\src\\main\\webapp\\files\\userImage\\"+myImage.getSubmittedFileName());
+//		 String AddedName=userService.getAlphaNumericString(7)+myImage.getSubmittedFileName();
+//		 File newfile =new File("C:\\Users\\Oussama\\git\\KINDERGARTEN-PI-DEV\\PIDEV-Kindergarten\\src\\main\\webapp\\files\\userImage\\"+AddedName);
+//		 oldFile.renameTo(newfile);		 
+//		 User userWithImage= new User();
+//		 userWithImage  = connectedUser;
+//		 userWithImage.setPhoto(AddedName);
+//		 userService.addUser(userWithImage);
+ //   	im=AddedName;
+    return "";
     }
 	}

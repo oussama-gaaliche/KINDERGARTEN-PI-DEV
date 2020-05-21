@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:pe="http://primefaces.org/ui/extensions" >
+
+<ui:param name="page_name" value="Connexion" />
+<ui:define name="menu">
+${SPRING_SECURITY_LAST_EXCEPTION.message}
+<h:form action="Login"  method="POST">
+<b>Connexion</b>
+<h:panelGrid columns="2">
+<h:outputText value="Login (Email)" />
+<h:inputText  name="username" type="text" placeholder="Username"  required="" />
+<h:outputText value="Mot de passe" />
+<h:inputSecret  name="password"  type="password" placeholder="Password"  required="" />
+<h:commandButton  name="submit" value="submit" />
+<h:message for="btn"/>
+</h:panelGrid>
+</h:form>
+</ui:define>
+
+</ui:composition>

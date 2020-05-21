@@ -1,0 +1,1430 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core">
+	<ui:param name="page_name" value="Sidebarfriend" />
+	
+	<body>
+	<div class="ui-block popup-chat popup-chat-responsive" tabindex="-1" role="dialog" aria-labelledby="popup-chat-responsive" aria-hidden="true">
+	
+<div class="modal-content">
+		
+<div class="modal-header">
+			<span class="icon-status online" />
+			
+<h6 class="title">Chat</h6>
+			
+<div class="more">
+				<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+				<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-little-delete" /></svg>
+			</div>
+		</div>
+		<div class="modal-body">
+			
+<div class="mCustomScrollbar">
+				
+<ul class="notification-list chat-message chat-message-field">
+					
+<li>
+						
+<div class="author-thumb">
+							<img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded" />
+						</div>
+						
+<div class="notification-event">
+							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
+							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 8:10pm</time></span>
+						</div>
+					</li>
+					
+<li>
+						
+<div class="author-thumb">
+							<img src="img/author-page.jpg" alt="author" class="mCS_img_loaded" />
+						</div>
+						
+<div class="notification-event">
+							<span class="chat-message-item">Don’t worry Mathilda!</span>
+							<span class="chat-message-item">I already bought everything</span>
+							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 8:29pm</time></span>
+						</div>
+					</li>
+					
+<li>
+						
+<div class="author-thumb">
+							<img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded" />
+						</div>
+						
+<div class="notification-event">
+							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
+							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 8:10pm</time></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<form class="need-validation">
+		
+<div class="form-group label-floating is-empty">
+			<label class="control-label">Press enter to post...</label>
+			<textarea class="form-control" placeholder="" />
+			
+<div class="add-options-message">
+				<a href="#" class="options-message">
+					<svg class="[object SVGAnimatedString]"><use href="svg-icons/sprites/icons.svg#olymp-computer-icon" /></svg>
+				</a>
+				
+<div class="options-message smile-block">
+					<svg class="[object SVGAnimatedString]"><use href="svg-icons/sprites/icons.svg#olymp-happy-sticker-icon" /></svg>
+					
+<ul class="more-dropdown more-with-triangle triangle-bottom-right">
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat1.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat2.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat3.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat4.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat5.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat6.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat7.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat8.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat9.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat10.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat11.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat12.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat13.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat14.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat15.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat16.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat17.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat18.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat19.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat20.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat21.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat22.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat23.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat24.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat25.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat26.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="img/icon-chat27.png" alt="icon" />
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</form>
+		</div>
+	</div>
+
+</div>
+		
+<!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
+<a class="back-to-top" href="#">
+	<img src="files\svg-icons/back-to-top.svg" alt="arrow" class="back-icon" /></a>
+	<div class="fixed-sidebar fixed-sidebar-responsive">
+	
+<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
+		<a href="#" class="logo files\js-sidebar-open">
+			<img src="files\img/logo.png" alt="Olympus" />
+		</a>
+	</div>
+	
+<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
+		<a href="#" class="logo">
+			
+<div class="img-wrap">
+				<img src="files\img/logo.png" alt="Olympus" />
+			</div>
+			
+<div class="title-block">
+				
+<h6 class="logo-title">olympus</h6>
+			</div>
+		</a>
+		
+<div class="mCustomScrollbar" data-mcs-theme="dark">
+			
+<div class="control-block">
+				
+<div class="author-page author vcard inline-items">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/author-page.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					<a href="02-ProfilePage.html" class="author-name fn">
+						
+<div class="author-title">
+							James Spiegel <svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon" /></svg>
+						</div>
+						<span class="author-subtitle">SPACE COWBOY</span>
+					</a>
+				</div>
+			</div>
+			
+<div class="ui-block-title ui-block-title-small">
+				
+<h6 class="title">MAIN SECTIONS</h6>
+			</div>
+			
+<ul class="left-menu">
+				
+<li>
+					<a href="#" class="/files/js-sidebar-open">
+						<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-close-icon" /></svg>
+						<span class="left-menu-title">Collapse Menu</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="mobile-index.html">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="NEWSFEED"><use href="files\svg-icons/sprites/icons.svg#olymp-newsfeed-icon" /></svg>
+						<span class="left-menu-title">Newsfeed</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="Mobile-28-YourAccount-PersonalInformation.html">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="FAV PAGE"><use href="files\svg-icons/sprites/icons.svg#olymp-star-icon" /></svg>
+						<span class="left-menu-title">Fav Pages Feed</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="mobile-29-YourAccount-AccountSettings.html">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="FRIEND GROUPS"><use href="files\svg-icons/sprites/icons.svg#olymp-happy-faces-icon" /></svg>
+						<span class="left-menu-title">Friend Groups</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="Mobile-30-YourAccount-ChangePassword.html">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="MUSIC&amp;PLAYLISTS"><use href="files\svg-icons/sprites/icons.svg#olymp-headphones-icon" /></svg>
+						<span class="left-menu-title">Music &amp; Playlists</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="Mobile-31-YourAccount-HobbiesAndInterests.html">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="WEATHER APP"><use href="files\svg-icons/sprites/icons.svg#olymp-weather-icon" /></svg>
+						<span class="left-menu-title">Weather App</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="Mobile-32-YourAccount-EducationAndEmployement.html">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="CALENDAR AND EVENTS"><use href="files\svg-icons/sprites/icons.svg#olymp-calendar-icon" /></svg>
+						<span class="left-menu-title">Calendar and Events</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="Mobile-33-YourAccount-Notifications.html">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="Community Badges"><use href="files\svg-icons/sprites/icons.svg#olymp-badge-icon" /></svg>
+						<span class="left-menu-title">Community Badges</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="Mobile-34-YourAccount-ChatMessages.html">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="Friends Birthdays"><use href="files\svg-icons/sprites/icons.svg#olymp-cupcake-icon" /></svg>
+						<span class="left-menu-title">Friends Birthdays</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="Mobile-35-YourAccount-FriendsRequests.html">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="Account Stats"><use href="files\svg-icons/sprites/icons.svg#olymp-stats-icon" /></svg>
+						<span class="left-menu-title">Account Stats</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="#">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="Manage Widgets"><use href="files\svg-icons/sprites/icons.svg#olymp-manage-widgets-icon" /></svg>
+						<span class="left-menu-title">Manage Widgets</span>
+					</a>
+				</li>
+			</ul>
+			
+<div class="ui-block-title ui-block-title-small">
+				
+<h6 class="title">YOUR ACCOUNT</h6>
+			</div>
+			
+<ul class="account-settings">
+				
+<li>
+					<a href="#">
+						<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-menu-icon" /></svg>
+						<span>Profile Settings</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="#">
+						<svg class="[object SVGAnimatedString]" data-toggle="tooltip" data-placement="right" data-original-title="FAV PAGE"><use href="files\svg-icons/sprites/icons.svg#olymp-star-icon" /></svg>
+						<span>Create Fav Page</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="#">
+						<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-logout-icon" /></svg>
+						<span>Log Out</span>
+					</a>
+				</li>
+			</ul>
+			
+<div class="ui-block-title ui-block-title-small">
+				
+<h6 class="title">About Olympus</h6>
+			</div>
+			
+<ul class="about-olympus">
+				
+<li>
+					<a href="#">
+						<span>Terms and Conditions</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="#">
+						<span>FAQs</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="#">
+						<span>Careers</span>
+					</a>
+				</li>
+				
+<li>
+					<a href="#">
+						<span>Contact</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div></div>
+<!-- ... end Fixed Sidebar Left -->
+<!-- Fixed Sidebar Right -->
+
+<div class="fixed-sidebar right">
+	
+<div class="fixed-sidebar-right sidebar--small" id="sidebar-right">
+		
+<div class="mCustomScrollbar" data-mcs-theme="dark">
+			
+<ul class="chat-users">
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar67-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar62-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar68-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar69-sm.jpg" class="avatar" />
+						<span class="icon-status away" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar70-sm.jpg" class="avatar" />
+						<span class="icon-status disconected" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar64-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar71-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar72-sm.jpg" class="avatar" />
+						<span class="icon-status away" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar63-sm.jpg" class="avatar" />
+						<span class="icon-status status-invisible" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar72-sm.jpg" class="avatar" />
+						<span class="icon-status away" />
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar71-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+<div class="search-friend inline-items">
+			<a href="#" class="/files/js-sidebar-open">
+				<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-menu-icon" /></svg>
+			</a>
+		</div>
+		<a href="#" class="olympus-chat inline-items files\js-chat-open">
+			<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-chat---messages-icon" /></svg>
+		</a>
+	</div>
+	
+<div class="fixed-sidebar-right sidebar--large" id="sidebar-right-1">
+		
+<div class="mCustomScrollbar" data-mcs-theme="dark">
+			
+<div class="ui-block-title ui-block-title-small">
+				<a href="#" class="title">Close Friends</a>
+				<a href="#">Settings</a>
+			</div>
+			
+<ul class="chat-users">
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar67-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Carol Summers</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar62-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Mathilda Brinker</a>
+						<span class="status">AT WORK!</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar68-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Carol Summers</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar69-sm.jpg" class="avatar" />
+						<span class="icon-status away" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Michael Maximoff</a>
+						<span class="status">AWAY</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar70-sm.jpg" class="avatar" />
+						<span class="icon-status disconected" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Rachel Howlett</a>
+						<span class="status">OFFLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			
+<div class="ui-block-title ui-block-title-small">
+				<a href="#" class="title">MY FAMILY</a>
+				<a href="#">Settings</a>
+			</div>
+			
+<ul class="chat-users">
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar64-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Sarah Hetfield</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			
+<div class="ui-block-title ui-block-title-small">
+				<a href="#" class="title">UNCATEGORIZED</a>
+				<a href="#">Settings</a>
+			</div>
+			
+<ul class="chat-users">
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar71-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Bruce Peterson</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar72-sm.jpg" class="avatar" />
+						<span class="icon-status away" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Chris Greyson</a>
+						<span class="status">AWAY</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar63-sm.jpg" class="avatar" />
+						<span class="icon-status status-invisible" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Nicholas Grisom</a>
+						<span class="status">INVISIBLE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar72-sm.jpg" class="avatar" />
+						<span class="icon-status away" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Chris Greyson</a>
+						<span class="status">AWAY</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items files\js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar71-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Bruce Peterson</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+<div class="search-friend inline-items">
+			<form class="form-group">
+				<input class="form-control" placeholder="Search Friends..." value="" type="text" />
+			</form>
+			<a href="29-YourAccount-AccountSettings.html" class="settings">
+				<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-settings-icon" /></svg>
+			</a>
+			<a href="#" class="/files/js-sidebar-open">
+				<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-close-icon" /></svg>
+			</a>
+		</div>
+		<a href="#" class="olympus-chat inline-items files\js-chat-open">
+			
+<h6 class="olympus-chat-title">OLYMPUS CHAT</h6>
+			<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-chat---messages-icon" /></svg>
+		</a>
+	</div></div>
+<!-- ... end Fixed Sidebar Right -->
+<!-- Fixed Sidebar Right-Responsive -->
+	<div class="fixed-sidebar right">
+	
+<div class="fixed-sidebar-right sidebar--small" id="sidebar-right">
+		
+<div class="mCustomScrollbar" data-mcs-theme="dark">
+			
+<ul class="chat-users" >
+
+				
+
+			<c:forEach items="#{userControllerfront.lisAmiprefrerer()}" var="friend" action="#{userControllerfront.messagesWithOther(friend.username)}">	
+<li class="inline-items js-chat-open"  >
+					
+<div class="author-thumb">
+<!-- 						<img alt="author" src="files\img/avatar67-sm.jpg" class="avatar" /> -->
+						<h:outputText class="icon-status online" value="#{friend.username}" />
+<!-- 						<span class="icon-status online"  /> -->
+					</div>
+				</li>
+				
+				</c:forEach>
+			</ul>
+			<ul class="chat-users" >
+
+				
+
+			<c:forEach items="#{userControllerfront.listFNP()}" var="friend" action="#{userControllerfront.messagesWithOther(friend.username)}">	
+<li class="inline-items js-chat-open"  >
+					
+<div class="author-thumb">
+<!-- 						<img alt="author" src="files\img/avatar67-sm.jpg" class="avatar" /> -->
+						<h:outputText value="#{friend.username}" />
+						<span class="icon-status online" />
+					</div>
+				</li>
+				
+				</c:forEach>
+			</ul>
+			
+		</div>
+		
+<div class="search-friend inline-items">
+			<a href="#" class="js-sidebar-open">
+				<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-menu-icon" /></svg>
+			</a>
+		</div>
+		<a href="#" class="olympus-chat inline-items js-chat-open">
+			<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-chat---messages-icon" /></svg>
+		</a>
+	</div>
+	
+<div class="fixed-sidebar-right sidebar--large" id="sidebar-right-1">
+		
+<div class="mCustomScrollbar" data-mcs-theme="dark">
+			
+<div class="ui-block-title ui-block-title-small">
+				<a href="#" class="title">Close Friends</a>
+				<a href="#">Settings</a>
+			</div>
+			
+<ul class="chat-users">
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar67-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Carol Summers</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar62-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Mathilda Brinker</a>
+						<span class="status">AT WORK!</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar68-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Carol Summers</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar69-sm.jpg" class="avatar" />
+						<span class="icon-status away" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Michael Maximoff</a>
+						<span class="status">AWAY</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar70-sm.jpg" class="avatar" />
+						<span class="icon-status disconected" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Rachel Howlett</a>
+						<span class="status">OFFLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			
+<div class="ui-block-title ui-block-title-small">
+				<a href="#" class="title">MY FAMILY</a>
+				<a href="#">Settings</a>
+			</div>
+			
+<ul class="chat-users">
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar64-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Sarah Hetfield</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			
+<div class="ui-block-title ui-block-title-small">
+				<a href="#" class="title">UNCATEGORIZED</a>
+				<a href="#">Settings</a>
+			</div>
+			
+<ul class="chat-users">
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar71-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Bruce Peterson</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar72-sm.jpg" class="avatar" />
+						<span class="icon-status away" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Chris Greyson</a>
+						<span class="status">AWAY</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar63-sm.jpg" class="avatar" />
+						<span class="icon-status status-invisible" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Nicholas Grisom</a>
+						<span class="status">INVISIBLE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar72-sm.jpg" class="avatar" />
+						<span class="icon-status away" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Chris Greyson</a>
+						<span class="status">AWAY</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+<li class="inline-items js-chat-open">
+					
+<div class="author-thumb">
+						<img alt="author" src="files\img/avatar71-sm.jpg" class="avatar" />
+						<span class="icon-status online" />
+					</div>
+					
+<div class="author-status">
+						<a href="#" class="h6 author-name">Bruce Peterson</a>
+						<span class="status">ONLINE</span>
+					</div>
+					
+<div class="more"><svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+						
+<ul class="more-icons">
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-comments-post-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon" /></svg>
+							</li>
+							
+<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-block-from-chat-icon" /></svg>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+<div class="search-friend inline-items">
+			<form class="form-group">
+				<input class="form-control" placeholder="Search Friends..." value="" type="text" />
+			</form>
+			<a href="29-YourAccount-AccountSettings.html" class="settings">
+				<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-settings-icon" /></svg>
+			</a>
+			<a href="#" class="js-sidebar-open">
+				<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-close-icon" /></svg>
+			</a>
+		</div>
+		<a href="#" class="olympus-chat inline-items js-chat-open">
+			
+<h6 class="olympus-chat-title">OLYMPUS CHAT</h6>
+			<svg class="[object SVGAnimatedString]"><use href="files\svg-icons/sprites/icons.svg#olymp-chat---messages-icon" /></svg>
+		</a>
+	</div></div>
+	
+<!-- ... end Fixed Sidebar Right -->
+<!-- Fixed Sidebar Right-Responsive -->
+
+</body>
+
+<script src="files\js/jQuery/jquery-3.4.1./files/js"></script>
+<script src="files\js/libs/jquery.appear./files/js"></script>
+<script src="files\js/libs/jquery.mousewheel./files/js"></script>
+<script src="files\js/libs/perfect-scrollbar./files/js"></script>
+<script src="files\js/libs/jquery.matchHeight./files/js"></script>
+<script src="files\js/libs/svgxuse./files/js"></script>
+<script src="files\js/libs/imagesloaded.pkgd./files/js"></script>
+<script src="files\js/libs/Headroom./files/js"></script>
+<script src="files\js/libs/velocity./files/js"></script>
+<script src="files\js/libs/ScrollMagic./files/js"></script>
+<script src="files\js/libs/jquery.waypoints./files/js"></script>
+<script src="files\js/libs/jquery.countTo./files/js"></script>
+<script src="files\js/libs/popper.min./files/js"></script>
+<script src="files\js/libs/material.min./files/js"></script>
+<script src="files\js/libs/bootstrap-select./files/js"></script>
+<script src="files\js/libs/smooth-scroll./files/js"></script>
+<script src="files\js/libs/selectize./files/js"></script>
+<script src="files\js/libs/swiper.jquery./files/js"></script>
+<script src="files\js/libs/moment./files/js"></script>
+<script src="files\js/libs/daterangepicker./files/js"></script>
+<script src="files\js/libs/fullcalendar./files/js"></script>
+<script src="files\js/libs/isotope.pkgd./files/js"></script>
+<script src="files\js/libs/ajax-pagination./files/js"></script>
+<script src="files\js/libs/Chart./files/js"></script>
+<script src="files\js/libs/chart/files/js-plugin-deferred./files/js"></script>
+<script src="files\js/libs/circle-progress./files/js"></script>
+<script src="files\js/libs/loader./files/js"></script>
+<script src="files\js/libs/run-chart./files/js"></script>
+<script src="files\js/libs/jquery.magnific-popup./files/js"></script>
+<script src="files\js/libs/jquery.gifplayer./files/js"></script>
+<script src="files\js/libs/mediaelement-and-player./files/js"></script>
+<script src="files\js/libs/mediaelement-playlist-plugin.min./files/js"></script>
+<script src="files\js/libs/ion.rangeSlider./files/js"></script>
+
+<script src="files\js/main./files/js"></script>
+<script src="files\js/libs-init/libs-init./files/js"></script>
+<script defer="" src="files\files\fonts/fontawesome-all./files/js"></script>
+
+<script src="files\Bootstrap/dist//files/js/bootstrap.bundle./files/js"></script>
+
+
+</ui:composition>

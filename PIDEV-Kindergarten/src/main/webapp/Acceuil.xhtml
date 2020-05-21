@@ -346,8 +346,9 @@
 										data-mh="log-tab">
 
 										<div class="title h6">Register to Olympus</div>
-										<form class="content">
-
+										
+										<h:form id="form" enctype="multipart/form-data" class="content">
+										
 											<div class="row">
 
 												<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -355,16 +356,18 @@
 													<div class="form-group label-floating">
 														
 														<h:outputText class="control-label" value="First Name" />
-														<h:inputText class="form-control" placeholder="" type="text" value="#{userController.useradd.nom}" />
+														<h:inputText class="form-control" placeholder="" type="text" value="#{userControlleradd.nom}" />
 													</div>
 												</div>
 
+
+  
 												<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
 
 													<div class="form-group label-floating">
 														
 															<h:outputText class="control-label" value="Last Name" />
-														<h:inputText class="form-control" placeholder="" type="text" value="#{userController.useradd.prenom}" />
+														<h:inputText class="form-control" placeholder="" type="text" value="#{userControlleradd.prenom}" />
 													</div>
 												</div>
 
@@ -374,44 +377,38 @@
 													<div class="form-group label-floating">
 														
 															<h:outputText class="control-label" value="Your Email" />
-														<h:inputText class="form-control" placeholder="" type="email" value="#{userController.useradd.email}" />
+														<h:inputText class="form-control" placeholder="" type="email" value="#{userControlleradd.email}" />
 													</div>
 
 													<div class="form-group label-floating">
 														
 															<h:outputText class="control-label" value="Your Password" />
-														<h:inputText class="form-control" placeholder="" type="password" value="#{userController.useradd.password}"/>
+														<h:inputText class="form-control" placeholder="" type="password" value="#{userControlleradd.password}"/>
 													</div>
 													<div class="form-group label-floating">
 														
 															<h:outputText class="control-label" value="Password Confirm" />
-														<h:inputText class="form-control" placeholder="" type="password" value="#{userController.useradd.passwordConfirm}" />
+														<h:inputText class="form-control" placeholder="" type="password" value="#{userControlleradd.passwordConfirm}" />
 													</div>
-		
-                                                         <div class="form-group label-floating">
-														
-															<h:outputText class="control-label" value="Status" />
-														<h:inputText class="form-control" placeholder="" type="text" value="#{userController.useradd.status}"  />
-													</div>
+													 
 													<div class="form-group label-floating">
 														
 															<h:outputText class="control-label" value="Username" />
-														<h:inputText class="form-control" placeholder="" type="text" value="#{userController.useradd.username}"   />
+														<h:inputText class="form-control" placeholder="" type="text" value="#{userControlleradd.username}"   />
+													</div>
+													<div class="form-group label-floating">
+														
+															<h:outputText class="control-label" value="Numero telephone" />
+														<h:inputText class="form-control" placeholder="" type="text" value="#{userControlleradd.numtel}"   />
 													</div>
 													
-
-<!-- 													<div class="form-group label-floating is-select"> -->
-<!-- 														<label class="control-label">Role</label> <select -->
-<!-- 															class="selectpicker form-control" value="#{userController.useradd.roles}"> -->
-
-<!-- 															<option value="ADMIN">ADMIN</option> -->
-
-<!-- 															<option value="PARENT">PARENT</option> -->
-<!-- 															<option value="RESPONSABLE">RESPONSABLE</option> -->
-<!-- 															<option value="ENSEIGNANT">ENSEIGNANT</option> -->
-<!-- 														</select> -->
-<!-- 													</div> -->
-
+									
+									
+								
+														
+															
+													
+													<div class="form-group label-floating">
 
 													<div class="remember">
 
@@ -424,11 +421,13 @@
 													</div>
 
 													
-														<h:commandButton id="btn" value="Complete Registration!" action="#{userController.addUser()}" />
+														<h:commandButton  value="Complete Registration!" action="#{userControlleradd.addUser()}" />
 												</div>
 											</div>
-										</form>
-									</div>
+											</div>
+										
+</h:form>
+									
 
 
 									<div class="tab-pane" id="profile" role="tabpanel"
@@ -1847,10 +1846,12 @@
 					</div>
 				</div>
 			</div>
+			
 			<!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
 			<a class="back-to-top" href="#"> <img
 				src="files\svg-icons/back-to-top.svg" alt="arrow" class="back-icon" /></a>
 			<!-- JS Scripts -->
+			</div>
 			<script src="files\js/jQuery/jquery-3.4.1.js"></script>
 			<script src="files\js/libs/jquery.appear.js"></script>
 			<script src="files\js/libs/jquery.mousewheel.js"></script>

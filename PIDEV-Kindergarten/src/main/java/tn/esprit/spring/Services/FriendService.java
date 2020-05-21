@@ -86,13 +86,13 @@ public class FriendService {
 				
 		});
 				List<User> friendpreferer=messageRepository.lista(HomeController.connectedUser);
-				for(User f:MyFriends){
-					for(User s:friendpreferer){
-						if(s.equals(f))
-							MyFriends.remove(f);
-							
-					}
-				}
+//				for(User f:MyFriends){
+//					for(User s:friendpreferer){
+//						if(s.equals(f))
+//							MyFriends.remove(f);
+//							
+//					}
+//				}
 		return MyFriends;
 		
 	}
