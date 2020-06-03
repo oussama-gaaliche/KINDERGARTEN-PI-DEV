@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.Repository.PublicityRepository;
 import tn.esprit.spring.Repository.UserRepository;
-import tn.esprit.spring.Services.PubLikeService;
+
 import tn.esprit.spring.Services.PubVuService;
-import tn.esprit.spring.entity.LikePub;
+
 import tn.esprit.spring.entity.PubVu;
 import tn.esprit.spring.entity.Publicity;
 import tn.esprit.spring.entity.User;
@@ -26,7 +26,7 @@ public class PubVuController {
 	@Autowired
 	private PublicityRepository publicityRepository;
 	@RequestMapping(method=RequestMethod.PUT,value="addview/{iduser}&{idad}")
-	public String addlike(@PathVariable Long  iduser,@PathVariable int  idad){
+	public String addvu(@PathVariable Long  iduser,@PathVariable int  idad){
 			
 			Optional<User> user=userRepository.findById(iduser);
 			

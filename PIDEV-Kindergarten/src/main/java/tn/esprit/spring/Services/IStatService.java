@@ -13,6 +13,7 @@ public interface IStatService {
 	public List<?> retrieveEnfantParNiveau();
 	public void updateScore();
 	public List<?> BestUser();
+	void addnbEnfantParJardin();
 	
 	
 

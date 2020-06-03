@@ -13,4 +13,6 @@ public interface IPubLikeService {
 	public List<LikePub> retrieveAllLike();
 	public String updateLike(int id, boolean etat);
 	public int nbLike(int id);
+	void deletePubLike(int i);
+	public String deleteLike(Long iduser,int idad);
 }

@@ -11,26 +11,34 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.faces.event.PhaseId;
 
+import org.chartistjsf.model.chart.PieChartModel;
 import org.ocpsoft.rewrite.annotation.Join;
 import org.ocpsoft.rewrite.el.ELBeanName;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 import org.primefaces.model.UploadedFile;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 
+import tn.esprit.spring.Repository.JardinRepository;
+import tn.esprit.spring.Repository.PubLikeRepository;
 import tn.esprit.spring.Repository.PublicityRepository;
 import tn.esprit.spring.Repository.UserRepository;
 import tn.esprit.spring.Services.PubLikeService;
+import tn.esprit.spring.Services.PubVuService;
 import tn.esprit.spring.Services.PublicityServiceImpl;
 import tn.esprit.spring.Services.RatingService;
+import tn.esprit.spring.entity.Jardin;
 import tn.esprit.spring.entity.LikePub;
+import tn.esprit.spring.entity.PubVu;
 import tn.esprit.spring.entity.Publicity;
 import tn.esprit.spring.entity.Rating;
 import tn.esprit.spring.entity.User;
@@ -49,6 +57,15 @@ public class PublicityControllerJSF {
 	PubLikeService publikeservice;
 	@Autowired
 	RatingService ratingservice;
+	@Autowired
+	PubVuService pubVuService;
+	@Autowired
+    private PubLikeRepository PubLikeRepository;
+	@Autowired
+	private JardinRepository jardinRepository;
+	
+	
+	
 
 	@Autowired
 	private PublicityRepository publicityRepository;
@@ -68,11 +85,22 @@ public class PublicityControllerJSF {
 	private String marqueEdit;
 	private String categoryEdit;
 	private float priceSponsoringEdit;
+	private Publicity publicity;
 	private UploadedFile file;
 	private StreamedContent productImage;
 	
 	
+	private float note;
+	private String review;
 	
+	private PieChartModel pieModel2;
+    private PieChartModel pieChartModel;
+
+	
+	  public PieChartModel getPieModel2() {
+	        return pieModel2;
+	    }
+
 	private int pubIdToBeUpdated;
 	
 	
@@ -277,6 +305,48 @@ public class PublicityControllerJSF {
 	}
 
 
+	public float getNote() {
+		return note;
+	}
+
+
+	public void setNote(float note) {
+		this.note = note;
+	}
+
+
+	public String getReview() {
+		return review;
+	}
+
+
+	public void setReview(String review) {
+		this.review = review;
+	}
+
+
+	public Publicity getPublicity() {
+		return publicity;
+	}
+
+
+	public void setPublicity(Publicity publicity) {
+		this.publicity = publicity;
+	}
+	
+	
+
+
+	public PieChartModel getPieChartModel() {
+		return pieChartModel;
+	}
+
+
+	public void setPieChartModel(PieChartModel pieChartModel) {
+		this.pieChartModel = pieChartModel;
+	}
+
+
 	public void removePublicity(int id) {
 		publicityService.deletePublicity(id);
 	}
@@ -431,13 +501,14 @@ public class PublicityControllerJSF {
 				pubLikeService.addLike(us.getId(), idad, lp);
              }
 		
-		//nb review par user
+		//nb review par pub
 		
 		public int getNbReview(int id)
 		{
 			return ratingservice.nbReview(id);
 		
 		}
+		//list reviews par pub
 	public List<Rating> listReviwes(int id) {
 			
 			System.out.println("manel");
@@ -445,6 +516,144 @@ public class PublicityControllerJSF {
 			
 
 	}
+	
+	//redirection vers details et add nb vu
+	public String addvu(Long  iduser,int  idad, Publicity p){
+		
+		Optional<User> user=userRepository.findById(iduser);
+		
+		
+		Publicity pub = publicityRepository.findById(idad).get();
+		
+		PubVu pv=new PubVu();
+		pv.setUser(user.get());
+		pv.setPublicity(pub);
+		//v.setDateCreation(new Date());
+		//lp.setEtat(etat);
+		
+		pubVuService.addVu(iduser, idad,pv);
+		
+		this.setProductNameEdit(p.getProductName());
+		this.setCategoryEdit(p.getCategory());
+		this.setMarqueEdit(p.getMarque());
+		this.setPriceSponsoringEdit(p.getPriceSponsoring());
+		this.setPubIdToBeUpdated(p.getId());
+		this.setPublicity(p);
+			
+			return "/detailsPub.xhtml?faces-redirect=true";
+
+			
+			
+	}
+	
+	// nb vu par pub
+  
+       public int getNbVu(int id)
+       
+	{
+		return pubVuService.nbVu(id);
+	
+	}
+	// add rating and review
+    
+   	public String addRating(int  idad)  {
+   	
+ 
+   		
+   		User us=userRepository.findUserByUsername(HomeController.connectedUser);
+		
+		Publicity pub = publicityRepository.findById(idad).get();
+		
+		Rating rating=new Rating();
+		
+		rating.setUser(us);
+		rating.setPublicity(pub);
+		//v.setDateCreation(new Date());
+		rating.setReview(review);
+		rating.setNote(note);
+		
+		return ratingservice.addRating(rating);
 		
 	
+		
+		}
+
+	public void removeLike(int idpub) 
+	{
+		User us=userRepository.findUserByUsername(HomeController.connectedUser);
+		
+		
+		pubLikeService.deleteLike(us.getId(),idpub);
+	}
+	
+   
+    public boolean isLiked(Long iduser, int idad)
+    {
+    	
+    	LikePub lp= new LikePub();
+		lp=PubLikeRepository.likeexist(iduser, idad);
+		if (lp==null)
+			return false;
+		else return true;
+    }
+    
+    /*@PostConstruct
+    public void init() {
+     
+        createPieModels();
+      
+    }*/
+
+  /*  private void createPieModels() {
+
+        createPieModel2();
+       
+    }*/
+    
+  /* public PieChartModel createPieModel2() {
+        pieModel2 = new PieChartModel();
+ 
+        pieModel2.set("Brand 1", 540);
+        pieModel2.set("Brand 2", 325);
+        pieModel2.set("Brand 3", 702);
+        pieModel2.set("Brand 4", 421);
+ 
+        pieModel2.setTitle("Custom Pie");
+        pieModel2.setLegendPosition("e");
+        pieModel2.setFill(false);
+        pieModel2.setShowDataLabels(true);
+        pieModel2.setDiameter(150);
+        pieModel2.setShadow(false);
+        return pieModel2;
+    }*/
+   
+	
+	/*public PieChartModel createPieModels()
+	{
+		
+		pieModel2 = new PieChartModel();
+	
+		List<Jardin> jardin = jardinRepository.findAll();
+		for ( Jardin j : jardin ) 
+		{ 
+			pieModel2.set(j.getNom(), j.getNombreEnfant());
+		
+		}
+	
+		return pieModel2;
+	}*/
+	
+    public PieChartModel createPieChart() {
+        pieChartModel = new PieChartModel();
+        
+        List<Jardin> jardin = jardinRepository.findAll();
+		for ( Jardin j : jardin ) 
+		{ 
+			pieChartModel.addLabel(j.getNom());
+			pieChartModel.set(j.getNombreEnfant());
+		
+		}
+        pieChartModel.setShowTooltip(true);
+        return pieChartModel;
+    }
 }

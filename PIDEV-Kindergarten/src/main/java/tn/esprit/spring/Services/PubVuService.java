@@ -24,4 +24,9 @@ public class PubVuService implements IPubVuService {
 	
 
 }
+	
+	public int nbVu(int id)
+	{
+		return  pubVuRepository.nbVu(id);
+	}
 }

@@ -4,12 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:f="http://java.sun.com/jsf/core"
-xmlns:ui="http://java.sun.com/jsf/facelets">
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
 
 
 <head>
-   <title>Calendar and Events - Create Event POPUP (Private/Public)</title>
 
+   <title>Calendar and Events - Create Event POPUP (Private/Public)</title>
 	<!-- Required meta tags always come first -->
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -33,12 +34,17 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
 				families: ['Roboto:300,400,500,700:latin']
 			}
 		});
+
+		
 	</script>
 
 </head>
 
+
 	
 <body>
+
+
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
 	 xmlns="http://www.w3.org/2000/svg">
 	<defs>
@@ -453,7 +459,10 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <ui:insert name="menu" />
 <ui:insert name="content" />
+
+
 <ui:include src="/template/footer.xhtml"/>
+
 <!-- JS Scripts -->
 <script src="files/js/jQuery/jquery-3.4.1.js"></script>
 <script src="files/js/libs/jquery.appear.js"></script>
