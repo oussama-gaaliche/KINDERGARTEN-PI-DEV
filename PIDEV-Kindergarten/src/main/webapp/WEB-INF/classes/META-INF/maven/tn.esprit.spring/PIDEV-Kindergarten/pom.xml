@@ -35,6 +35,11 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 
 		</dependency>
+		<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    
+</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-core -->
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
@@ -66,6 +71,7 @@
 			</exclusions>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
@@ -109,6 +115,45 @@
 			<version>1.16.16</version>
 		</dependency>
 		
+=======
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mail</artifactId>
+</dependency>
+<dependency>
+<groupId>org.apache.myfaces.core</groupId>
+<artifactId>myfaces-impl</artifactId>
+<version>2.2.12</version>
+</dependency>
+<dependency>
+<groupId>org.apache.myfaces.core</groupId>
+<artifactId>myfaces-api</artifactId>
+<version>2.2.12</version>
+</dependency>
+<dependency>
+<groupId>org.apache.tomcat.embed</groupId>
+<artifactId>tomcat-embed-jasper</artifactId>
+</dependency>
+<dependency>
+<groupId>org.ocpsoft.rewrite</groupId>
+<artifactId>rewrite-servlet</artifactId>
+<version>3.4.1.Final</version>
+</dependency>
+<dependency>
+<groupId>org.ocpsoft.rewrite</groupId>
+<artifactId>rewrite-integration-faces</artifactId>
+<version>3.4.1.Final</version>
+</dependency>
+<dependency>
+<groupId>org.primefaces</groupId>
+<artifactId>primefaces</artifactId>
+<version>6.1</version>
+</dependency>
+<dependency>
+<groupId>org.projectlombok</groupId>
+<artifactId>lombok</artifactId>
+<version>1.16.16</version>
+</dependency>
+>>>>>>> branch 'master' of https://github.com/gaaliche22/KINDERGARTEN-PI-DEV.git
 
 	</dependencies>
 
@@ -122,4 +167,23 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<servlet-mapping>
+       <servlet-name>Faces Servlet</servlet-name>
+       <url-pattern>/faces/*</url-pattern>
+</servlet-mapping>
+<filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>
+        org.springframework.web.filter.DelegatingFilterProxy
+    </filter-class>
+</filter>
+<!-- Defines urls pattern on which the filter is applied -->
+<filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher><!-- mandatory to allow the managed bean to forward the request to the filter -->
+</filter-mapping>
 </project>
+

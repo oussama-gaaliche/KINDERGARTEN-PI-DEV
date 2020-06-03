@@ -60,6 +60,12 @@ public class Planning implements Serializable {
 	public Planning() {
 		super();
 	}
+	public Planning(int id_planning, Date date_debut, Date date_fin) {
+		super();
+		this.id_planning = id_planning;
+		this.date_debut = date_debut;
+		this.date_fin = date_fin;
+	}
 	
 
 }

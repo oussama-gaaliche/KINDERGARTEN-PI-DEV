@@ -14,6 +14,9 @@ public interface PlanningSerivce {
 	public void DeletePlanning(int id);
 	 public List<Planning> GetPlByDate(Date date);
 	 public List<User> parents(Long id);
+		public List<Planning> Getallplan();
+		
+
 	
 	 public String EnvoiPlanning();
 	

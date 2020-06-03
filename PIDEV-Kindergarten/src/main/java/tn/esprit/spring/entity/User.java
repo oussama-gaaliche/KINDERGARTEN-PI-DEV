@@ -3,14 +3,15 @@ package tn.esprit.spring.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import java.util.List;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -18,6 +19,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "user")
@@ -231,4 +233,47 @@ public class User implements Serializable {
 	public void setNbrsig(int nbrsig) {
 		this.nbrsig = nbrsig;
 	}
+	@Lob
+	@Column(length = 2125635)
+	private String image;
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public User(Long id, @NotEmpty(message = "Please provide your first name") String username,
+			@NotEmpty(message = "Please provide your first name") String nom,
+			@NotEmpty(message = "Please provide your last name") String prenom, String password,
+			@Email(message = "Please provide a valid e-mail") @NotEmpty(message = "Please provide an e-mail") String email,
+			Long numtel, String status, int nbrsig, Date dateInscription, float score, List<Event> eventm,
+			List<Participation> participations, List<Evaluation> evaluations, List<Message> messages,
+			List<Enfant> enfant, List<Publicity> publicity, String passwordConfirm, String roles, boolean active,
+			Set<Facture> factures, String image) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.password = password;
+		this.email = email;
+		this.numtel = numtel;
+		this.status = status;
+		this.nbrsig = nbrsig;
+		this.dateInscription = dateInscription;
+		this.score = score;
+		this.eventm = eventm;
+		this.participations = participations;
+		this.evaluations = evaluations;
+		this.messages = messages;
+		this.enfant = enfant;
+		this.publicity = publicity;
+		this.passwordConfirm = passwordConfirm;
+		this.roles = roles;
+		this.active = active;
+		this.factures = factures;
+		this.image = image;
+	}
+	
+	
 }

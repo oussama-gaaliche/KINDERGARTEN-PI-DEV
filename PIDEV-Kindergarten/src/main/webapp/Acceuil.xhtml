@@ -1,3 +1,1902 @@
+<<<<<<< HEAD
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+
+
+
+		<head>
+
+<title>Company Page - Home</title>
+<!-- Required meta tags always come first -->
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css"
+	href="files\Bootstrap/dist/css/bootstrap-reboot.css" />
+<link rel="stylesheet" type="text/css"
+	href="files\Bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css"
+	href="files\Bootstrap/dist/css/bootstrap-grid.css" />
+<!-- Main Styles CSS -->
+<link rel="stylesheet" type="text/css" href="files\css/main.css" />
+<link rel="stylesheet" type="text/css" href="files\css/fonts.min.css" />
+<!-- Main Font -->
+
+<script src="files\js/libs/webfontloader.min.js"></script>
+
+<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+		</head>
+		<body class="body-bg-white">
+			<!-- Preloader -->
+
+
+			<!-- ... end Preloader -->
+			<div
+				class="main-header main-header-fullwidth main-header-has-header-standard">
+
+				<!-- Header Standard Landing  -->
+
+
+				<div class="header--standard header--standard-landing"
+					id="header--standard">
+
+					<div class="container">
+
+						<div class="header--standard-wrap">
+
+							<a href="#" class="logo">
+
+								<div class="img-wrap">
+									<img src="files\img/logoapp.png" alt="Olympus" /> <img
+										src="files\img/logoapp.png" alt="Olympus" class="logo-colored" />
+								</div>
+
+								<div class="title-block">
+
+									<h6 class="logo-title">KinderGarten</h6>
+
+									<div class="sub-title">SOCIAL NETWORK</div>
+								</div>
+							</a> <a href="#" class="open-responsive-menu js-open-responsive-menu">
+
+							</a>
+
+
+							<div class="nav nav-pills nav1 header-menu">
+
+								<div class="mCustomScrollbar">
+
+									<ul>
+
+										<li class="nav-item"><a href="#" class="nav-link">Home</a>
+										</li>
+
+										<li class="nav-item dropdown"><a
+											class="nav-link dropdown-toggle" data-hover="dropdown"
+											data-toggle="dropdown" href="#" role="button"
+											aria-haspopup="false" aria-expanded="false" tabindex="1">Profile</a>
+
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#">Profile Page</a> <a
+													class="dropdown-item" href="#">Newsfeed</a> <a
+													class="dropdown-item" href="#">Post Versions</a>
+											</div></li>
+
+										<li class="nav-item dropdown dropdown-has-megamenu"><a
+											href="#" class="nav-link dropdown-toggle"
+											data-hover="dropdown" data-toggle="dropdown" role="button"
+											aria-haspopup="false" aria-expanded="false" tabindex="1">Forums</a>
+
+											<div class="dropdown-menu megamenu">
+
+												<div class="row">
+
+													<div class="col col-sm-3">
+
+														<h6 class="column-tittle">Main Links</h6>
+														<a class="dropdown-item" href="#">Profile Page<span
+															class="tag-label bg-blue-light">new</span></a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a>
+													</div>
+
+													<div class="col col-sm-3">
+
+														<h6 class="column-tittle">BuddyPress</h6>
+														<a class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page<span
+															class="tag-label bg-primary">HOT!</span></a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a>
+													</div>
+
+													<div class="col col-sm-3">
+
+														<h6 class="column-tittle">Corporate</h6>
+														<a class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a>
+													</div>
+
+													<div class="col col-sm-3">
+
+														<h6 class="column-tittle">Forums</h6>
+														<a class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a> <a
+															class="dropdown-item" href="#">Profile Page</a>
+													</div>
+												</div>
+											</div></li>
+
+										<li class="nav-item"><a href="#" class="nav-link">Terms
+												&amp; Conditions</a></li>
+
+										<li class="nav-item"><a href="#" class="nav-link">Events</a>
+										</li>
+
+										<li class="nav-item"><a href="#" class="nav-link">Privacy
+												Policy</a></li>
+
+										<li class="close-responsive-menu js-close-responsive-menu">
+
+										</li>
+
+										<li class="nav-item js-expanded-menu"><a href="#"
+											class="nav-link"> </a></li>
+
+										<li class="shoping-cart more"><a href="#"
+											class="nav-link"> <span class="count-product">2</span>
+										</a>
+
+											<div class="more-dropdown shop-popup-cart">
+
+												<ul>
+
+													<li class="cart-product-item">
+
+														<div class="product-thumb">
+															<img src="files\img/product1.png" alt="product" />
+														</div>
+
+														<div class="product-content">
+
+															<h6 class="title">White Enamel Mug</h6>
+
+															<ul class="rait-stars">
+
+																<li><i class="fa fa-star star-icon c-primary"
+																	aria-hidden="true" /></li>
+
+																<li><i class="fa fa-star star-icon c-primary"
+																	aria-hidden="true" /></li>
+
+
+																<li><i class="fa fa-star star-icon c-primary"
+																	aria-hidden="true" /></li>
+
+																<li><i class="fa fa-star star-icon c-primary"
+																	aria-hidden="true" /></li>
+
+																<li><i class="far fa-star star-icon"
+																	aria-hidden="true" /></li>
+															</ul>
+
+															<div class="counter">x2</div>
+														</div>
+
+														<div class="product-price">$20</div>
+
+														<div class="more">
+															<svg class="[object SVGAnimatedString]">
+																<use
+																	href="files\svg-icons/sprites/icons.svg#olymp-little-delete" /></svg>
+														</div>
+													</li>
+
+													<li class="cart-product-item">
+
+														<div class="product-thumb">
+															<img src="files\img/product2.png" alt="product" />
+														</div>
+
+														<div class="product-content">
+
+															<h6 class="title">Olympus Orange Shirt</h6>
+
+															<ul class="rait-stars">
+
+																<li><i class="fa fa-star star-icon c-primary"
+																	aria-hidden="true" /></li>
+
+																<li><i class="fa fa-star star-icon c-primary"
+																	aria-hidden="true" /></li>
+
+
+																<li><i class="fa fa-star star-icon c-primary"
+																	aria-hidden="true" /></li>
+
+																<li><i class="fa fa-star star-icon c-primary"
+																	aria-hidden="true" /></li>
+
+																<li><i class="far fa-star star-icon"
+																	aria-hidden="true" /></li>
+															</ul>
+
+															<div class="counter">x1</div>
+														</div>
+
+														<div class="product-price">$40</div>
+
+														<div class="more">
+															<svg class="[object SVGAnimatedString]">
+																<use
+																	href="files\svg-icons/sprites/icons.svg#olymp-little-delete" /></svg>
+														</div>
+													</li>
+												</ul>
+
+
+												<div class="cart-subtotal">
+													Cart Subtotal:<span>$80</span>
+												</div>
+
+
+												<div class="cart-btn-wrap">
+													<a href="#" class="btn btn-primary btn-sm">Go to Your
+														Cart</a> <a href="#" class="btn btn-purple btn-sm">Go to
+														Checkout</a>
+												</div>
+											</div></li>
+
+
+										<li class="menu-search-item"><a href="#" class="nav-link"
+											data-toggle="modal" data-target="#main-popup-search"> <svg
+													class="[object SVGAnimatedString]">
+													<use
+														href="files\svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon" /></svg>
+										</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ... end Header Standard Landing  -->
+
+				<div class="header-spacer--standard" />
+
+				<div class="content-bg-wrap bg-landing" />
+
+				<div class="container">
+
+					<div class="row display-flex">
+
+						<div class="col col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+
+							<div class="landing-content">
+
+								<h1>The Most Complete Social Network is Here!</h1>
+
+								<p>We are the best and biggest social network with 5 billion
+									active users all around the world. Share you thoughts, write
+									blog posts, show your favourite music via Stopify, earn badges
+									and much more!</p>
+								<a href="#" class="btn btn-md btn-border c-white">Register
+									Now!</a>
+							</div>
+						</div>
+
+						<div
+							class="col col-xl-5 ml-auto col-lg-6 col-md-12 col-sm-12 col-12">
+
+							<!-- Login-Registration Form  -->
+
+
+							<div class="registration-login-form">
+								<!-- Nav tabs -->
+
+								<ul class="nav nav-tabs" role="tablist">
+
+									<li class="nav-item"><a class="nav-link active"
+										data-toggle="tab" href="#home" role="tab"> <svg
+												class="[object SVGAnimatedString]">
+												<use
+													href="files\svg-icons/sprites/icons.svg#olymp-login-icon" /></svg>
+									</a></li>
+
+									<li class="nav-item"><a class="nav-link" data-toggle="tab"
+										href="#profile" role="tab"> <svg
+												class="[object SVGAnimatedString]"> <use
+													href="files\svg-icons/sprites/icons.svg#olymp-register-icon" /></svg>
+									</a></li>
+								</ul>
+
+								<!-- Tab panes -->
+
+								<div class="tab-content">
+
+									<div class="tab-pane active" id="home" role="tabpanel"
+										data-mh="log-tab">
+
+										<div class="title h6">Register to Olympus</div>
+										
+										<h:form id="form" enctype="multipart/form-data" class="content">
+										
+											<div class="row">
+
+												<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+													<div class="form-group label-floating">
+														
+														<h:outputText class="control-label" value="First Name" />
+														<h:inputText class="form-control" placeholder="" type="text" value="#{userControlleradd.nom}" />
+													</div>
+												</div>
+
+
+  
+												<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+													<div class="form-group label-floating">
+														
+															<h:outputText class="control-label" value="Last Name" />
+														<h:inputText class="form-control" placeholder="" type="text" value="#{userControlleradd.prenom}" />
+													</div>
+												</div>
+
+												<div
+													class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+													<div class="form-group label-floating">
+														
+															<h:outputText class="control-label" value="Your Email" />
+														<h:inputText class="form-control" placeholder="" type="email" value="#{userControlleradd.email}" />
+													</div>
+
+													<div class="form-group label-floating">
+														
+															<h:outputText class="control-label" value="Your Password" />
+														<h:inputText class="form-control" placeholder="" type="password" value="#{userControlleradd.password}"/>
+													</div>
+													<div class="form-group label-floating">
+														
+															<h:outputText class="control-label" value="Password Confirm" />
+														<h:inputText class="form-control" placeholder="" type="password" value="#{userControlleradd.passwordConfirm}" />
+													</div>
+													 
+													<div class="form-group label-floating">
+														
+															<h:outputText class="control-label" value="Username" />
+														<h:inputText class="form-control" placeholder="" type="text" value="#{userControlleradd.username}"   />
+													</div>
+													<div class="form-group label-floating">
+														
+															<h:outputText class="control-label" value="Numero telephone" />
+														<h:inputText class="form-control" placeholder="" type="text" value="#{userControlleradd.numtel}"   />
+													</div>
+													
+									
+									
+								
+														
+															
+													
+													<div class="form-group label-floating">
+
+													<div class="remember">
+
+														<div class="checkbox">
+															<label> <input name="optionsCheckboxes"
+																type="checkbox" /> I accept the <a href="#">Terms
+																	and Conditions</a> of the website
+															</label>
+														</div>
+													</div>
+
+													
+														<h:commandButton  value="Complete Registration!" action="#{userControlleradd.addUser()}" />
+												</div>
+											</div>
+											</div>
+										
+</h:form>
+									
+
+
+									<div class="tab-pane" id="profile" role="tabpanel"
+										data-mh="log-tab">
+
+										<div class="title h6">Login to your Account</div>
+										<form class="content">
+
+											<div class="row">
+
+												<div
+													class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+													<div class="form-group label-floating">
+														<label class="control-label">Your Email</label> <input
+															class="form-control" placeholder="" type="email" />
+													</div>
+
+													<div class="form-group label-floating">
+														<label class="control-label">Your Password</label> <input
+															class="form-control" placeholder="" type="password" />
+													</div>
+
+
+													<div class="remember">
+
+
+														<div class="checkbox">
+															<label> <input name="optionsCheckboxes"
+																type="checkbox" /> Remember Me
+															</label>
+														</div>
+														<a href="#" class="forgot" data-toggle="modal"
+															data-target="#restore-password">Forgot my Password</a>
+													</div>
+
+													<a href="#" class="btn btn-lg btn-primary full-width">Login</a>
+
+
+													<div class="or" />
+
+													<a href="#"
+														class="btn btn-lg bg-facebook full-width btn-icon-left"><i
+														class="fab fa-facebook-f" aria-hidden="true" />Login with
+														Facebook</a> <a href="#"
+														class="btn btn-lg bg-twitter full-width btn-icon-left"><i
+														class="fab fa-twitter" aria-hidden="true" />Login with
+														Twitter</a>
+
+
+
+													<p>
+														Don’t you have an account? <a href="#">Register Now!</a>
+														it’s really simple and you can start enjoing all the
+														benefits!
+													</p>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<!-- ... end Login-Registration Form  -->
+						</div>
+					</div>
+				</div>
+				<img class="img-bottom" src="files\img/group-bottom.png"
+					alt="friends" /> <img class="img-rocket"
+					src="files\img/rocket.png" alt="rocket" />
+			</div>
+			<!-- Clients Block -->
+			<section class="crumina-module crumina-clients">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col col-xl-2 m-auto col-lg-2 col-md-6 col-sm-6 col-6">
+							<a class="clients-item" href="#"> <img
+								src="files\img/client1.png" class="" alt="logo" />
+							</a>
+						</div>
+
+						<div class="col col-xl-2 m-auto col-lg-2 col-md-6 col-sm-6 col-6">
+							<a class="clients-item" href="#"> <img
+								src="files\img/client2.png" class="" alt="logo" />
+							</a>
+						</div>
+
+						<div class="col col-xl-2 m-auto col-lg-2 col-md-6 col-sm-6 col-6">
+							<a class="clients-item" href="#"> <img
+								src="files\img/client3.png" class="" alt="logo" />
+							</a>
+						</div>
+
+						<div class="col col-xl-2 m-auto col-lg-2 col-md-6 col-sm-6 col-6">
+							<a class="clients-item" href="#"> <img
+								src="files\img/client4.png" class="" alt="logo" />
+							</a>
+						</div>
+
+						<div class="col col-xl-2 m-auto col-lg-2 col-md-6 col-sm-6 col-6">
+							<a class="clients-item" href="#"> <img
+								src="files\img/client5.png" class="" alt="logo" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ... end Clients Block -->
+			<!-- Section Img Scale Animation -->
+			<section
+				class="align-center pt80 section-move-bg-top img-scale-animation scrollme">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div
+							class="col col-xl-10 m-auto col-lg-10 col-md-12 col-sm-12 col-12">
+							<img class="main-img" src="files\img/scale1.png" alt="screen" />
+						</div>
+					</div>
+					<img class="first-img1" alt="img" src="files\img/scale2.png" /> <img
+						class="second-img1" alt="img" src="files\img/scale3.png" /> <img
+						class="third-img1" alt="img" src="files\img/scale4.png" />
+				</div>
+
+				<div class="content-bg-wrap bg-section2" />
+			</section>
+			<!-- ... end Section Img Scale Animation -->
+			<section class="medium-padding120">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<img src="files/img/likekinder.png" alt="screen" />
+						</div>
+
+						<div
+							class="col col-xl-4 col-lg-4 m-auto col-md-12 col-sm-12 col-12">
+
+							<div class="crumina-module crumina-heading">
+
+								<h2 class="heading-title">
+									Why Join <span class="c-primary">KinderGarten Social
+										Network</span>?
+								</h2>
+
+								<p class="heading-text">Duis aute irure dolor in
+									reprehenderit in voluptate velit esse cillum dolore eu fugiat
+									nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+									sunt in culpa.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="medium-padding120">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div
+							class="col col-xl-4 col-lg-4 m-auto col-md-12 col-sm-12 col-12">
+
+							<div class="crumina-module crumina-heading">
+
+								<h2 class="heading-title">
+									Meet New People <span class="c-primary">all over the
+										World</span>
+								</h2>
+
+								<p class="heading-text">Duis aute irure dolor in
+									reprehenderit in voluptate velit esse cillum dolore eu fugiat
+									nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+									sunt in culpa.</p>
+							</div>
+						</div>
+
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<img src="files/img/image1.png" alt="screen" />
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="medium-padding120">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<img src="files/img/image2.png" alt="screen" />
+						</div>
+
+						<div
+							class="col col-xl-4 col-lg-4 m-auto col-md-12 col-sm-12 col-12">
+
+							<div class="crumina-module crumina-heading">
+
+								<h2 class="heading-title">
+									The Best UI/UX and <span class="c-primary">Awesome
+										Features</span>
+								</h2>
+
+								<p class="heading-text">Duis aute irure dolor in
+									reprehenderit in voluptate velit esse cillum dolore eu fugiat
+									nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+									sunt in culpa.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="medium-padding120">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div
+							class="col col-xl-4 col-lg-4 m-auto col-md-12 col-sm-12 col-12">
+
+							<div class="crumina-module crumina-heading">
+
+								<h2 class="heading-title">
+									Find People with <span class="c-primary">Your Same
+										Interests</span>
+								</h2>
+
+								<p class="heading-text">Duis aute irure dolor in
+									reprehenderit in voluptate velit esse cillum dolore eu fugiat
+									nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+									sunt in culpa.</p>
+							</div>
+						</div>
+
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<img src="files\img/image3.png" alt="screen" />
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Planer Animation -->
+			<section
+				class="medium-padding120 bg-section3 background-cover planer-animation">
+
+				<div class="container">
+
+					<div class="row mb60">
+
+						<div
+							class="col col-xl-4 col-lg-4 m-auto col-md-12 col-sm-12 col-12">
+
+							<div class="crumina-module crumina-heading align-center">
+
+								<div class="heading-sup-title">SOCIAL NETWORK</div>
+
+								<h2 class="h1 heading-title">Community Reviews</h2>
+
+								<p class="heading-text">Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit, sed do eiusmod tempor incididunt
+									ut labore</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+						<div class="swiper-container pagination-bottom"
+							data-show-items="3">
+
+							<div class="swiper-wrapper">
+
+								<div class="ui-block swiper-slide">
+
+									<!-- Testimonial Item -->
+
+
+									<div class="crumina-module crumina-testimonial-item">
+
+										<div class="testimonial-header-thumb" />
+
+
+										<div class="testimonial-item-content">
+
+
+											<div class="author-thumb">
+												<img src="files\img/avatar3.jpg" alt="author" />
+											</div>
+
+
+											<h3 class="testimonial-title">Amazing Community</h3>
+
+
+											<ul class="rait-stars">
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+												<li><i class="far fa-star star-icon" /></li>
+											</ul>
+
+
+											<p class="testimonial-message">Lorem ipsum dolor sit
+												amet, consectetur adipisicing elit, sed do eiusmod tempor
+												incididunt ut labore et dolore magna aliqua. Ut enim ad
+												minim veniam, quis nostrud exercitation ullamco.</p>
+
+
+											<div class="author-content">
+												<a href="#" class="h6 author-name">Mathilda Brinker</a>
+
+												<div class="country">Los Angeles, CA</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- ... end Testimonial Item -->
+								</div>
+
+								<div class="ui-block swiper-slide">
+
+									<!-- Testimonial Item -->
+
+
+									<div class="crumina-module crumina-testimonial-item">
+
+										<div class="testimonial-header-thumb" />
+
+
+										<div class="testimonial-item-content">
+
+
+											<div class="author-thumb">
+												<img src="files\img/avatar17.jpg" alt="author" />
+											</div>
+
+
+											<h3 class="testimonial-title">This is the Best Social
+												Network ever!</h3>
+
+
+											<ul class="rait-stars">
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+												<li><i class="fa fa-star star-icon" /></li>
+											</ul>
+
+
+											<p class="testimonial-message">Duis aute irure dolor in
+												reprehenderit in voluptate velit esse cillum dolore eu nulla
+												pariatur laborum.</p>
+
+
+											<div class="author-content">
+												<a href="#" class="h6 author-name">Marina Valentine</a>
+
+												<div class="country">Long Island, NY</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- ... end Testimonial Item -->
+								</div>
+
+								<div class="ui-block swiper-slide">
+
+									<!-- Testimonial Item -->
+
+
+									<div class="crumina-module crumina-testimonial-item">
+
+										<div class="testimonial-header-thumb" />
+
+
+										<div class="testimonial-item-content">
+
+
+											<div class="author-thumb">
+												<img src="files\img/avatar1.jpg" alt="author" />
+											</div>
+
+
+											<h3 class="testimonial-title">Incredible Design!</h3>
+
+
+											<ul class="rait-stars">
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+												<li><i class="fa fa-star star-icon" /></li>
+
+												<li><i class="far fa-star star-icon" /></li>
+											</ul>
+
+
+											<p class="testimonial-message">Sed ut perspiciatis unde
+												omnis iste natus error sit voluptatem accusantium doloremque
+												laudantium, totam rem aperiam, eaque ipsa quae ab illo
+												inventore veritatis et quasi architecto beatae vitae dicta
+												sunt explicabo.</p>
+
+
+											<div class="author-content">
+												<a href="#" class="h6 author-name">Nicholas Grissom</a>
+
+												<div class="country">San Francisco, CA</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- ... end Testimonial Item -->
+								</div>
+							</div>
+
+							<div class="swiper-pagination" />
+						</div>
+					</div>
+				</div>
+				<img src="files/img/planer.png" alt="planer" class="planer" />
+			</section>
+			<!-- ... end Section Planer Animation -->
+			<section class="medium-padding120">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<img src="files/img/image4.png" alt="screen" />
+						</div>
+
+						<div
+							class="col col-xl-5 col-lg-5 m-auto col-md-12 col-sm-12 col-12">
+
+							<div class="crumina-module crumina-heading">
+
+								<h2 class="h1 heading-title">
+									Release all the Power with the <span class="c-primary">Olympus
+										App!</span>
+								</h2>
+
+								<p class="heading-text">Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit, sed do eiusmod tempor incididunt
+									ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+									nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+									commodo consequat.</p>
+							</div>
+
+
+							<ul class="list--styled">
+
+								<li><i class="far fa-check-circle" aria-hidden="true" />
+									Build your profile in just minutes, it’s that simple!</li>
+
+								<li><i class="far fa-check-circle" aria-hidden="true" />
+									Unlimited messaging with the best interface.</li>
+							</ul>
+							<a href="#" class="btn btn-market"> <img class="icon"
+								src="files\svg-icons/apple-logotype.svg" alt="app store" />
+
+								<div class="text">
+									<span class="sup-title">AVAILABLE ON THE</span> <span
+										class="title">App Store</span>
+								</div>
+							</a> <a href="#" class="btn btn-market"> <img class="icon"
+								src="files\svg-icons/google-play.svg" alt="google" />
+
+								<div class="text">
+									<span class="sup-title">ANDROID APP ON</span> <span
+										class="title">Google Play</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Section Subscribe Animation -->
+			<section
+				class="medium-padding100 subscribe-animation scrollme bg-users">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+
+							<div class="crumina-module crumina-heading c-white custom-color">
+
+								<h2 class="h1 heading-title">Olympus Newsletter</h2>
+
+								<p class="heading-text">Subscribe to be the first one to
+									know about updates, new features and much more!</p>
+							</div>
+
+							<!-- Subscribe Form  -->
+
+							<form class="form-inline subscribe-form" method="post">
+
+								<div class="form-group label-floating is-empty">
+									<label class="control-label">Enter your email</label> <input
+										class="form-control bg-white" placeholder="" type="email" />
+								</div>
+
+								<button class="btn btn-blue btn-lg">Send</button>
+							</form>
+
+							<!-- ... end Subscribe Form  -->
+						</div>
+					</div>
+					<img src="img/paper-plane.png" alt="plane" class="plane" />
+				</div>
+			</section>
+			<!-- ... end Section Subscribe Animation -->
+			<section class="medium-padding120">
+
+				<div class="container">
+
+					<div class="row mb60">
+
+						<div
+							class="col col-xl-4 col-lg-4 m-auto col-md-12 col-sm-12 col-12">
+
+							<div class="crumina-module crumina-heading align-center">
+
+								<div class="heading-sup-title">OLYMPUS BLOG</div>
+
+								<h2 class="h1 heading-title">Latest News</h2>
+
+								<p class="heading-text">Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit, sed do eiusmod tempor incididunt
+									ut labore</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+						<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+							<!-- Post -->
+
+							<article class="hentry blog-post">
+
+
+								<div class="post-thumb">
+									<img src="files/img/post1.jpg" alt="photo" />
+								</div>
+
+
+								<div class="post-content">
+									<a href="#" class="post-category bg-blue-light">THE
+										COMMUNITY</a> <a href="#" class="h4 post-title">Here’s the
+										Featured Urban photo of August! </a>
+
+									<p>Here’s a photo from last month’s photoshoot. We got
+										really awesome shots for the new catalog.</p>
+
+
+									<div class="author-date">
+										by <a class="h6 post__author-name fn" href="#">Maddy
+											Simmons</a>
+
+										<div class="post__date">
+											<time class="published" datetime="2017-03-24T18:18"> -
+												7 hours ago </time>
+										</div>
+									</div>
+
+
+									<div class="post-additional-info inline-items">
+
+										<div class="friends-harmonic-wrap">
+
+											<ul class="friends-harmonic">
+
+												<li><a href="#"> <img
+														src="files\img/icon-chat27.png" alt="icon" />
+												</a></li>
+
+												<li><a href="#"> <img
+														src="files\img/icon-chat2.png" alt="icon" />
+												</a></li>
+											</ul>
+
+											<div class="names-people-likes">26</div>
+										</div>
+
+
+										<div class="comments-shared">
+											<a href="#" class="post-add-icon inline-items"> <svg
+													class="[object SVGAnimatedString]">
+										<use
+														href="files\svg-icons/sprites/icons.svg#olymp-speech-balloon-icon" />
+									</svg> <span>0</span>
+											</a>
+										</div>
+
+									</div>
+								</div>
+
+							</article>
+
+							<!-- ... end Post -->
+						</div>
+
+						<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+							<!-- Post -->
+
+							<article class="hentry blog-post">
+
+
+								<div class="post-thumb">
+									<img src="files/img/post2.jpg" alt="photo" />
+								</div>
+
+
+								<div class="post-content">
+									<a href="#" class="post-category bg-primary">OLYMPUS NEWS</a> <a
+										href="#" class="h4 post-title">Olympus Network added new
+										photo filters!</a>
+
+									<p>Here’s a photo from last month’s photoshoot. We got
+										really awesome shots for the new catalog.</p>
+
+
+									<div class="author-date">
+										by <a class="h6 post__author-name fn" href="#">JACK
+											SCORPIO</a>
+
+										<div class="post__date">
+											<time class="published" datetime="2017-03-24T18:18"> -
+												12 hours ago </time>
+										</div>
+									</div>
+
+
+									<div class="post-additional-info inline-items">
+
+
+										<div class="friends-harmonic-wrap">
+
+											<ul class="friends-harmonic">
+
+												<li><a href="#"> <img
+														src="files\img/icon-chat4.png" alt="icon" />
+												</a></li>
+
+												<li><a href="#"> <img
+														src="files\img/icon-chat26.png" alt="icon" />
+												</a></li>
+
+												<li><a href="#"> <img
+														src="files\img/icon-chat16.png" alt="icon" />
+												</a></li>
+											</ul>
+
+											<div class="names-people-likes">82</div>
+										</div>
+
+
+										<div class="comments-shared">
+											<a href="#" class="post-add-icon inline-items"> <svg
+													class="[object SVGAnimatedString]">
+										<use
+														href="files\svg-icons/sprites/icons.svg#olymp-speech-balloon-icon" />
+									</svg> <span>14</span>
+											</a>
+										</div>
+
+									</div>
+								</div>
+
+							</article>
+
+							<!-- ... end Post -->
+						</div>
+
+						<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+							<!-- Post -->
+
+							<article class="hentry blog-post">
+
+
+								<div class="post-thumb">
+									<img src="files\img/post3.jpg" alt="photo" />
+								</div>
+
+
+								<div class="post-content">
+									<a href="#" class="post-category bg-purple">INSPIRATION</a> <a
+										href="#" class="h4 post-title">Take a look at these truly
+										awesome worspaces</a>
+
+									<p>Here’s a photo from last month’s photoshoot. We got
+										really awesome shots for the new catalog.</p>
+
+
+									<div class="author-date">
+										by <a class="h6 post__author-name fn" href="#">Maddy
+											Simmons</a>
+
+										<div class="post__date">
+											<time class="published" datetime="2017-03-24T18:18"> -
+												2 days ago </time>
+										</div>
+									</div>
+
+
+									<div class="post-additional-info inline-items">
+
+
+										<div class="friends-harmonic-wrap">
+
+											<ul class="friends-harmonic">
+
+												<li><a href="#"> <img
+														src="files\img/icon-chat28.png" alt="icon" />
+												</a></li>
+											</ul>
+
+											<div class="names-people-likes">0</div>
+										</div>
+
+
+										<div class="comments-shared">
+											<a href="#" class="post-add-icon inline-items"> <svg
+													class="[object SVGAnimatedString]">
+										<use
+														href="files\svg-icons/sprites/icons.svg#olymp-speech-balloon-icon" />
+									</svg> <span>22</span>
+											</a>
+										</div>
+
+									</div>
+								</div>
+
+							</article>
+
+							<!-- ... end Post -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Section Call To Action Animation -->
+			<section
+				class="align-right pt160 pb80 section-move-bg call-to-action-animation scrollme">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div
+							class="col col-xl-10 m-auto col-lg-10 col-md-12 col-sm-12 col-12">
+							<a href="#" class="btn btn-primary btn-lg" data-toggle="modal"
+								data-target="#registration-login-form-popup">Start Making
+								Friends Now!</a>
+						</div>
+					</div>
+				</div>
+				<img class="first-img" alt="guy" src="files\img/guy.png" /> <img
+					class="second-img" alt="rocket" src="files\img/rocket1.png" />
+
+				<div class="content-bg-wrap bg-section1" />
+			</section>
+			<!-- ... end Section Call To Action Animation -->
+
+			<div class="modal fade" id="registration-login-form-popup"
+				tabindex="-1" role="dialog"
+				aria-labelledby="registration-login-form-popup" aria-hidden="true">
+
+				<div class="modal-dialog window-popup registration-login-form-popup"
+					role="document">
+
+					<div class="modal-content">
+						<a href="#" class="close icon-close" data-dismiss="modal"
+							aria-label="Close"> <svg class="[object SVGAnimatedString]">
+								<use href="files\svg-icons/sprites/icons.svg#olymp-close-icon" /></svg>
+						</a>
+
+						<div class="modal-body">
+
+							<div class="registration-login-form">
+								<!-- Nav tabs -->
+
+								<ul class="nav nav-tabs" role="tablist">
+
+									<li class="nav-item"><a class="nav-link active"
+										data-toggle="tab" href="#home1" role="tab"> <svg
+												class="[object SVGAnimatedString]">
+									<use href="files\svg-icons/sprites/icons.svg#olymp-login-icon" />
+								</svg>
+									</a></li>
+
+									<li class="nav-item"><a class="nav-link" data-toggle="tab"
+										href="#profile1" role="tab"> <svg
+												class="[object SVGAnimatedString]">
+									<use
+													href="files\svg-icons/sprites/icons.svg#olymp-register-icon" />
+								</svg>
+									</a></li>
+								</ul>
+								<!-- Tab panes -->
+
+								<div class="tab-content">
+
+									<div class="tab-pane active" id="home1" role="tabpanel"
+										data-mh="log-tab">
+
+										<div class="title h6">Register to Olympus</div>
+										<form class="content">
+
+											<div class="row">
+
+												<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+													<div class="form-group label-floating">
+														<label class="control-label">First Name</label> <input
+															class="form-control" placeholder="" type="text" />
+													</div>
+												</div>
+
+												<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+													<div class="form-group label-floating">
+														<label class="control-label">Last Name</label> <input
+															class="form-control" placeholder="" type="text" />
+													</div>
+												</div>
+
+												<div
+													class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+													<div class="form-group label-floating">
+														<label class="control-label">Your Email</label> <input
+															class="form-control" placeholder="" type="email" />
+													</div>
+
+													<div class="form-group label-floating">
+														<label class="control-label">Your Password</label> <input
+															class="form-control" placeholder="" type="password" />
+													</div>
+
+													<div class="form-group date-time-picker label-floating">
+														<label class="control-label">Your Birthday</label> <input
+															name="datetimepicker" value="10/24/1984" /> <span
+															class="input-group-addon"> <svg
+																class="[object SVGAnimatedString]">
+																<use
+																	href="files\svg-icons/sprites/icons.svg#olymp-calendar-icon" /></svg>
+														</span>
+													</div>
+
+													<div class="form-group label-floating is-select">
+														<label class="control-label">Your Gender</label> <select
+															class="selectpicker form-control">
+
+															<option value="MA">Male</option>
+
+															<option value="FE">Female</option>
+														</select>
+													</div>
+
+													<div class="remember">
+
+														<div class="checkbox">
+															<label> <input name="optionsCheckboxes"
+																type="checkbox" /> I accept the <a href="#">Terms
+																	and Conditions</a> of the website
+															</label>
+														</div>
+													</div>
+													<a href="#" class="btn btn-purple btn-lg full-width">Complete
+														Registration!</a>
+												</div>
+											</div>
+										</form>
+									</div>
+
+									<div class="tab-pane" id="profile1" role="tabpanel"
+										data-mh="log-tab">
+
+										<div class="title h6">Login to your Account</div>
+										<form class="content">
+
+											<div class="row">
+
+												<div
+													class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+													<div class="form-group label-floating">
+														<label class="control-label">Your Email</label> <input
+															class="form-control" placeholder="" type="email" />
+													</div>
+
+													<div class="form-group label-floating">
+														<label class="control-label">Your Password</label> <input
+															class="form-control" placeholder="" type="password" />
+													</div>
+
+													<div class="remember">
+
+														<div class="checkbox">
+															<label> <input name="optionsCheckboxes"
+																type="checkbox" /> Remember Me
+															</label>
+														</div>
+														<a href="#" class="forgot" data-toggle="modal"
+															data-target="#restore-password">Forgot my Password</a>
+													</div>
+													<a href="#" class="btn btn-lg btn-primary full-width">Login</a>
+
+													<div class="or" />
+													<a href="#"
+														class="btn btn-lg bg-facebook full-width btn-icon-left"><i
+														class="fab fa-facebook-f" aria-hidden="true" />Login with
+														Facebook</a> <a href="#"
+														class="btn btn-lg bg-twitter full-width btn-icon-left"><i
+														class="fab fa-twitter" aria-hidden="true" />Login with
+														Twitter</a>
+
+													<p>
+														Don’t you have an account? <a href="#">Register Now!</a>
+														it’s really simple and you can start enjoing all the
+														benefits!
+													</p>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Window-popup Restore Password -->
+
+			<div class="modal fade" id="restore-password" tabindex="-1"
+				role="dialog" aria-labelledby="restore-password" aria-hidden="true">
+
+				<div class="modal-dialog window-popup restore-password-popup"
+					role="document">
+
+					<div class="modal-content">
+						<a href="#" class="close icon-close" data-dismiss="modal"
+							aria-label="Close"> <svg class="[object SVGAnimatedString]">
+								<use href="files\svg-icons/sprites/icons.svg#olymp-close-icon" /></svg>
+						</a>
+
+						<div class="modal-header">
+
+							<h6 class="title">Restore your Password</h6>
+						</div>
+
+						<div class="modal-body">
+							<form method="get">
+
+								<p>Enter your email and click the send code button. You’ll
+									receive a code in your email. Please use that code below to
+									change the old password for a new one.</p>
+
+								<div class="form-group label-floating">
+									<label class="control-label">Your Email</label> <input
+										class="form-control" placeholder="" type="email"
+										value="james-spiegel@yourmail.com" />
+								</div>
+								<button class="btn btn-purple btn-lg full-width">Send
+									me the Code</button>
+
+								<div class="form-group label-floating">
+									<label class="control-label">Enter the Code</label> <input
+										class="form-control" placeholder="" type="text" value="" />
+								</div>
+
+								<div class="form-group label-floating">
+									<label class="control-label">Your New Password</label> <input
+										class="form-control" placeholder="" type="password"
+										value="olympus" />
+								</div>
+								<button class="btn btn-primary btn-lg full-width">Change
+									your Password!</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ... end Window-popup Restore Password -->
+			<!-- Window Popup Main Search -->
+
+			<div class="modal fade" id="main-popup-search" tabindex="-1"
+				role="dialog" aria-labelledby="main-popup-search" aria-hidden="true">
+
+				<div
+					class="modal-dialog modal-dialog-centered window-popup main-popup-search"
+					role="document">
+
+					<div class="modal-content">
+						<a href="#" class="close icon-close" data-dismiss="modal"
+							aria-label="Close"> <svg class="[object SVGAnimatedString]">
+								<use href="files\svg-icons/sprites/icons.svg#olymp-close-icon" /></svg>
+						</a>
+
+						<div class="modal-body">
+							<form class="form-inline search-form" method="post">
+
+								<div class="form-group label-floating">
+									<label class="control-label">What are you looking for?</label>
+									<input class="form-control bg-white" placeholder="" type="text"
+										value="" />
+								</div>
+								<button class="btn btn-purple btn-lg">Search</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ... end Window Popup Main Search -->
+			<!-- Footer Full Width -->
+
+			<div class="footer footer-full-width" id="footer">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
+
+							<!-- Widget About -->
+
+
+							<div class="widget w-about">
+
+								<a href="02-ProfilePage.html" class="logo">
+
+									<div class="img-wrap">
+										<img src="files\img/logoapp.png" alt="Olympus" />
+									</div>
+
+									<div class="title-block">
+
+										<h6 class="logo-title">kinderGarten</h6>
+
+										<div class="sub-title">SOCIAL NETWORK</div>
+									</div>
+								</a>
+
+								<p>Lorem ipsum dolor sit amet, consect adipisicing elit, sed
+									do eiusmod por incidid ut labore et lorem.</p>
+
+								<ul class="socials">
+
+									<li><a href="#"> <i class="fab fa-facebook-square"
+											aria-hidden="true" />
+									</a></li>
+
+									<li><a href="#"> <i class="fab fa-twitter"
+											aria-hidden="true" />
+									</a></li>
+
+									<li><a href="#"> <i class="fab fa-youtube"
+											aria-hidden="true" />
+									</a></li>
+
+									<li><a href="#"> <i class="fab fa-google-plus-g"
+											aria-hidden="true" />
+									</a></li>
+
+									<li><a href="#"> <i class="fab fa-instagram"
+											aria-hidden="true" />
+									</a></li>
+								</ul>
+							</div>
+
+							<!-- ... end Widget About -->
+						</div>
+
+						<div class="col col-lg-2 col-md-4 col-sm-12 col-12">
+
+							<!-- Widget List -->
+
+
+							<div class="widget w-list">
+
+								<h6 class="title">Main Links</h6>
+
+								<ul>
+
+									<li><a href="#">Landing</a></li>
+
+									<li><a href="#">Home</a></li>
+
+									<li><a href="#">About</a></li>
+
+									<li><a href="#">Events</a></li>
+								</ul>
+							</div>
+
+							<!-- ... end Widget List -->
+						</div>
+
+						<div class="col col-lg-2 col-md-4 col-sm-12 col-12">
+
+
+							<div class="widget w-list">
+
+								<h6 class="title">Your Profile</h6>
+
+								<ul>
+
+									<li><a href="#">Main Page</a></li>
+
+									<li><a href="#">About</a></li>
+
+									<li><a href="#">Friends</a></li>
+
+									<li><a href="#">Photos</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col col-lg-2 col-md-4 col-sm-12 col-12">
+
+
+							<div class="widget w-list">
+
+								<h6 class="title">Features</h6>
+
+								<ul>
+
+									<li><a href="#">Newsfeed</a></li>
+
+									<li><a href="#">Post Versions</a></li>
+
+									<li><a href="#">Messages</a></li>
+
+									<li><a href="#">Friend Groups</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col col-lg-2 col-md-4 col-sm-12 col-12">
+
+
+							<div class="widget w-list">
+
+								<h6 class="title">Olympus</h6>
+
+								<ul>
+
+									<li><a href="#">Privacy</a></li>
+
+									<li><a href="#">Terms &amp; Conditions</a></li>
+
+									<li><a href="#">Forums</a></li>
+
+									<li><a href="#">Statistics</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+
+							<!-- SUB Footer -->
+
+
+							<div class="sub-footer-copyright">
+								<span> Copyright <a href="index.html">Olympus
+										Buddypress + WP</a> All Rights Reserved 2017
+								</span>
+							</div>
+
+							<!-- ... end SUB Footer -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ... end Footer Full Width -->
+			<!-- Window-popup-CHAT for responsive min-width: 768px -->
+
+			<div class="ui-block popup-chat popup-chat-responsive" tabindex="-1"
+				role="dialog" aria-labelledby="popup-chat-responsive"
+				aria-hidden="true">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<span class="icon-status online" />
+
+						<h6 class="title">Chat</h6>
+
+						<div class="more">
+							<svg class="[object SVGAnimatedString]">
+								<use
+									href="files\svg-icons/sprites/icons.svg#olymp-three-dots-icon" /></svg>
+							<svg class="[object SVGAnimatedString]">
+								<use
+									href="files\svg-icons/sprites/icons.svg#olymp-little-delete" /></svg>
+						</div>
+					</div>
+
+					<div class="modal-body">
+
+						<div class="mCustomScrollbar">
+
+							<ul class="notification-list chat-message chat-message-field">
+
+								<li>
+
+									<div class="author-thumb">
+										<img src="files\img/avatar14-sm.jpg" alt="author"
+											class="mCS_img_loaded" />
+									</div>
+
+									<div class="notification-event">
+										<span class="chat-message-item">Hi James! Please
+											remember to buy the food for tomorrow! I’m gonna be handling
+											the gifts and Jake’s gonna get the drinks</span> <span
+											class="notification-date"><time
+												class="entry-date updated" datetime="2004-07-24T18:18">Yesterday
+												at 8:10pm</time></span>
+									</div>
+								</li>
+
+								<li>
+
+									<div class="author-thumb">
+										<img src="files\img/author-page.jpg" alt="author"
+											class="mCS_img_loaded" />
+									</div>
+
+									<div class="notification-event">
+										<span class="chat-message-item">Don’t worry Mathilda!</span> <span
+											class="chat-message-item">I already bought everything</span>
+										<span class="notification-date"><time
+												class="entry-date updated" datetime="2004-07-24T18:18">Yesterday
+												at 8:29pm</time></span>
+									</div>
+								</li>
+
+								<li>
+
+									<div class="author-thumb">
+										<img src="files\img/avatar14-sm.jpg" alt="author"
+											class="mCS_img_loaded" />
+									</div>
+
+									<div class="notification-event">
+										<span class="chat-message-item">Hi James! Please
+											remember to buy the food for tomorrow! I’m gonna be handling
+											the gifts and Jake’s gonna get the drinks</span> <span
+											class="notification-date"><time
+												class="entry-date updated" datetime="2004-07-24T18:18">Yesterday
+												at 8:10pm</time></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<form class="need-validation">
+
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Press enter to post...</label>
+								<textarea class="form-control" placeholder=""></textarea>
+
+								<div class="add-options-message">
+									<a href="#" class="options-message"> <svg
+											class="[object SVGAnimatedString]">
+											<use
+												href="files\svg-icons/sprites/icons.svg#olymp-computer-icon" /></svg>
+									</a>
+
+									<div class="options-message smile-block">
+										<svg class="[object SVGAnimatedString]">
+											<use
+												href="files\svg-icons/sprites/icons.svg#olymp-happy-sticker-icon" /></svg>
+
+										<ul
+											class="more-dropdown more-with-triangle triangle-bottom-right">
+
+											<li><a href="#"> <img src="files\img/icon-chat1.png"
+													alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img src="files\img/icon-chat2.png"
+													alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img src="files\img/icon-chat3.png"
+													alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img src="files\img/icon-chat4.png"
+													alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img src="files\img/icon-chat5.png"
+													alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img src="files\img/icon-chat6.png"
+													alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img src="files\img/icon-chat7.png"
+													alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img src="files\img/icon-chat8.png"
+													alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img src="files\img/icon-chat9.png"
+													alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat10.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat11.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat12.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat13.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat14.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat15.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat16.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat17.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat18.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat19.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat20.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat21.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat22.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat23.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat24.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat25.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat26.png" alt="icon" />
+											</a></li>
+
+											<li><a href="#"> <img
+													src="files\img/icon-chat27.png" alt="icon" />
+											</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+			<!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
+			<a class="back-to-top" href="#"> <img
+				src="files\svg-icons/back-to-top.svg" alt="arrow" class="back-icon" /></a>
+			<!-- JS Scripts -->
+			</div>
+			<script src="files\js/jQuery/jquery-3.4.1.js"></script>
+			<script src="files\js/libs/jquery.appear.js"></script>
+			<script src="files\js/libs/jquery.mousewheel.js"></script>
+			<script src="files\js/libs/perfect-scrollbar.js"></script>
+			<script src="files\js/libs/jquery.matchHeight.js"></script>
+			<script src="files\js/libs/svgxuse.js"></script>
+			<script src="files\js/libs/imagesloaded.pkgd.js"></script>
+			<script src="files\js/libs/Headroom.js"></script>
+			<script src="files\js/libs/velocity.js"></script>
+			<script src="files\js/libs/ScrollMagic.js"></script>
+			<script src="files\js/libs/jquery.waypoints.js"></script>
+			<script src="files\js/libs/jquery.countTo.js"></script>
+			<script src="files\js/libs/popper.min.js"></script>
+			<script src="files\js/libs/material.min.js"></script>
+			<script src="files\js/libs/bootstrap-select.js"></script>
+			<script src="files\js/libs/smooth-scroll.js"></script>
+			<script src="files\js/libs/selectize.js"></script>
+			<script src="files\js/libs/swiper.jquery.js"></script>
+			<script src="files\js/libs/moment.js"></script>
+			<script src="files\js/libs/daterangepicker.js"></script>
+			<script src="files\js/libs/fullcalendar.js"></script>
+			<script src="files\js/libs/isotope.pkgd.js"></script>
+			<script src="files\js/libs/ajax-pagination.js"></script>
+			<script src="files\js/libs/Chart.js"></script>
+			<script src="files\js/libs/chartjs-plugin-deferred.js"></script>
+			<script src="files\js/libs/circle-progress.js"></script>
+			<script src="files\js/libs/loader.js"></script>
+			<script src="files\js/libs/run-chart.js"></script>
+			<script src="files\js/libs/jquery.magnific-popup.js"></script>
+			<script src="files\js/libs/jquery.gifplayer.js"></script>
+			<script src="files\js/libs/mediaelement-and-player.js"></script>
+			<script src="files\js/libs/mediaelement-playlist-plugin.min.js"></script>
+			<script src="files\js/libs/ion.rangeSlider.js"></script>
+
+			<script src="files\js/main.js"></script>
+			<script src="files\js/libs-init/libs-init.js"></script>
+			<script defer="" src="files\fonts/fontawesome-all.js"></script>
+
+			<script src="files\Bootstrap/dist/js/bootstrap.bundle.js"></script>
+		</body>
+
+	</ui:define>
+</ui:composition>
+=======
 
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -1895,3 +3794,4 @@
 
 	</ui:define>
 </ui:composition>
+>>>>>>> branch 'master' of https://github.com/gaaliche22/KINDERGARTEN-PI-DEV.git
