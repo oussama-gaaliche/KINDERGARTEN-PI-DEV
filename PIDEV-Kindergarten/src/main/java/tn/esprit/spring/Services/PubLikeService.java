@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import tn.esprit.spring.Repository.PubLikeRepository;
 import tn.esprit.spring.Repository.UserRepository;
 import tn.esprit.spring.entity.LikePub;
+import tn.esprit.spring.entity.Publicity;
 
 
 
@@ -119,5 +120,27 @@ public class PubLikeService implements IPubLikeService  {
 	{
 		return PubLikeRepository.nbDisLike(id);
 	}
+	
+	@Override
+	public void deletePubLike(int i) {
+		PubLikeRepository.deleteById(i);
+		
+	}
+	@Override
+	public String deleteLike(Long iduser,int idad){
+		LikePub lp= new LikePub();
+		lp=PubLikeRepository.likeexist(iduser, idad);
+		if (lp==null)
+		{
+		
+		return "pub doesn't exist";
+		}
+		else {
+			
+			PubLikeRepository.delete(lp);
+		}
+		return "deletion with succes";
+	}
+	
 
 }

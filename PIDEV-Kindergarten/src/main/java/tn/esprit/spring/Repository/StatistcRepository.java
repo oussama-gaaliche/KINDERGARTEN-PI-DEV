@@ -23,7 +23,7 @@ public interface StatistcRepository extends JpaRepository<User, Long> {
 	@Query("select count (*), e.niveau , e.classe , e.jardin.nom from Enfant e group by e.niveau , e.classe , e.jardin.nom order by e.jardin.nom ")  
     public List<?> listEnfantParNiveau();
 	
-	@Query("select count (*) , e.jardin.nom from Enfant e group by e.jardin")  
+	@Query("select  e.jardin.nom, count (*) from Enfant e group by e.jardin")  
     public List<?> listEnfantParJardin();
 	
 	@Query("SELECT count(*) FROM Like l where l.user.id =:userid ")  
@@ -45,9 +45,24 @@ public interface StatistcRepository extends JpaRepository<User, Long> {
 	@Query("SELECT u FROM User u")
 	List <User> getUserList();
 	
+	@Query("SELECT count(*) FROM Enfant e where e.jardin.id =:jardinid ")  
+	public int nbEnfantParJardin(@Param ("jardinid") Long jardinid);
 	
-	//select count (*) , l.user.nom from Like l group by l.user
 	
+	@Query("select count (*) from Enfant e where YEAR(e.user.dateInscription)=2020 and e.jardin.id =:jardinid")
+    public int NbUser2020(@Param ("jardinid") Long jardinid);
+	
+	@Query("select count (*) from Enfant e where YEAR(e.user.dateInscription)=2019 and e.jardin.id =:jardinid")
+    public int NbUser2019(@Param ("jardinid") Long jardinid);
+	
+	@Query("select count (*) from Enfant e where YEAR(e.user.dateInscription)=2018 and e.jardin.id =:jardinid")
+    public int NbUser2018(@Param ("jardinid") Long jardinid);
+	
+	@Query("select count (*) from Enfant e where YEAR(e.user.dateInscription)=2020 and MONTH(e.user.dateInscription)=:month")
+    public int NbUser2020ByMonth(@Param ("month") int month);
+	
+	@Query("select count (*) from Enfant e where YEAR(e.user.dateInscription)=2019 and MONTH(e.user.dateInscription)=:month")
+    public int NbUser2019ByMonth(@Param ("month") int month);
 	
 	
 
