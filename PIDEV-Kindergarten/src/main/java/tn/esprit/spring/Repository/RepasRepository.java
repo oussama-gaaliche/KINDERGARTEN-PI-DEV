@@ -20,7 +20,7 @@ public interface RepasRepository extends JpaRepository<Repas, Integer> {
    public List<Repas> GetRepasByPlanning(@Param("p") int p);
 	@Query("SELECT DISTINCT r.plat FROM Repas r "
 			+ "join r.plat p "
-			+ " where p.id_Plat=r.plat")
+			+ " where p.id_plat=r.plat")
    public List<Plat> GetPlat();
 	
 	

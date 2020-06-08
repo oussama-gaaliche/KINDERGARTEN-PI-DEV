@@ -39,10 +39,10 @@ public class IngretientPlatServiceImpl implements IngretientPlatService{
 		List<Plat> plats=iprepo.GetIPlat();
 		for(Plat p:plats){
 		m=0;
-		List<Ingredient> ingredients =iprepo.GetIngreidnet(p.getId());
+		List<Ingredient> ingredients =iprepo.GetIngreidnet(p.getId_plat());
 		for(Ingredient i:ingredients){
 			double q;
-			q=iprepo.getQuntityIngredient(i.getId(),p.getId());
+			q=iprepo.getQuntityIngredient(i.getId(),p.getId_plat());
 			m=m+i.getPrix()*q;
 			p.setPrix(m);
 			platrepo.save(p);

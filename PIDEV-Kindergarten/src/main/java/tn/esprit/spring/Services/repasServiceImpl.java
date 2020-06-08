@@ -39,7 +39,7 @@ public class repasServiceImpl implements RepasService {
 			RepasPk rp=new RepasPk();
 			rp.setDate(date);
 			rp.setIdplanning(Planningid);
-			rp.setIdplat(plat.getId());
+			rp.setIdplat(plat.getId_plat());
 			Repas repas =new Repas();
 			repas.setRepasPK(rp);
 			repas.setQuantity(n);
@@ -51,7 +51,7 @@ public class repasServiceImpl implements RepasService {
 					RepasPk rp=new RepasPk();
 					rp.setDate(date);
 					rp.setIdplanning(Planningid);
-					rp.setIdplat(plat.getId());
+					rp.setIdplat(plat.getId_plat());
 					Repas repas =new Repas();
 					repas.setRepasPK(rp);
 					repas.setQuantity(s);

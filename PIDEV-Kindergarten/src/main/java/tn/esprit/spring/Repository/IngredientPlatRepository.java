@@ -17,7 +17,7 @@ public interface IngredientPlatRepository extends JpaRepository<IngredientPlat, 
 	
 	 @Query("SELECT DISTINCT ip.plb FROM IngredientPlat ip "
 				+ "join ip.plb p  "
-				+" where ip.plb=p.id_Plat ")
+				+" where ip.plb=p.id_plat ")
 	 public List<Plat> GetIPlat();
 	 
 	 
@@ -25,7 +25,7 @@ public interface IngredientPlatRepository extends JpaRepository<IngredientPlat, 
 				+ "join ip.ingredient i  "
 				 +"join ip.plb p  "
 				+" where ip.ingredient=i.id and "
-				+ "p.id_Plat=:plat")
+				+ "p.id_plat=:plat")
 	 public List<Ingredient> GetIngreidnet(@Param("plat") int plat);
 	 
 	 
@@ -33,7 +33,7 @@ public interface IngredientPlatRepository extends JpaRepository<IngredientPlat, 
 	 		 +"join ip.plb p  "
 	 		 +"join ip.ingredient i  "
 			+" where i.id=:ing and " 
-	 		 +"p.id_Plat=:plat" )
+	 		 +"p.id_plat=:plat" )
 	    public double getQuntityIngredient(@Param("ing") int ing,@Param("plat") int plat);
 	
 

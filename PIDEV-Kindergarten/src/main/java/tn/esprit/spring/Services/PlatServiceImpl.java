@@ -57,7 +57,7 @@ public class PlatServiceImpl implements PlatService {
 		double q;
 		List<Plat>plat=platrepo.GetRepasByPlat();
          for(Plat p:plat){
-        	 q=platrepo.getQuntityByPlat(p.getId());
+        	 q=platrepo.getQuntityByPlat(p.getId_plat());
         	 m=m+p.getPrix()*q;  
         	  }
         	  return m;

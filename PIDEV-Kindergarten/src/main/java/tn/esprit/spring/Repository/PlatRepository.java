@@ -17,11 +17,11 @@ public interface PlatRepository extends JpaRepository<Plat, Integer> {
 	 
 	 @Query("SELECT DISTINCT r.plat FROM Repas r "
 				+ "join r.plat p  "
-				+" where r.plat=p.id_Plat ")
+				+" where r.plat=p.id_plat ")
 	   public List<Plat> GetRepasByPlat();
 	 @Query("select r.Quantity from Repas r "
 	 		 +"join r.plat p  "
-			+" where p.id_Plat=:p")
+			+" where p.id_plat=:p")
 	    public double getQuntityByPlat(@Param("p") int p);
 		
 }
