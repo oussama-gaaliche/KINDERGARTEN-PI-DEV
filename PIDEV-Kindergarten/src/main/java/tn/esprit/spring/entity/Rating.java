@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 @Entity
 @Table(name = "rating")
 public class Rating implements Serializable {
@@ -19,22 +20,22 @@ public class Rating implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+    
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@ManyToOne
 	User user;
-	
+
 	@ManyToOne
 	Publicity publicity;
-	
-	@Temporal (TemporalType.DATE)
+
+	@Temporal(TemporalType.DATE)
 	private Date dateRating;
-	
-	private float note;
-	
+
+	private Integer note;
+
 	private String review;
 
 	public String getReview() {
@@ -69,15 +70,13 @@ public class Rating implements Serializable {
 		this.publicity = publicity;
 	}
 
-	public float getNote() {
+	public Integer getNote() {
 		return note;
 	}
 
-	public void setNote(float note) {
+	public void setNote(Integer note) {
 		this.note = note;
 	}
-
-	
 
 	public Rating() {
 		super();
@@ -91,7 +90,7 @@ public class Rating implements Serializable {
 		this.dateRating = dateRating;
 	}
 
-	public Rating(User user, Publicity publicity, Date dateRating, float note, String review) {
+	public Rating(User user, Publicity publicity, Date dateRating, Integer note, String review) {
 		super();
 		this.user = user;
 		this.publicity = publicity;
@@ -100,7 +99,7 @@ public class Rating implements Serializable {
 		this.review = review;
 	}
 
-	public Rating(int id, User user, Publicity publicity, Date dateRating, float note, String review) {
+	public Rating(int id, User user, Publicity publicity, Date dateRating, Integer note, String review) {
 		super();
 		this.id = id;
 		this.user = user;
@@ -110,14 +109,4 @@ public class Rating implements Serializable {
 		this.review = review;
 	}
 
-
-
-	
-	
-	
-	
-	
-	
-	
-	
 }

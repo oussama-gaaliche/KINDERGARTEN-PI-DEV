@@ -2,26 +2,31 @@ package tn.esprit.spring.Controller;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import javax.faces.context.FacesContext;
 import javax.faces.event.PhaseId;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Part;
 
 import org.chartistjsf.model.chart.PieChartModel;
 import org.ocpsoft.rewrite.annotation.Join;
 import org.ocpsoft.rewrite.el.ELBeanName;
+
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 import org.primefaces.model.UploadedFile;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+
 import org.springframework.stereotype.Controller;
 
 import tn.esprit.spring.Repository.PubLikeRepository;
@@ -41,6 +46,8 @@ import tn.esprit.spring.entity.User;
 @Controller(value = "PublicityController")
 @ELBeanName(value = "PublicityController")
 @Join(path = "/", to = "/PubAffich.jsf")
+@MultipartConfig
+@WebServlet
 public class PublicityControllerJSF {
 	@Autowired
 	PublicityServiceImpl publicityService;
@@ -61,25 +68,92 @@ public class PublicityControllerJSF {
 	PubLikeService pubLikeService;
 
 	private List<Publicity> publicities;
+	private int id;
 	private String productName;
 	private String marque;
 	private String category;
 	private float priceSponsoring;
-	private byte[] image;
+	private String image;
 
 	private String productNameEdit;
 	private String marqueEdit;
 	private String categoryEdit;
 	private float priceSponsoringEdit;
+	private String imageEdit;
 	private Publicity publicity;
-	private UploadedFile file;
-	private StreamedContent productImage;
+	// private StreamedContent productImage;
 
 	private float note;
 	private String review;
 
 	private PieChartModel pieModel2;
 	private PieChartModel pieChartModel;
+
+	private Integer rating;
+
+	private boolean pub_exist = false;
+
+	
+
+	private String folder = "c:\\files";
+
+	private Part productImage;
+
+	private String msg = "";
+
+	private boolean all_reviews = false;
+
+	private boolean champs = false;
+	
+	
+
+	public Part getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(Part productImage) {
+		this.productImage = productImage;
+	}
+
+	public boolean isChamps() {
+		return champs;
+	}
+
+	public void setChamps(boolean champs) {
+		this.champs = champs;
+	}
+
+	public boolean isAll_reviews() {
+		return all_reviews;
+	}
+
+	public void setAll_reviews(boolean all_reviews) {
+		this.all_reviews = all_reviews;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public boolean isPub_exist() {
+		return pub_exist;
+	}
+
+	public void setPub_exist(boolean pub_exist) {
+		this.pub_exist = pub_exist;
+	}
+
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
 
 	public PieChartModel getPieModel2() {
 		return pieModel2;
@@ -88,68 +162,34 @@ public class PublicityControllerJSF {
 	private int pubIdToBeUpdated;
 
 	/*
-	 * public void setProductImage(StreamedContent productImage) {
-	 * this.productImage = productImage; }
-	 */
-
-	/*
-	 * public String addPub() { System.out.println("manel");
-	 * publicityService.addPublicity(new Publicity (productName, category,
-	 * marque , priceSponsoring )); return
-	 * "/PubAffich.xhtml?faces-redirect=true";
+	 * public String addPub() throws IOException, ParseException {
+	 * 
+	 * 
+	 * if ( this.productName.equals("") ) { this.champs = true; return
+	 * "/addpub.xhtml?faces-redirect=true";
+	 * 
+	 * } else { this.champs = false; User us =
+	 * userRepository.findUserByUsername(HomeController.connectedUser);
+	 * 
+	 * publicityService.addPublicity(new Publicity(productName, marque,
+	 * category, priceSponsoring, us));
+	 * 
+	 * 
+	 * return "/PubAffich.xhtml?faces-redirect=true"; }
 	 * 
 	 * }
 	 */
 
-	public StreamedContent getProductImage() throws IOException, SQLException {
-		FacesContext context = FacesContext.getCurrentInstance();
-
-		if (context.getCurrentPhaseId() == PhaseId.RENDER_RESPONSE) {
-			return new DefaultStreamedContent();
-		}
-
-		else {
-
-			byte[] image = new PublicityServiceImpl().findImage(1);
-			productImage = new DefaultStreamedContent(new ByteArrayInputStream(image));
-			return productImage;
-
-		}
-
-	}
-
-	public void setProductImage(StreamedContent productImage) {
-		this.productImage = productImage;
-	}
-
-	public String addPub() throws IOException {
-
-		User us = userRepository.findUserByUsername(HomeController.connectedUser);
-		Publicity p = new Publicity();
-		p.setUser(us);
-		p.setCategory(category);
-		p.setMarque(marque);
-		p.setProductName(productName);
-		p.setPriceSponsoring(priceSponsoring);
-
-		File file = new File("src/main/resources/image/test.png");
-
-		byte[] picInBytes = new byte[(int) file.length()];
-
-		FileInputStream fileInputStream = new FileInputStream(file);
-		fileInputStream.read(picInBytes);
-		fileInputStream.close();
-
-		p.setImage(picInBytes);
-
-		publicityService.addPublicity(p);
-
-		return "/PubAffich.xhtml?faces-redirect=true";
-
-	}
-
 	public List<Publicity> getPublicities() {
 		return publicities;
+	}
+
+	public String getImageEdit() {
+		return imageEdit;
+	}
+
+	public void setImageEdit(String imageEdit) {
+		this.imageEdit = imageEdit;
 	}
 
 	public PublicityControllerJSF() {
@@ -162,6 +202,14 @@ public class PublicityControllerJSF {
 
 	public void setProductName(String productName) {
 		this.productName = productName;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getMarque() {
@@ -220,11 +268,11 @@ public class PublicityControllerJSF {
 		this.priceSponsoringEdit = priceSponsoringEdit;
 	}
 
-	public byte[] getImage() {
+	public String getImage() {
 		return image;
 	}
 
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 
@@ -417,14 +465,6 @@ public class PublicityControllerJSF {
 
 	}
 
-	// list reviews par pub
-	public List<Rating> listReviwes(int id) {
-
-		System.out.println("manel");
-		return ratingservice.retrieveAllReviews(id);
-
-	}
-
 	// redirection vers details et add nb vu
 	public String addvu(Long iduser, int idad, Publicity p) {
 
@@ -444,6 +484,7 @@ public class PublicityControllerJSF {
 		this.setCategoryEdit(p.getCategory());
 		this.setMarqueEdit(p.getMarque());
 		this.setPriceSponsoringEdit(p.getPriceSponsoring());
+		this.setImageEdit(p.getImage());
 		this.setPubIdToBeUpdated(p.getId());
 		this.setPublicity(p);
 
@@ -460,6 +501,8 @@ public class PublicityControllerJSF {
 
 	}
 	// add rating and review
+	
+	
 
 	public String addRating(int idad) {
 
@@ -467,16 +510,15 @@ public class PublicityControllerJSF {
 
 		Publicity pub = publicityRepository.findById(idad).get();
 
-		Rating rating = new Rating();
+		Rating rating1 = new Rating();
 
-		rating.setUser(us);
-		rating.setPublicity(pub);
+		rating1.setUser(us);
+		rating1.setPublicity(pub);
 		// v.setDateCreation(new Date());
-		rating.setReview(review);
-		rating.setNote(note);
+		rating1.setReview(review);
+		rating1.setNote(rating);
 
-		return ratingservice.addRating(rating);
-
+		return ratingservice.addRating(rating1);
 	}
 
 	public void removeLike(int idpub) {
@@ -495,4 +537,112 @@ public class PublicityControllerJSF {
 			return true;
 	}
 
+	public void pubExists() {
+
+		System.out.println(this.productName);
+
+		List<Publicity> publicity = new ArrayList<Publicity>();
+		publicity = publicityRepository.findAll();
+
+		for (Publicity pub : publicity) {
+			if (pub.getProductName().equals(this.productName))
+
+			{
+				this.pub_exist = true;
+				return;
+			}
+
+		}
+		this.pub_exist = false;
+	}
+
+	public void champVide() {
+		if (this.productName.equals(null) || this.marque.equals(null) || this.marque.equals(null))
+
+			this.champs = true;
+		else
+			this.champs = false;
+	}
+
+	// affichage avec recherche
+	public List<Publicity> getAllPub() {
+
+		if (this.msg.length() == 0)
+			return publicityService.retrieveAllPublicitiesPub();
+		else
+			return publicityService.searchPub(msg);
+	}
+
+	// list reviews par pub
+	public List<Rating> listReviwes(int id) {
+		if (all_reviews == false) {
+			System.out.println("sa7louba");
+			return ratingservice.listLastReviews(id);
+
+		}
+
+		else
+			return ratingservice.retrieveAllReviews(id);
+
+	}
+
+	// load more reviews
+	public void loadReviews() {
+
+		this.all_reviews = true;
+
+	}
+
+	public String addPub() throws IOException, ParseException {
+
+		// C:\Users\manel\git\KINDERGARTEN-PI-DEV\PIDEV-Kindergarten\src\main\webapp\img
+
+		
+
+		if (this.productName.equals("")) {
+			this.champs = true;
+			return "/addpub.xhtml?faces-redirect=true";
+
+		} else {
+			this.champs = false;
+
+			User us = userRepository.findUserByUsername(HomeController.connectedUser);
+
+			publicityService.addPublicity(new Publicity(productName, marque, category, priceSponsoring, us));
+
+			return "/PubAffich.xhtml?faces-redirect=true";
+		}
+
+	}
+	public String addimage()
+	{ 
+	String navigateTo = "null";
+	System.out.println(productImage.getSubmittedFileName());
+	try {
+		productImage.write("C:\\Users\\manel\\git\\KINDERGARTEN-PI-DEV\\PIDEV-Kindergarten\\src\\main\\webapp\\img\\"+productImage.getSubmittedFileName());
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		System.out.println("mzamra");
+	}        
+    File oldFile=new File("C:\\Users\\manel\\git\\KINDERGARTEN-PI-DEV\\PIDEV-Kindergarten\\src\\main\\webapp\\img\\"+productImage.getSubmittedFileName());
+    String img= publicityService.getAlphaNumericString(7)+productImage.getSubmittedFileName();
+    System.out.println(img);
+    File newfile =new File("C:\\Users\\manel\\git\\KINDERGARTEN-PI-DEV\\PIDEV-Kindergarten\\src\\main\\webapp\\img\\"+img);
+    oldFile.renameTo(newfile);
+		System.out.println("ka3boufiboura mmm");
+		User us = userRepository.findUserByUsername(HomeController.connectedUser);
+		publicityService.addPublicity(new Publicity(productName, marque, category, priceSponsoring,img, us));
+    return navigateTo ;
+	}
+	
+	public String goStat() {
+
+		return "/stat.xhtml?faces-redirect=true";
+	}
+	
+	public String goPub() {
+
+		return "/PubAffichFront.xhtml?faces-redirect=true";
+	}
+	
 }

@@ -34,12 +34,12 @@ public class RatingController {
 	return ratingService.retrieveAllRating();
     
 } 
-	@GetMapping("/editNote/{id}&{note}")
-public String updateNote(@PathVariable("id") int id,@PathVariable("note") float note){
+	/*@GetMapping("/editNote/{id}&{note}")
+public String updateNote(@PathVariable("id") int id,@PathVariable("note") int note){
 		return ratingService.updateRating(id, note);
 	
 }
-	
+	*/
 	@DeleteMapping("/remove-rating/{id}")
 	@ResponseBody
 	public void removeUser(@PathVariable("id") int id) {
