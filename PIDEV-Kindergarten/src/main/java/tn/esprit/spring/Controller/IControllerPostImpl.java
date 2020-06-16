@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import tn.esprit.spring.services.ICommentService;
-import tn.esprit.spring.services.IPostService;
+import tn.esprit.spring.Services.ICommentService;
+import tn.esprit.spring.Services.IPostService;
 import tn.esprit.spring.entity.Comment;
 import tn.esprit.spring.entity.Post;
 

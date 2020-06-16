@@ -23,8 +23,8 @@ import tn.esprit.spring.entity.Comment;
 
 import tn.esprit.spring.entity.Post;
 import tn.esprit.spring.entity.User;
-import tn.esprit.spring.services.ICommentService;
-import tn.esprit.spring.services.IPostService;
+import tn.esprit.spring.Services.ICommentService;
+import tn.esprit.spring.Services.IPostService;
 
 @RestController
 public class PostController {
