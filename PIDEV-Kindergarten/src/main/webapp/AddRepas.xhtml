@@ -1,0 +1,167 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="addPlan" />
+	<ui:define name="content">
+	<div class="main-body">
+                            
+<div class="page-wrapper">
+                                <!-- Page-header start -->
+                                
+<div class="page-header">
+                                    
+<div class="row align-items-end">
+                                        
+
+                                        
+<div class="col-lg-4">
+       <center>                                          
+<div class="page-header-breadcrumb">
+                                                
+<ul class="breadcrumb-title">
+                                                
+<li class="breadcrumb-item">
+
+                                                        <a href="index-1.htm"> <i class="feather icon-home" /> </a>
+                                                  </li>
+                                                    
+<li class="breadcrumb-item"><a href="#!"> </a></li>
+                                                </ul>
+                                            </div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                    <!-- Page body start -->
+            <h:form>                         
+<div class="page-body">
+                                        
+<div class="row">
+                                            
+<div class="col-sm-12">
+                                                <!-- Default Date-Picker card start -->
+                   
+
+                                                                
+
+    
+                                                     <!-- Date-Dropper card start -->
+       
+                                                                                     
+<div class="card">
+                                                    
+<div class="card-header">
+                                                        
+<h2>Add Lunch</h2>
+                                                    
+                                                    </div>
+                                                  
+<div class="card-block">
+                                                        
+<div class="row">
+                                                            
+
+    <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Choose Normal Supply</h4>
+                                                                
+
+   <h:selectOneMenu  value="#{repController.pNormal}" class="form-control">
+ 	
+								
+								<f:selectItems value="#{repController.GetPlatsNormal()}" class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 313.391px;">
+								  <span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-gf4e-container" />
+								<span class="select2-selection__rendered" id="select2-gf4e-container" title="Alabama"></span>
+                                                            <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span><span class="dropdown-wrapper" aria-hidden="true"></span>
+								</f:selectItems>
+							</h:selectOneMenu>  
+                                                            </div>
+                                                            
+  
+                                                            
+  <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Choose Special Supply</h4>
+                                                                
+
+   <h:selectOneMenu  value="#{repController.pSpecial}" class="form-control">
+ 	
+								
+								<f:selectItems value="#{repController.GetPlatsSpecial()}" class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 313.391px;">
+								  <span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-gf4e-container" />
+								<span class="select2-selection__rendered" id="select2-gf4e-container" title="Alabama"></span>
+                                                            <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span><span class="dropdown-wrapper" aria-hidden="true"></span>
+								</f:selectItems>
+							</h:selectOneMenu>  
+                                                            </div>
+                                                            
+  
+                                                  
+
+<div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Date</h4>
+                                                                
+
+    <h:inputText id="date" class="form-control" type="text"   value="#{repController.date}"  required="true" requiredMessage="le champs est obligatoire"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+                                                            <h:message for="date" style="color:red"></h:message>
+                                                            </div>
+                                                            
+  
+                                                            
+
+                                                        </div>
+                                         <center>           
+                    <h:commandButton class="btn btn-success" action="#{repController.addRep()}" value="Add" />
+                 
+                                                   </center>  
+                                               
+                                                               
+
+
+                                                    </div>
+                                                </div>
+                                             
+                                                <!-- Date-Dropper card end -->
+                                               
+
+
+                                                                     
+
+                                                            
+                                                      
+
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                    
+
+
+                                                                </div>
+                                                                </h:form>
+                                                            </div>
+                                                        </div>
+                                                  
+                                
+                                
+                          
+                            <!-- Main-body end -->
+	
+           
+
+                                       
+                                               
+                                               
+                                                        
+                                                      
+                                                      
+  
+                                                      
+                                                    
+	</ui:define>
+	</ui:composition>
+	
+

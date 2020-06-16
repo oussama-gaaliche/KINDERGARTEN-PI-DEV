@@ -1,0 +1,151 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="Front.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<ui:param name="page_name" value="Plat Normal" />
+	<ui:define name="content">
+	
+	
+
+<h:panelGroup>
+<form >
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block responsive-flex1200">
+<div class="ui-block-title">
+					<ul class="filter-icons">
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat2.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat15.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat9.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat4.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat6.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat26.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat27.png" alt="icon"/>
+							</a>
+						</li>
+					</ul>
+					<h:form>
+					<a href="#"  >
+					<h:commandButton action="#{plaController.viewmyfavourites()}" class="btn btn-primary btn-md-2" value="My Favourites"></h:commandButton>
+					</a>
+					<a href="#">
+					<h:commandButton action="#{plaController.GoSpecial()}" class="btn btn-primary btn-md-2" value="Plat Special"></h:commandButton></a>
+
+					<a href="#">
+					<h:commandButton action="#{plaController.GoNormal()}" class="btn btn-primary btn-md-2" value="Plat Normal"></h:commandButton>
+					</a></h:form>
+		</div></div></div></div>		
+				</div>
+<div class="container">
+	<div class="row">
+	
+<c:forEach items="#{repController.GetNormal()}" var="plat" >
+<div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				
+<!-- Friend Item -->
+				
+				<div class="friend-item fav-page">
+					<div class="friend-header-thumb">
+						<img src="files/img/p2.jpg" alt="friend"/>
+					</div>
+				
+					<div class="friend-item-content">
+				
+						<div class="more">
+							<svg class="olymp-three-dots-icon" ><use xlink:href="#olymp-three-dots-icon"></use></svg>
+							
+						</div>
+						<div class="friend-avatar">
+							
+							<div class="author-content">
+						<h:form>
+								<a href="#"  class="h5 author-name" >
+								<h:commandLink action="#{plaController.Gottodetail(plat.id_plat)}" class="post-add-icon inline-items"><h:outputText value="#{plat.nom}" /></h:commandLink>
+								</a></h:form>
+								<div class="country"><h:outputText value="#{plat.typeplat}" /> </div>
+							</div>
+						</div>
+				
+						<div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal" id="swiper-unique-id-0">
+							<div class="swiper-wrapper" style="width: 784px; transform: translate3d(-196px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 196px;">
+									
+				
+									
+								</div>
+								<div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
+									<div class="friend-count" data-swiper-parallax="-500" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+										<a href="#" class="friend-count-item">
+											<div class="h6">Price </div>
+											<div class="title"><h:outputText value="#{plat.prix}" /></div>
+										</a>
+										<a href="#" class="friend-count-item">
+											<div class="h6"><h:outputText value="#{plaController.getNbFavories(plat.id_plat)}" /></div>
+											<div class="title">Favourites</div>
+										</a>
+										
+									</div>
+									
+								</div>
+				
+						
+						
+							
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				
+				
+				<!-- ... end Friend Item -->			
+		</div>
+							
+							
+</c:forEach>
+
+   </div></div>
+</form>
+
+ </h:panelGroup>
+
+						
+						
+				
+	
+
+
+	</ui:define>
+	
+</ui:composition>
+

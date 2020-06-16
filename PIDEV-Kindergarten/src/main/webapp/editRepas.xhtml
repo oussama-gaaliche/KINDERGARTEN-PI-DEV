@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="editPlan" />
+	<ui:define name="content">
+	
+	
+	<h:panelGroup columns="2"><h:form>
+	
+	
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label"> Planning</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                               <h:inputText type="text" class="form-control" value="#{repController.idplanning}"></h:inputText>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Supply</label>
+                                                            
+                                                            
+                                                            <div class="col-sm-10">
+                                                             <h:selectOneMenu  value="#{repController.nomedit}" class="form-control">
+                                                              <f:selectItems value="#{repController.GetAllPlat()}" class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 313.391px;">
+								  <span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-gf4e-container" />
+								<span class="select2-selection__rendered" id="select2-gf4e-container" title="Alabama"></span>
+                                                            <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span><span class="dropdown-wrapper" aria-hidden="true"></span>
+								</f:selectItems>
+							</h:selectOneMenu> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Date</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                               <h:inputText type="text" class="form-control" value="#{repController.date}"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Quantity</label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                               <h:inputText type="text" class="form-control" value="#{repController.quantity}"></h:inputText>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        
+                                                        
+                                                      
+                                                       
+                                                    <center>
+                       <h:commandButton value="Update"  class="btn btn-success" action="#{repController.updateRepas()}" /> 
+                                                        </center>
+                                                       
+                                                        </h:form></h:panelGroup>
+                                                      
+                                                    
+	</ui:define>
+	</ui:composition>

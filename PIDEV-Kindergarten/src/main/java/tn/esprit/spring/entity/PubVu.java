@@ -3,10 +3,9 @@ package tn.esprit.spring.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-<<<<<<< HEAD
+
 import javax.persistence.CascadeType;
-=======
->>>>>>> branch 'master' of https://github.com/gaaliche22/KINDERGARTEN-PI-DEV.git
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

@@ -1,0 +1,145 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	
+xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+		template="/template/DashTemplate.xhtml"
+	>
+	<!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+	<ui:param name="page_name" value="addPlan" />
+	<ui:define name="content">
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="#"/>
+    <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app"/>
+    <meta name="author" content="#"/>
+	  <link rel="icon" href="files\assets\images\favicon.ico" type="image/x-icon"/>
+    <!-- Google font--><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet"/>
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\bootstrap\css\bootstrap.min.css"/>
+    <!-- Font awesome star css -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\font-awesome\css\font-awesome.min.css"/>
+    <!-- Font awesome star css -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\fontawesome-stars.css"/>
+    <!-- star theme css -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-1to10.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-horizontal.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-movie.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-pill.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-reversed.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-square.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="files/bower_components/jquery-bar-rating/dist/themes/bootstrap-stars.css"/> -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\css-stars.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="files/bower_components/jquery-bar-rating/css/fontawesome-stars.css"/> -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\fontawesome-stars-o.css"/>
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="files\assets\icon\themify-icons\themify-icons.css"/>
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="files\assets\icon\icofont\css\icofont.css"/>
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="files\assets\icon\feather\css\feather.css"/>
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="files\assets\css\style.css"/>
+  <link rel="stylesheet" type="text/css" href="files\assets\css\jquery.mCustomScrollbar.css"/>
+  <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">fractional star Rating</h6>
+                                                                
+                                                                <div class="stars stars-example-fontawesome-o">
+                                                                    <div class="br-wrapper br-theme-fontawesome-stars-o">
+                                                                    <select id="example-fontawesome-o" name="rating" data-current-rating="5.6" autofocus="autofocus" contenteditable="true" autocomplete="off" style="display: none;">
+                                                <option value="" label="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select><div class="br-widget">
+                                       
+                                         <a href="#" data-rating-value="1" data-rating-text="1" class="br-selected br-current"></a>
+                                            <a href="#" data-rating-value="2" data-rating-text="2" class="br-selected br-current"></a>
+                                            <a href="#" data-rating-value="3" data-rating-text="3" class=""></a>
+                                            <a href="#" data-rating-value="4" data-rating-text="4" class=""></a>
+                                            <a href="#" data-rating-value="5" data-rating-text="5" class=""></a>
+                                            <a href="#" data-rating-value="6" data-rating-text="6" class=""></a>
+                                            <a href="#" data-rating-value="7" data-rating-text="7" class=""></a>
+                                            <a href="#" data-rating-value="8" data-rating-text="8" class=""></a>
+                                            <a href="#" data-rating-value="9" data-rating-text="9" class=""></a>
+                                            <a href="#" data-rating-value="10" data-rating-text="10" class=""></a>
+                                       </div></div>
+                                                                    <span class="title current-rating hidden">
+                                Current rating: <span class="value">5.6</span>
+                                                                    </span>
+                                                                    <span class="title your-rating">
+                                Your rating: <span class="value">1</span>
+                                                                    <a href="#" class="clear-rating"><i class="icofont icofont-close-circled"></i></a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div id="styleSelector">
+
+                            </div>
+    
+    
+    
+    
+    
+    
+    <script type="text/javascript" src="files\bower_components\jquery\js\jquery.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\popper.js\js\popper.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\bootstrap\js\bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="files\bower_components\modernizr\js\modernizr.js"></script>
+    <script type="text/javascript" src="files\bower_components\modernizr\js\css-scrollbars.js"></script>
+
+    <!-- rating js -->
+    <script type="text/javascript" src="files\bower_components\jquery-bar-rating\js\jquery.barrating.js"></script>
+    <script type="text/javascript" src="files\assets\js\rating.js"></script>
+
+    <!-- i18next.min.js -->
+    <script type="text/javascript" src="files\bower_components\i18next\js\i18next.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\i18next-xhr-backend\js\i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\i18next-browser-languagedetector\js\i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\jquery-i18next\js\jquery-i18next.min.js"></script>
+    <script src="files\assets\js\pcoded.min.js"></script>
+    <script src="files\assets\js\vartical-layout.min.js"></script>
+    <script src="files\assets\js\jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                content: function() {
+                    return $('#primary-popover-content').html();
+                }
+            });
+        });
+
+    </script>
+    <script type="text/javascript" src="..\files\assets\js\script.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+    </ui:define>
+    </ui:composition>
+    

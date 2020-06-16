@@ -18,11 +18,11 @@ import tn.esprit.spring.entity.Post;
 import tn.esprit.spring.entity.React;
 import tn.esprit.spring.entity.Reaction;
 import tn.esprit.spring.entity.User;
-import tn.esprit.spring.repository.PostRepository;
-import tn.esprit.spring.repository.ReactionRepository;
-import tn.esprit.spring.repository.UserRepository;
-import tn.esprit.spring.services.IPostService;
-import tn.esprit.spring.services.IReactionService;
+import tn.esprit.spring.Repository.PostRepository;
+import tn.esprit.spring.Repository.ReactionRepository;
+import tn.esprit.spring.Repository.UserRepository;
+import tn.esprit.spring.Services.IPostService;
+import tn.esprit.spring.Services.IReactionService;
 
 @RestController
 
@@ -53,7 +53,7 @@ public class LikeController {
 		return reactService.addReaction(userManagedEntity.getId(), idPost, rp);
 
 	}
-	@GetMapping(value ="/retrieve-all-likes")
+	@GetMapping(value ="/retrieve-likes")
 	@ResponseBody
 	public List<Reaction> getLikes() {
 	

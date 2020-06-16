@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="PubAffich" />
+	<ui:define name="content">
+	
+
+
+
+
+<h:panelGroup>
+<h:form>
+<h:dataTable class="table table-hover"  var="ingpl" value="#{ingplatController.GetAll()}">
+
+<h:column><f:facet name="header"><h:outputText value="Plat" /></f:facet>
+<h:outputText value="#{ingpl.plb.nom}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="Ingredient" /></f:facet>
+<h:outputText value="#{ingpl.ingredient.nom}" /></h:column>
+<h:column><f:facet name="header"><h:outputText value="Quantity" /></f:facet>
+<h:outputText value="#{ingpl.quantity}" /></h:column>
+
+
+
+
+<h:column><f:facet name="header"><h:outputText value="Action" /></f:facet>
+<h:commandButton  value="delete" class="btn btn-danger" action="#{ingplatController.Delete(ingpl)}" />
+<h:commandButton  value="edit" class="btn btn-info" action="#{ingplatController.displayINGPL(ingpl)}"/>
+
+</h:column>
+
+
+</h:dataTable>
+<center>
+<h:commandButton  value="Add" class="btn btn-success" action="#{ingplatController.GoFormAddIngPL()}" />
+<h:commandButton  value="Update Plat's price" class="btn btn-success" action="#{ingplatController.CalculPrix()}" />
+</center>
+</h:form>
+</h:panelGroup>
+
+</ui:define>
+</ui:composition>

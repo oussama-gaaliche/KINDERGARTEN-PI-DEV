@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="search.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+
+<h:form>
+
+<form class="w-search">
+						<div class="form-group with-button is-empty">
+							<h:inputText class="form-control" type="text" placeholder="Search Blog Posts......" value="#{repController.date}"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+							<button onclick="#{repController.GetByPlanning(repController.date)}">
+								<svg class="olymp-magnifying-glass-icon"><use href="#olymp-magnifying-glass-icon"/></svg>
+							</button>
+						<span class="material-input"></span></div>
+					</form>	</h:form>
+					</ui:define>
+					</ui:composition>

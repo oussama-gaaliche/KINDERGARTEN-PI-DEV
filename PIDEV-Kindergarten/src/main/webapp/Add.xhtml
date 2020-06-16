@@ -1,0 +1,136 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="addPlan" />
+	<ui:define name="content">
+	<div class="main-body">
+                            
+<div class="page-wrapper">
+                                <!-- Page-header start -->
+                                
+<div class="page-header">
+                                    
+<div class="row align-items-end">
+                                        
+
+                                        
+<div class="col-lg-4">
+       <center>                                          
+<div class="page-header-breadcrumb">
+                                                
+<ul class="breadcrumb-title">
+                                                
+<li class="breadcrumb-item">
+
+                                                        <a href="index-1.htm"> <i class="feather icon-home" /> </a>
+                                                  </li>
+                                                    
+<li class="breadcrumb-item"><a href="#!"> </a></li>
+                                                </ul>
+                                            </div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                    <!-- Page body start -->
+            <h:form>                         
+<div class="page-body">
+                                        
+<div class="row">
+                                            
+<div class="col-sm-12">
+                                                <!-- Default Date-Picker card start -->
+                   
+
+                                                                
+
+    
+                                                     <!-- Date-Dropper card start -->
+       
+                                                                                     
+<div class="card">
+                                                    
+<div class="card-header">
+                                                        
+<h2>Add New Planning</h2>
+                                                    
+                                                    </div>
+                                                  
+<div class="card-block">
+                                                        
+<div class="row">
+                                                            
+<div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Pick Start Date</h4>
+                                                             
+
+    <h:inputText id="datedebut"  class="form-control" type="date" value="#{planController.date_debut}" required="true" requiredMessage="le champs est obligatoire"> <f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+                                                         <h:message for="datedebut" style="color:red"></h:message>
+                                                            </div>
+                                                            
+<div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Pick End Date</h4>
+                                                                
+
+    <h:inputText id="datefin"  class="form-control" type="date"   value="#{planController.date_fin}" required="true" requiredMessage="le champs est obligatoire"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+                                                            <h:message for="datefin" style="color:red"></h:message>
+                                                            </div>
+                                                 
+                                                        </div>
+                                         <center>           
+                    <h:commandButton class="btn btn-success" action="#{planController.addPlanning()}" value="Add Planning"/>
+                 
+                                                   </center>  
+                                               
+                                                               
+
+
+                                                    </div>
+                                                </div>
+                                             
+                                                <!-- Date-Dropper card end -->
+                                               
+
+
+                                                                     
+
+                                                            
+                                                      
+
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                    
+
+
+                                                                </div>
+                                                                </h:form>
+                                                            </div>
+                                                        </div>
+                                                  
+                                
+                                
+                          
+                            <!-- Main-body end -->
+	
+           
+
+                                       
+                                               
+                                               
+                                                        
+                                                      
+                                                      
+  
+                                                      
+                                                    
+	</ui:define>
+	</ui:composition>
+	
+

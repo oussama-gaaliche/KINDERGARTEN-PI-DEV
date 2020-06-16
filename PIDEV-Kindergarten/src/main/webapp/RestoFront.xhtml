@@ -2,11 +2,76 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/template/templateFront.xhtml"
+	template="search.xhtml"
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:xlink="http://www.w3.org/1999/xlink">
-	<ui:param name="page_name" value="Accueil" />
+	<ui:param name="page_name" value="AccueilResto" />
 	<ui:define name="content">
+	
+	<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block responsive-flex1200">
+				<div class="ui-block-title">
+					<ul class="filter-icons">
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat2.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat15.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat9.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat4.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat6.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat26.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat27.png" alt="icon"/>
+							</a>
+						</li>
+					</ul>
+					<h:form>
+
+						<div class="form-group with-button is-empty">
+							<h:inputText id="dte" class="form-control" type="date" placeholder="Search Blog Posts......" value="#{repController.date}" ><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+							
+							<h:commandLink action="#{repController.GetByPlanning(repController.date)}"  >
+								<svg class="olymp-magnifying-glass-icon"><use href="#olymp-magnifying-glass-icon"/></svg>
+							</h:commandLink>
+						<span class="material-input"></span></div>
+					</h:form>
+
+					
+
+					
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
 
 <div class="container">
 	
@@ -18,13 +83,17 @@
 				
 <div class="ui-block-title">
 <h2>
-School meals are a fundamental service in the daily life of students which allows them to benefit from a complete and balanced meal at a competitive price.
-This is why, Our Group has made available to its students a School Restaurant located on campus.
+School meals are a fundamental service in the daily life of children which allows them to benefit from a complete and balanced meal at a competitive price.
+This is why, Our Group has made available to its children a School Restaurant located on campus.
 <br></br>
 <span>
 
 <h4>
-<a class="dropdown-item" href="#{ingController.GoFormAdd()}">View details</a></h4></span>
+ <h:form>
+								<a href="#"  class="h5 author-name" >
+								<h:commandLink action="#{plaController.GoAcceuil()}" class="post-add-icon inline-items" value="View More "></h:commandLink>
+								</a></h:form>
+</h4></span>
 </h2>
 
 

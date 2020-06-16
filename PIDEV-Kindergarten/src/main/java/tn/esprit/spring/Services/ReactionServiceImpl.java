@@ -15,9 +15,9 @@ import tn.esprit.spring.entity.Post;
 import tn.esprit.spring.entity.React;
 import tn.esprit.spring.entity.Reaction;
 import tn.esprit.spring.entity.User;
-import tn.esprit.spring.repository.PostRepository;
-import tn.esprit.spring.repository.ReactionRepository;
-import tn.esprit.spring.repository.UserRepository;
+import tn.esprit.spring.Repository.PostRepository;
+import tn.esprit.spring.Repository.ReactionRepository;
+import tn.esprit.spring.Repository.UserRepository;
 
 @Service
 public class ReactionServiceImpl implements IReactionService {

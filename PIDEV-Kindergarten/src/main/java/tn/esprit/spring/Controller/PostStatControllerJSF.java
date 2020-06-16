@@ -19,12 +19,12 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import tn.esprit.spring.entity.CountWord;
-import tn.esprit.spring.repository.WordCountRepository;
-import tn.esprit.spring.services.PostStatService;
+import tn.esprit.spring.Repository.WordCountRepository;
+import tn.esprit.spring.Services.PostStatService;
 
 @Scope(value = "session")
-@Controller(value = "statControllerJSF")
-@ELBeanName(value = "statControllerjsf")
+@Controller(value = "staControllerJSF")
+@ELBeanName(value = "staControllerjsf")
 public class PostStatControllerJSF {
 
 private BarChartModel barChartModel;

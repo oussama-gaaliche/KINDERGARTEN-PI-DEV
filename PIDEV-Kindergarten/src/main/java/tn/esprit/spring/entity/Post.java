@@ -108,6 +108,12 @@ public class Post implements Serializable {
 		return "Post [id=" + id + ", contained=" + contained + ", date=" + date + ", user=" + user + ", like=" + like
 				+ ", image=" + image + ", comment=" + comment + "]";
 	}
+	public Integer getLikeCount() {
+		return likeCount;
+	}
+	public void setLikeCount(Integer likeCount) {
+		this.likeCount = likeCount;
+	}
 	
 	
 }

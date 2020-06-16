@@ -1,0 +1,50 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="PubAffich" />
+	<ui:define name="content">
+	
+
+
+
+
+<h:panelGroup>
+<h:form>
+<h:dataTable class="table table-hover"  var="repas" value="#{repController.getallRepas()}">
+
+<h:column><f:facet name="header"><h:outputText value="ID Planning" /></f:facet>
+<h:outputText value="#{repas.planning.id_planning}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="Plat" /></f:facet>
+<h:outputText value="#{repas.plat.nom}" /></h:column>
+<h:column><f:facet name="header"><h:outputText value="Type" /></f:facet>
+<h:outputText value="#{repas.plat.typeplat}" /></h:column>
+<h:column><f:facet name="header"><h:outputText value="Quantity" /></f:facet>
+<h:outputText value="#{repas.quantity}" /></h:column>
+<h:column><f:facet name="header"><h:outputText value="Date" /></f:facet>
+<h:outputText value="#{repas.repasPK.date}" /></h:column>
+
+
+
+
+<h:column><f:facet name="header"><h:outputText value="Action" /></f:facet>
+<h:commandButton  value="delete" class="btn btn-danger" action="#{repController.removeRepas(repas)}" />
+<h:commandButton  value="edit" class="btn btn-info" action="#{repController.displayRepas(repas)}" />
+
+</h:column>
+
+
+</h:dataTable>
+
+<center>
+<h:commandButton  value="Add a new Repas" class="btn btn-success" action="#{repController.GoToFormAdd()}" />
+</center>
+</h:form>
+</h:panelGroup>
+
+</ui:define>
+</ui:composition>
