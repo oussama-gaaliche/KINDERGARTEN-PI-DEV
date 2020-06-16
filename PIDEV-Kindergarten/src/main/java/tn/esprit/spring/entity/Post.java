@@ -48,6 +48,9 @@ public class Post implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy="post",fetch=FetchType.EAGER)
 	private Set<Comment> comment;
+	@JsonIgnore
+	@OneToMany(mappedBy="post",fetch=FetchType.EAGER)
+	private Set<PostReport> postreport;
 	public Post() {
 		super();
 	}
