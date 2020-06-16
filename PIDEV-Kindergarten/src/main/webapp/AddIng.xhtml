@@ -27,7 +27,7 @@
                                                         <a href="index-1.htm"> <i class="feather icon-home" /> </a>
                                                   </li>
                                                     
-<li class="breadcrumb-item"><a href="#!"> <h3>Ingredient Management</h3></a></li>
+<li class="breadcrumb-item"><a href="#!"> </a></li>
                                                 </ul>
                                             </div>
                                             </center>
@@ -55,7 +55,7 @@
                                                     
 <div class="card-header">
                                                         
-<h2>Add New Planning</h2>
+<h2>Add Ingredient</h2>
                                                     
                                                     </div>
                                                   
@@ -68,7 +68,10 @@
 <h4 class="sub-title">Name</h4>
                                                              
 
-    <h:inputText  class="form-control" type="Text"   value="#{ingController.nom}"></h:inputText>
+    <h:inputText id="noming"  class="form-control" type="Text"   value="#{ingController.nom}" required="true" requiredMessage="le champs est obligatoire" >
+                                                        
+                                                           </h:inputText>
+                                                            <h:message for="noming" style="color:red"></h:message>
                                                             </div>
                                                             
 <div class="col-sm-12 col-xl-6 m-b-30">
@@ -76,7 +79,10 @@
 <h4 class="sub-title">Price</h4>
                                                                 
 
-    <h:inputText  class="form-control" type="text"   value="#{ingController.prix}"></h:inputText>
+    <h:inputText id="prixing" class="form-control" type="text"   value="#{ingController.prix}" required="true" requiredMessage="le champs est obligatoire" validatorMessage="le prix doit etre compris entre 5.5 et 7">
+<f:validateDoubleRange minimum="5" maximum="8" /></h:inputText>
+
+                                                         <h:message for="prixing" style="color:red"></h:message>  
                                                             </div>
                                                             
   
@@ -84,7 +90,7 @@
 
                                                         </div>
                                          <center>           
-                    <h:commandButton class="btn btn-success" action="#{ingController.AddIng()}" value="Add Ingredient"/>
+                    <h:commandButton class="btn btn-success" action="#{ingController.AddIng()}" value="Add Ingredient" update="grid" icon="pi pi-check" validateClient="true" style="margin-right:10px"/>
                  
                                                    </center>  
                                                

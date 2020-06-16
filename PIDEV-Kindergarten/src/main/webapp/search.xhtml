@@ -1,0 +1,73 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="Front.xhtml">
+	<ui:param name="page_name" value="addPlan" />
+	<ui:define name="content">
+
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block responsive-flex1200">
+				<div class="ui-block-title">
+					<ul class="filter-icons">
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat2.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat15.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat9.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat4.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat6.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat26.png" alt="icon"/>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat27.png" alt="icon"/>
+							</a>
+						</li>
+					</ul>
+					<h:form class="w-search">
+
+						<div class="form-group with-button is-empty">
+							<h:inputText class="form-control" type="date"  value="#{repController.date}"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+							<h:commandLink action="#{repController.GetByPlanning(repController.date)}"  >
+								<svg class="olymp-magnifying-glass-icon"><use href="#olymp-magnifying-glass-icon"/></svg>
+							</h:commandLink>
+						<span class="material-input"></span></div>
+					</h:form>
+
+					
+
+					
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</ui:define>
+</ui:composition>

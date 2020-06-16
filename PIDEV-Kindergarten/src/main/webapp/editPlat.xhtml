@@ -1,0 +1,151 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="addPlan" />
+	<ui:define name="content">
+	<div class="main-body">
+                            
+<div class="page-wrapper">
+                                <!-- Page-header start -->
+                                
+<div class="page-header">
+                                    
+<div class="row align-items-end">
+                                        
+
+                                        
+<div class="col-lg-4">
+       <center>                                          
+<div class="page-header-breadcrumb">
+                                                
+<ul class="breadcrumb-title">
+                                                
+<li class="breadcrumb-item">
+
+                                                        <a href="index-1.htm"> <i class="feather icon-home" /> </a>
+                                                  </li>
+                                                    
+<li class="breadcrumb-item"><a href="#!"> </a></li>
+                                                </ul>
+                                            </div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                    <!-- Page body start -->
+            <h:form>                         
+<div class="page-body">
+                                        
+<div class="row">
+                                            
+<div class="col-sm-12">
+                                                <!-- Default Date-Picker card start -->
+                   
+
+                                                                
+
+    
+                                                     <!-- Date-Dropper card start -->
+       
+                                                                                     
+<div class="card">
+                                                    
+<div class="card-header">
+                                                        
+<h2>Update a supply</h2>
+    <h:inputText  id="nomp" class="form-control" value="#{plaController.nom}" required="true" requiredMessage="le champs est obligatoire">
+       
+        </h:inputText>
+          <h:message for="nomp" style="color:red"></h:message>
+                                                    
+                                                    </div>
+                                                  
+<div class="card-block">
+                                                        
+<div class="row">
+                                                            
+<div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">price</h4>
+<h:inputText  id="prixp" class="form-control" value="#{plaController.prix}" required="true" requiredMessage="le champs est obligatoire">
+       
+        </h:inputText>
+          <h:message for="prixp" style="color:red"></h:message>
+                                                             
+
+ 	  
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Type</h4>
+<h:inputText   class="form-control" value="#{plaController.typeplat}">
+       
+        </h:inputText>
+          
+                                                             
+
+ 	  
+                                                            </div>
+                                                            
+
+                                                           
+                                                            
+  
+                                                            
+
+                                                        </div>
+                                         <center>           
+                    <h:commandButton class="btn btn-success" action="#{plaController.UpdatePlat()}" value="Update "/>
+                 
+                                                   </center>  
+                                               
+                                                               
+
+
+                                                    </div>
+                                                </div>
+                                             
+                                                <!-- Date-Dropper card end -->
+                                               
+
+
+                                                                     
+
+                                                            
+                                                      
+
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                    
+
+
+                                                                </div>
+                                                                </h:form>
+                                                            </div>
+                                                        </div>
+                                                  
+                                
+                                
+                          
+                            <!-- Main-body end -->
+	
+           
+
+                                       
+                                               
+                                               
+                                                        
+                                                      
+                                                      
+  
+                                                      
+                                                    
+	</ui:define>
+	</ui:composition>
+	
+
+ 

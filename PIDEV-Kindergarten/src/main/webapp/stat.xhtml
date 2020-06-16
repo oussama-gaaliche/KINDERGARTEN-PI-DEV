@@ -1,0 +1,102 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/template.xhtml"
+	xmlns:ct="http://www.chartistjsf.org/charts">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+		<h:head></h:head>
+		<div class="container" style="margin-top: 6%;">
+			<div class="row">
+
+				<div class="col col-lg-12 col-sm-12 col-12">
+
+					<div class="ui-block responsive-flex">
+
+						<div class="ui-block-title">
+							<div
+								style="width: 120%; height: 120%; margin-left: auto; margin-right: auto;">
+
+								<div class="h6 title">Registrations per kindergarten
+									during the last 3 years</div>
+							</div>
+
+
+
+						</div>
+
+						<div class="ui-block-content">
+
+							<div>
+								<ct:chart id="barChart" type="bar"
+									model="#{statControllerJSF.createBarModel()}">
+
+								</ct:chart>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+
+					<div class="ui-block responsive-flex" data-mh="pie-chart">
+
+						<div class="ui-block-title">
+
+							<div class="h6 title">Registrations this year -
+								Registration last year</div>
+
+
+
+
+						</div>
+
+						<div class="ui-block-content">
+
+							<ct:chart id="lineChart" type="line"
+								model="#{statControllerJSF.createLineModel()}">
+
+							</ct:chart>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+					<div class="ui-block" data-mh="pie-chart">
+
+						<div class="ui-block-title">
+
+							<div class="h6 title">Registration by kindergarten</div>
+
+						</div>
+
+						<div class="ui-block-content">
+
+							<div>
+
+								<div
+									style="width: 120%; height: 120%; margin-left: auto; margin-right: auto; margin-top: 50%; margin-bottom: 50%;">
+									<ct:chart id="radar-chart" type="pie"
+										model="#{statControllerJSF.createPieChart()}"></ct:chart>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</ui:define>
+</ui:composition>

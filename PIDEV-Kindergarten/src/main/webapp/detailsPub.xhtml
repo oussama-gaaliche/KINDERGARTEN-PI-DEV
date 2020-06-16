@@ -1,0 +1,286 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+		<h:head></h:head>
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="container">
+
+			<div class="row mt50">
+
+				<div class="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+
+
+
+					<div class="ui-block mb60">
+
+						<div class="ui-block">
+							<!-- Post -->
+
+							<article class="hentry blog-post blog-post-v2">
+
+
+								<div class="post-thumb">
+									<img src="img/#{PublicityController.imageEdit}" alt="photo" />
+									<a href="#" class="post-category bg-blue-light">THE
+										COMMUNITY</a>
+								</div>
+
+								<div class="post-content">
+
+
+
+
+
+
+									<a href="#"> <h:outputText class="h4 post-title"
+											value="#{PublicityController.productNameEdit}" /></a>
+
+
+									<div class="post__author author vcard inline-items">
+
+
+
+										<div class="author-date not-uppercase">
+											<a class="h6 post__author-name fn" href="#"> <h:outputText
+													value="#{PublicityController.marqueEdit}" /></a>
+
+
+										</div>
+									</div>
+
+
+									<div class="post-additional-info inline-items">
+
+
+
+
+
+										<div class="comments-shared">
+											<a href="#" class="post-add-icon inline-items"> <svg
+													class="[object SVGAnimatedString]">
+											<use xlink:href="#olymp-speech-balloon-icon" />
+										</svg> <span><h:outputText
+														value="#{PublicityController.getNbReview(PublicityController.pubIdToBeUpdated)}" /></span>
+											</a>
+										</div>
+
+									</div>
+								</div>
+							</article>
+
+							<!-- ... end Post -->
+						</div>
+
+
+						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+						</div>
+
+						<div class="crumina-module crumina-heading with-title-decoration">
+
+							<h5 class="heading-title">
+								Reviews
+								<h:outputText
+									value="#{PublicityController.getNbReview(PublicityController.pubIdToBeUpdated)}" />
+							</h5>
+						</div>
+
+						<!-- Comments -->
+
+						<h:panelGroup id="all">
+							<ul class="comments-list style-3">
+								<c:forEach
+									items="#{PublicityController.listReviwes(PublicityController.pubIdToBeUpdated) }"
+									var="r">
+
+									<li class="comment-item">
+
+										<div class="post__author-thumb">
+											<img src="files/img/avatar4.jpg" alt="author" />
+										</div>
+
+
+										<div class="comments-content">
+
+											<div class="post__author author vcard">
+
+
+												<div class="author-date">
+													<a class="h6 post__author-name fn" href="#"><h:outputText
+															value="#{r.user.username}" /></a>
+
+													<div class="post__date">
+														<time class="published" datetime="2004-07-24T18:18">
+															<h:outputText value="#{r.dateRating}" />
+														</time>
+													</div>
+												</div>
+
+											</div>
+
+
+											<p>
+												<h:outputText value="#{r.review}" />
+											</p>
+
+											<a href="#" class="reply">Reply</a> <a href="#"
+												class="report">Report</a>
+										</div>
+									</li>
+
+
+								</c:forEach>
+							</ul>
+						</h:panelGroup>
+
+						<!-- ... end Comments -->
+
+						<div
+							class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-center">
+
+							<h:form>
+								<h:commandLink id="btn"
+									styleClass="btn btn-purple btn-md mb60 mt60"
+									value="Load More Comments"
+									action="#{PublicityController.loadReviews()}">
+									<f:ajax render="all" />
+								</h:commandLink>
+
+							</h:form>
+						</div>
+
+
+						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+							<!-- Comment Form -->
+
+							<form>
+
+								<div
+									class="crumina-module crumina-heading with-title-decoration">
+
+									<h5 class="heading-title">Evaluate a Product</h5>
+								</div>
+
+								<div class="row">
+
+									<div
+										style="margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: 5%;">
+
+
+										<p:rating value="#{PublicityController.rating}">
+										</p:rating>
+									</div>
+
+
+
+
+
+
+									<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+										<h:inputTextarea class="form-control"
+											a:placeholder="Your Review"
+											value="#{PublicityController.review}"></h:inputTextarea>
+
+										<h:form>
+											<h:commandButton value="Save Your Review"
+												class="btn btn-primary btn-lg full-width"
+												action="#{PublicityController.addRating(PublicityController.pubIdToBeUpdated)}" />
+										</h:form>
+
+									</div>
+								</div>
+							</form>
+
+							<!-- ... end Comment Form -->
+
+
+						</div>
+					</div>
+				</div>
+
+					<div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+
+						<aside>
+
+							<div class="ui-block">
+
+								<div class="ui-block-title">
+
+									<h6 class="title">Recommended advertisement</h6>
+								</div>
+							</div>
+
+
+
+							<div class="ui-block">
+
+								<c:forEach
+									items="#{PublicityController.listPublicities2(PublicityController.getUserCo()) }"
+									var="pub2">
+									<!-- Post -->
+
+									<article
+										class="hentry blog-post blog-post-v3 featured-post-item">
+
+										<div class="post-thumb">
+											<img src="img/#{pub2.image}" alt="photo" /> <a href="#"
+												class="post-category bg-blue-light">THE COMMUNITY</a>
+										</div>
+
+
+
+										<div class="post-content">
+
+
+											<div class="author-date">
+												<a class="h4 post__author-name fn" href="#"><h:outputText
+														value="#{pub2.productName}" /></a>
+
+												
+											</div>
+
+											<a href="#" class="h4 post-title"><h:outputText
+													value="#{pub2.marque}" /></a>
+
+
+
+										</div>
+
+									</article>
+
+									<!-- ... end Post -->
+								</c:forEach>
+							</div>
+
+
+
+
+
+						</aside>
+					</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

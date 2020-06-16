@@ -21,8 +21,8 @@ import tn.esprit.spring.Repository.WordCountRepository;
 import tn.esprit.spring.Services.PostStatService;
 
 @Scope(value = "session")
-@Controller(value = "statControllerJSF")
-@ELBeanName(value = "statControllerjsf")
+@Controller(value = "staControllerJSF")
+@ELBeanName(value = "staControllerjsf")
 public class PostStatControllerJSF {
 
 private BarChartModel barChartModel;

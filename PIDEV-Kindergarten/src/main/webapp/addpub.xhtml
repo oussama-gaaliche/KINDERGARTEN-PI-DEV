@@ -6,61 +6,115 @@
 	<ui:param name="page_name" value="addpub" />
 	<ui:define name="content">
 
+		<div class="col-sm-12 align-center">
 
-		<h:panelGroup columns="2">
-			<h:form>
+			<h:panelGroup id="total" columns="2">
+				<h:panelGroup id="champ">
+					<h:form enctype='multipart/form-data'>
+						<h:panelGroup rendered="#{PublicityController.pub_exist}">
+							<div class="alert alert-danger background-danger">
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">
+									<i class="icofont icofont-close-line-circled text-white" />
+								</button>
+								<strong>This Publicity exists !</strong>
+							</div>
+						</h:panelGroup>
+						<h:panelGroup rendered="#{PublicityController.champs}">
+							<div class="alert alert-danger background-danger">
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">
+									<i class="icofont icofont-close-line-circled text-white" />
+								</button>
+								<strong> empty fields!</strong>
+							</div>
+						</h:panelGroup>
+
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Product Name</label>
+
+							<div class="col-sm-5">
+								<h:form>
+									<h:inputText class="form-control" id="input-name"
+										value="#{PublicityController.productName}">
+										<f:ajax event="blur" execute="input-name" render="total"
+											listener="#{PublicityController.pubExists()}"></f:ajax>
+									</h:inputText>
+								</h:form>
+
+							</div>
+
+						</div>
+
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Category</label>
+
+							<div class="col-sm-5">
+								<h:form>
+									<h:inputText type="text" class="form-control"
+										id="input-category" value="#{PublicityController.category}">
+										<f:ajax execute="input-category"></f:ajax>
+									</h:inputText>
+								</h:form>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Description</label>
+
+							<div class="col-sm-5">
+								<h:form>
+									<h:inputText type="text" class="form-control" id="input-marque"
+										value="#{PublicityController.marque}">
+										<f:ajax execute="input-marque"></f:ajax>
+									</h:inputText>
+								</h:form>
+							</div>
+						</div>
+
+						
+
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">sponsorship award</label>
+
+							<div class="col-sm-5">
+								<h:form>
+
+									<h:inputText class="form-control" id="input-price"
+										onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"
+										value="#{PublicityController.priceSponsoring}">
+										<f:ajax execute="input-price"></f:ajax>
+									</h:inputText>
+								</h:form>
+
+							</div>
+						</div>
+							<div class="form-group row">
+							<label class="col-sm-2 col-form-label">sponsorship award</label>
+
+							<div class="col-sm-5">
+						<h:form>
+							<h:inputFile type="file" class="file-uploader pull-right"
+								value="#{PublicityController.productImage}" id="unpit">
+								<f:ajax execute="unpit"></f:ajax>
+							</h:inputFile>
+						</h:form></div></div>
 
 
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Product Name</label>
-
-					<div class="col-sm-10">
-						<h:inputText type="text" class="form-control"
-							value="#{PublicityController.productName}"></h:inputText>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Category</label>
-
-					<div class="col-sm-10">
-						<h:inputText type="text" class="form-control"
-							value="#{PublicityController.category}"></h:inputText>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">product brand</label>
-
-					<div class="col-sm-10">
-						<h:inputText type="text" class="form-control"
-							value="#{PublicityController.marque}"></h:inputText>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">sponsorship award</label>
-
-					<div class="col-sm-10">
-						<h:inputText type="text" class="form-control"
-							value="#{PublicityController.priceSponsoring}"></h:inputText>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Upload Image</label>
-					<div class="col-sm-10">
-						<input type="file" class="form-control"></input>
-					</div>
-				</div>
-
-				<h:commandButton value="Add" class="btn btn-success"
-					action="#{PublicityController.addPub()}" />
+						<h:form>
 
 
-			</h:form>
-		</h:panelGroup>
+							<h:commandButton value="Add" class="btn btn-success"
+								action="#{PublicityController.addPub()}">
+								<f:ajax render="champ" />
+							</h:commandButton>
 
+						</h:form>
+					</h:form>
+				</h:panelGroup>
+			</h:panelGroup>
+
+		</div>
 
 	</ui:define>
 </ui:composition>

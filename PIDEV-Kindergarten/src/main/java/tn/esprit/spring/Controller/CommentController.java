@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.Comment;
 import tn.esprit.spring.entity.Post;
-import tn.esprit.spring.services.ICommentService;
+import tn.esprit.spring.Services.ICommentService;
 @RestController
 
 public class CommentController {

@@ -144,7 +144,7 @@ public class UserControlerAdd {
 			
 			usera.setUsername(username);
 			usera.setNumtel(numtel);
-			usera.setRoles(role);
+			usera.setRoles(role.toString());
 			System.out.println("ammar§§§§§§§§§§"+usera.getNom());
 			if(usera.getPassword().equals(usera.getPasswordConfirm())){
 			String pwd=usera.getPassword();

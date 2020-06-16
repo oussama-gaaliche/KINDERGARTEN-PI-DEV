@@ -27,4 +27,10 @@ public List<Publicity> listPub(@Param("id") Long id);
 	
 	@Query("select p.average from Publicity p where p.id=:id")
 	public float getRating(@Param("id") int id);
+	
+	@Query("SELECT p FROM Publicity p WHERE p.productName LIKE CONCAT('%',:string,'%')")
+	public List<Publicity> searchPublicity(@Param("string") String msg);
+	
+	@Query("SELECT p FROM Publicity p WHERE p.productName=: string")
+	public Publicity getPubByName(@Param("string") String msg);
 }

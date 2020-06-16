@@ -53,7 +53,7 @@ public class LikeController {
 		return reactService.addReaction(userManagedEntity.getId(), idPost, rp);
 
 	}
-	@GetMapping(value ="/retrieve-all-likes")
+	@GetMapping(value ="/retrieve-likes")
 	@ResponseBody
 	public List<Reaction> getLikes() {
 	

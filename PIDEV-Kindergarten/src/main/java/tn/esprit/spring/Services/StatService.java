@@ -74,8 +74,8 @@ public class StatService implements IStatService {
 	
 	for( User u : user){
 	
-			u.setScore( (StatisticRepository.bLikeParUser(u.getId())) + 2*(StatisticRepository.nbComParUser(u.getId())) 
-					+ 3* (StatisticRepository.nbPostParUser(u.getId())) + 4*(StatisticRepository.nbParticipationParUser(u.getId())) );
+			u.setScore( (float) ( 0.1 *(StatisticRepository.bLikeParUser(u.getId())) + 0.2 *(StatisticRepository.nbComParUser(u.getId())) 
+					+ 0.4* (StatisticRepository.nbPostParUser(u.getId())) + 0.3*(StatisticRepository.nbParticipationParUser(u.getId()))) );
 			
 			StatisticRepository.save(u);
 	

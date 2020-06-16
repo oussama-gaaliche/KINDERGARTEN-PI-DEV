@@ -44,7 +44,7 @@ public class CommentServiceImpl implements ICommentService {
 		Post post = postRepository.findById(postId).get();
 		Comment comment = new Comment();
 		comment.setUser(userrManagedEntity);
-		comment.setDate(ZonedDateTime.now());
+		//comment.setDate(ZonedDateTime.now());
 		output = BadWordFilter.getCensoredText(cmt);
 		comment.setContained(output);
 		comment.setPost(post);
