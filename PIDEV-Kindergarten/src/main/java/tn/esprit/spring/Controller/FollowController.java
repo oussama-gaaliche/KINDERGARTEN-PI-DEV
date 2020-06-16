@@ -75,6 +75,42 @@ public class FollowController {
 	{
 		return followservice.userssendedtome(HomeController.connectedUser);
 	}
+	@RequestMapping(method=RequestMethod.PUT,value="/f/{id}")
+	public String AcceptdemandeStatus(@PathVariable Long  id)
+	{
+		
+		Follow follow=new Follow();
+		Follow follow1=new Follow();
+		follow1=followRepository.cherchefollow(id, HomeController.connectedUser).stream().findFirst().get();
+		System.out.println(follow1.getId());
+		follow=followRepository.findById(follow1.getId()).get();
+		
+		follow.setEtat("Accepted");
+		followservice.changeStatus(follow, follow1.getId());
+		int idd=follow1.getId();
+		follow = followservice.allFollows().stream().filter(d->d.getId()==idd).findFirst().get();
+		
+		boolean s=false;
+		if(follow.getEtat().equals("Accepted"))	{
+			
+		for(Friend f :friendService.allFriend()){
+			if((f.getUser1()==follow.getId_Sender()&& f.getUser2()==follow.getUserReciver().getId())||(f.getUser2()==follow.getId_Sender()&& f.getUser1()==follow.getUserReciver().getId()))
+				s=true;
+			
+		}
+		if(s==true)
+			return "cc";
+		else {
+			if(follow.getUserReciver().getUsername().equals(HomeController.connectedUser))
+			friendService.addFriend(new Friend(follow.getId_Sender(),follow.getUserReciver().getId(),false,false,false,null));
+			else
+				return "bb";
+		}
+		}
+		else
+			followservice.DeleteFollow(follow);	
+		return "dd";
+	}
 	@RequestMapping(method=RequestMethod.PUT,value="/{etat}&{id}")
 	public String demandeStatus(@PathVariable String  etat,@PathVariable int  id)
 	{
@@ -116,16 +152,12 @@ public class FollowController {
 		return friendService.friendNonPreferer(HomeController.connectedUser);
 		
 	}
-//	@Transactional
-//	@Scheduled(cron="*/3600 * * * * ?")
-//	public void suppdemande(){
-//		followservice.DeleteFollowAuto();
-//	}
+
 	@RequestMapping(method=RequestMethod.PUT,value="/block/{id}")
-	public String blockFriend(@PathVariable Long id){
+	public void blockFriend(@PathVariable Long id){
 		friendService.BlockFriend(id, HomeController.connectedUser);
 		
-		return "Blocked success";
+		
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT,value="/blocksign/{id}")

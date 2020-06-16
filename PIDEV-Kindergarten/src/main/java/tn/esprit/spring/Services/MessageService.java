@@ -95,7 +95,7 @@ public class MessageService {
 		messageRepository.delete(message);
 		return "supprission de message succes";
 	}
-	//@Scheduled(initialDelay=1000L,fixedDelayString= "PT10S")
+	
 	public List<User> listactif(){
 		List<User> li= messageRepository.lista(HomeController.connectedUser);
 		

@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -90,14 +92,15 @@ public class User implements Serializable {
 	private List<Publicity> publicity;
 	@Transient
 	private String passwordConfirm;
-	private String roles;
+	@Enumerated(EnumType.STRING)
+	private Role roles;
 	private boolean active;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Facture> factures;
 	public User() {
 		super();
 	}
-	public User(Long id, String username, String nom,String prenom,String password,String email,Long numtel, String status,String passwordConfirm, String roles) {
+	public User(Long id, String username, String nom,String prenom,String password,String email,Long numtel, String status,String passwordConfirm, Role roles) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -111,7 +114,7 @@ public class User implements Serializable {
 		this.roles = roles;
 	}
 	public User(String username,String nom,String prenom,String password,String email,Long numtel, String status,
-			String roles) {
+			Role roles) {
 		super();
 		this.username = username;
 		this.nom = nom;
@@ -126,7 +129,7 @@ public class User implements Serializable {
 			@NotEmpty(message = "Please provide your first name") String nom,
 			@NotEmpty(message = "Please provide your last name") String prenom, String password,
 			@Email(message = "Please provide a valid e-mail") @NotEmpty(message = "Please provide an e-mail") String email,
-			Long numtel, String status, int nbrsig, List<Message> messages, String passwordConfirm, String roles,
+			Long numtel, String status, int nbrsig, List<Message> messages, String passwordConfirm, Role roles,
 			boolean active) {
 		super();
 		this.username = username;
@@ -142,14 +145,14 @@ public class User implements Serializable {
 		this.roles = roles;
 		this.active = active;
 	}
-	public User(String username,String password,String email,String roles) {
+	public User(String username,String password,String email,Role roles) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.roles = roles;
 	}
-	public User(String username,String nom,String prenom,String password, String email,Long numtel, String status,String passwordConfirm, String roles) {
+	public User(String username,String nom,String prenom,String password, String email,Long numtel, String status,String passwordConfirm, Role roles) {
 		super();
 		this.username = username;
 		this.nom = nom;
@@ -221,10 +224,10 @@ public class User implements Serializable {
 	public void setPasswordConfirm(String passwordConfirm) {
 		this.passwordConfirm = passwordConfirm;
 	}
-	public String getRoles() {
+	public Role getRoles() {
 		return roles;
 	}
-	public void setRoles(String roles) {
+	public void setRoles(Role roles) {
 		this.roles = roles;
 	}
 	public int getNbrsig() {
@@ -248,7 +251,7 @@ public class User implements Serializable {
 			@Email(message = "Please provide a valid e-mail") @NotEmpty(message = "Please provide an e-mail") String email,
 			Long numtel, String status, int nbrsig, Date dateInscription, float score, List<Event> eventm,
 			List<Participation> participations, List<Evaluation> evaluations, List<Message> messages,
-			List<Enfant> enfant, List<Publicity> publicity, String passwordConfirm, String roles, boolean active,
+			List<Enfant> enfant, List<Publicity> publicity, String passwordConfirm, Role roles, boolean active,
 			Set<Facture> factures, String image) {
 		super();
 		this.id = id;

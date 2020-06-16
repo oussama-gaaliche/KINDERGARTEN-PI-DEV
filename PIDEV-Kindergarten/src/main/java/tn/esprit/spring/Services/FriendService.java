@@ -62,7 +62,7 @@ public class FriendService {
 	public List<User> myFriends(String username )
 	{
 		User connected = userRepository.findByUsername(username).get();
-		List<Friend> myfriend=allFriend().stream().filter(r->(r.getUser1()== connected.getId() || r.getUser2()== connected.getId())&&r.isStatus()==false).collect(Collectors.toList());
+		List<Friend> myfriend=allFriend().stream().filter(r->( (r.getUser1()== connected.getId() || r.getUser2()== connected.getId())&&r.isStatus()==false)).collect(Collectors.toList());
 				List<User> MyFriends= new ArrayList<>();
 				myfriend.forEach(r->{
 			if(r.getUser1() == connected.getId())
@@ -72,6 +72,10 @@ public class FriendService {
 				
 		});
 		return MyFriends;
+	}
+	public void deletfriend(Long id,long idr){
+		Friend friend=allFriend().stream().filter(r->(r.getUser1()== id && r.getUser2()==idr)||(r.getUser2()== id && r.getUser1()==idr)).findFirst().get();
+		friendRepository.delete(friend);
 	}
 	
 	public List<User> friendNonPreferer(String username){
@@ -143,14 +147,14 @@ public class FriendService {
 		f.setSigblock(true);
 		f.setIdsign(connected.getId());
 		friendRepository.save(f);
-		return"sgnal friend acces";
+		return"/AllUser.xhtml?faces-redirect=true";
 			}
 		break;
 		}
 		
 		}
 		
-			return "forbidden  signal ";
+			return "/profil.xhtml?faces-redirect=true";
 		}
 	@Transactional
 	@Scheduled(cron="*/10 * * * * ?")
