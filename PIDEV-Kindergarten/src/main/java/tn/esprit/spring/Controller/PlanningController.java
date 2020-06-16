@@ -24,11 +24,7 @@ public class PlanningController {
 	PlanningServiceImpl planningservice;
 
 	
-	@GetMapping("/Parents/{id}")
-	public List<User> parents(@PathVariable("id")Long id) {
-		return planningservice.parents(id);
-	}
-
+	
 
 	@GetMapping("/SendEmail")
 	public String EnvoiPlanning() {
@@ -36,10 +32,6 @@ public class PlanningController {
 	}
 
 	
-	@GetMapping("/p/{date}")
-	public List<Planning> GetPlByDate(@PathVariable("date") @DateTimeFormat(pattern ="yyyy-MM-dd") Date date) {
-		return planningservice.GetPlByDate(date);
-	}
 	
 	
 	@PostMapping("/addPlanning")

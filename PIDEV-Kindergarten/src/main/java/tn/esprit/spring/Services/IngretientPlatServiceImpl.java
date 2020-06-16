@@ -58,7 +58,12 @@ public class IngretientPlatServiceImpl implements IngretientPlatService{
 		List<Ingredient> ingredient=iprepo.GetIngreidnet(plat);
 		for (Ingredient i:ingredient)
 			 re.add(i);
-           return re;
+           return re;	
+	}
+
+	@Override
+	public List<IngredientPlat> getAll() {
+		return iprepo.findAll();
 		
 	}
 
