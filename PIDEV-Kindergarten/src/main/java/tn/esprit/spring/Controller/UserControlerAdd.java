@@ -2,7 +2,9 @@ package tn.esprit.spring.Controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.Part;
 
@@ -20,11 +22,13 @@ import tn.esprit.spring.Repository.UserRepository;
 import tn.esprit.spring.Services.FriendService;
 import tn.esprit.spring.Services.MessageService;
 import tn.esprit.spring.Services.UserService;
+import tn.esprit.spring.entity.Role;
+import tn.esprit.spring.entity.Message;
 import tn.esprit.spring.entity.User;
 @Scope(value = "session")
 @Controller(value ="userControlleradd")
 @ELBeanName(value = "userControlleradd")
-@Join(path = "/Acceuil.jsf", to = "/Acceuil.jsf")
+@Join(path = "/", to = "/AllUser.jsf")
 public class UserControlerAdd {
 	@Autowired
     ActiveUserStore activeUserStore;
@@ -58,9 +62,8 @@ public class UserControlerAdd {
 	private String username;
 	private String status;
 	private Long numtel;
-	private String Roles;
+	private Role role;
 	private Part  myImage;
-
 
 	public Part getMyImage() {
 		return myImage;
@@ -68,11 +71,11 @@ public class UserControlerAdd {
 	public void setMyImage(Part myImage) {
 		this.myImage = myImage;
 	}
-	public String getRoles() {
-		return Roles;
+	public Role getRole() {
+		return role;
 	}
-	public void setRoles(String roles) {
-		Roles = roles;
+	public void setRole(Role roles) {
+		role = roles;
 	}
 	public String getNom() {
 		return nom;
@@ -128,7 +131,10 @@ public class UserControlerAdd {
 	public void setUseradd(User useradd) {
 		this.useradd = useradd;
 	}
-	public String addUser(){
+	public Role[] getRoles() { return Role.values(); }
+	
+	
+	public void addUser(){
 			User usera=new User();
 			usera.setNom(nom);
 			usera.setPrenom(prenom);
@@ -138,32 +144,32 @@ public class UserControlerAdd {
 			
 			usera.setUsername(username);
 			usera.setNumtel(numtel);
-			usera.setRoles(Roles);
+			usera.setRoles(role);
 			System.out.println("ammar§§§§§§§§§§"+usera.getNom());
 			if(usera.getPassword().equals(usera.getPasswordConfirm())){
 			String pwd=usera.getPassword();
 			String encryptpwd= passwordEncoder.encode(pwd);
 			usera.setPassword(encryptpwd);
 			usera.setScore(0);
-			usera.setRoles("ADMIN");
 			usera.setStatus("0");
 			
 			usera.setDateInscription(new Date());
 			usera.setActive(false);
-			usera.setImage("lol");
-			System.out.println(im);
+			usera.setImage("files\\userImage\\20200215_230231.jpg");
+			System.out.println("lol");
 			userRepository.save(usera);
 			
-			return "";
 			}
-			return "";
+			
 		}
+	
 	
 	public void addImage() throws IOException {
     	System.out.println("oussama!!!!!!!!!!!!!!!");
     	myImage.write("C:\\Users\\Oussama\\git\\KINDERGARTEN-PI-DEV\\PIDEV-Kindergarten\\src\\main\\webapp\\files\\userImage\\"+myImage.getSubmittedFileName());		 		 
 		 File oldFile=new File("C:\\Users\\Oussama\\git\\KINDERGARTEN-PI-DEV\\PIDEV-Kindergarten\\src\\main\\webapp\\files\\userImage\\"+myImage.getSubmittedFileName());
 		 String AddedName=userService.getAlphaNumericString(7)+myImage.getSubmittedFileName();
+		 String AddedName1=userService.getAlphaNumericString(7)+myImage.getSubmittedFileName();
 		 File newfile =new File("C:\\Users\\Oussama\\git\\KINDERGARTEN-PI-DEV\\PIDEV-Kindergarten\\src\\main\\webapp\\files\\userImage\\"+AddedName);
 		 oldFile.renameTo(newfile);		 
 //		 User userWithImage= new User();

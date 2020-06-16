@@ -1,3 +1,4 @@
+
 package tn.esprit.spring.Configuration;
 
 import java.util.Arrays;
@@ -25,7 +26,7 @@ public class MyUserDetail implements UserDetails {
 		this.username=user.getUsername();
 		this.password=user.getPassword();
 		this.active=user.isActive();
-		this.authorities=Arrays.stream(user.getRoles().split(",")).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+		this.authorities=Arrays.stream(user.getRoles().toString().split(",")).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
 	 }
 
 	@Override

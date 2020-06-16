@@ -1,3 +1,4 @@
+
 package tn.esprit.spring.Services;
 
 
@@ -14,13 +15,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.Controller.HomeController;
+import tn.esprit.spring.Controller.UserControllerfront;
 import tn.esprit.spring.Repository.FollowRepository;
 import tn.esprit.spring.Repository.UserRepository;
 import tn.esprit.spring.entity.Follow;
 import tn.esprit.spring.entity.User;
 
 @Service
-@EnableScheduling
 public class FollowService  {
 	@Autowired
 	FollowRepository FollowRepository;
@@ -71,6 +73,7 @@ public class FollowService  {
 		return  allFollows().stream().filter(d->d.getId_Sender()==userRepository.findByUsername(userName).get().getId()).collect(Collectors.toList());		
 	}
 	
+	
 	public void  changeStatus(Follow follow , int id )
 	{
 		Follow selected = allFollows().stream().filter(d->d.getId()==id).findFirst().get();
@@ -85,7 +88,19 @@ public class FollowService  {
 	{
 		FollowRepository.delete(follow);
 	}
-	
+	public User userconnecter(){
+		return userRepository.userconnect(HomeController.connectedUser);
+	}
+	public void DeleteFollow1(long id )
+	{
+		Follow selected = allFollows().stream().filter(d->(d.getId_Sender()==userconnecter().getId() && d.getUserReciver().getId()==id)).findFirst().get();
+		FollowRepository.delete(selected);
+	}
+	public void DeleteFollow2(long id )
+	{
+		Follow selected = allFollows().stream().filter(d->(d.getId_Sender()==id && d.getUserReciver().getId()==userconnecter().getId())).findFirst().get();
+		FollowRepository.delete(selected);
+	}
 	public void DeleteFollowAuto()
 	{
 		
@@ -96,3 +111,4 @@ public class FollowService  {
 	}
 
 }
+

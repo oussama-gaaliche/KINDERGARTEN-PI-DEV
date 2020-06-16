@@ -1,0 +1,466 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+ xmlns:p="http://primefaces.org/ui"
+xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+
+<div class="fixed-sidebar right">
+	<div class="fixed-sidebar-right sidebar--small" id="sidebar-right">
+
+		<div class="mCustomScrollbar ps ps--theme_default ps--active-y" data-mcs-theme="dark" data-ps-id="5e38e5d5-85e7-01f8-cc4e-0a8eea30b98b">
+			<ul class="chat-users">
+			<c:forEach items="#{userControllerfront.lisAmiprefrerer()}" var="friend"  >	
+				<li class="inline-items js-chat-open"  >
+					<div class="author-thumb">
+					<h:form>
+					<img alt="author" src="#{friend.image}" class="avatar" width="24px" height="24px" onclick="#{userControllerfront.remplirusername(friend)}" /> 
+					</h:form>
+					
+						
+						<span class="icon-status online"></span>
+					</div>
+				</li>
+</c:forEach>
+			</ul>
+			<ul class="chat-users" >
+
+				
+
+			<c:forEach items="#{userControllerfront.listFNP()}" var="friend"  >	
+<li class="inline-items js-chat-open"  >
+					
+<div class="author-thumb">
+<img alt="author" src="#{friend.image}" class="avatar" width="24px" height="24px" onclick="#{userControllerfront.remplirusername(friend)}" /> 
+					
+						<span class="icon-status online" />
+					</div>
+				</li>
+				
+				</c:forEach>
+			</ul>
+		<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; height: 513px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 398px;"></div></div></div>
+
+		<div class="search-friend inline-items">
+			<a href="#" class="js-sidebar-open">
+				<svg class="olymp-menu-icon"><use xlink:href="#olymp-menu-icon"></use></svg>
+			</a>
+		</div>
+
+		<a href="#" class="olympus-chat inline-items js-chat-open">
+			<svg class="olymp-chat---messages-icon"><use xlink:href="#olymp-chat---messages-icon"></use></svg>
+		</a>
+
+	</div>
+
+	<div class="fixed-sidebar-right sidebar--large" id="sidebar-right-1">
+
+		<div class="mCustomScrollbar ps ps--theme_default ps--active-y" data-mcs-theme="dark" data-ps-id="449fedfe-a1bc-a9d2-bfdc-538f76028e5d">
+
+			<div class="ui-block-title ui-block-title-small">
+				<a href="#" class="title">Close Friends</a>
+				<a href="#">Settings</a>
+			</div>
+
+			<ul class="chat-users">
+			<c:forEach items="#{userControllerfront.lisAmiprefrerer()}" var="friend"  >	
+			<h:form>
+				<li class="inline-items js-chat-open">
+
+					<div class="author-thumb">
+					<h:commandLink action="#{userControllerfront.remplirusername(friend)}" >
+					
+						<img alt="author" src="#{friend.image}" class="avatar" width="24px" height="24px"  />
+						
+					</h:commandLink>
+						<span class="icon-status online"></span>
+					</div>
+
+					<div class="author-status">
+						<a href="#" class="h6 author-name"><h:outputText class="control-label" value="#{friend.username}" /></a>
+						<span class="status">ONLINE</span>
+					</div>
+
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="#olymp-three-dots-icon"></use></svg>
+
+						<ul class="more-icons">
+							<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="#olymp-comments-post-icon"></use></svg>
+							</li>
+
+							<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="#olymp-add-to-conversation-icon"></use></svg>
+							</li>
+
+							<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="#olymp-block-from-chat-icon"></use></svg>
+							</li>
+						</ul>
+
+					</div>
+
+				</li>
+				</h:form></c:forEach>
+			</ul>
+
+			
+
+			<div class="ui-block-title ui-block-title-small">
+				<a href="#" class="title">UNCATEGORIZED</a>
+				<a href="#">Settings</a>
+			</div>
+
+			<ul class="chat-users">
+			<c:forEach items="#{userControllerfront.listFNP()}" var="friend"  >	
+			<h:form>
+				<li class="inline-items js-chat-open">
+
+					<div class="author-thumb">
+					<h:commandLink action="#{userControllerfront.remplirusername(friend)}" >
+						<img alt="author" src="#{friend.image}" class="avatar" width="24px" height="24px"  />
+						</h:commandLink>
+					
+						<span class="icon-status online"></span>
+					</div>
+
+					<div class="author-status">
+						<a href="#" class="h6 author-name"><h:outputText class="control-label" value="#{friend.username}" /></a>
+						<span class="status">ONLINE</span>
+					</div>
+
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="#olymp-three-dots-icon"></use></svg>
+
+						<ul class="more-icons">
+							<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="#olymp-comments-post-icon"></use></svg>
+							</li>
+
+							<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="#olymp-add-to-conversation-icon"></use></svg>
+							</li>
+
+							<li>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="#olymp-block-from-chat-icon"></use></svg>
+							</li>
+						</ul>
+
+					</div>
+
+				</li>
+				</h:form></c:forEach>
+			</ul>
+
+			
+		<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; height: 513px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 319px;"></div></div></div>
+
+		<div class="search-friend inline-items">
+			<form class="form-group is-empty">
+				<input class="form-control" placeholder="Search Friends..." value="" type="text"></input>
+			<span class="material-input"></span></form>
+
+			<a href="29-YourAccount-AccountSettings.html" class="settings">
+				<svg class="olymp-settings-icon"><use xlink:href="#olymp-settings-icon"></use></svg>
+			</a>
+
+			<a href="#" class="js-sidebar-open">
+				<svg class="olymp-close-icon"><use xlink:href="#olymp-close-icon"></use></svg>
+			</a>
+		</div>
+
+		<a href="#" class="olympus-chat inline-items js-chat-open">
+
+			<h6 class="olympus-chat-title">OLYMPUS CHAT</h6>
+			<svg class="olymp-chat---messages-icon"><use xlink:href="#olymp-chat---messages-icon"></use></svg>
+		</a>
+
+	</div>
+</div>
+<div class="ui-block popup-chat popup-chat-responsive" tabindex="-1" role="dialog" aria-labelledby="popup-chat-responsive" aria-hidden="true">
+	
+<div class="modal-content">
+		
+<div class="modal-header">
+			
+			
+<h6 class="title">Chat</h6>
+			
+
+		</div>
+		
+<div class="modal-body">
+			
+<div class="mCustomScrollbar">
+				
+<ul class="notification-list chat-message chat-message-field">
+		<c:forEach items="#{userControllerfront.messagesWithOther()}" var="message" >
+		
+		<c:if test="#{userControllerfront.userconnecter().username == message.sender}">
+		<li>
+						
+<div class="author-thumb">
+							<img src="#{userControllerfront.userconnecter().image}" alt="author" class="mCS_img_loaded" width="30px" height="30px" />
+						</div>
+						
+<div class="notification-event">
+							<span class="chat-message-item"><h:outputText class="control-label" value="#{message.messageContenu}" /></span>
+							
+							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18"><h:outputText class="control-label" value="#{message.date}" /></time></span>
+						</div>
+					</li>
+		</c:if>
+		
+		<c:if test="#{userControllerfront.username1 == message.sender}">
+		
+		<li>
+						
+<div class="author-thumb">
+							<img src="#{message.userReciver.image}" alt="author" class="mCS_img_loaded" width="30px" height="30px"/>
+						</div>
+						
+<div class="notification-event">
+							<span class="chat-message-item"><h:outputText class="control-label" value="#{message.messageContenu}" /></span>
+							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18"><h:outputText class="control-label" value="#{message.date}" /></time></span>
+						</div>
+					</li>
+		</c:if>
+		</c:forEach>			
+
+					
+
+				</ul>
+			</div>
+			
+		<h:form class="need-validation">
+<div class="form-group label-floating is-empty">
+			<label class="control-label">Press enter to post...</label>
+			
+			<h:inputTextarea  class="form-control" placeholder="" value="#{userControllerfront.messcont}"   />
+			
+<div class="add-options-message">
+				<h:commandLink action="#{userControllerfront.sendMessage()}" class="options-message">
+					<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-computer-icon" /></svg>
+				</h:commandLink>
+				
+<div class="options-message smile-block">
+					<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-happy-sticker-icon" /></svg>
+					
+<ul class="more-dropdown more-with-triangle triangle-bottom-right">
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat1.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat2.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat3.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat4.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat5.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat6.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat7.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat8.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat9.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat10.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat11.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat12.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat13.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat14.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat15.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat16.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat17.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat18.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat19.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat20.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat21.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat22.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat23.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat24.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat25.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat26.png" alt="icon" />
+							</a>
+						</li>
+						
+<li>
+							<a href="#">
+								<img src="files\img/icon-chat27.png" alt="icon" />
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</h:form>
+	
+		</div>
+	</div>
+</div>
+<!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
+<a class="back-to-top" href="#">
+	<img src="files\svg-icons/back-to-top.svg" alt="arrow" class="back-icon" /></a>
+<script src="files\js/jQuery/jquery-3.4.1.js"></script>
+<script src="files\js/libs/jquery.appear.js"></script>
+<script src="files\js/libs/jquery.mousewheel.js"></script>
+<script src="files\js/libs/perfect-scrollbar.js"></script>
+<script src="files\js/libs/jquery.matchHeight.js"></script>
+<script src="files\js/libs/svgxuse.js"></script>
+<script src="files\js/libs/imagesloaded.pkgd.js"></script>
+<script src="files\js/libs/Headroom.js"></script>
+<script src="files\js/libs/velocity.js"></script>
+<script src="files\js/libs/ScrollMagic.js"></script>
+<script src="files\js/libs/jquery.waypoints.js"></script>
+<script src="files\js/libs/jquery.countTo.js"></script>
+<script src="files\js/libs/popper.min.js"></script>
+<script src="files\js/libs/material.min.js"></script>
+<script src="files\js/libs/bootstrap-select.js"></script>
+<script src="files\js/libs/smooth-scroll.js"></script>
+<script src="files\js/libs/selectize.js"></script>
+<script src="files\js/libs/swiper.jquery.js"></script>
+<script src="files\js/libs/moment.js"></script>
+<script src="files\js/libs/daterangepicker.js"></script>
+<script src="files\js/libs/fullcalendar.js"></script>
+<script src="files\js/libs/isotope.pkgd.js"></script>
+<script src="files\js/libs/ajax-pagination.js"></script>
+<script src="files\js/libs/Chart.js"></script>
+<script src="files\js/libs/chartjs-plugin-deferred.js"></script>
+<script src="files\js/libs/circle-progress.js"></script>
+<script src="files\js/libs/loader.js"></script>
+<script src="files\js/libs/run-chart.js"></script>
+<script src="files\js/libs/jquery.magnific-popup.js"></script>
+<script src="files\js/libs/jquery.gifplayer.js"></script>
+<script src="files\js/libs/mediaelement-and-player.js"></script>
+<script src="files\js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="files\js/libs/ion.rangeSlider.js"></script>
+
+<script src="files\js/main.js"></script>
+<script src="files\js/libs-init/libs-init.js"></script>
+<script defer="" src="files\fonts/fontawesome-all.js"></script>
+
+<script src="files\Bootstrap/dist/js/bootstrap.bundle.js"></script>
+</ui:composition>
+

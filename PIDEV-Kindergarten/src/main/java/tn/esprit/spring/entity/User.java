@@ -1,9 +1,29 @@
 
+
 package tn.esprit.spring.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -94,6 +114,17 @@ public class User implements Serializable {
 	private boolean active;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Facture> factures;
+	@JsonIgnore
+	@OneToMany(mappedBy="user")
+	private List<Post> post;
+	@JsonIgnore
+	@OneToMany(mappedBy="user")
+	private Set<Reaction> like;
+	@JsonIgnore
+	@OneToMany(mappedBy="user")
+	private Set<Comment> comment;
+	@OneToMany(mappedBy="user")
+	private Set<PostReport> postreport;
 	public User() {
 		super();
 	}
@@ -276,4 +307,5 @@ public class User implements Serializable {
 	}
 	
 	
+
 }

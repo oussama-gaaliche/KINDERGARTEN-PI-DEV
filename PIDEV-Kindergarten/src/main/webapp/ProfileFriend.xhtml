@@ -1,0 +1,477 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	template="/template/template.xhtml">
+	<ui:param name="page_name" value="profil" />
+	<ui:define name="content">
+	
+	<body class="page-has-left-panels page-has-right-panels">
+	
+<title>Profile Page - Friends</title>
+	<!-- Required meta tags always come first -->
+	
+<meta charset="utf-8" />
+	
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="files\Bootstrap/dist/css/bootstrap-reboot.css" />
+	<link rel="stylesheet" type="text/css" href="files\Bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="files\Bootstrap/dist/css/bootstrap-grid.css" />
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="files\css/main.css" />
+	<link rel="stylesheet" type="text/css" href="files\css/fonts.min.css" />
+	<!-- Main Font -->
+	
+<script src="files\js/libs/webfontloader.min.js"></script>
+	
+<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+<!-- Preloader -->
+
+
+<ui:include src="/headerfriend.xhtml"/>
+<div class="container">
+	
+<div class="row">
+		
+<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			
+<div class="ui-block responsive-flex">
+				
+<div class="ui-block-title">
+				<h:form>
+<div class="h6 title"><h:outputText  value="#{userControllerfront.userprofil.nom}'s Friends (#{userControllerfront.countFriend()})" /> Friends (86)</div>
+</h:form>
+					<form class="w-search">
+						
+<div class="form-group with-button">
+							<input class="form-control" type="text" placeholder="Search Friends..." />
+							<button>
+								<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon" /></svg>
+							</button>
+						</div>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+	</div></div>
+<!-- Friends -->
+
+<div class="container">
+	<h:form>
+		<c:forEach items="#{userControllerfront.friendp()}" var="user" >
+<div class="row">
+		
+<div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+			
+<div class="ui-block">
+				
+				<!-- Friend Item -->
+				
+				
+<div class="friend-item">
+					
+<div class="friend-header-thumb">
+						<img src="files\img/friend1.jpg" alt="friend" />
+					</div>
+				
+					
+<div class="friend-item-content">
+				
+						
+<div class="more">
+							
+							
+<ul class="more-dropdown">
+								
+<li>
+									<a href="#">Report Profile</a>
+								</li>
+								
+<li>
+									<a href="#">Block Profile</a>
+								</li>
+								
+<li>
+									<a href="#">Turn Off Notifications</a>
+								</li>
+							</ul>
+						</div>
+						
+<div class="friend-avatar">
+							
+<div class="author-thumb">
+								<img src="#{user.image}" alt="author" width="92px" height="92px" />
+							</div>
+							
+<div class="author-content">
+								<a href="#" class="h5 author-name"><h:outputText  value="#{user.nom} " /><h:outputText  value="#{user.prenom}" /></a>
+								
+<div class="country">Tunis, Tunisia</div>
+							</div>
+						</div>
+				
+						
+<div class="swiper-container" data-slide="fade">
+							
+<div class="swiper-wrapper">
+								
+<div class="swiper-slide">
+									
+<div class="friend-count" data-swiper-parallax="-500">
+										<a href="#" class="friend-count-item">
+											
+<div class="h6">52</div>
+											
+<div class="title">Friends</div>
+										</a>
+										<a href="#" class="friend-count-item">
+											
+<div class="h6">240</div>
+											
+<div class="title">Photos</div>
+										</a>
+										<a href="#" class="friend-count-item">
+											
+<div class="h6">16</div>
+											
+<div class="title">Videos</div>
+										</a>
+									</div>
+									
+<div class="control-block-button" data-swiper-parallax="-100">
+										<a href="#" class="btn btn-control bg-blue">
+											<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-happy-face-icon" /></svg>
+										</a>
+				
+										<a href="#" class="btn btn-control bg-purple">
+											<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-chat---messages-icon" /></svg>
+										</a>
+				
+									</div>
+								</div>
+				
+								
+<div class="swiper-slide">
+									
+<p class="friend-about" data-swiper-parallax="-500">
+										Hi!, I’m Marina and I’m a Community Manager for “Gametube”. Gamer and full-time mother.
+									</p>
+				
+									
+<div class="friend-since" data-swiper-parallax="-100">
+										<span>Friends Since:</span>
+										
+<div class="h6">December 2014</div>
+									</div>
+								</div>
+							</div>
+				
+							<!-- If we need pagination -->
+							
+<div class="swiper-pagination" />
+						</div>
+					</div>
+				</div>
+				
+				<!-- ... end Friend Item -->			</div>
+		</div>
+		
+</div>
+</c:forEach>
+		</h:form>
+</div>
+<!-- Window-popup Update Header Photo -->
+
+<div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
+	
+<div class="modal-dialog window-popup update-header-photo" role="document">
+		
+<div class="modal-content">
+			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-close-icon" /></svg>
+			</a>
+			
+<div class="modal-header">
+				
+<h6 class="title">Update Header Photo</h6>
+			</div>
+			
+<div class="modal-body">
+				<a href="#" class="upload-photo-item">
+				<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-computer-icon" /></svg>
+				
+<h6>Upload Photo</h6>
+				<span>Browse your computer.</span>
+			</a>
+				<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
+			<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-photos-icon" /></svg>
+			
+<h6>Choose from My Photos</h6>
+			<span>Choose from your uploaded photos</span>
+		</a>
+			</div>
+		</div>
+	</div></div>
+<!-- ... end Window-popup Update Header Photo -->
+<!-- Window-popup Choose from my Photo -->
+
+<div class="modal fade" id="choose-from-my-photo" tabindex="-1" role="dialog" aria-labelledby="choose-from-my-photo" aria-hidden="true">
+	
+<div class="modal-dialog window-popup choose-from-my-photo" role="document">
+		
+<div class="modal-content">
+			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-close-icon" /></svg>
+			</a>
+			
+<div class="modal-header">
+				
+<h6 class="title">Choose from My Photos</h6>
+				<!-- Nav tabs -->
+				
+<ul class="nav nav-tabs" role="tablist">
+					
+<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-expanded="true">
+							<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-photos-icon" /></svg>
+						</a>
+					</li>
+					
+<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-expanded="false">
+							<svg class="[object SVGAnimatedString]"><use xlink:href="files\svg-icons/sprites/icons.svg#olymp-albums-icon" /></svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+<div class="modal-body">
+				<!-- Tab panes -->
+				
+<div class="tab-content">
+					
+<div class="tab-pane active" id="home" role="tabpanel" aria-expanded="true">
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							
+<div class="radio">
+								<label class="custom-radio">
+									<img src="files\img/choose-photo1.jpg" alt="photo" />
+									<input type="radio" name="optionsRadios" />
+								</label>
+							</div>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							
+<div class="radio">
+								<label class="custom-radio">
+									<img src="files\img/choose-photo2.jpg" alt="photo" />
+									<input type="radio" name="optionsRadios" />
+								</label>
+							</div>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							
+<div class="radio">
+								<label class="custom-radio">
+									<img src="files\img/choose-photo3.jpg" alt="photo" />
+									<input type="radio" name="optionsRadios" />
+								</label>
+							</div>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							
+<div class="radio">
+								<label class="custom-radio">
+									<img src="files\img/choose-photo4.jpg" alt="photo" />
+									<input type="radio" name="optionsRadios" />
+								</label>
+							</div>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							
+<div class="radio">
+								<label class="custom-radio">
+									<img src="files\img/choose-photo5.jpg" alt="photo" />
+									<input type="radio" name="optionsRadios" />
+								</label>
+							</div>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							
+<div class="radio">
+								<label class="custom-radio">
+									<img src="files\img/choose-photo6.jpg" alt="photo" />
+									<input type="radio" name="optionsRadios" />
+								</label>
+							</div>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							
+<div class="radio">
+								<label class="custom-radio">
+									<img src="files\img/choose-photo7.jpg" alt="photo" />
+									<input type="radio" name="optionsRadios" />
+								</label>
+							</div>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							
+<div class="radio">
+								<label class="custom-radio">
+									<img src="files\img/choose-photo8.jpg" alt="photo" />
+									<input type="radio" name="optionsRadios" />
+								</label>
+							</div>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							
+<div class="radio">
+								<label class="custom-radio">
+									<img src="files\img/choose-photo9.jpg" alt="photo" />
+									<input type="radio" name="optionsRadios" />
+								</label>
+							</div>
+						</div>
+						<a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
+						<a href="#" class="btn btn-primary btn-lg btn--half-width">Confirm Photo</a>
+					</div>
+					
+<div class="tab-pane" id="profile" role="tabpanel" aria-expanded="false">
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							<figure>
+								<img src="files\img/choose-photo10.jpg" alt="photo" />
+								<figcaption>
+									<a href="#">South America Vacations</a>
+									<span>Last Added: 2 hours ago</span>
+								</figcaption>
+							</figure>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							<figure>
+								<img src="files\img/choose-photo11.jpg" alt="photo" />
+								<figcaption>
+									<a href="#">Photoshoot Summer 2016</a>
+									<span>Last Added: 5 weeks ago</span>
+								</figcaption>
+							</figure>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							<figure>
+								<img src="files\img/choose-photo12.jpg" alt="photo" />
+								<figcaption>
+									<a href="#">Amazing Street Food</a>
+									<span>Last Added: 6 mins ago</span>
+								</figcaption>
+							</figure>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							<figure>
+								<img src="files\img/choose-photo13.jpg" alt="photo" />
+								<figcaption>
+									<a href="#">Graffity &amp; Street Art</a>
+									<span>Last Added: 16 hours ago</span>
+								</figcaption>
+							</figure>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							<figure>
+								<img src="files\img/choose-photo14.jpg" alt="photo" />
+								<figcaption>
+									<a href="#">Amazing Landscapes</a>
+									<span>Last Added: 13 mins ago</span>
+								</figcaption>
+							</figure>
+						</div>
+						
+<div class="choose-photo-item" data-mh="choose-item">
+							<figure>
+								<img src="files\img/choose-photo15.jpg" alt="photo" />
+								<figcaption>
+									<a href="#">The Majestic Canyon</a>
+									<span>Last Added: 57 mins ago</span>
+								</figcaption>
+							</figure>
+						</div>
+						<a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
+						<a href="#" class="btn btn-primary btn-lg disabled btn--half-width">Confirm Photo</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div></div>
+<!-- ... end Window-popup Choose from my Photo -->
+<a class="back-to-top" href="#">
+	<img src="files\svg-icons/back-to-top.svg" alt="arrow" class="back-icon" /></a>
+<!-- Window-popup-CHAT for responsive min-width: 768px -->
+
+
+<script src="files\js/jQuery/jquery-3.4.1.js"></script>
+<script src="files\js/libs/jquery.appear.js"></script>
+<script src="files\js/libs/jquery.mousewheel.js"></script>
+<script src="files\js/libs/perfect-scrollbar.js"></script>
+<script src="files\js/libs/jquery.matchHeight.js"></script>
+<script src="files\js/libs/svgxuse.js"></script>
+<script src="files\js/libs/imagesloaded.pkgd.js"></script>
+<script src="files\js/libs/Headroom.js"></script>
+<script src="files\js/libs/velocity.js"></script>
+<script src="files\js/libs/ScrollMagic.js"></script>
+<script src="files\js/libs/jquery.waypoints.js"></script>
+<script src="files\js/libs/jquery.countTo.js"></script>
+<script src="files\js/libs/popper.min.js"></script>
+<script src="files\js/libs/material.min.js"></script>
+<script src="files\js/libs/bootstrap-select.js"></script>
+<script src="files\js/libs/smooth-scroll.js"></script>
+<script src="files\js/libs/selectize.js"></script>
+<script src="files\js/libs/swiper.jquery.js"></script>
+<script src="files\js/libs/moment.js"></script>
+<script src="files\js/libs/daterangepicker.js"></script>
+<script src="files\js/libs/fullcalendar.js"></script>
+<script src="files\js/libs/isotope.pkgd.js"></script>
+<script src="files\js/libs/ajax-pagination.js"></script>
+<script src="files\js/libs/Chart.js"></script>
+<script src="files\js/libs/chartjs-plugin-deferred.js"></script>
+<script src="files\js/libs/circle-progress.js"></script>
+<script src="files\js/libs/loader.js"></script>
+<script src="files\js/libs/run-chart.js"></script>
+<script src="files\js/libs/jquery.magnific-popup.js"></script>
+<script src="files\js/libs/jquery.gifplayer.js"></script>
+<script src="files\js/libs/mediaelement-and-player.js"></script>
+<script src="files\js/libs/mediaelement-playlist-plugin.min.js"></script>
+<script src="files\js/libs/ion.rangeSlider.js"></script>
+
+<script src="files\js/main.js"></script>
+<script src="files\js/libs-init/libs-init.js"></script>
+<script defer="" src="files\fonts/fontawesome-all.js"></script>
+
+<script src="files\Bootstrap/dist/js/bootstrap.bundle.js"></script>
+	</body>
+	</ui:define>
+</ui:composition>
+	

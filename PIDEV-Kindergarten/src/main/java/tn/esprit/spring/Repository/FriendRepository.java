@@ -21,5 +21,7 @@ public interface FriendRepository extends JpaRepository<Friend, Integer>{
     @Query("UPDATE Friend f SET f.verifsig =true WHERE (select count(f) from Friend f where (f.user1=:id or f.user2=:id) and f.idsign!=:id and f.sigblock=true and f.verifsig=false)>1 and(f.user1=:id or f.user2=:id)and f.sigblock=true and f.verifsig=false")
     public void BannedUser(@Param("id")Long id);
 	//test
+	@Query("select count(f)  from Friend f  where f.user1=:id or f.user2=:id")
+	 public int countfriend(@Param("id") Long id);
 }
 

@@ -10,4 +10,5 @@ public interface IngretientPlatService {
 	public int addIngredientPlat(int idplat,int iding,int quantity,int calories);
 	public String CalculPrixPlat();
 	public List<Ingredient> AllIngredientByPlat( int plat);
+	public List<IngredientPlat> getAll();
 }

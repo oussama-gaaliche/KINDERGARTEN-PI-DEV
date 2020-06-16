@@ -4,8 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:f="http://java.sun.com/jsf/core"
+<<<<<<< HEAD
+xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+xmlns:ui="http://java.sun.com/jsf/facelets">
+=======
 xmlns:ui="http://java.sun.com/jsf/facelets"
 xmlns:p="http://primefaces.org/ui">
+>>>>>>> branch 'master' of https://github.com/gaaliche22/KINDERGARTEN-PI-DEV.git
 
 
 <head>
@@ -453,9 +458,11 @@ xmlns:p="http://primefaces.org/ui">
 	</defs>
 </svg>
 
+<c:if test="#{userControllerfront.userconnecter().username != anonymousUser}">	
 <ui:include src="/template/header.xhtml"/>
-<ui:include src="/template/sidebarl.xhtml"/>
+
 <ui:include src="/template/sidebarf.xhtml"/>
+</c:if>
 
 <ui:insert name="menu" />
 <ui:insert name="content" />

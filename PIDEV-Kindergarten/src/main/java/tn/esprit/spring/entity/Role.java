@@ -1,6 +1,6 @@
+
 package tn.esprit.spring.entity;
 
-public enum Role {
-ADMIN,PARENT,RESPONSABLE,ENSEIGNANT
-
+public enum Role{
+	ADMIN, PARENT, RESPONSABLE, ENSEIGNANT
 }

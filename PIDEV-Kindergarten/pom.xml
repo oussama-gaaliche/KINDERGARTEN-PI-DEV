@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.1.RELEASE</version>
+		<version>2.2.5.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tn.esprit.spring</groupId>
@@ -114,11 +114,32 @@
 			<artifactId>lombok</artifactId>
 			<version>1.16.16</version>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>javax.faces</groupId>
 			<artifactId>javax.faces-api</artifactId>
 			<version>2.2</version>
 			<scope>provided</scope>
+=======
+		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+            <version>2.2.5.RELEASE</version>
+        </dependency>
+
+ 
+
+        <dependency>
+            <groupId>com.icegreen</groupId>
+            <artifactId>greenmail</artifactId>
+            <version>1.5.5</version>
+        </dependency>
+        <dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>16.0.1</version>
+>>>>>>> branch 'master' of https://github.com/gaaliche22/KINDERGARTEN-PI-DEV.git
 		</dependency>
 
    
@@ -156,4 +177,3 @@
     <dispatcher>REQUEST</dispatcher><!-- mandatory to allow the managed bean to forward the request to the filter -->
 </filter-mapping>
 </project>
-

@@ -1,7 +1,6 @@
 
 package tn.esprit.spring.Controller;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,6 +30,7 @@ import tn.esprit.spring.Services.MessageService;
 import tn.esprit.spring.Services.UserService;
 import tn.esprit.spring.entity.Classe;
 import tn.esprit.spring.entity.Enfant;
+import tn.esprit.spring.entity.Friend;
 import tn.esprit.spring.entity.Jardin;
 import tn.esprit.spring.entity.Message;
 import tn.esprit.spring.entity.MessageBrocker;
@@ -45,7 +45,8 @@ import tn.esprit.spring.entity.User;
 public class UserController {
 	@Autowired
     ActiveUserStore activeUserStore;
-	
+	@Autowired
+	FriendService friendservice;
 	@Autowired
 	private UserRepository userRepository;
 	
@@ -96,9 +97,9 @@ public class UserController {
 		usera.setImage("fg");
 		userRepository.save(usera);
 		
-		return "";
+		return "add user succes";
 		}
-		return "";
+		return "verify data";
 	}
 	//@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/edit/{id}")
@@ -152,8 +153,7 @@ public class UserController {
 	    }
 	    if(enfants.size()<=0 )
     	{a="you havent any enfant";}
-	    else if(!user.getRoles().equals("PARENT"))  
-	    	a="you cannot validate user that had role as "+ user.getRoles();
+	    
 	    else if(status==false)
     	{a="you havent any child affeted to a class";}
     else  {a="update-user";}
@@ -185,10 +185,10 @@ public class UserController {
 		messageService.sendMessage(message);
 		return "message sended with acces";
 	}
-	@Scheduled(initialDelay=1000L,fixedDelayString= "PT10S")
+	@Scheduled(initialDelay=1L,fixedDelayString= "PT10S")
 	public void checkForMessages()
 	{
-		messageService.sendedMessages().stream().filter(s->((s.isStatus() == false)&&s.getUserReciver().equals(HomeController.connectedUser))).forEach(sended->
+		messageService.sendedMessages().stream().filter(s->((s.isStatus() == false))).forEach(sended->
 		{
 			messageService.sendMessageToSpecificUser(sended);
 			sended.setStatus(true);
@@ -253,4 +253,26 @@ public class UserController {
  //   	im=AddedName;
     return "";
     }
+    public User userconnecter(){
+    	return userRepository.userconnect(HomeController.connectedUser);
+    }
+    @GetMapping("/jj/{id}")
+    public Boolean friendex(@PathVariable("id") long id){
+    	
+    	List<Friend> friends=new ArrayList<>();
+    	friends=friendservice.allFriend();
+    	for(Friend f : friends){
+    		if((f.getUser1()==id && f.getUser2()==userconnecter().getId())||(f.getUser2()==id && f.getUser1()==userconnecter().getId()))
+    			return true;
+    		
+    		
+    	}
+    	return false;
+    		
+    	}
+    @RequestMapping(method=RequestMethod.PUT,value="/f/{id}")
+    public List<User> friendp(@PathVariable String id){
+    	
+    	return friendservice.myFriends(id);
+    	}
 }

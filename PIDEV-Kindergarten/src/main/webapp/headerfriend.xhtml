@@ -1,0 +1,175 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<div class="container">
+	
+<div class="row">
+		
+<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			
+<div class="ui-block">
+				
+<div class="top-header">
+		
+<div class="top-header-thumb">
+						<img src="files\userImage/20190914_123447.jpg" alt="nature" width="1920px" height="640px"/>
+					</div>
+					
+<div class="profile-section">
+						
+<div class="row">
+							
+<div class="col col-lg-5 col-md-5 col-sm-12 col-12">
+								
+<ul class="profile-menu">
+									
+<li>
+										<a href="02-ProfilePage.html" class="active">Timeline</a>
+									</li>
+									
+<li>
+										<a href="05-ProfilePage-About.html">About</a>
+									</li>
+									
+<li>
+										<h:form>
+										<h:commandLink action= "#{userControllerfront.affichefriend()}"  value="Friends" />
+										</h:form>
+										
+									</li>
+								</ul>
+							</div>
+							
+<div class="col col-lg-5 ml-auto col-md-5 col-sm-12 col-12">
+								
+<ul class="profile-menu">
+									
+<li>
+										<a href="07-ProfilePage-Photos.html">Photos</a>
+									</li>
+									
+<li>
+										<a href="09-ProfilePage-Videos.html">Videos</a>
+									</li>
+									
+<li>
+										
+<div class="more">
+											
+<ul class="more-dropdown more-with-triangle">
+												
+<li>
+													<a href="#">Report Profile</a>
+												</li>
+												
+<li>
+													<a href="#">Block Profile</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+				<h:form>	
+				<c:if test="#{userControllerfront.friendex(userControllerfront.userprofil.id) == 1}">
+					
+					<div class="control-block-button">
+
+							<h:commandLink action="#{userControllerfront.blockFriend(userControllerfront.userprofil.id)}" class="btn btn-control bg-blue">
+								<FONT size="1">Block</FONT>
+							</h:commandLink>
+							<h:commandLink action="#{userControllerfront.blockSignFriend(userControllerfront.userprofil.id)}" class="btn btn-control bg-purple">
+								<FONT size="1">Signal</FONT>
+							</h:commandLink>
+							<h:commandLink action="#{userControllerfront.deletfriend(userControllerfront.userprofil.id)}">
+<div class="btn btn-control bg-primary more">
+
+								<FONT size="1">Delete</FONT>
+								
+
+							</div>
+							
+							</h:commandLink>
+							<c:if test="#{userControllerfront.userconnecter().roles eq 'RESPONSABLE' and userControllerfront.userprofil.active eq 'false' and userControllerfront.userprofil.roles eq 'PARENT' }">
+							<h:commandLink action="#{userControllerfront.ValidateuserwithResponsable(userControllerfront.userprofil.id)}" class="btn btn-control bg-purple">
+								<FONT size="1">Validate</FONT>
+							</h:commandLink>
+							</c:if>
+						</div>
+						
+						</c:if>
+				<c:if test="#{userControllerfront.followex(userControllerfront.userprofil.id) == 1}">
+				<div class="control-block-button">
+
+							<h:commandLink action="#{userControllerfront.AcceptdemandeStatus(userControllerfront.userprofil.id)}" class="btn btn-control bg-blue">
+								<FONT size="2">+</FONT>
+							</h:commandLink>
+							<h:commandLink action="#{userControllerfront.deletFollow1(userControllerfront.userprofil.id)}" class="btn btn-control bg-purple">
+								<FONT size="2">-</FONT>
+							</h:commandLink>
+							<c:if test="#{userControllerfront.userconnecter().roles eq 'RESPONSABLE' and userControllerfront.userprofil.active eq 'false' and userControllerfront.userprofil.roles eq 'PARENT' }">
+							<h:commandLink action="#{userControllerfront.ValidateuserwithResponsable(userControllerfront.userprofil.id)}" class="btn btn-control bg-purple">
+								<FONT size="1">Validate</FONT>
+							</h:commandLink>
+							</c:if>
+							</div>
+
+				
+				</c:if>
+						<c:if test="#{userControllerfront.followreciver(userControllerfront.userprofil.id) == 1}">
+						<div class="control-block-button">
+
+							<h:commandLink action="#{userControllerfront.deletFollow5(userControllerfront.userprofil.id)}" class="btn btn-control bg-blue">
+								<FONT size="1">Delete</FONT>
+							</h:commandLink>
+							<c:if test="#{userControllerfront.userconnecter().roles eq 'RESPONSABLE' and userControllerfront.userprofil.active eq 'false' and userControllerfront.userprofil.roles eq 'PARENT' }">
+							<h:commandLink action="#{userControllerfront.ValidateuserwithResponsable(userControllerfront.userprofil.id)}" class="btn btn-control bg-purple">
+								<FONT size="1">Validate</FONT>
+							</h:commandLink>
+							</c:if>
+							</div>
+							
+						</c:if>
+				<c:if test="#{userControllerfront.followex(userControllerfront.userprofil.id) == 0 and userControllerfront.friendex(userControllerfront.userprofil.id) == 0 and userControllerfront.followreciver(userControllerfront.userprofil.id) == 0 }">
+				<div class="control-block-button">
+
+							<h:commandLink action="#{userControllerfront.sendDemand1(userControllerfront.userprofil.username)}" class="btn btn-control bg-blue">
+								<FONT size="1">Send</FONT>
+							</h:commandLink>
+							<c:if test="#{userControllerfront.userconnecter().roles eq 'RESPONSABLE' and userControllerfront.userprofil.active eq 'false' and userControllerfront.userprofil.roles eq 'PARENT' }">
+
+							<h:commandLink  action="#{userControllerfront.ValidateuserwithResponsable(userControllerfront.userprofil.id)}" class="btn btn-control bg-purple">
+								<FONT size="1">Validate</FONT>
+									
+							</h:commandLink>
+							</c:if>
+							</div>
+				</c:if>	
+						</h:form>
+					</div>
+					
+<div class="top-header-author">
+						<a href="02-ProfilePage.html" class="author-thumb">
+							<img src="#{userControllerfront.userprofil.image}" alt="author" width="124px" height="124px"/>
+						</a>
+						
+<div class="author-content">
+<h:form>
+							<h:commandLink action="#{userControllerfront.afficheprofil(userControllerfront.userprofil)}" class="h4 author-name"><h:outputText  value="#{userControllerfront.userprofil.nom} " /> <h:outputText  value="#{userControllerfront.userprofil.prenom}" /></h:commandLink>
+							</h:form>
+<div class="country">San Francisco, CA</div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div></div>
+<!-- ... end Top Header-Profile -->
+</ui:composition>

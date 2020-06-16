@@ -32,15 +32,16 @@ public class PidevKindergartenApplication {
 	}
 	@Bean
 	public ServletRegistrationBean servletRegistrationBean() {
-	FacesServlet servlet = new FacesServlet();
-	return new ServletRegistrationBean(servlet, "*.jsf"); }
+		FacesServlet servlet = new FacesServlet();
+		return new ServletRegistrationBean(servlet, "*.jsf");
+	}
+
 	@Bean
 	public FilterRegistrationBean rewriteFilter() {
-	FilterRegistrationBean rwFilter = new FilterRegistrationBean(new RewriteFilter());
-	rwFilter.setDispatcherTypes(EnumSet.of(DispatcherType.FORWARD, DispatcherType.REQUEST,
-	DispatcherType.ASYNC, DispatcherType.ERROR));
-	rwFilter.addUrlPatterns("/*");
-	return rwFilter;
+		FilterRegistrationBean rwFilter = new FilterRegistrationBean(new RewriteFilter());
+		rwFilter.setDispatcherTypes(EnumSet.of(DispatcherType.FORWARD, DispatcherType.REQUEST, DispatcherType.ASYNC, DispatcherType.ERROR));
+		rwFilter.addUrlPatterns("/*");
+		return rwFilter;
 	}
 
 }

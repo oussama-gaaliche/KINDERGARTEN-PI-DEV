@@ -20,13 +20,14 @@ import org.springframework.stereotype.Controller;
 @Scope(value = "session")
 @Controller(value ="planController")
 @ELBeanName(value ="planController")
-@Join(path = "/", to = "AffichagePlanning.jsf")
+@Join(path = "/", to = "Add.jsf")
 public class PlanningControllerJSF {
 	
 	
 	
 	@Autowired
 	PlanningServiceImpl planningservice;
+	
 	private Planning planning;
 	public Planning getPlanning() {
 		return planning;
@@ -131,6 +132,10 @@ public class PlanningControllerJSF {
 	public String goFormAdd() {
 		
 		return "/Add.xhtml?faces-redirect=true";
+		}
+public String GoBackPlan() {
+		
+	return "/AffichagePlanning.xhtml?faces-redirect=true";
 		}
 		
 		

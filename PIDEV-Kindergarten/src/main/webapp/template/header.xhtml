@@ -2,6 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 	<meta charset="UTF-8" />
 	<svg style="position: absolute; width: 0; height: 0; overflow: hidden;"
@@ -38,7 +39,6 @@
 
 				</div>
 			</form>
-
 			<a href="#" class="link-find-friend">Find Friends</a>
 
 			<div class="control-block">
@@ -58,109 +58,45 @@
 							data-mcs-theme="dark"
 							data-ps-id="c9a655c8-b305-666a-511b-97880d054792">
 							<ul class="notification-list friend-requests">
+							<c:forEach items="#{userControllerfront.mySendedDemandes()}" var="follow" >
 								<li>
 									<div class="author-thumb">
-										<img src="files/img/avatar55-sm.jpg" alt="author"></img>
+										<img src="#{follow.image}" width="30px" height="30px" alt="author" />
 									</div>
 									<div class="notification-event">
-										<a href="#" class="h6 notification-friend">Tamara Romanoff</a>
+										<a href="#" class="h6 notification-friend"><h:outputText class="control-label" value="#{follow.username}" /></a>
 										<span class="chat-message-item">Mutual Friend: Sarah
 											Hetfield</span>
-									</div> <span class="notification-icon"> <a href="#"
-										class="accept-request"> <span
+								
+									</div>
+									<h:form>
+									<span class="notification-icon"><h:link class="accept-request" value="#{userControllerfront.AcceptdemandeStatus(follow.id)}"  >
+									 <span
 											class="icon-add without-text"> <svg
 													class="olymp-happy-face-icon">
 													<use xlink:href="#olymp-happy-face-icon"></use></svg>
 										</span>
-									</a> <a href="#" class="accept-request request-del"> <span
+									</h:link> <h:link class="accept-request request-del" value="#{userControllerfront.refusedemandeStatus(follow.id)}"  > <span
 											class="icon-minus"> <svg class="olymp-happy-face-icon">
 													<use xlink:href="#olymp-happy-face-icon"></use></svg>
 										</span>
-									</a>
-
+									</h:link>
+								
 								</span>
-
+									
+									</h:form>
+									 
 									<div class="more">
 										<svg class="olymp-three-dots-icon">
 											<use xlink:href="#olymp-three-dots-icon"></use></svg>
 									</div>
 								</li>
 
-								<li>
-									<div class="author-thumb">
-										<img src="files/img/avatar56-sm.jpg" alt="author"></img>
-									</div>
-									<div class="notification-event">
-										<a href="#" class="h6 notification-friend">Tony Stevens</a> <span
-											class="chat-message-item">4 Friends in Common</span>
-									</div> <span class="notification-icon"> <a href="#"
-										class="accept-request"> <span
-											class="icon-add without-text"> <svg
-													class="olymp-happy-face-icon">
-													<use xlink:href="#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a> <a href="#" class="accept-request request-del"> <span
-											class="icon-minus"> <svg class="olymp-happy-face-icon">
-													<use xlink:href="#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a>
+								</c:forEach>
 
-								</span>
+								
 
-									<div class="more">
-										<svg class="olymp-three-dots-icon">
-											<use xlink:href="#olymp-three-dots-icon"></use></svg>
-									</div>
-								</li>
-
-								<li class="accepted">
-									<div class="author-thumb">
-										<img src="files/img/avatar57-sm.jpg" alt="author"></img>
-									</div>
-									<div class="notification-event">
-										You and <a href="#" class="h6 notification-friend">Mary
-											Jane Stark</a> just became friends. Write on <a href="#"
-											class="notification-link">her wall</a>.
-									</div> <span class="notification-icon"> <svg
-											class="olymp-happy-face-icon">
-											<use xlink:href="#olymp-happy-face-icon"></use></svg>
-								</span>
-
-									<div class="more">
-										<svg class="olymp-three-dots-icon">
-											<use xlink:href="#olymp-three-dots-icon"></use></svg>
-										<svg class="olymp-little-delete">
-											<use xlink:href="#olymp-little-delete"></use></svg>
-									</div>
-								</li>
-
-								<li>
-									<div class="author-thumb">
-										<img src="files/img/avatar58-sm.jpg" alt="author"></img>
-									</div>
-									<div class="notification-event">
-										<a href="#" class="h6 notification-friend">Stagg Clothing</a>
-										<span class="chat-message-item">9 Friends in Common</span>
-									</div> <span class="notification-icon"> <a href="#"
-										class="accept-request"> <span
-											class="icon-add without-text"> <svg
-													class="olymp-happy-face-icon">
-													<use xlink:href="#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a> <a href="#" class="accept-request request-del"> <span
-											class="icon-minus"> <svg class="olymp-happy-face-icon">
-													<use xlink:href="#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a>
-
-								</span>
-
-									<div class="more">
-										<svg class="olymp-three-dots-icon">
-											<use xlink:href="#olymp-three-dots-icon"></use></svg>
-									</div>
-								</li>
-
+								
 							</ul>
 							<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
 								<div class="ps__scrollbar-x" tabindex="0"
@@ -460,7 +396,7 @@
 
 				<div class="author-page author vcard inline-items more">
 					<div class="author-thumb">
-						<img alt="author" src="files/img/author-page.jpg" class="avatar"></img>
+						<img alt="author" src="#{userControllerfront.userconnecter().image}" class="avatar" width="30px" height="30px" />
 						<span class="icon-status online"></span>
 						<div class="more-dropdown more-with-triangle">
 							<div class="mCustomScrollbar ps ps--theme_default ps--active-y"
@@ -554,10 +490,10 @@
 					</div>
 					<a href="02-ProfilePage.html" class="author-name fn">
 						<div class="author-title">
-							James Spiegel
+							<h:outputText  value="#{userControllerfront.userconnecter().nom}" />
 							<svg class="olymp-dropdown-arrow-icon">
 								<use xlink:href="#olymp-dropdown-arrow-icon"></use></svg>
-						</div> <span class="author-subtitle">SPACE COWBOY</span>
+						</div> <span class="author-subtitle"><h:outputText  value="#{userControllerfront.userconnecter().roles}" /></span>
 					</a>
 				</div>
 
@@ -572,6 +508,5 @@
 
 
 	<!-- ... end Header Standard  -->
-
 
 </ui:composition>

@@ -1,3 +1,4 @@
+
 package tn.esprit.spring.Services;
 
 import java.util.ArrayList;
@@ -147,5 +148,10 @@ public class UserService {
 	        } 
 	        return sb.toString(); 
 	    }
+		
+		public List<User> rechercheuser(String username){
+			 return userRepository.rechercheuser(username);
+		}
 	}
+
 
