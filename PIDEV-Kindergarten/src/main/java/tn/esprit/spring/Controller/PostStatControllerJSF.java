@@ -1,8 +1,6 @@
 package tn.esprit.spring.Controller;
 
-import org.chartistjsf.model.chart.AspectRatio;
-import org.chartistjsf.model.chart.Axis;
-import org.chartistjsf.model.chart.AxisType;
+
 import org.chartistjsf.model.chart.BarChartModel;
 import org.chartistjsf.model.chart.BarChartSeries;
 import org.chartistjsf.model.chart.PieChartModel;
@@ -19,8 +17,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import tn.esprit.spring.entity.CountWord;
-import tn.esprit.spring.repository.WordCountRepository;
-import tn.esprit.spring.services.PostStatService;
+import tn.esprit.spring.Repository.WordCountRepository;
+import tn.esprit.spring.Services.PostStatService;
 
 @Scope(value = "session")
 @Controller(value = "statControllerJSF")

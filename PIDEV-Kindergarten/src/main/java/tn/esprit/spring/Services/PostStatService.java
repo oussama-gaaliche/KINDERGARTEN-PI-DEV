@@ -12,9 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.spring.entity.CountWord;
 import tn.esprit.spring.entity.poststats;
 
-import tn.esprit.spring.repository.PostRepository;
-import tn.esprit.spring.repository.PostStatRepository;
-import tn.esprit.spring.repository.WordCountRepository;
+import tn.esprit.spring.Repository.PostRepository;
+import tn.esprit.spring.Repository.PostStatRepository;
+import tn.esprit.spring.Repository.WordCountRepository;
 
 @Service
 @Transactional
