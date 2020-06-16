@@ -94,6 +94,17 @@ public class User implements Serializable {
 	private boolean active;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Facture> factures;
+	@JsonIgnore
+	@OneToMany(mappedBy="user")
+	private List<Post> post;
+	@JsonIgnore
+	@OneToMany(mappedBy="user")
+	private Set<Reaction> like;
+	@JsonIgnore
+	@OneToMany(mappedBy="user")
+	private Set<Comment> comment;
+	@OneToMany(mappedBy="user")
+	private Set<PostReport> postreport;
 	public User() {
 		super();
 	}
