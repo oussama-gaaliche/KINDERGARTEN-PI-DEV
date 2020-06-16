@@ -1,3 +1,4 @@
+
 package tn.esprit.spring.Repository;
 
 
@@ -30,3 +31,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	 @Query("select  u from User u WHERE u.id=:id")
 	    public User userfollow(@Param("id") Long user);
 }
+

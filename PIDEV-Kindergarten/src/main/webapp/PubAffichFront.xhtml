@@ -7,6 +7,7 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink">
 	<ui:param name="page_name" value="Accueil" />
 	<ui:define name="content">
+<h:panelGroup id="like">
 
 <div class="container">
 	
@@ -153,8 +154,10 @@
 							</div>
 					
 							<a href="#" class="h3 post-title">
-							<h:commandLink action="#{PublicityController.displayPubFront(pub)}"> 
+							
+							<h:commandLink action="#{PublicityController.addvu(PublicityController.getUserCo(),pub.id,pub)}">
 							<h:outputText value="#{pub.productName}" /> 
+						
 							</h:commandLink></a>
 <p>Here’s a photo from last month’s photoshoot. We had a lot of fun doing it and got really
 								awesome shots for the new summer catalog.
@@ -162,30 +165,32 @@
 					
 							
 <div class="post-additional-info inline-items">
-					
-								
+	 					
 <div class="friends-harmonic-wrap">
+
 <a href="#" class="post-add-icon inline-items">
 
 
 				   
 						
-				
-				  <h:commandLink action="#{PublicityController.addlike(pub.id)}" class="post-add-icon inline-items" href="#" > 
-		
-										<svg class="olymp-heart-icon"><use xlink:href="#olymp-heart-icon"></use></svg>
+				<h:panelGroup rendered="#{!PublicityController.isLiked(PublicityController.getUserCo(),pub.id)}">
+				   <h:commandLink action="#{PublicityController.addlike(pub.id)}" class="post-add-icon inline-items" href="#" >  
+				 
+										<svg class="olymp-heart-icon" ><use xlink:href="#olymp-heart-icon"></use></svg>
 										
-								
-						 </h:commandLink>
-								
+								<f:ajax render="like" />
+					</h:commandLink></h:panelGroup>
+					
+									<h:panelGroup rendered="#{PublicityController.isLiked(PublicityController.getUserCo(),pub.id)}">
+				   <h:commandLink action="#{PublicityController.removeLike(pub.id)}" class="post-add-icon inline-items" href="#" >  
+				 
+										<svg class="olymp-heart-icon" style="fill:#FF6D39"><use xlink:href="#olymp-heart-icon"></use></svg>
+										
+								<f:ajax render="like" />
+					</h:commandLink></h:panelGroup>
+
 								<span><h:outputText value="#{PublicityController.getNbPub(pub.id)}"  class="post-add-icon inline-items" /></span>
-							</a>		
-
-									
-									
-									
-
-									
+							</a>	
 
 								</div>
 					
@@ -199,7 +204,14 @@
 									</a>
 								</div>
 					
-							</div>
+							
+							
+											<div class="friends-harmonic-wrap">
+<a href="#" class="post-add-icon inline-items">
+						<span> <h:outputText value="#{PublicityController.getNbVu(pub.id)}" />  views</span>
+						</a>
+						</div>
+						</div>
 						</div>
 					
 					</article>
@@ -310,6 +322,6 @@
 	</div>
 
 
-
+</h:panelGroup>
 	</ui:define>
 </ui:composition>

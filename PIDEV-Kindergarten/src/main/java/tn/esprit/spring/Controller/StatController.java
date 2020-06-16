@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.Services.StatService;
-import tn.esprit.spring.entity.LikeUser;
-import tn.esprit.spring.entity.StatNombeInscri;
-import tn.esprit.spring.entity.User;
+
 
 @RestController
 public class StatController {
@@ -64,6 +62,11 @@ public List<?> getBestUser() {
 return statService.BestUser();
 
 }
+@RequestMapping(method = RequestMethod.PUT, value="/add-nbrEnfant-to-jardin")
+
+public void addNbEnfant() {
+ statService.addnbEnfantParJardin();
+ }
 
 
 }

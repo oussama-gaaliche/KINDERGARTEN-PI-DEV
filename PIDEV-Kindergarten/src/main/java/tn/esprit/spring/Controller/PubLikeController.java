@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -50,6 +52,7 @@ public class PubLikeController {
 			return pubLikeService.updateLike(id, etat);
 		
 	}
+	
 	@RequestMapping(method=RequestMethod.PUT,value="/{idad}&{etat}")
 public String addlike(@PathVariable int  idad,@PathVariable boolean  etat){
 		
@@ -68,8 +71,20 @@ public String addlike(@PathVariable int  idad,@PathVariable boolean  etat){
 		}
 		else
 			return pubLikeService.addDislike(us.getId(), idad, lp);
-			
-		
-		
+	
 	}
+
+	
+	@DeleteMapping("/remove-like/{idpub}")
+	public void removeLike(@PathVariable("idpub") int idpub) 
+	{
+		User us=userRepository.findUserByUsername(HomeController.connectedUser);
+		
+		
+		pubLikeService.deleteLike(us.getId(),idpub);
+	}
+
 }
+
+
+

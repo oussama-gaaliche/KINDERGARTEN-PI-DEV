@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="PubAffich" />
+	<ui:define name="content">
+<h:panelGroup>
+<h:form>
+<h:dataTable class="table table-hover"  var="pub" value="#{PublicityController.listPublicities()}">
+
+<h:column><f:facet name="header"><h:outputText value="Product Name" /></f:facet>
+<h:outputText value="#{pub.productName}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="Category" /></f:facet>
+<h:outputText value="#{pub.category}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="Marque" /></f:facet>
+<h:outputText value="#{pub.marque}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="Price Sponsoring" /></f:facet>
+<h:outputText value="#{pub.priceSponsoring}" /></h:column>
+
+
+<h:column><f:facet name="header"><h:outputText value="Action" /></f:facet>
+<h:commandButton  value="delete" class="btn btn-success" action="#{PublicityController.removePublicity(pub.id)}" />
+<h:commandButton  value="Edit" class="btn btn-success" action="#{PublicityController.displayPub(pub)}" />
+</h:column>
+
+
+</h:dataTable>
+
+<h:commandButton  value="Add a publicity" class="btn btn-success" action="#{PublicityController.goForm()}" />
+
+</h:form>
+</h:panelGroup>
+
+</ui:define>
+</ui:composition>

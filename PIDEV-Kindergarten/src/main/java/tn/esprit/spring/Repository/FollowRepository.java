@@ -1,3 +1,4 @@
+
 package tn.esprit.spring.Repository;
 
 import java.util.List;
@@ -27,3 +28,4 @@ public interface FollowRepository extends JpaRepository<Follow, Integer>  {
 //	@Query(nativeQuery = true, value ="select `id`, `date_rating`, `review`, `publicity_id`, `user_id`, `note` from rating where id order by date_rating desc limit 3")
 //	public List<Rating> listLastReviews(@Param("id") int id);
 }
+

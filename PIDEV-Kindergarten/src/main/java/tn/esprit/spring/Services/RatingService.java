@@ -47,10 +47,10 @@ public class RatingService implements IRatingService {
 			
 			}
 			
-			 if (r.getNote()>10  || r.getNote()<0 )
+			 if (r.getNote()>5  || r.getNote()<0 )
 			{
 				
-				return "il faut saisir une note comprise entre 0 et 10 ";
+				return "il faut saisir une note comprise entre 0 et 5 ";
 				
 				}
 				
@@ -81,10 +81,10 @@ public class RatingService implements IRatingService {
 		
 			
 			
-			 if (rating.getNote()>10  ||rating.getNote()<0 )
+			 if (rating.getNote()>5  ||rating.getNote()<0 )
 			{
 				
-				return "il faut saisir une note comprise entre 0 et 10 ";
+				return "il faut saisir une note comprise entre 0 et 5";
 				
 				}
 				

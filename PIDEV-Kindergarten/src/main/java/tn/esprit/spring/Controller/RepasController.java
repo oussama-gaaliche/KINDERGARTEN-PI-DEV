@@ -20,10 +20,7 @@ public class RepasController {
 	@Autowired 
 	repasServiceImpl repaservice;
 	
-	@GetMapping("/planreaps/{p}")
-	public List<Repas> GetRepasByPlanning(@PathVariable("p") int p) {
-		return repaservice.GetRepasByPlanning(p);
-	}
+	
 
 	@GetMapping("/repas/to")
 	public List<Repas> GetRepasByDate() {

@@ -9,6 +9,7 @@ import tn.esprit.spring.Repository.PlatRepository;
 import tn.esprit.spring.Repository.RepasRepository;
 import tn.esprit.spring.entity.Enfant;
 import tn.esprit.spring.entity.Etat;
+import tn.esprit.spring.entity.Planning;
 import tn.esprit.spring.entity.Plat;
 import tn.esprit.spring.entity.Repas;
 import tn.esprit.spring.entity.RepasPk;
@@ -39,7 +40,7 @@ public class repasServiceImpl implements RepasService {
 			RepasPk rp=new RepasPk();
 			rp.setDate(date);
 			rp.setIdplanning(Planningid);
-			rp.setIdplat(plat.getId());
+			rp.setIdplat(plat.getId_plat());
 			Repas repas =new Repas();
 			repas.setRepasPK(rp);
 			repas.setQuantity(n);
@@ -51,7 +52,7 @@ public class repasServiceImpl implements RepasService {
 					RepasPk rp=new RepasPk();
 					rp.setDate(date);
 					rp.setIdplanning(Planningid);
-					rp.setIdplat(plat.getId());
+					rp.setIdplat(plat.getId_plat());
 					Repas repas =new Repas();
 					repas.setRepasPK(rp);
 					repas.setQuantity(s);
@@ -148,9 +149,49 @@ public class repasServiceImpl implements RepasService {
 	}
 
 	@Override
-	public List<Repas> GetRepasByPlanning(int p) {
-		return repasrepo.GetRepasByPlanning(p);
+	public List<RepasPk> GetRepasByPlanning(int p) {
+		List <RepasPk> re=new ArrayList<>();
+		
+	     re= repasrepo.GetRepasByPlanning(p);
+	    
+	     return re;
 	}
+
+	@Override
+	public List<Repas> GetAllRepas() {
+		
+		return repasrepo.findAll();
+	}
+
+	
+		
+		
+	
+
+	@Override
+	public Repas updateRepas(Repas repas) {
+		repasrepo.save(repas);
+		return repas;
+	}
+
+	@Override
+	public void deleteRepas(Date date) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/*@Override
+	public void deleteRepasJPQL(Date date) {
+		repasrepo.deleteRepasJPQL(date);
+		
+	}*/
+
+	
+	public List<Repas> getAllRepas( Planning ip){
+		 return repasrepo.getAllRepas(ip);
+	 }
+
+	
 	
 	
 

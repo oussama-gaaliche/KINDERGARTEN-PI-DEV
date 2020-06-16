@@ -25,10 +25,7 @@ public class PlatController {
 	public double getQuntityByPlat(@PathVariable("p")int p) {
 		return platservice.getQuntityByPlat(p);
 	}
-	@GetMapping("/montant")
-	public double PrixTotalRepas() {
-		return platservice.PrixTotalRepas();
-	}
+	
 	@GetMapping("/platre")
 	 public List<Plat> GetRepasByPlat() {
 		return platservice.GetRepasByPlat();
@@ -37,11 +34,7 @@ public class PlatController {
 	public List<Plat> AllPlats() {
 		return platservice.AllPlats();
 	}
-	@PostMapping("/addPlat")
-	@ResponseBody
-	public int AddPlat(@RequestBody Plat p) {
-		return platservice.AddPlat(p);
-	}
+	
 	@PutMapping(value="/UpdatePlat") 
 	@ResponseBody
 	public Plat updatePlat(@RequestBody Plat p) {

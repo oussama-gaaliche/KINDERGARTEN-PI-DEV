@@ -22,6 +22,8 @@ public class Jardin implements Serializable {
 	@ManyToOne(cascade = CascadeType.ALL) 
 	User user;
 	
+	private int nombreEnfant;
+	
 	
 	public Jardin() {
 		super();
@@ -83,5 +85,15 @@ public class Jardin implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public int getNombreEnfant() {
+		return nombreEnfant;
+	}
+
+	public void setNombreEnfant(int nombreEnfant) {
+		this.nombreEnfant = nombreEnfant;
+	}
+	
+	
 
 }
