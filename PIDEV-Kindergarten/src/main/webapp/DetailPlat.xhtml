@@ -1,0 +1,134 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="Front.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+<h:panelGroup >
+<center>
+<h:form>
+
+
+
+
+
+
+
+
+
+<div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				
+				
+				<!-- Friend Item -->
+				
+				<div class="friend-item fav-page">
+					<div class="friend-header-thumb">
+						<img src="files/img/p1.jpg" alt="friend"/>
+					</div>
+				
+					<div class="friend-item-content">
+				
+						<div class="friend-avatar">
+							
+							<div class="author-content">
+								<a href="#" class="h5 author-name"><h:outputText value="#{plaController.nom}" /></a>
+								<div class="country"><h:outputText value="#{plaController.typeplat}" /> </div>
+							</div>
+						</div>
+				
+						<div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal" id="swiper-unique-id-0">
+							<div class="swiper-wrapper" style="width: 784px; transform: translate3d(-196px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 196px;">
+									<p class="friend-about" data-swiper-parallax="-500" style="transform: translate3d(-500px, 0px, 0px); transition-duration: 0ms;">
+										We choose for child the healthier food . this Plat is formed by : 
+										<h:outputText value="#{plaController.noming}" />
+									</p>
+				
+									<div class="friend-since" data-swiper-parallax="-100" style="transform: translate3d(-100px, 0px, 0px); transition-duration: 0ms;">
+										<div>Website:</div>
+										<a href="#" class="h6">www.ggrock.com</a>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
+									<div class="friend-count" data-swiper-parallax="-500" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+										
+										<a href="#" class="friend-count-item">
+											<div class="h6"><h:outputText value="#{plaController.getNbFavories(plaController.id_Plat)}" /></div>
+											<div class="title">Favourites</div>
+										</a>
+										
+									</div>
+									<div class="control-block-button" data-swiper-parallax="-100" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+									<p:growl id="growl" showDetail="true" sticky="true"></p:growl>
+       
+										  <h:commandLink action="#{plaController.Like(plaController.id_Plat)}" class="btn btn-control bg-primary" href="#">
+										   
+										<svg class="olymp-star-icon">
+
+									<use xlink:href="#olymp-star-icon"></use></svg>
+									
+									</h:commandLink>
+									
+													
+								
+				
+									
+				
+									</div>
+								</div>
+				
+								<div class="swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 196px;">
+									<p class="friend-about" data-swiper-parallax="-500" style="transform: translate3d(500px, 0px, 0px); transition-duration: 0ms;">
+										We choose for child the healthier food . this Plat is formed by :
+										<c:forEach items="#{plaController.listing(plaController.id_Plat)}" var="p" >
+										<p> 
+										<h:outputText value="#{p.nom}" /></p>
+										</c:forEach>
+									</p>
+				
+									
+								</div>
+							<div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 196px;">
+									<div class="friend-count" data-swiper-parallax="-500" style="transform: translate3d(500px, 0px, 0px); transition-duration: 0ms;">
+										<a href="#" class="friend-count-item">
+											<div class="h6">48</div>
+											<div class="title">Photos</div>
+										</a>
+										<a href="#" class="friend-count-item">
+											<div class="h6">5630</div>
+											<div class="title">Favourites</div>
+										</a>
+										<a href="#" class="friend-count-item">
+											<div class="h6">12</div>
+											<div class="title">Videos</div>
+										</a>
+									</div>
+									<div class="control-block-button" data-swiper-parallax="-100" style="transform: translate3d(100px, 0px, 0px); transition-duration: 0ms;">
+										<a href="#" class="btn btn-control bg-primary">
+										
+											<svg class="olymp-star-icon"><use xlink:href="#olymp-star-icon"></use></svg>
+										</a>
+				
+									
+									</div>
+								</div></div>
+				
+							<!-- If we need pagination -->
+							<div class="swiper-pagination pagination-swiper-unique-id-0 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span></div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<!-- ... end Friend Item -->			</div>
+		</div>
+		
+		</h:form>
+		</center>
+		</h:panelGroup>
+		</ui:define>
+		</ui:composition>

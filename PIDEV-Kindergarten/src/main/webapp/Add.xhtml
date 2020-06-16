@@ -2,6 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
 	template="/template/DashTemplate.xhtml">
 	<ui:param name="page_name" value="addPlan" />
 	<ui:define name="content">
@@ -55,7 +56,7 @@
                                                     
 <div class="card-header">
                                                         
-<h2>Add Ingredient</h2>
+<h2>Add New Planning</h2>
                                                     
                                                     </div>
                                                   
@@ -65,32 +66,25 @@
                                                             
 <div class="col-sm-12 col-xl-6 m-b-30">
                                                                 
-<h4 class="sub-title">Name</h4>
+<h4 class="sub-title">Pick Start Date</h4>
                                                              
 
-    <h:inputText id="noming"  class="form-control" type="Text"   value="#{ingController.nom}" required="true" requiredMessage="le champs est obligatoire" >
-                                                        
-                                                           </h:inputText>
-                                                            <h:message for="noming" style="color:red"></h:message>
+    <h:inputText id="datedebut"  class="form-control" type="date" value="#{planController.date_debut}" required="true" requiredMessage="le champs est obligatoire"> <f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+                                                         <h:message for="datedebut" style="color:red"></h:message>
                                                             </div>
                                                             
 <div class="col-sm-12 col-xl-6 m-b-30">
                                                                 
-<h4 class="sub-title">Price</h4>
+<h4 class="sub-title">Pick End Date</h4>
                                                                 
 
-    <h:inputText id="prixing" class="form-control" type="text"   value="#{ingController.prix}" required="true" requiredMessage="le champs est obligatoire" validatorMessage="le prix doit etre compris entre 5.5 et 7">
-<f:validateDoubleRange minimum="5" maximum="8" /></h:inputText>
-
-                                                         <h:message for="prixing" style="color:red"></h:message>  
+    <h:inputText id="datefin"  class="form-control" type="date"   value="#{planController.date_fin}" required="true" requiredMessage="le champs est obligatoire"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+                                                            <h:message for="datefin" style="color:red"></h:message>
                                                             </div>
-                                                            
-  
-                                                            
-
+                                                 
                                                         </div>
                                          <center>           
-                    <h:commandButton class="btn btn-success" action="#{ingController.AddIng()}" value="Add Ingredient" update="grid" icon="pi pi-check" validateClient="true" style="margin-right:10px"/>
+                    <h:commandButton class="btn btn-success" action="#{planController.addPlanning()}" value="Add Planning"/>
                  
                                                    </center>  
                                                

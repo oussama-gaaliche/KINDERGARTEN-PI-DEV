@@ -368,8 +368,8 @@ public void setUploadedFile(Part uploadedFile) {
 	}
 	public void Like(int id){
 		System.out.println("takwa" +id);
-		long iduser=1;
-		long o=1;
+		long iduser=2;
+		//long o=2;
 		//User u=new User(4,"username","hello","takwa.chnab@gmail.com",Role.PARENT);
 		User u=userrepo.findById(iduser).get();
 		System.out.println(u);

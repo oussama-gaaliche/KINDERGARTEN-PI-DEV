@@ -1,0 +1,52 @@
+
+  
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="PubAffich" />
+	<ui:define name="content">
+	
+
+
+
+
+
+
+
+
+	 
+
+
+<h:panelGroup>
+<h:form>
+<h:dataTable class="table table-hover"  var="plat" value="#{plaController.getallPlats()}">
+
+
+<h:column><f:facet name="header"><h:outputText value="Name" /></f:facet>
+<h:outputText value="#{plat.nom}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="Price" /></f:facet>
+<h:outputText value="#{plat.prix}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="Type" /></f:facet>
+<h:outputText value="#{plat.typeplat}" /></h:column>
+
+
+<h:column><f:facet name="header"><h:outputText value="Action" /></f:facet>
+<h:commandButton  value="delete" class="btn btn-danger" action="#{plaController.removePlat(plat.id_plat)}" />
+<h:commandButton  value="edit" class="btn btn-info" action="#{plaController.displayPlat(plat)}" />
+
+</h:column>
+
+
+</h:dataTable>
+<center>
+<h:commandButton  value="Add a new Plat" class="btn btn-success" action="#{planController.goFormAdd()}" />
+</center>
+</h:form>
+</h:panelGroup>
+
+</ui:define>
+</ui:composition>

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.common.collect.Lists;
+
 
 import tn.esprit.spring.Repository.reclamationRepository;
 import tn.esprit.spring.entity.TypeReclamation;
@@ -19,7 +19,7 @@ public class reclamationServiceImpl implements IReclamationService {
 
 	@Override
 	public List<reclamation> getAllReclamations() {
-		return Lists.newArrayList(reclamationrepository.findAll());
+		return null;
 	}
 
 	@Override

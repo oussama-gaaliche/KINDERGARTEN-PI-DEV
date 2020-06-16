@@ -34,7 +34,7 @@ public class IControllerPostImpl {
 
 	public void addPost() {
 
-		postservice.addPost(new Post(contained, null, null, 0,null));
+		
 	}
 
 	public String getContained() {

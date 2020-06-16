@@ -1,8 +1,6 @@
 package tn.esprit.spring.Controller;
 
-import org.chartistjsf.model.chart.AspectRatio;
-import org.chartistjsf.model.chart.Axis;
-import org.chartistjsf.model.chart.AxisType;
+
 import org.chartistjsf.model.chart.BarChartModel;
 import org.chartistjsf.model.chart.BarChartSeries;
 import org.chartistjsf.model.chart.PieChartModel;
@@ -23,8 +21,8 @@ import tn.esprit.spring.Repository.WordCountRepository;
 import tn.esprit.spring.Services.PostStatService;
 
 @Scope(value = "session")
-@Controller(value = "statControllerJSF")
-@ELBeanName(value = "statControllerjsf")
+@Controller(value = "staControllerJSF")
+@ELBeanName(value = "staControllerjsf")
 public class PostStatControllerJSF {
 
 private BarChartModel barChartModel;

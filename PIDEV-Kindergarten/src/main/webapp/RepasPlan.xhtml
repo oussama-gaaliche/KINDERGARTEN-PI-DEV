@@ -1,0 +1,108 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+xmlns:swag="http://java.sun.com/jsf/composite/swag"
+	template="Front.xhtml">
+	<ui:param name="page_name" value="Planning" />
+	<ui:define name="content">
+	<h:panelGroup >
+	<h:form>
+	
+	<div class="container">
+	
+<div class="row">
+		
+
+	
+	<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+	
+	<div class="ui-block responsive-flex1200">
+	
+				
+				<c:forEach items="#{repController.mydatalist}" var="e">
+				
+
+				
+<div class="ui-block-title" >
+	
+						<ul class="table-careers">
+						<li>	
+						<span class="position bold"><h:outputText value="#{e.value1}" /></span>
+							<c:forEach items="#{repController.getp(e.value1)}" var="p">
+						
+						<span class="position bold"><h:outputText value="#{p.nom}" /></span>
+						
+							<span class="position bold"><h:outputText value="#{p.typeplat}" /></span>
+							
+						</c:forEach>
+						</li>
+						</ul>
+						</div>
+						</c:forEach>
+						<div class="ui-block-title" >
+	
+						<ul class="table-careers">
+						<li>	
+						
+
+		<center>
+					
+   <div class="col col-lg-3 col-md-6 col-sm-12 col-12 mb30">
+							<div class="input-group number-spinner number-spinner--green">
+								<span class="input-group-btn data-dwn input-group-prepend">
+								
+							<h:commandLink action="#{counterView.decrement}" class="btn btn-default btn-info" data-dir="dwn" ><span class="glyphicon glyphicon-minus"></span></h:commandLink>
+							
+								</span>
+								<div class="form-group">
+								<h:outputText id="output" value="#{counterView.number}" class="form-control text-center" >
+								   </h:outputText> 
+								<span class="material-input"></span></div>
+								<span class="input-group-btn data-up input-group-append">
+								
+									<h:commandLink action="#{counterView.increment}" class="btn btn-default btn-info" data-dir="up" update="output"><span class="glyphicon glyphicon-plus"></span></h:commandLink>
+								
+								</span>
+							</div>
+						</div>
+						<ul><li>
+					
+     <h:commandButton value="Evaluer" action="#{repController.addRating(repController.idplan,counterView.number)}" class="btn btn-primary btn-md-2" />
+    
+    		</li></ul></center>	
+    	
+            
+						</li>
+						</ul>
+						</div>
+						<div class="ui-block-title" >
+	
+						<ul class="table-careers">
+						<li>	
+						
+       
+    
+    	
+            
+						</li>
+						</ul>
+					
+					</div></div></div>
+					
+				
+			
+	
+    
+    	
+            
+	</div></div>
+	
+	
+	</h:form>
+	</h:panelGroup><script type="text/javascript" language="javascript" src="#{facesContext.externalContext.requestContextPath}/resources/js/jquery-1.7.1.js" />
+	</ui:define>
+	</ui:composition>

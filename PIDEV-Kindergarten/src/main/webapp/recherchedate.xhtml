@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="Front.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+
+
+<div class="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+<h:panelGroup>
+<h:form>
+ <h:inputText  class="form-control" type="date" value="#{repController.date}"> <f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+										
+											
+<h:commandButton class="btn btn-success" action="#{repController.GetByPlanning(repController.date)}" value="Search"/>
+                 </h:form>
+
+				</h:panelGroup>
+				
+</div>
+			
+
+
+	</ui:define>
+</ui:composition>

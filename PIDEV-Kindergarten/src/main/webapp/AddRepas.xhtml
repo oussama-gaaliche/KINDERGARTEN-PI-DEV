@@ -55,7 +55,7 @@
                                                     
 <div class="card-header">
                                                         
-<h2>Add Ingredient</h2>
+<h2>Add Lunch</h2>
                                                     
                                                     </div>
                                                   
@@ -63,26 +63,51 @@
                                                         
 <div class="row">
                                                             
-<div class="col-sm-12 col-xl-6 m-b-30">
-                                                                
-<h4 class="sub-title">Name</h4>
-                                                             
 
-    <h:inputText id="noming"  class="form-control" type="Text"   value="#{ingController.nom}" required="true" requiredMessage="le champs est obligatoire" >
-                                                        
-                                                           </h:inputText>
-                                                            <h:message for="noming" style="color:red"></h:message>
+    <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Choose Normal Supply</h4>
+                                                                
+
+   <h:selectOneMenu  value="#{repController.pNormal}" class="form-control">
+ 	
+								
+								<f:selectItems value="#{repController.GetPlatsNormal()}" class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 313.391px;">
+								  <span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-gf4e-container" />
+								<span class="select2-selection__rendered" id="select2-gf4e-container" title="Alabama"></span>
+                                                            <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span><span class="dropdown-wrapper" aria-hidden="true"></span>
+								</f:selectItems>
+							</h:selectOneMenu>  
                                                             </div>
                                                             
+  
+                                                            
+  <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Choose Special Supply</h4>
+                                                                
+
+   <h:selectOneMenu  value="#{repController.pSpecial}" class="form-control">
+ 	
+								
+								<f:selectItems value="#{repController.GetPlatsSpecial()}" class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 313.391px;">
+								  <span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-gf4e-container" />
+								<span class="select2-selection__rendered" id="select2-gf4e-container" title="Alabama"></span>
+                                                            <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span><span class="dropdown-wrapper" aria-hidden="true"></span>
+								</f:selectItems>
+							</h:selectOneMenu>  
+                                                            </div>
+                                                            
+  
+                                                  
+
 <div class="col-sm-12 col-xl-6 m-b-30">
                                                                 
-<h4 class="sub-title">Price</h4>
+<h4 class="sub-title">Date</h4>
                                                                 
 
-    <h:inputText id="prixing" class="form-control" type="text"   value="#{ingController.prix}" required="true" requiredMessage="le champs est obligatoire" validatorMessage="le prix doit etre compris entre 5.5 et 7">
-<f:validateDoubleRange minimum="5" maximum="8" /></h:inputText>
-
-                                                         <h:message for="prixing" style="color:red"></h:message>  
+    <h:inputText id="date" class="form-control" type="text"   value="#{repController.date}"  required="true" requiredMessage="le champs est obligatoire"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
+                                                            <h:message for="date" style="color:red"></h:message>
                                                             </div>
                                                             
   
@@ -90,7 +115,7 @@
 
                                                         </div>
                                          <center>           
-                    <h:commandButton class="btn btn-success" action="#{ingController.AddIng()}" value="Add Ingredient" update="grid" icon="pi pi-check" validateClient="true" style="margin-right:10px"/>
+                    <h:commandButton class="btn btn-success" action="#{repController.addRep()}" value="Add" />
                  
                                                    </center>  
                                                

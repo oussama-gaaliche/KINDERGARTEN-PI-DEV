@@ -1,0 +1,337 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	
+xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+		template="/template/DashTemplate.xhtml"
+	>
+	<ui:param name="page_name" value="addPlan" />
+	<ui:define name="content">
+	  <link rel="icon" href="files\assets\images\favicon.ico" type="image/x-icon"/>
+    <!-- Google font--><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet"/>
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\bootstrap\css\bootstrap.min.css"/>
+    <!-- Font awesome star css -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\font-awesome\css\font-awesome.min.css"/>
+    <!-- Font awesome star css -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\fontawesome-stars.css"/>
+    <!-- star theme css -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-1to10.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-horizontal.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-movie.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-pill.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-reversed.css"/>
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\bars-square.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="files/bower_components/jquery-bar-rating/dist/themes/bootstrap-stars.css"/> -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\css-stars.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="files/bower_components/jquery-bar-rating/css/fontawesome-stars.css"/> -->
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery-bar-rating\css\fontawesome-stars-o.css"/>
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="files\assets\icon\themify-icons\themify-icons.css"/>
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="files\assets\icon\icofont\css\icofont.css"/>
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="files\assets\icon\feather\css\feather.css"/>
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="files\assets\css\style.css"/>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="files\assets\css\jquery.mCustomScrollbar.css"/>
+	<div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <!-- Page-header start -->
+                                <div class="page-header">
+                                    <div class="row align-items-end">
+                                        <div class="col-lg-8">
+                                            <div class="page-header-title">
+                                                <div class="d-inline">
+                                                    <h4>Rating</h4>
+                                                    <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="page-header-breadcrumb">
+                                                <ul class="breadcrumb-title">
+                                                    <li class="breadcrumb-item">
+                                                        <a href="index-1.htm"> <i class="feather icon-home"></i> </a>
+                                                    </li>
+                                                    <li class="breadcrumb-item"><a href="#!">Advance Components</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item"><a href="#!">Rating</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                   
+                                    <!-- Page body start -->
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- Rating card start -->
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <div class="card-header-left">
+                                                            <h5>Rating</h5>
+                                                            <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <div class="row">
+                                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">1/10 Rating</h6>
+                                                                <p>Use <code>id="example-1to10"</code> to see default rating</p>
+                                                                <div class="box-body">
+                                                                    <div class="br-wrapper br-theme-bars-1to10"><select id="example-1to10" name="rating" autocomplete="off" style="display: none;">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7" selected="selected">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select><div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1" class="br-selected"></a><a href="#" data-rating-value="2" data-rating-text="2" class="br-selected"></a><a href="#" data-rating-value="3" data-rating-text="3" class="br-selected"></a><a href="#" data-rating-value="4" data-rating-text="4" class="br-selected"></a><a href="#" data-rating-value="5" data-rating-text="5" class="br-selected"></a><a href="#" data-rating-value="6" data-rating-text="6" class="br-selected"></a><a href="#" data-rating-value="7" data-rating-text="7" class="br-selected br-current"></a><a href="#" data-rating-value="8" data-rating-text="8"></a><a href="#" data-rating-value="9" data-rating-text="9"></a><a href="#" data-rating-value="10" data-rating-text="10"></a><div class="br-current-rating">7</div></div></div>
+                                                                    <span class="current-rating"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">Movie Rating</h6>
+                                                                <p>Use <code>id="example-movie"</code> to see movie rating</p>
+                                                                <div class="box-body">
+                                                                    <div class="br-wrapper br-theme-bars-movie"><select id="example-movie" name="rating" autocomplete="off" style="display: none;">
+                                                <option value="Bad">Bad</option>
+                                                <option value="Mediocre">Mediocre</option>
+                                                <option value="Good" selected="selected">Good</option>
+                                                <option value="Awesome">Awesome</option>
+                                            </select><div class="br-widget"><a href="#" data-rating-value="Bad" data-rating-text="Bad" class="br-selected"></a><a href="#" data-rating-value="Mediocre" data-rating-text="Mediocre" class="br-selected br-current"></a><a href="#" data-rating-value="Good" data-rating-text="Good"></a><a href="#" data-rating-value="Awesome" data-rating-text="Awesome"></a><div class="br-current-rating">Mediocre</div></div></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">square rating</h6>
+                                                                <p>Use <code>id="example-square"</code> to see square rating</p>
+                                                                <div class="box-body">
+                                                                    <div class="br-wrapper br-theme-bars-square"><select id="example-square" name="rating" autocomplete="off" style="display: none;">
+                                                <option value="" label="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select><div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1">1</a><a href="#" data-rating-value="2" data-rating-text="2">2</a><a href="#" data-rating-value="3" data-rating-text="3">3</a><a href="#" data-rating-value="4" data-rating-text="4">4</a><a href="#" data-rating-value="5" data-rating-text="5">5</a></div></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">Pill rating</h6>
+                                                                <p>Use <code>id="example-pill"</code> to see pill rating</p>
+                                                                <div class="box-body">
+                                                                    <div class="br-wrapper br-theme-bars-pill"><select id="example-pill" name="rating" autocomplete="off" style="display: none;"><option value="-- no rating selected --"></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                            </select><div class="br-widget"><a href="#" data-rating-value="A" data-rating-text="A" class="br-selected br-current">A</a><a href="#" data-rating-value="B" data-rating-text="B">B</a><a href="#" data-rating-value="C" data-rating-text="C">C</a><a href="#" data-rating-value="D" data-rating-text="D">D</a><a href="#" data-rating-value="E" data-rating-text="E">E</a><a href="#" data-rating-value="F" data-rating-text="F">F</a></div></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">Reverse rating</h6>
+                                                                <p>Use <code>id="example-reversed"</code> to see reverse rating</p>
+                                                                <div class="box-body">
+                                                                    <div class="br-wrapper br-theme-bars-reversed"><select id="example-reversed" name="rating" autocomplete="off" style="display: none;">
+                                                <option value="Strongly Agree">Strongly Agree</option>
+                                                <option value="Agree">Agree</option>
+                                                <option value="Neither Agree or Disagree" selected="selected">Neither Agree or Disagree</option>
+                                                <option value="Disagree">Disagree</option>
+                                                <option value="Strongly Disagree">Strongly Disagree</option>
+                                            </select><div class="br-widget br-reverse"><a href="#" data-rating-value="Strongly Agree" data-rating-text="Strongly Agree" class=""></a><a href="#" data-rating-value="Agree" data-rating-text="Agree" class=""></a><a href="#" data-rating-value="Neither Agree or Disagree" data-rating-text="Neither Agree or Disagree" class="br-selected br-current"></a><a href="#" data-rating-value="Disagree" data-rating-text="Disagree" class="br-selected"></a><a href="#" data-rating-value="Strongly Disagree" data-rating-text="Strongly Disagree" class="br-selected"></a><div class="br-current-rating br-selected br-active">Neither Agree or Disagree</div></div></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">Horizontal Rating</h6>
+                                                                <p>Use <code>id="example-horizontal"</code> to see horizontal rating</p>
+                                                                <div class="box-body">
+                                                                    <div class="br-wrapper br-theme-bars-horizontal"><select id="example-horizontal" name="rating" autocomplete="off" style="display: none;">
+                                                <option value="10">10</option>
+                                                <option value="9">9</option>
+                                                <option value="8">8</option>
+                                                <option value="7">7</option>
+                                                <option value="6">6</option>
+                                                <option value="5">5</option>
+                                                <option value="4">4</option>
+                                                <option value="3">3</option>
+                                                <option value="2">2</option>
+                                                <option value="1" selected="selected">1</option>
+                                            </select><div class="br-widget br-reverse"><a href="#" data-rating-value="10" data-rating-text="10"></a><a href="#" data-rating-value="9" data-rating-text="9"></a><a href="#" data-rating-value="8" data-rating-text="8"></a><a href="#" data-rating-value="7" data-rating-text="7"></a><a href="#" data-rating-value="6" data-rating-text="6"></a><a href="#" data-rating-value="5" data-rating-text="5"></a><a href="#" data-rating-value="4" data-rating-text="4"></a><a href="#" data-rating-value="3" data-rating-text="3"></a><a href="#" data-rating-value="2" data-rating-text="2"></a><a href="#" data-rating-value="1" data-rating-text="1" class="br-selected br-current"></a><div class="br-current-rating br-selected">1</div></div></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">Font awesome Rating</h6>
+                                                                <p>Use <code>id="example-fontawesome"</code> to see font awesome rating</p>
+                                                                <div class="stars stars-example-fontawesome">
+                                                                    <div class="br-wrapper br-theme-fontawesome-stars"><select id="example-fontawesome" name="rating" autocomplete="off" style="display: none;">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select><div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1" class="br-selected br-current"></a><a href="#" data-rating-value="2" data-rating-text="2"></a><a href="#" data-rating-value="3" data-rating-text="3"></a><a href="#" data-rating-value="4" data-rating-text="4"></a><a href="#" data-rating-value="5" data-rating-text="5"></a></div></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">CSS Stars Rating</h6>
+                                                                <p>Use <code>id="example-css"</code> to see css stars rating</p>
+                                                                <div class="stars stars-example-css">
+                                                                    <div class="br-wrapper br-theme-css-stars"><select id="example-css" class="rating-star" name="rating" autocomplete="off" style="display: none;">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select><div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1" class="br-selected"></a><a href="#" data-rating-value="2" data-rating-text="2" class="br-selected"></a><a href="#" data-rating-value="3" data-rating-text="3" class="br-selected"></a><a href="#" data-rating-value="4" data-rating-text="4" class="br-selected"></a><a href="#" data-rating-value="5" data-rating-text="5" class="br-selected br-current"></a></div></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                <h6 class="sub-title">fractional star Rating</h6>
+                                                                <p>Use <code>id="example-fontawesome-o"</code> to see fractional star rating</p>
+                                                                <div class="stars stars-example-fontawesome-o">
+                                                                    <div class="br-wrapper br-theme-fontawesome-stars-o"><select id="example-fontawesome-o" name="rating" data-current-rating="5.6" autocomplete="off" style="display: none;">
+                                                <option value="" label="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select><div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1" class="br-selected"></a><a href="#" data-rating-value="2" data-rating-text="2" class="br-selected"></a><a href="#" data-rating-value="3" data-rating-text="3" class="br-selected"></a><a href="#" data-rating-value="4" data-rating-text="4" class="br-selected"></a><a href="#" data-rating-value="5" data-rating-text="5" class="br-selected br-current"></a><a href="#" data-rating-value="6" data-rating-text="6" class="br-fractional br-fractional-60"></a><a href="#" data-rating-value="7" data-rating-text="7"></a><a href="#" data-rating-value="8" data-rating-text="8"></a><a href="#" data-rating-value="9" data-rating-text="9"></a><a href="#" data-rating-value="10" data-rating-text="10"></a></div></div>
+                                                                    <span class="title current-rating">
+                                Current rating: <span class="value">5.6</span>
+                                                                    </span>
+                                                                    <span class="title your-rating hidden">
+                                Your rating: <span class="value"></span>
+                                                                    <a href="#" class="clear-rating"><i class="icofont icofont-close-circled"></i></a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Rating card end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Page body end -->
+                                </div>
+                            </div>
+                            <!-- Main-body start -->
+
+                            <div id="styleSelector">
+
+                            <div class="selector-toggle"><a href="javascript:void(0)"></a>
+                            </div><ul><li><p class="selector-title main-title st-main-title">
+                            <b>Adminty </b>Customizer</p><span class="text-muted">Live customizer with tons of options</span>
+                            </li><li><p class="selector-title">Main layouts</p></li><li><div class="theme-color"
+                            ><a href="#" class="navbar-theme" navbar-theme="themelight1"><span class="head">
+                            </span><span class="cont"></span></a><a href="#" class="navbar-theme" navbar-theme="theme1">
+                            <span class="head"></span><span class="cont"></span></a></div></li></ul>
+                            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: calc(100vh - 440px);">
+                            <div class="style-cont m-t-10" style="overflow: hidden; width: auto; height: calc(100vh - 440px);">
+                            <ul class="nav nav-tabs  tabs" role="tablist"><li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#sel-layout" role="tab">Layouts</a>
+                            </li><li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sel-sidebar-setting" role="tab">
+                            Sidebar Settings</a></li></ul><div class="tab-content tabs">
+                            <div class="tab-pane active" id="sel-layout" role="tabpanel"><ul>
+                            <li class="theme-option"><div class="checkbox-fade fade-in-primary"><label>
+                            <input type="checkbox" value="false" id="sidebar-position" name="sidebar-position" checked=""/>
+                            <span class="cr"><i class="cr-icon feather icon-check txt-success f-w-600"></i></span>
+                            <span>Fixed Sidebar Position</span></label></div></li><li class="theme-option">
+                            <div class="checkbox-fade fade-in-primary"><label>
+                            <input type="checkbox" value="false" id="header-position" name="header-position" checked=""/>
+                            <span class="cr"><i class="cr-icon feather icon-check txt-success f-w-600"></i>
+                            </span><span>Fixed Header Position</span></label></div></li></ul></div>
+                            <div class="tab-pane" id="sel-sidebar-setting" role="tabpanel"><ul>
+                            <li class="theme-option"><p class="sub-title drp-title">Menu Type</p>
+                            <div class="form-radio" id="menu-effect">
+                            <div class="radio radio-inverse radio-inline" data-toggle="tooltip" title="" data-original-title="simple icon">
+                            <label><input type="radio" name="radio" value="st6" onclick="handlemenutype(this.value)" checked="true"
+/><i class="helper"></i><span class="micon st6"><i class="feather icon-command"></i></span></label></div>
+                            <div class="radio  radio-primary radio-inline" data-toggle="tooltip" title="" data-original-title="color icon">
+                            <label><input type="radio" name="radio" value="st5" onclick="handlemenutype(this.value)"/>
+                            <i class="helper"></i><span class="micon st5"><i class="feather icon-command"></i></span></label></div></div></li>
+                            <li class="theme-option"><p class="sub-title drp-title">SideBar Effect</p>
+                            <select id="vertical-menu-effect" class="form-control minimal">
+                            <option name="vertical-menu-effect" value="shrink">shrink</option>
+                            <option name="vertical-menu-effect" value="overlay">overlay</option>
+                            <option name="vertical-menu-effect" value="push">Push</option></select></li>
+                            <li class="theme-option"><p class="sub-title drp-title">Hide/Show Border</p>
+                            <select id="vertical-border-style" class="form-control minimal">
+                            <option name="vertical-border-style" value="solid">Style 1</option>
+                            <option name="vertical-border-style" value="dotted">Style 2</option><option name="vertical-border-style" value="dashed">Style 3</option><option name="vertical-border-style" value="none">No Border</option></select></li><li class="theme-option"><p class="sub-title drp-title">Drop-Down Icon</p><select id="vertical-dropdown-icon" class="form-control minimal"><option name="vertical-dropdown-icon" value="style1">Style 1</option><option name="vertical-dropdown-icon" value="style2">style 2</option><option name="vertical-dropdown-icon" value="style3">style 3</option></select></li><li class="theme-option"><p class="sub-title drp-title">Sub Menu Drop-down Icon</p><select id="vertical-subitem-icon" class="form-control minimal"><option name="vertical-subitem-icon" value="style1">Style 1</option><option name="vertical-subitem-icon" value="style2">style 2</option><option name="vertical-subitem-icon" value="style3">style 3</option><option name="vertical-subitem-icon" value="style4">style 4</option><option name="vertical-subitem-icon" value="style5">style 5</option><option name="vertical-subitem-icon" value="style6">style 6</option></select></li></ul></div><ul><li><p class="selector-title">Header Brand color</p></li><li class="theme-option"><div class="theme-color"><a href="#" class="logo-theme" logo-theme="theme1"><span class="head"></span><span class="cont"></span></a><a href="#" class="logo-theme" logo-theme="theme2"><span class="head"></span><span class="cont"></span></a><a href="#" class="logo-theme" logo-theme="theme3"><span class="head"></span><span class="cont"></span></a><a href="#" class="logo-theme" logo-theme="theme4"><span class="head"></span><span class="cont"></span></a><a href="#" class="logo-theme" logo-theme="theme5"><span class="head"></span><span class="cont"></span></a></div></li><li><p class="selector-title">Header color</p></li><li class="theme-option"><div class="theme-color"><a href="#" class="header-theme" header-theme="theme1"><span class="head"></span><span class="cont"></span></a><a href="#" class="header-theme" header-theme="theme2"><span class="head"></span><span class="cont"></span></a><a href="#" class="header-theme" header-theme="theme3"><span class="head"></span><span class="cont"></span></a><a href="#" class="header-theme" header-theme="theme4"><span class="head"></span><span class="cont"></span></a><a href="#" class="header-theme" header-theme="theme5"><span class="head"></span><span class="cont"></span></a><a href="#" class="header-theme" header-theme="theme6"><span class="head"></span><span class="cont"></span></a></div></li><li><p class="selector-title">Active link color</p></li><li class="theme-option"><div class="theme-color"><a href="#" class="active-item-theme small" active-item-theme="theme1"></a><a href="#" class="active-item-theme small" active-item-theme="theme2"></a><a href="#" class="active-item-theme small" active-item-theme="theme3"></a><a href="#" class="active-item-theme small" active-item-theme="theme4"></a><a href="#" class="active-item-theme small" active-item-theme="theme5"></a><a href="#" class="active-item-theme small" active-item-theme="theme6"></a><a href="#" class="active-item-theme small" active-item-theme="theme7"></a><a href="#" class="active-item-theme small" active-item-theme="theme8"></a><a href="#" class="active-item-theme small" active-item-theme="theme9"></a><a href="#" class="active-item-theme small" active-item-theme="theme10"></a><a href="#" class="active-item-theme small" active-item-theme="theme11"></a><a href="#" class="active-item-theme small" active-item-theme="theme12"></a></div></li><li><p class="selector-title">Menu Caption Color</p></li><li class="theme-option"><div class="theme-color"><a href="#" class="leftheader-theme small" lheader-theme="theme1"></a><a href="#" class="leftheader-theme small" lheader-theme="theme2"></a><a href="#" class="leftheader-theme small" lheader-theme="theme3"></a><a href="#" class="leftheader-theme small" lheader-theme="theme4"></a><a href="#" class="leftheader-theme small" lheader-theme="theme5"></a><a href="#" class="leftheader-theme small" lheader-theme="theme6"></a></div></li></ul></div></div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 82.1048px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div><ul><li><a href="http://html.codedthemes.com/Adminty/doc" target="_blank" class="btn btn-primary btn-block m-r-15 m-t-5 m-b-10">Online Documentation</a></li><li class="text-center"><span class="text-center f-18 m-t-15 m-b-15 d-block">Thank you for sharing !</span><a href="#!" target="_blank" class="btn btn-facebook soc-icon m-b-20"><i class="feather icon-facebook"></i></a><a href="#!" target="_blank" class="btn btn-twitter soc-icon m-l-20 m-b-20"><i class="feather icon-twitter"></i></a></li></ul></div>
+                        </div>
+	
+ <script type="text/javascript" src="files\bower_components\jquery\js\jquery.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\popper.js\js\popper.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\bootstrap\js\bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="files\bower_components\modernizr\js\modernizr.js"></script>
+    <script type="text/javascript" src="files\bower_components\modernizr\js\css-scrollbars.js"></script>
+
+    <!-- rating js -->
+    <script type="text/javascript" src="files\bower_components\jquery-bar-rating\js\jquery.barrating.js"></script>
+    <script type="text/javascript" src="files\assets\js\rating.js"></script>
+
+    <!-- i18next.min.js -->
+    <script type="text/javascript" src="files\bower_components\i18next\js\i18next.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\i18next-xhr-backend\js\i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\i18next-browser-languagedetector\js\i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\jquery-i18next\js\jquery-i18next.min.js"></script>
+    <script src="files\assets\js\pcoded.min.js"></script>
+    <script src="files\assets\js\vartical-layout.min.js"></script>
+    <script src="files\assets\js\jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Custom js -->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                content: function() {
+                    return $('#primary-popover-content').html();
+                }
+            });
+        });
+
+    </script>
+    <script type="text/javascript" src="..\files\assets\js\script.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+	
+	</ui:define></ui:composition>

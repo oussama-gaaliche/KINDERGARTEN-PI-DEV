@@ -2,13 +2,12 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="search.xhtml"
-	xmlns:c="http://java.sun.com/jstl/core"
-	xmlns:xlink="http://www.w3.org/1999/xlink">
-	<ui:param name="page_name" value="AccueilResto" />
+	template="Front.xhtml">
+	<ui:param name="page_name" value="addPlan" />
 	<ui:define name="content">
-	
-	<div class="container">
+
+
+<div class="container">
 	<div class="row">
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<div class="ui-block responsive-flex1200">
@@ -50,11 +49,10 @@
 							</a>
 						</li>
 					</ul>
-					<h:form>
+					<h:form class="w-search">
 
 						<div class="form-group with-button is-empty">
-							<h:inputText id="dte" class="form-control" type="date" placeholder="Search Blog Posts......" value="#{repController.date}" ><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
-							
+							<h:inputText class="form-control" type="date"  value="#{repController.date}"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
 							<h:commandLink action="#{repController.GetByPlanning(repController.date)}"  >
 								<svg class="olymp-magnifying-glass-icon"><use href="#olymp-magnifying-glass-icon"/></svg>
 							</h:commandLink>
@@ -71,50 +69,5 @@
 		</div>
 	</div>
 </div>
-	
-
-<div class="container">
-	
-<div class="row">
-		
-<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			
-<div class="ui-block responsive-flex1200">
-				
-<div class="ui-block-title">
-<h2>
-School meals are a fundamental service in the daily life of children which allows them to benefit from a complete and balanced meal at a competitive price.
-This is why, Our Group has made available to its children a School Restaurant located on campus.
-<br></br>
-<span>
-
-<h4>
- <h:form>
-								<a href="#"  class="h5 author-name" >
-								<h:commandLink action="#{plaController.GoAcceuil()}" class="post-add-icon inline-items" value="View More "></h:commandLink>
-								</a></h:form>
-</h4></span>
-</h2>
-
-
-					
-					
-
-					
-<div class="w-select">
-
-
-<img src="files/img/resto.jpg" alt="photo" />
-
-						</div>
-						</div>
-						</div></div></div>
-						</div>
-						
-					
-
-	
-
-
-	</ui:define>
+</ui:define>
 </ui:composition>

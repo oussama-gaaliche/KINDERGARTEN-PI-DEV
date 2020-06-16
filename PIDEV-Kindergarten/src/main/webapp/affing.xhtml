@@ -1,0 +1,21 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/DashTemplate.xhtml">
+	<ui:param name="page_name" value="addPlan" />
+	<ui:define name="content">
+	                                                           
+
+    	<h:selectOneMenu value="#{ingplatController.noming}" class="js-example-basic-single col-sm-12 select2-hidden-accessible" tabindex="-1" aria-hidden="true" >
+								
+								<f:selectItems value="#{ingplatController.GetNomIng()}" class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 313.391px;">
+								  <span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-gf4e-container" />
+								<span class="select2-selection__rendered" id="select2-gf4e-container" title="Alabama"></span>
+                                                            <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span><span class="dropdown-wrapper" aria-hidden="true"></span>
+								</f:selectItems>
+							</h:selectOneMenu>  
+							 <h:graphicImage class="bgSizeContain" library="eventdocs"  name ="#{detaileventController.geteventbyid().photo}" />
+                                                    
+	</ui:define>
+	</ui:composition>

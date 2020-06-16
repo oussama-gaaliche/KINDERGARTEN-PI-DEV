@@ -12,9 +12,9 @@ import tn.esprit.spring.entity.Comment;
 import tn.esprit.spring.entity.CommentPK;
 import tn.esprit.spring.entity.Post;
 import tn.esprit.spring.entity.User;
-import tn.esprit.spring.repository.CommentRepository;
-import tn.esprit.spring.repository.PostRepository;
-import tn.esprit.spring.repository.UserRepository;
+import tn.esprit.spring.Repository.CommentRepository;
+import tn.esprit.spring.Repository.PostRepository;
+import tn.esprit.spring.Repository.UserRepository;
 
 
 @Service
@@ -44,7 +44,7 @@ public class CommentServiceImpl implements ICommentService {
 		Post post = postRepository.findById(postId).get();
 		Comment comment = new Comment();
 		comment.setUser(userrManagedEntity);
-		comment.setDate(ZonedDateTime.now());
+		//comment.setDate(ZonedDateTime.now());
 		output = BadWordFilter.getCensoredText(cmt);
 		comment.setContained(output);
 		comment.setPost(post);

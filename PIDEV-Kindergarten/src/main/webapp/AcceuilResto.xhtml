@@ -1,0 +1,183 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="Front.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<ui:param name="page_name" value="Accueil Detail" />
+	<ui:define name="content">
+	
+	
+
+<h:panelGroup>
+<form >
+<div class="container">
+	<div class="row">
+	
+<c:forEach items="#{plaController.PopularPlats()}" var="plat" >
+<div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+			<div class="ui-block">
+				
+<!-- Friend Item -->
+				
+				<div class="friend-item fav-page">
+					<div class="friend-header-thumb">
+						<img src="files/img/p2.jpg" alt="friend"/>
+					</div>
+				
+					<div class="friend-item-content">
+				
+						<div class="more">
+							<svg class="olymp-three-dots-icon" ><use xlink:href="#olymp-three-dots-icon"></use></svg>
+							
+						</div>
+						<div class="friend-avatar">
+							
+							<div class="author-content">
+						<h:form>
+								<a href="#"  class="h5 author-name" >
+								<h:commandLink action="#{plaController.Gottodetail(plat.id_plat)}" class="post-add-icon inline-items"><h:outputText value="#{plat.nom}" /></h:commandLink>
+								</a></h:form>
+								<div class="country"><h:outputText value="#{plat.typeplat}" /> </div>
+							</div>
+						</div>
+				
+						
+				</div>
+				</div>
+				</div>
+			
+				<!-- ... end Friend Item -->			
+		</div>
+		
+							
+							
+</c:forEach>
+
+
+   </div> <center> <div>
+   <h:form>
+								<a href="#"  class="h5 author-name" >
+								<h:commandLink action="#{plaController.GoAlplat()}" class="post-add-icon inline-items" value="View More Plats"></h:commandLink>
+								</a></h:form></div>
+								
+   </center></div>
+  
+   <div class="ui-block features-video">
+				<div class="video-player">
+					<img src="files/img/video9.jpg" alt="photo"/>
+					
+			
+					<div class="video-content">
+						<div class="h4 title">Rock Garden Festival - Day 3</div>
+						<time class="published" datetime="2017-03-24T18:18">12:06</time>
+					</div>
+			
+					<div class="overlay"></div>
+				</div>
+			
+				<div class="features-video-content">
+			
+					<article class="hentry post">
+			
+						<div class="post__author author vcard inline-items">
+							<img src="files/img/author-page.jpg" alt="author"/>
+			
+							<div class="author-date">
+								<a class="h6 post__author-name fn" href="02-ProfilePage.html">James Spiegel</a>
+								<div class="post__date">
+									<time class="published" datetime="2017-03-24T18:18">
+										2 hours ago
+									</time>
+								</div>
+							</div>
+			
+							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="#olymp-three-dots-icon"></use></svg>
+								
+							</div>
+			
+						</div>
+			
+						<p>We are Trying to  <a href="#"> Mathilda Brinker</a> to the “Rock Garden Festival” and had a blast! Here’s a small video of one of us in the crowd.</p>
+			
+						<div class="post-additional-info inline-items">
+			
+							<a href="#" class="post-add-icon inline-items">
+								<svg class="olymp-heart-icon"><use xlink:href="#olymp-heart-icon"></use></svg>
+								<span>14</span>
+							</a>
+			
+							<div class="comments-shared">
+								<a href="#" class="post-add-icon inline-items">
+									<svg class="olymp-speech-balloon-icon"><use xlink:href="#olymp-speech-balloon-icon"></use></svg>
+									<span>19</span>
+								</a>
+			
+								<a href="#" class="post-add-icon inline-items">
+									<svg class="olymp-share-icon"><use xlink:href="#olymp-share-icon"></use></svg>
+									<span>27</span>
+								</a>
+							</div>
+			
+						</div>
+			
+						<div class="control-block-button post-control-button">
+			
+							<a href="#" class="btn btn-control">
+								<svg class="olymp-like-post-icon"><use xlink:href="#olymp-like-post-icon"></use></svg>
+							</a>
+			
+							<a href="#" class="btn btn-control">
+								<svg class="olymp-comments-post-icon"><use xlink:href="#olymp-comments-post-icon"></use></svg>
+							</a>
+			
+							<a href="#" class="btn btn-control">
+								<svg class="olymp-share-icon"><use xlink:href="#olymp-share-icon"></use></svg>
+							</a>
+			
+						</div>
+			
+					</article>
+			
+					<div class="mCustomScrollbar ps ps--theme_default ps--active-y" data-mcs-theme="dark" data-ps-id="ac281a7a-28ef-2a0a-8c15-a2a76d04436e">
+			
+						
+			
+					<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; height: 110px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 32px;"></div></div></div>
+			
+					<form class="comment-form inline-items">
+			
+						<div class="post__author author vcard inline-items">
+							<img src="files/img/avatar73-sm.jpg" alt="author"/>
+			
+							<div class="form-group with-icon-right is-empty">
+								<textarea class="form-control" placeholder="Press Enter to post..."></textarea>
+								<div class="add-options-message">
+									<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
+										<svg class="olymp-camera-icon"><use xlink:href="#olymp-camera-icon"></use></svg>
+									</a>
+								</div>
+							<span class="material-input"></span></div>
+						</div>
+			
+					</form>
+			
+				</div>
+			
+			</div>
+ 
+</form>
+
+ </h:panelGroup>
+
+						
+						
+				
+	
+
+
+	</ui:define>
+	
+</ui:composition>
+

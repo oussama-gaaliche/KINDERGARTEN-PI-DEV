@@ -11,18 +11,18 @@
 	
 	
                                                         <div class="form-group row">
-                                                            <label class="col-sm-2 col-form-label">Name</label>
+                                                            <label class="col-sm-2 col-form-label">Pick Start Date</label>
                                                             
                                                             <div class="col-sm-10">
-                                                               <h:inputText type="text" class="form-control" value="#{ingController.nom}"></h:inputText>
+                                                               <h:inputText type="text" class="form-control" value="#{planController.date_debut}"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
                                                             </div>
                                                         </div>
                                                         
                                                         <div class="form-group row">
-                                                            <label class="col-sm-2 col-form-label">Price</label>
+                                                            <label class="col-sm-2 col-form-label">Pick End Date</label>
                                                             
                                                             <div class="col-sm-10">
-                                                               <h:inputText type="text" class="form-control" value="#{ingController.prix}"></h:inputText>
+                                                               <h:inputText type="text" class="form-control" value="#{planController.date_fin}"><f:convertDateTime pattern="MM-dd-yyyy" /></h:inputText>
                                                             </div>
                                                         </div>
                                                         
@@ -31,7 +31,7 @@
                                                       
                                                        
                                                     <center>
-                       <h:commandButton value="Update"  class="btn btn-success" action="#{ingController.updateIng()}" /> 
+                       <h:commandButton value="Update"  class="btn btn-success" action="#{planController.updatePlanning()}" /> 
                                                         </center>
                                                        
                                                         </h:form></h:panelGroup>

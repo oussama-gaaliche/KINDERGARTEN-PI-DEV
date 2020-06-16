@@ -55,7 +55,11 @@
                                                     
 <div class="card-header">
                                                         
-<h2>Add Ingredient</h2>
+<h2>Update a supply</h2>
+    <h:inputText  id="nomp" class="form-control" value="#{plaController.nom}" required="true" requiredMessage="le champs est obligatoire">
+       
+        </h:inputText>
+          <h:message for="nomp" style="color:red"></h:message>
                                                     
                                                     </div>
                                                   
@@ -65,32 +69,36 @@
                                                             
 <div class="col-sm-12 col-xl-6 m-b-30">
                                                                 
-<h4 class="sub-title">Name</h4>
+<h4 class="sub-title">price</h4>
+<h:inputText  id="prixp" class="form-control" value="#{plaController.prix}" required="true" requiredMessage="le champs est obligatoire">
+       
+        </h:inputText>
+          <h:message for="prixp" style="color:red"></h:message>
                                                              
 
-    <h:inputText id="noming"  class="form-control" type="Text"   value="#{ingController.nom}" required="true" requiredMessage="le champs est obligatoire" >
-                                                        
-                                                           </h:inputText>
-                                                            <h:message for="noming" style="color:red"></h:message>
+ 	  
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-6 m-b-30">
+                                                                
+<h4 class="sub-title">Type</h4>
+<h:inputText   class="form-control" value="#{plaController.typeplat}">
+       
+        </h:inputText>
+          
+                                                             
+
+ 	  
                                                             </div>
                                                             
-<div class="col-sm-12 col-xl-6 m-b-30">
-                                                                
-<h4 class="sub-title">Price</h4>
-                                                                
 
-    <h:inputText id="prixing" class="form-control" type="text"   value="#{ingController.prix}" required="true" requiredMessage="le champs est obligatoire" validatorMessage="le prix doit etre compris entre 5.5 et 7">
-<f:validateDoubleRange minimum="5" maximum="8" /></h:inputText>
-
-                                                         <h:message for="prixing" style="color:red"></h:message>  
-                                                            </div>
+                                                           
                                                             
   
                                                             
 
                                                         </div>
                                          <center>           
-                    <h:commandButton class="btn btn-success" action="#{ingController.AddIng()}" value="Add Ingredient" update="grid" icon="pi pi-check" validateClient="true" style="margin-right:10px"/>
+                    <h:commandButton class="btn btn-success" action="#{plaController.UpdatePlat()}" value="Update "/>
                  
                                                    </center>  
                                                
@@ -140,3 +148,4 @@
 	</ui:composition>
 	
 
+ 
