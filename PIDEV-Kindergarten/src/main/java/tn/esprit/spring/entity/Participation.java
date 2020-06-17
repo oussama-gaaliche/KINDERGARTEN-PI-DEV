@@ -30,8 +30,7 @@ private static final long serialVersionUID = 1L;
 	private ParticipationPK participationpk ;
 	
 	@Column(name="Type_Participation")
-	@Enumerated(EnumType.STRING)
-	private Etat_participation etat ;
+		private  String etat ;
 	
 	@Temporal (TemporalType.DATE)
     @Column(name="Date_participation")
@@ -55,11 +54,13 @@ private static final long serialVersionUID = 1L;
 		this.participationpk = participationpk;
 	}
 
-	public Etat_participation getEtat() {
+
+
+	public String getEtat() {
 		return etat;
 	}
 
-	public void setEtat(Etat_participation etat) {
+	public void setEtat(String etat) {
 		this.etat = etat;
 	}
 

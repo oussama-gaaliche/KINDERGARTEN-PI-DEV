@@ -80,10 +80,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @Scope(value = "session")
 @Controller(value ="plaController")
 @ELBeanName(value = "plaController")
-@Join(path = "/", to = "testPlat.jsf")
-@MultipartConfig
+@Join(path = "/", to = "Detail.jsf")
 
-@RequestScoped
+
+
 
 public class PlatControllerJSF  {
 	@Autowired

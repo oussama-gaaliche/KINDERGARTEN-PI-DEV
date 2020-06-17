@@ -2,7 +2,10 @@
 package tn.esprit.spring.Services;
 
 import java.util.Date;
+
 import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -91,7 +94,7 @@ public class EventServiceImpl implements IEventService {
 	////////////////////////////////////////// participation////////////////////////////////////////////////////
 	@Override
 	public void partciperUser_Event(int EventId, Etat_participation etat) throws Exception {
-		Date date = new Date();
+	/*	Date date = new Date();
 		Event eventManagedEntity = eventrepository.findById(EventId).get();
 		Participation l = participationrepository.getParticipationByeventAnduser(2, EventId);
 
@@ -149,33 +152,30 @@ public class EventServiceImpl implements IEventService {
 			throw new Exception(
 					"cet evenement  avec l'id " + EventId + " est plein ou la date finale de reservation est atteint");
 	}
-	// }
-
+	//*/ }
+	@Transactional
 	@Override
 	public void annuler_participation_User_Event(int EventId) throws Exception {
 		Date date = new Date();
-		// User user = userrepository.findById((long)5).get() ;
-		Event eventManagedEntity = eventrepository.findById(EventId).get();
-		// String k =
-		// participationrepository.getEtat_participationByParticipatio(5,
-		// EventId);
-		Participation l = participationrepository.getParticipationByeventAnduser(2, EventId);
 
-		if (eventManagedEntity.getParticipations().contains(l)) {
-			if (l.getEtat().equals(Etat_participation.participe)) {
+		  Event eventManagedEntity = eventrepository.findById(EventId).get();
+		
+		     Participation l = participationrepository.getParticipationByeventAnduser(2, EventId) ;
 
-				if (eventManagedEntity.getStart_date().after(date)) {
-					eventManagedEntity.setNbr_participants(eventManagedEntity.getNbr_participants() - 1);
+		     if (eventManagedEntity.getParticipations().contains(l) ) {
+			    	if (l.getEtat().equals("participe")){
+             
+				
+					eventManagedEntity.setNbr_participants(eventManagedEntity.getNbr_participants()-1);
 					participationrepository.deleteParticipationByiduserandIdevent(2, EventId);
-					eventrepository.save(eventManagedEntity);
-				} else
-					throw new Exception("cet evenement avec l'id " + EventId + "est deja en cours");
-			} else
-				throw new Exception("vous etes pas participer a cette event avec l'id " + EventId);
-
-		} else
-			throw new Exception("vous etes pas inscrit  cette event avec l'id " + EventId);
-
+				    eventrepository.save(eventManagedEntity);
+				}
+				else throw new Exception ("cet evenement avec l'id "+EventId+"est deja en cours");
+			}
+             else throw new Exception ("vous etes pas participer a cette event avec l'id "+EventId);
+			
+		
+		     
 	}
 
 	@Override
@@ -252,5 +252,107 @@ public class EventServiceImpl implements IEventService {
 		return eventrepository.getAllEventByNom(titre);
 		
 	}
+
+	@Transactional
+	@Override
+	public void participer_parentjsf(int id_event) {
+	    Date date = new Date();
+	     User user = userrepository.findById((long) 2).get();
+	   // Parent parent = user.getParent() ;
+	     Event event = eventrepository.findById(id_event).get();
+	     Participation participation = participationrepository.getParticipationByeventAnduser(2,id_event);
+	    
+	if (user.getParticipations().contains(participation)){
+	  if (participation.getEtat().equals("participe"))
+	      {
+	        
+	          System.out.println("cet evenement  avec l'id " + id_event + " est deja participe ") ;
+} 
+
+	      else {
+	          if (event.getNbr_participants()<event.getNbr_places() && event.getDate_final_reservation().after(date))
+	          {
+	            
+	            if (participation.getEtat().equals("intéressé"))
+	            {
+	              
+	            	participation.setDate_participation(date);
+	            	participation.setEtat("participe");
+	              event.setNbr_participants(event.getNbr_participants() +1 );
+	              
+	              event.setNbr_interssants(event.getNbr_interssants()-1);
+	              participationrepository.save(participation);
+	              eventrepository.save(event);
+	              
+	              }
+	          }
+	      }
+	}
+	            else
+	            {  
+	            	ParticipationPK participationpk = new ParticipationPK();
+	      	         participationpk.setIdEventt(id_event);
+	    	         participationpk.setIduserr(2);
+	            	Participation part=new Participation();
+	            	part.setParticipationpk(participationpk);
+	            	part.setDate_participation(date);
+	            	part.setEtat("participe");
+	               event.setNbr_participants(event.getNbr_participants() +1 );
+                  
+	              participationrepository.save(part);
+	              eventrepository.save(event);
+
+	            }
+	            
+	          
+	         
+	            System.out.println("la date finale de reservation est atteint");
+	          
+	            }
+	@Transactional
+	@Override
+	public void interesser_parentjsf(int id_event) {
+		 Date date = new Date();
+	     User user = userrepository.findById((long) 2).get();
+	   // Parent parent = user.getParent() ;
+	     Event event = eventrepository.findById(id_event).get();
+	     Participation participation = participationrepository.getParticipationByeventAnduser(2,id_event);
+	    
+	if (user.getParticipations().contains(participation)){
+	  if (participation.getEtat().equals("interresse"))
+	      {
+	        
+	          System.out.println("cet evenement  avec l'id " + id_event + " est deja participe ") ;
+} 
+	}
+
+	      else {
+	          if (event.getDate_final_reservation().after(date))
+	          {
+	        	  ParticipationPK participationpk = new ParticipationPK();
+	      	         participationpk.setIdEventt(id_event);
+	    	         participationpk.setIduserr(2);
+	            	Participation part=new Participation();
+	            	part.setParticipationpk(participationpk);
+	            	part.setDate_participation(date);
+	            	part.setEtat("intéressé");
+	               event.setNbr_interssants(event.getNbr_interssants() +1 );
+               
+	              participationrepository.save(part);
+	              eventrepository.save(event);
+	              
+	              }
+	          System.out.println("la date finale de reservation est atteint");
+	          }
+	      
+	
+	          
+	         
+	           
+	          
+		
+		
+	}
+	    
 
 }

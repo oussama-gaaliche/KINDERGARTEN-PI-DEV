@@ -1,0 +1,332 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<ui:param name="page_name" value="Detail" />
+	<ui:define name="content">
+	<f:view transient="true">
+	<body>
+<div class="header-spacer header-spacer-small"></div>
+	<div class="modal-content">
+			
+			<div class="modal-body">
+				<article class="hentry post has-post-thumbnail thumb-full-width private-event">
+
+				<div class="private-event-head inline-items">
+					<img src="files/img/avatar77-sm.jpg" alt="author"></img>
+
+					<div class="author-date">
+						
+						<div class="author-date">
+						<a class="h3 event-title" href="#"><h:outputText value="#{evController.title}" /></a>
+						<div class="event__date">
+							<time class="published" datetime="2017-03-24T18:18">
+								Saturday at 9:00am
+							</time>
+						</div>
+					</div>
+						
+					</div>
+
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="#">Edit Event Settings</a>
+							</li>
+							<li>
+								<a href="#">Mark as Completed</a>
+							</li>
+							<li>
+								<a href="#">Delete></a></li></ul>
+								
+					</div>
+				</div>
+
+				<div class="post-thumb">
+					<img class="" src="files/img/evenement-1.jpg" alt="photo"></img>
+					
+				</div>
+
+				<div class="row">
+					<div class="col col-lg-7 col-md-7 col-sm-12 col-12">
+						<div class="post__author author vcard inline-items">
+							<img src="files/img/author-page.jpg" alt="author"></img>
+
+							<div class="author-date">
+								<a class="h6 post__author-name fn" href="02-ProfilePage.html">James Spiegel</a> created the <a href="#">Event</a>
+								<div class="post__date">
+									<time class="published" datetime="2017-03-24T18:18">
+										March 11 at 9:52pm
+									</time>
+								</div>
+							</div>
+
+						</div>
+
+						<p>
+							<h:outputText value="#{evController.description}" />
+						</p>
+					</div>
+					<div class="col col-lg-5 col-md-5 col-sm-12 col-12">
+						<div class="event-description">
+							<h6 class="event-description-title"><h:outputText value="#{evController.type}" /></h6>
+							<div class="place inline-items">
+								<svg class="olymp-add-a-place-icon"><use xlink:href="#olymp-add-a-place-icon"></use></svg>
+								<span><h:outputText value="#{evController.location}" /></span>
+							</div>
+
+							<div class="place inline-items">
+								<svg class="olymp-small-calendar-icon"><use xlink:href="#olymp-small-calendar-icon"></use></svg>
+								<span>Mar 26, 2016 at 9:00am UTC-8</span>
+							</div>
+
+							<ul class="friends-harmonic">
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic5.jpg" alt="friend"></img>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic10.jpg" alt="friend"></img>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic7.jpg" alt="friend"></img>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic8.jpg" alt="friend"></img>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic2.jpg" alt="friend"></img>
+									</a>
+								</li>
+
+								<li class="with-text">
+								<h:outputText value="#{evController.nbr_participants}" />	Will Assist
+								</li>
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic5.jpg" alt="friend"></img>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic10.jpg" alt="friend"></img>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic7.jpg" alt="friend"></img>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic8.jpg" alt="friend"></img>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="files/img/friend-harmonic2.jpg" alt="friend"></img>
+									</a>
+								</li>
+
+								<li class="with-text">
+								<h:outputText value="#{evController.nbr_interssants}" />	Will Assist
+								</li>
+								
+							</ul>
+
+							<h:form>
+       	<h:commandButton class="btn btn-breez btn-sm full-width" 
+              value="participer"   action="#{evController.participateevent(evController.id)}"> 
+            </h:commandButton>
+            </h:form>
+            <h:form>
+							<h:commandButton class="btn btn-breez btn-sm full-width" 
+              value="interreser"   action="#{evController.interreserevent(evController.id)}"> 
+            </h:commandButton>
+           <h:commandButton class="btn btn-breez btn-sm full-width" 
+              value="annuler"   action="#{evController.annulerparticipateevent(evController.id)}"> 
+            </h:commandButton>
+            </h:form>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="post-additional-info inline-items">
+
+					<a href="#" class="post-add-icon inline-items">
+						<h:form><h:commandLink  ><svg class="olymp-heart-icon" ><use xlink:href="#olymp-heart-icon" ></use></svg></h:commandLink></h:form>
+						
+						<span>8</span>
+					</a>
+					
+						<li>
+							<a href="#">
+								<img src="files/img/icon-chat6.png"  alt="icon"></img>
+							</a>
+						</li>
+
+					<ul class="friends-harmonic">
+						<li>
+							<a href="#">
+								<img src="files/img/friend-harmonic1.jpg" alt="friend"></img>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/friend-harmonic9.jpg" alt="friend"></img>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/friend-harmonic7.jpg" alt="friend"></img>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/friend-harmonic4.jpg" alt="friend"></img>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="files/img/friend-harmonic8.jpg" alt="friend"></img>
+							</a>
+						</li>
+					</ul>
+
+					<div class="names-people-likes">
+						<a href="#">Diana </a>, <a href="#">Nicholas</a> and
+						<br></br>2 liked this<button class="btn aqua-gradient">Aqua</button>
+					</div>
+
+
+					<div class="comments-shared">
+						<a href="#" class="post-add-icon inline-items">
+							<svg class="olymp-speech-balloon-icon"><use xlink:href="#olymp-speech-balloon-icon"></use></svg>
+							<span>
+							
+							
+			2 Comments</span>
+						</a>
+					</div>
+
+
+				</div>
+
+				<div class="control-block-button post-control-button">
+
+					<a href="#" class="btn btn-control">
+						<svg class="olymp-like-post-icon"><use xlink:href="#olymp-like-post-icon"></use></svg>
+					</a>
+
+					<a href="#" class="btn btn-control">
+						<svg class="olymp-comments-post-icon"><use xlink:href="#olymp-comments-post-icon"></use></svg>
+					</a>
+
+				</div>
+
+			</article>
+
+				<div class="mCustomScrollbar ps ps--theme_default ps--active-y" data-mcs-theme="dark" data-ps-id="69ba7858-e89e-3e57-be25-329652988ddc">
+
+				<ul class="comments-list">
+						<li class="comment-item">
+							<div class="post__author author vcard inline-items">
+								<img src="files/img/avatar2-sm.jpg" alt="author"></img>
+					
+								<div class="author-date">
+									<a class="h6 post__author-name fn" href="#">Nicholas Grissom</a>
+									<div class="post__date">
+										<time class="published" datetime="2017-03-24T18:18">
+											28 mins ago
+										</time>
+									</div>
+								</div>
+					
+								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="#olymp-three-dots-icon"></use></svg></a>
+					
+							</div>
+					
+							<p>Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+					
+							<a href="#" class="post-add-icon inline-items">
+								<svg class="olymp-heart-icon"><use xlink:href="#olymp-heart-icon"></use></svg>
+								<span>6</span>
+							</a>
+							<a href="#" class="reply">Reply</a>
+						</li>
+						<li class="comment-item">
+							<div class="post__author author vcard inline-items">
+								<img src="files/img/avatar19-sm.jpg" alt="author"></img>
+					
+								<div class="author-date">
+									<a class="h6 post__author-name fn" href="#">Jimmy Elricson</a>
+									<div class="post__date">
+										<time class="published" datetime="2017-03-24T18:18">
+											2 hours ago
+										</time>
+									</div>
+								</div>
+					
+								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="#olymp-three-dots-icon"></use></svg></a>
+					
+							</div>
+					
+							<p>Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum
+								quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+							</p>
+					
+							<a href="#" class="post-add-icon inline-items">
+								<svg class="olymp-heart-icon"><use xlink:href="#olymp-heart-icon"></use></svg>
+								<span>8</span>
+							</a>
+							<a href="#" class="reply">Reply</a>
+						</li>
+					</ul>
+				
+
+			<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px; height: 366px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 258px;"></div></div></div>
+
+				<form class="comment-form inline-items">
+					
+						<div class="post__author author vcard inline-items">
+							<img src="files/img/author-page.jpg" alt="author"></img>
+					
+							<div class="form-group with-icon-right is-empty">
+								<textarea class="form-control" placeholder=""></textarea>
+								<div class="add-options-message">
+									<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
+										<svg class="olymp-camera-icon">
+											<use xlink:href="#olymp-camera-icon"></use>
+										</svg>
+									</a>
+								</div>
+							<span class="material-input"></span></div>
+						</div>
+					
+						<button class="btn btn-md-2 btn-primary">Post Comment</button>
+					
+						<button class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">Cancel</button>
+					
+					</form>
+			</div>
+		</div>
+	
+	
+	</body>
+	</f:view>
+</ui:define>
+
+</ui:composition>

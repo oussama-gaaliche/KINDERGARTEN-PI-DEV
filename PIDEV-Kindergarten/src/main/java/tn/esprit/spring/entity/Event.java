@@ -45,6 +45,9 @@ private static final long serialVersionUID = 1L;
 
 	@Enumerated(EnumType.STRING)
 	private Category category;
+
+	@Enumerated(EnumType.STRING)
+	private Type  type;
 	
 	
 	
@@ -73,13 +76,13 @@ private static final long serialVersionUID = 1L;
 	
 	
 	@Column(name="Event_Nbr_Place")
-	private int Nbr_places;
+	private int nbr_places;
 	
 	@Column(name="Event_Nbr_Participants")
-	private int Nbr_participants;
+	private int nbr_participants;
 	
 	@Column(name="Event_Nbr_interessants")
-	private int Nbr_interssants;
+	private int nbr_interssants;
 	
 	@Column(name="Event_budget")
 	private int event_budget;
@@ -121,9 +124,9 @@ private static final long serialVersionUID = 1L;
 		this.end_date = end_date;
 		this.event_fin_heure = event_fin_heure;
 		this.date_final_reservation = date_final_reservation;
-		Nbr_places = nbr_places;
-		Nbr_participants = nbr_participants;
-		Nbr_interssants = nbr_interssants;
+		this.nbr_places = nbr_places;
+	    this.nbr_participants = nbr_participants;
+		 this.nbr_interssants = nbr_interssants;
 		this.event_budget = event_budget;
 		this.etat_event = etat_event;
 	}
@@ -216,29 +219,7 @@ private static final long serialVersionUID = 1L;
 		this.date_final_reservation = date_final_reservation;
 	}
 
-	public int getNbr_places() {
-		return Nbr_places;
-	}
 
-	public void setNbr_places(int nbr_places) {
-		Nbr_places = nbr_places;
-	}
-
-	public int getNbr_participants() {
-		return Nbr_participants;
-	}
-
-	public void setNbr_participants(int nbr_participants) {
-		Nbr_participants = nbr_participants;
-	}
-
-	public int getNbr_interssants() {
-		return Nbr_interssants;
-	}
-
-	public void setNbr_interssants(int nbr_interssants) {
-		Nbr_interssants = nbr_interssants;
-	}
 
 	public int getEvent_budget() {
 		return event_budget;
@@ -303,7 +284,79 @@ private static final long serialVersionUID = 1L;
 	public void setReservation_stock_interne(List<Reservation_Stock_Interne> reservation_stock_interne) {
 		this.reservation_stock_interne = reservation_stock_interne;
 	}
+
+	public int getNbr_places() {
+		return nbr_places;
+	}
+
+	public void setNbr_places(int nbr_places) {
+		this.nbr_places = nbr_places;
+	}
+
+	public int getNbr_participants() {
+		return nbr_participants;
+	}
+
+	public void setNbr_participants(int nbr_participants) {
+		this.nbr_participants = nbr_participants;
+	}
+
+	public int getNbr_interssants() {
+		return nbr_interssants;
+	}
+
+	public void setNbr_interssants(int nbr_interssants) {
+		this.nbr_interssants = nbr_interssants;
+	}
+
+	public Type getType() {
+		return type;
+	}
+
+	public void setType(Type type) {
+		this.type = type;
+	}
+	public Event(String title, String location, String photo, Category category,	Date start_date, Date end_date, Date date_final_reservation, 
+			Type type, String description,
+		 int nbr_places, int nbr_participants,
+			int nbr_interssants, int event_budget, Etat_event etat_event) {
+		super();
+		this.title = title;
+		this.location = location;
+		this.photo = photo;
+		this.category = category;
+		this.type = type;
+		this.description = description;
+		this.start_date = start_date;
+		this.end_date = end_date;
+		this.date_final_reservation = date_final_reservation;
+		this.nbr_places = nbr_places;
+		this.nbr_participants = nbr_participants;
+		this.nbr_interssants = nbr_interssants;
+		this.event_budget = event_budget;
+		this.etat_event = etat_event;
+	}
+
+	public Event(int id, String title, String location, String photo, Category category, Type type, String description,
+			Date start_date, Date date_final_reservation, int nbr_places, 
+			 int event_budget, Etat_event etat_event) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.location = location;
+		this.photo = photo;
+		this.category = category;
+		this.type = type;
+		this.description = description;
+		this.start_date = start_date;
+		
+		this.date_final_reservation = date_final_reservation;
+		this.nbr_places = nbr_places;
 	
+		this.event_budget = event_budget;
+		this.etat_event = etat_event;
+	}
+
 
 	
 

@@ -305,6 +305,12 @@ public class User implements Serializable {
 		this.factures = factures;
 		this.image = image;
 	}
+	public List<Participation> getParticipations() {
+		return participations;
+	}
+	public void setParticipations(List<Participation> participations) {
+		this.participations = participations;
+	}
 	
 	
 
