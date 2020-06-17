@@ -1,0 +1,230 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml" xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+
+	<ui:define name="content">
+		<div class="stunning-header bg-primary-opacity">
+
+
+			<!-- Header Standard Landing  -->
+
+
+
+			<!-- ... end Header Standard Landing  -->
+			<div class="header-spacer--standard"></div>
+
+			<div class="stunning-header-content">
+				<h1 class="stunning-header-title">Shopping Cart</h1>
+				<ul class="breadcrumbs">
+					<li class="breadcrumbs-item"><a href="#">Home</a> <span
+						class="icon breadcrumbs-custom">/</span></li>
+					<li class="breadcrumbs-item active"><span>Shopping Cart</span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="content-bg-wrap stunning-header-bg1"></div>
+		</div>
+		<br></br>
+		<h:form>
+		
+         <h:commandLink class="offset-sm-9"  action="#{CommandeJsfController.retourAcheter()}" value="continuer mes achats"></h:commandLink>
+         </h:form>
+		<div class="container">
+			<h:panelGroup id="listpromo">
+
+				<div class="row">
+					<div
+						class="col col-xl-10 m-auto col-lg-10 col-md-12 col-sm-12 col-12">
+						<div class="cart-main">
+
+
+							<!-- Shop Table Cart -->
+
+							<table class="shop_table cart">
+								<thead>
+									<tr>
+										<th class="product-thumbnail">ITEM DESCRIPTION</th>
+										<th class="product-price">UNIT PRICE</th>
+										<th class="product-quantity">QUANTITY</th>
+										<th class="product-subtotal">TOTAL</th>
+										<th class="product-remove">REMOVE</th>
+									</tr>
+
+								</thead>
+
+
+								<tbody>
+
+									<ui:repeat var="commande"
+										value="#{CommandeJsfController.commandespanier}">
+
+										<tr class="cart_item">
+
+											<td class="product-thumbnail">
+
+												<div class="cart-product__item">
+													<a href="files/img/product-small1.png"
+														class="product-thumb js-zoom-image"> <h:graphicImage library="vente"  name ="#{commande.article_commande.image}" />
+													</a>
+													<div class="cart-product-content">
+														<a><h:outputText
+																value="#{commande.article_commande.reference}"></h:outputText></a><br></br>
+														<a><h:outputText
+																value="#{commande.article_commande.nom}"></h:outputText></a>
+
+													</div>
+												</div>
+											</td>
+
+											<td class="product-price"><a><h:outputText
+														value="#{commande.article_commande.venteTTC}"></h:outputText></a>
+											</td>
+
+											<td><p:spinner value="#{commande.qte_cmd}">
+												</p:spinner>
+												</td>
+
+											<td class="product-subtotal"><a><h:outputText
+														value="#{commande.montant_ttc}"></h:outputText> DT</a></td>
+
+											<td class="product-remove"><h:form id="deleteform">
+													<h:commandLink
+														action="#{CommandeJsfController.deleteCommande(commande.article_commande.id_article)}">
+														<svg class="olymp-close-icon">
+													<use xlink:href="#olymp-close-icon"></use></svg>
+														<f:ajax render="listpromo divpromo" execute="deleteform"></f:ajax>
+
+													</h:commandLink>
+												</h:form></td>
+										</tr>
+
+									</ui:repeat>
+
+
+
+									<tr>
+										<td colspan="4" class="actions"><h:form id="applyform">
+
+												<div class="form-inline coupon">
+													<div class="form-group label-floating">
+														<label class="control-label">Enter Coupon</label>
+														<h:inputText id="code" class="form-control bg-white"
+															placeholder="" value="#{CommandeJsfController.entry}"
+															name="coupon_code"></h:inputText>
+														<span class="material-input"></span>
+													</div>
+													<h:commandButton class="btn btn-blue btn-lg" value="Apply"
+														action="#{CommandeJsfController.promoo()}">
+														<f:ajax render="divpromo" execute="applyform"></f:ajax>
+													</h:commandButton>
+												</div>
+											</h:form>
+
+											<div class="cart-subtotal">
+												Subtotal:<span><h:outputText
+														value="#{CommandeJsfController.totalttc}"></h:outputText>
+													DT</span>
+											</div></td>
+
+									</tr>
+
+								</tbody>
+
+							</table>
+
+
+
+							<!-- ... end Shop Table Cart -->
+						</div>
+					</div>
+				</div>
+			</h:panelGroup>
+			<br></br> <br></br>
+			<div class="row">
+				<div class="col col-xl-5 mr-auto col-lg-5 col-md-6 col-sm-6 col-12">
+
+
+					<!-- Form Calculate Shiping -->
+
+					<h:form id="livraisonform">
+						<div class="crumina-module crumina-heading with-title-decoration">
+							<h5 class="heading-title">Calculate Shipping</h5>
+						</div>
+						<div class="row">
+
+							<div class="col col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
+								<div class="form-group label-floating is-select">
+
+									<h:selectOneMenu value="#{CommandeJsfController.ville}">
+										<f:selectItem itemLabel="choisir ville" itemValue="#{null}"></f:selectItem>
+										<f:selectItems
+											value="#{CommandeJsfController.getListvilles()}" var="v"
+											itemLabel="#{v.ville}" itemValue="#{v.ville}"></f:selectItems>
+									</h:selectOneMenu>
+
+									<span class="material-input"></span>
+								</div>
+							</div>
+
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<h:commandButton class="btn btn-blue btn-lg full-width"
+									value="calculer frais"
+									action="#{CommandeJsfController.calculLivraison()}">
+									<f:ajax render="divpromo" execute="livraisonform"></f:ajax>
+
+								</h:commandButton>
+							</div>
+						</div>
+					</h:form>
+
+					<!-- ... end Form Calculate Shiping -->
+				</div>
+
+
+				<div class="col col-xl-5 ml-auto col-lg-5 col-md-6 col-sm-6 col-12">
+					<div class="crumina-module crumina-heading with-title-decoration">
+						<h5 class="heading-title">Order Totals</h5>
+					</div>
+
+
+					<!-- Order Totals List -->
+					<h:panelGroup id="divpromo">
+						<ul class="order-totals-list">
+							<li>Cart Subtotal <span><h:outputText
+										value="#{CommandeJsfController.totalttc}"></h:outputText> DT</span>
+							</li>
+							<li>Shipping &amp; Handling <span><h:outputText
+										value="#{CommandeJsfController.livraison}"></h:outputText> DT</span>
+							</li>
+							<li>Discount <span>-<h:outputText
+										value="#{CommandeJsfController.promo}"></h:outputText> DT
+							</span>
+							</li>
+							<li class="total">Order Total <span><h:outputText
+										value="#{CommandeJsfController.ordertotal}"></h:outputText> DT</span>
+							</li>
+						</ul>
+					</h:panelGroup>
+					<!-- ... end Order Totals List -->
+					<h:form>
+						<h:commandButton class="btn btn-purple btn-lg full-width"
+							value="Valider Commande"
+							action="#{CommandeJsfController.passerFacture()}"></h:commandButton>
+					</h:form>
+
+				</div>
+
+
+			</div>
+		</div>
+
+
+	</ui:define>
+</ui:composition>

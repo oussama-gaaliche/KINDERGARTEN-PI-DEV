@@ -1,6 +1,9 @@
 package tn.esprit.spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public enum FamilleArticles {
+	
 	Livres_scolaires{
 
 		@Override

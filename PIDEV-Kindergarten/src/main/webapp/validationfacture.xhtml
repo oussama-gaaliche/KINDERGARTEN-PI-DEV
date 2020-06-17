@@ -1,0 +1,79 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml" xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+
+	<ui:define name="content">
+	<body class="body-bg-white">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKGD7NP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="stunning-header bg-primary-opacity">
+
+	
+	<!-- Header Standard Landing  -->
+	
+	<div class="header--standard header--standard-landing animated headroom--not-bottom slideDown headroom--top" id="header--standard">
+		<div class="container">
+			<div class="header--standard-wrap">
+	
+				<a href="#" class="logo">
+					<div class="img-wrap">
+						<img src="img/logo.png" alt="Olympus"/>
+						<img src="img/logo-colored-small.png" alt="Olympus" class="logo-colored"/>
+					</div>
+					<div class="title-block">
+						<h6 class="logo-title">olympus</h6>
+						<div class="sub-title">SOCIAL NETWORK</div>
+					</div>
+				</a>
+	
+				<a href="#" class="open-responsive-menu js-open-responsive-menu" wfd-invisible="true">
+					<svg class="olymp-menu-icon"><use xlink:href="#olymp-menu-icon"></use></svg>
+				</a>
+	
+				
+			</div>
+		</div>
+	</div>
+	
+	<!-- ... end Header Standard Landing  -->
+	<div class="header-spacer--standard"></div>
+	<div class="stunning-header-content">
+		<h1 class="stunning-header-title">Checkout</h1>
+		<ul class="breadcrumbs">
+			<li class="breadcrumbs-item">
+				<a href="#">Home</a>
+				<span class="icon breadcrumbs-custom">/</span>
+			</li>
+			<li class="breadcrumbs-item active">
+				<span>Checkout</span>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-bg-wrap stunning-header-bg1"></div>
+</div>
+<section class="medium-padding120">
+	<div class="container">
+		<div class="row">
+			<div class="col col-xl-7 col-lg-7 col-md-6 col-sm-6 col-12">
+			<h:form>
+			<h6 class="title"><h:outputText
+																value="#{CommandeJsfController.mess}"></h:outputText></h6><br></br>
+         <h:commandLink class="btn btn-blue md-2"  action="#{CommandeJsfController.retourAcheter()}" value="continuer mes achats"></h:commandLink>
+         </h:form>
+			</div>
+			</div>
+			</div>
+			</section>
+			
+</body>
+</ui:define>
+</ui:composition>

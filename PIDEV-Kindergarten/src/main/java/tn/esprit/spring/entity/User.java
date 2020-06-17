@@ -112,8 +112,8 @@ public class User implements Serializable {
 	private String passwordConfirm;
 	private String roles;
 	private boolean active;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
-	private Set<Facture> factures;
+//	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+//	private Set<Facture> factures;
 	@JsonIgnore
 	@OneToMany(mappedBy="user")
 	private List<Post> post;
@@ -280,7 +280,7 @@ public class User implements Serializable {
 			Long numtel, String status, int nbrsig, Date dateInscription, float score, List<Event> eventm,
 			List<Participation> participations, List<Evaluation> evaluations, List<Message> messages,
 			List<Enfant> enfant, List<Publicity> publicity, String passwordConfirm, String roles, boolean active,
-			Set<Facture> factures, String image) {
+			 String image) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -302,7 +302,6 @@ public class User implements Serializable {
 		this.passwordConfirm = passwordConfirm;
 		this.roles = roles;
 		this.active = active;
-		this.factures = factures;
 		this.image = image;
 	}
 	public List<Participation> getParticipations() {

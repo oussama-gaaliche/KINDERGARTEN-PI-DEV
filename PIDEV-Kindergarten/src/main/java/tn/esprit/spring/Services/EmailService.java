@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import tn.esprit.spring.Repository.ArticleRepository;
-import tn.esprit.spring.entity.Article;
+
 import tn.esprit.spring.entity.Planning;
 
 

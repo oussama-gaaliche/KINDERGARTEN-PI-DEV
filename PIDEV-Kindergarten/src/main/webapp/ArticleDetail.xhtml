@@ -1,0 +1,111 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	
+	
+	
+	<ui:define name="content">
+	<div class="stunning-header bg-primary-opacity">
+
+
+			<!-- Header Standard Landing  -->
+
+
+
+			<!-- ... end Header Standard Landing  -->
+			<div class="header-spacer--standard"></div>
+			
+			<div class="stunning-header-content">
+				<h1 class="stunning-header-title">Merchandise</h1>
+				<ul class="breadcrumbs">
+					<li class="breadcrumbs-item"><a href="#">Home</a> <span
+						class="icon breadcrumbs-custom">/</span></li>
+					<li class="breadcrumbs-item active"><span>Merchandise</span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="content-bg-wrap stunning-header-bg1"></div>
+		</div>
+	<div class="shop-product-detail">
+		<div class="container">
+		<br></br>
+<h:form>
+         <h:commandLink class="offset-sm-9"  action="#{CommandeJsfController.retourAcheter()}" value="home"></h:commandLink>
+         </h:form>
+			<div class="row">
+				<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+					<div class="thumbs-wrap">
+
+							<div class="shop-product-detail-thumb">
+								<h:graphicImage
+									class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"
+									library="vente" name="#{CommandeJsfController.image}" />
+							</div>
+						</div>
+				</div>
+				<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+					<div class="shop-product-detail-content">
+						<div class="main-content-wrap">
+							<div class="block-title">
+							<br></br>
+							<br></br>
+							<br></br>
+							<br></br>
+							<br></br>
+							<br></br>
+								<a href="#" class="product-category"><h:outputText value="#{CommandeJsfController.famille}"></h:outputText></a>
+								<h2 class="title bold"><h:outputText value="#{CommandeJsfController.nom}"></h:outputText></h2>
+								
+							</div>
+	<br></br>
+							<br></br>
+							<div class="block-price">
+								<div class="product-price"><h:outputText value="#{CommandeJsfController.venteTTC}"></h:outputText> DT</div>
+							</div>
+						</div>
+	<br></br>
+					
+						<p><h2 class="title bold">description:</h2><br></br><h:outputText value="#{CommandeJsfController.desc}"></h:outputText></p>
+						
+	                     <h:form>
+	                     	
+			
+								<div class="form-group label-floating quantity col-sm-6">
+									<label class="control-label">Quantity</label> <a href="#"
+										class="quantity-minus">∨</a>
+										
+									<h:inputText class="form-control" value="#{CommandeJsfController.quantite_cmd}" 
+										></h:inputText>
+										<a href="#" class="quantity-plus">∧</a>
+										<span class="material-input"></span>
+								</div>
+								
+								<div class="btn btn-blue btn-md with--icon">
+							<svg class="olymp-shopping-bag-icon icon">
+							<use xlink:href="#olymp-shopping-bag-icon"></use></svg>
+							<div class="text">
+	
+										<h:commandButton class="btn btn-blue btn-md with--icon" value="Add To Cart"
+											action="#{CommandeJsfController.ajouterAuPanier()}"></h:commandButton>
+											
+										
+								</div>
+						</div>
+	                       </h:form>
+	
+						<div class="article-number">
+							reference:<h:outputText value="#{CommandeJsfController.reference}"></h:outputText>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</ui:define>
+	</ui:composition>

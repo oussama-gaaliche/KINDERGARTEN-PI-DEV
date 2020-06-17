@@ -1,0 +1,244 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml" xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+
+	<ui:define name="content">
+	<body class="body-bg-white">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKGD7NP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="stunning-header bg-primary-opacity">
+
+	
+	<!-- Header Standard Landing  -->
+	
+	<div class="header--standard header--standard-landing animated headroom--not-bottom slideDown headroom--top" id="header--standard">
+	
+		<div class="container">
+			<div class="header--standard-wrap">
+	
+				<a href="#" class="logo">
+					<div class="img-wrap">
+						<img src="img/logo.png" alt="Olympus"/>
+						<img src="img/logo-colored-small.png" alt="Olympus" class="logo-colored"/>
+					</div>
+					<div class="title-block">
+						<h6 class="logo-title">olympus</h6>
+						<div class="sub-title">SOCIAL NETWORK</div>
+					</div>
+				</a>
+	
+				<a href="#" class="open-responsive-menu js-open-responsive-menu" wfd-invisible="true">
+					<svg class="olymp-menu-icon"><use xlink:href="#olymp-menu-icon"></use></svg>
+				</a>
+	
+				
+			</div>
+		</div>
+	</div>
+	
+	<!-- ... end Header Standard Landing  -->
+	<div class="header-spacer--standard"></div>
+	<div class="stunning-header-content">
+		<h1 class="stunning-header-title">Checkout</h1>
+		<ul class="breadcrumbs">
+			<li class="breadcrumbs-item">
+				<a href="#">Home</a>
+				<span class="icon breadcrumbs-custom">/</span>
+			</li>
+			<li class="breadcrumbs-item active">
+				<span>Checkout</span>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-bg-wrap stunning-header-bg1"></div>
+</div>
+
+<!-- End Stunning header -->
+
+
+<section class="medium-padding120">
+<br></br>
+		<h:form>
+		
+         <h:commandLink class="offset-sm-9"  action="#{CommandeJsfController.retourAcheter()}" value="retour"></h:commandLink>
+         </h:form>
+	<div class="container">
+		<div class="row">
+			<div class="col col-xl-7 col-lg-7 col-md-6 col-sm-6 col-12">
+
+				
+				<!-- Form Billing Details -->
+				
+				<h:form class="mb60">
+					<div class="crumina-module crumina-heading with-title-decoration">
+						<h5 class="heading-title">Billing Details</h5>
+					</div>
+				
+					<div class="row">
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<div class="form-group label-floating">
+								<label class="control-label">First Name:</label><br></br>
+								<h:outputLabel value="#{CommandeJsfController.usernom}"></h:outputLabel>
+								
+		
+							<span class="material-input"></span></div>
+						</div>
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<div class="form-group label-floating">
+									<label class="control-label">Last Name:</label><br></br>
+									
+							
+								<h:outputLabel  value="#{CommandeJsfController.userprenom}"></h:outputLabel>
+
+							<span class="material-input"></span></div>
+						</div>
+				
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<div class="form-group label-floating">
+								
+								<h:outputLabel class="control-label" value="#{CommandeJsfController.email}"></h:outputLabel>
+								
+							<span class="material-input"></span></div>
+						</div>
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<div class="form-group is-empty">
+							<label class="control-label">N° Telephone:</label><br></br>
+								<h:outputLabel class="control-label" value="#{CommandeJsfController.tel}"></h:outputLabel>
+								
+							<span class="material-input"></span></div>
+						</div>
+				
+					
+					
+						<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<div class="form-group is-empty">
+							<h:inputText id="code" class="form-control bg-white"
+															placeholder="" value="codepostal"
+															name="codepostal"></h:inputText><span class="material-input"></span></div>
+						</div>
+				
+						<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="form-group is-empty">
+								<h:inputText id="adress" class="form-control bg-white"
+															placeholder="" value="#{CommandeJsfController.adresse}"
+															name="adress"></h:inputText><span class="material-input"></span>							<span class="material-input"></span></div>
+								
+							
+						</div>
+					</div>
+				</h:form>
+				
+				<!-- ... end Form Billing Details -->
+				
+				<!-- Form Shiping Details -->
+				
+				
+				<!-- ... end Form Shiping Details -->
+
+			</div>
+			<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ml-auto">
+
+
+				
+					<div class="crumina-module crumina-heading with-title-decoration">
+						<h5 class="heading-title">Order Totals</h5>
+					</div>
+
+					
+					<!-- Order Totals List -->
+					
+					<ul class="order-totals-list">
+						<li>Tax Stamp <span>0.6 DT
+							</span>
+							</li>
+							<h:form>
+							<li class="total">Order Total <span><h:outputText
+										value="#{CommandeJsfController.montantfacture}"></h:outputText> DT</span>
+							</li>
+							</h:form>
+					</ul>
+					
+					<!-- ... end Order Totals List -->
+
+					
+					<!-- Payment Methods List -->
+					<h:form>
+											<h:selectOneMenu  class="payment-methods-list" value="#{CommandeJsfController.paiement}">
+										<f:selectItem itemLabel="type paiement" itemValue="#{null}"></f:selectItem>
+										<f:selectItems
+											value="#{CommandeJsfController.getTypePaiement()}" 
+											></f:selectItems>
+									</h:selectOneMenu>
+					
+					<!-- ... end Payment Methods List -->
+
+				</h:form>
+				<h:form>
+						<h:commandButton class="btn btn-purple btn-lg full-width"
+							value="Valider Commande"
+							action="#{CommandeJsfController.validercommande()}"></h:commandButton>
+					</h:form>
+					<h:form>
+						<h:commandButton class="btn btn-purple btn-lg full-width"
+							value="annuler commande"
+							action="#{CommandeJsfController.annulercommande()}"></h:commandButton>
+					</h:form>
+			</div>
+			
+		</div>
+	</div>
+</section>
+<script src="js/jQuery/jquery-3.4.1.js" wfd-invisible="true"></script>
+<script src="js/libs/jquery.appear.js" wfd-invisible="true"></script>
+<script src="js/libs/jquery.mousewheel.js" wfd-invisible="true"></script>
+<script src="js/libs/perfect-scrollbar.js" wfd-invisible="true"></script>
+<script src="js/libs/jquery.matchHeight.js" wfd-invisible="true"></script>
+<script src="js/libs/svgxuse.js" wfd-invisible="true"></script>
+<script src="js/libs/imagesloaded.pkgd.js" wfd-invisible="true"></script>
+<script src="js/libs/Headroom.js" wfd-invisible="true"></script>
+<script src="js/libs/velocity.js" wfd-invisible="true"></script>
+<script src="js/libs/ScrollMagic.js" wfd-invisible="true"></script>
+<script src="js/libs/jquery.waypoints.js" wfd-invisible="true"></script>
+<script src="js/libs/jquery.countTo.js" wfd-invisible="true"></script>
+<script src="js/libs/popper.min.js" wfd-invisible="true"></script>
+<script src="js/libs/material.min.js" wfd-invisible="true"></script>
+<script src="js/libs/bootstrap-select.js" wfd-invisible="true"></script>
+<script src="js/libs/smooth-scroll.js" wfd-invisible="true"></script>
+<script src="js/libs/selectize.js" wfd-invisible="true"></script>
+<script src="js/libs/swiper.jquery.js" wfd-invisible="true"></script>
+<script src="js/libs/moment.js" wfd-invisible="true"></script>
+<script src="js/libs/daterangepicker.js" wfd-invisible="true"></script>
+<script src="js/libs/fullcalendar.js" wfd-invisible="true"></script>
+<script src="js/libs/isotope.pkgd.js" wfd-invisible="true"></script>
+<script src="js/libs/ajax-pagination.js" wfd-invisible="true"></script>
+<script src="js/libs/Chart.js" wfd-invisible="true"></script>
+<script src="js/libs/chartjs-plugin-deferred.js" wfd-invisible="true"></script>
+<script src="js/libs/circle-progress.js" wfd-invisible="true"></script>
+<script src="js/libs/loader.js" wfd-invisible="true"></script>
+<script src="js/libs/run-chart.js" wfd-invisible="true"></script>
+<script src="js/libs/jquery.magnific-popup.js" wfd-invisible="true"></script>
+<script src="js/libs/jquery.gifplayer.js" wfd-invisible="true"></script>
+<script src="js/libs/mediaelement-and-player.js" wfd-invisible="true"></script>
+<script src="js/libs/mediaelement-playlist-plugin.min.js" wfd-invisible="true"></script>
+<script src="js/libs/ion.rangeSlider.js" wfd-invisible="true"></script>
+<script src="js/libs/leaflet.js" wfd-invisible="true"></script>
+<script src="js/libs/MarkerClusterGroup.js" wfd-invisible="true"></script>
+
+<script src="js/main.js" wfd-invisible="true"></script>
+<script src="js/libs-init/libs-init.js" wfd-invisible="true"></script>
+<script defer="" src="fonts/fontawesome-all.js" wfd-invisible="true"></script>
+
+<script src="Bootstrap/dist/js/bootstrap.bundle.js" wfd-invisible="true"></script>
+
+</body>
+	</ui:define>
+	</ui:composition>

@@ -1,0 +1,127 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+
+	<ui:define name="content">
+	<div class="stunning-header bg-primary-opacity">
+
+
+			<!-- Header Standard Landing  -->
+
+
+
+			<!-- ... end Header Standard Landing  -->
+			<div class="header-spacer--standard"></div>
+
+			<div class="stunning-header-content">
+				<h1 class="stunning-header-title">Home</h1>
+				<ul class="breadcrumbs">
+					<li class="breadcrumbs-item"><a href="#">Home</a> <span
+						class="icon breadcrumbs-custom">/</span></li>
+					<li class="breadcrumbs-item active"><span></span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="content-bg-wrap stunning-header-bg1"></div>
+		</div>
+
+		<div class="row">
+			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="ui-block responsive-flex1200">
+					<div class="ui-block-title col-md-2">
+
+						<div class="w-select">
+						<tr>
+						<td>
+							<div class="title">Filter By: </div>
+							</td>
+							<td>
+							<fieldset class="form-group">
+							<div class="btn-group bootstrap-select form-control">
+								<span class="material-input"></span>
+								<h:form>
+										
+											<h:selectOneMenu value="#{CommandeJsfController.famille}">
+												<f:selectItem itemLabel="choisir categorie"
+													itemValue="#{null}"></f:selectItem>
+												<f:selectItems
+													value="#{CommandeJsfController.familleArticles}"></f:selectItems>
+											</h:selectOneMenu>
+									
+											<h:commandButton class="btn btn-blue md-2"
+												action="#{CommandeJsfController.getListArticlesFamille()}"
+												value="Filter Products">
+											</h:commandButton>
+										
+
+									</h:form>
+								</div>
+							</fieldset>
+							</td>
+							</tr>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class="pt120">
+			<div class="container">
+
+
+				<div class="row">
+					<!-- Product Item -->
+					<ui:repeat var="article"
+						value="#{CommandeJsfController.listArticlesFamille}"
+						varStatus="status">
+
+
+						<div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+							<div class="shop-product-item">
+
+								<h:graphicImage class="product-thumb" library="vente"
+									name="#{article.image}" />
+
+								<div class="product-content">
+									<div class="block-title">
+										<a><h:outputText value="#{article.nom}"></h:outputText></a> <br></br>
+										<a><h:outputText value="#{article.reference}"></h:outputText></a>
+
+									</div>
+									
+									<div class="product-price">
+										<h:outputText value="#{article.venteTTC}"></h:outputText> DT
+									</div>
+									<h:form>
+										<h:commandButton value="consulter"
+											action="#{CommandeJsfController.detailArticle(article)}"></h:commandButton>
+									</h:form>
+								</div>
+							</div>
+
+
+
+						</div>
+
+					</ui:repeat>
+				</div>
+				<!-- ... end Product Item -->
+
+
+
+
+			</div>
+		</section>
+
+
+
+	</ui:define>
+</ui:composition>
