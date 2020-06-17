@@ -251,4 +251,8 @@ public class Form implements Serializable {
   public List<Erreur> getErreurs() {
     return erreurs;
   }
+  public String goRDV() {
+
+		return "/index1.xhtml?faces-redirect=true";
+	}
 }

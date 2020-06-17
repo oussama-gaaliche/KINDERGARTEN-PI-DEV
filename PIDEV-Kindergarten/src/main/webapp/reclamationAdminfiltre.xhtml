@@ -1,0 +1,137 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="/template/templateFront.xhtml">
+	<ui:param name="page_name" value="reclamationAdmin" />
+	<ui:define name="content">
+	<div
+			style="margin-left: 15%; margin-right: 5%; margin-bottom: auto; margin-top: 6%;">
+			<div class="container">
+				<div class="row">
+
+					<!-- Main Content Post Versions -->
+
+
+
+
+					<div class="container">
+						<div class="row">
+							<div
+								class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+
+								<div class="tab-content" id="myTabContent">
+									<div class="tab-pane fade show active" id="personal"
+										role="tabpanel" aria-labelledby="personal-tab">
+										<div class="ui-block">
+
+
+											<div class="ui-block-title">
+												<h6 class="title">Toutes les réclamations</h6>
+												<div class="form-group with-button is-empty">
+													<h:form>
+														<h:inputText class="form-control" type="text" id="input"
+															value="#{ControllerReclamationImpladmin.msg}">
+															<f:ajax event="keyup" execute="input" render="reclam"></f:ajax>
+														</h:inputText>
+													</h:form>
+												</div>
+											</div>
+										</div>
+
+										<div class="ui-block">
+
+
+											<div class="ui-block-title">
+											<h:panelGroup >
+										<h:form>
+
+												<a><h:selectOneMenu
+														value="#{ControllerReclamationImpladmin.typeReclamation}">
+														<f:selectItem itemLabel="Choisir le type"
+															itemValue="#{null}" />
+														<f:selectItems
+															value="#{ControllerReclamationImpl.typeReclamations}" />
+
+													</h:selectOneMenu></a> <a> <h:commandButton
+														styleClass="btn btn-primary btn-md" value="Valider"
+														action="#{ControllerReclamationImpladmin.getreclamationOrderTypes(ControllerReclamationImpladmin.typeReclamation)}" /></a>
+
+</h:form></h:panelGroup>
+
+
+
+
+											</div>
+										</div>
+									</div>
+
+	
+			<h:panelGroup id="reclam">
+				<h:form>
+					<c:forEach items="#{ControllerReclamationImpladmin.reclamationOrderTypes}"
+						var="reclamation">
+						<div class="ui-block">
+							<!-- Post -->
+
+							<article class="hentry post">
+
+
+								<div class="post__author author vcard inline-items">
+									<div
+										style="margin-left: auto; margin-right: auto; margin-bottom: 5%;">
+
+										<h4>
+
+											<p:messages styleClass="bg-breez-light" for="somekey3" />
+										</h4>
+
+									</div>
+
+
+
+									<div class="author-date">
+
+										<div class="h6 title">
+											<h:outputText value="#{reclamation.sender.username}" />
+										</div>
+
+
+										<div class="post__date">
+											<h:outputText value="#{reclamation.typeReclamation}" />
+
+										</div>
+										<div class="post__date">
+											<h:outputText value="#{reclamation.posted}" />
+
+										</div>
+									</div>
+
+
+								</div>
+								<p>
+									<h:outputText value="#{reclamation.body}" />
+								</p>
+							</article>
+						</div>
+					</c:forEach>
+
+				</h:form>
+
+			</h:panelGroup>
+			</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</ui:define>
+</ui:composition>

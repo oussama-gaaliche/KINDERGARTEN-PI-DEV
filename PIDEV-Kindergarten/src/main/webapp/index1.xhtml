@@ -1,0 +1,91 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="/template/templateFront.xhtml">
+	<ui:param name="page_name" value="form" />
+	<ui:define name="content">
+		<div
+			style="margin-left: 15%; margin-right: 5%; margin-bottom: auto; margin-top: 6%;">
+			<div class="container">
+				<div class="row">
+					<div class="container">
+						<div class="row">
+							<div
+								class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+								<f:view locale="#{changeLocale.locale}">
+
+									<h:panelGroup columns="2">
+
+										<h:form id="formulaire">
+											<div class="tab-content" id="myTabContent">
+												<div class="tab-pane fade show active" id="personal"
+													role="tabpanel" aria-labelledby="personal-tab">
+													<div class="ui-block">
+														<div class="ui-block-title">
+															<h4 class="title"></h4>
+														</div>
+														
+															<div class="ui-block-title">
+																
+														<table style="width: 1200px">
+													
+														
+															<tr>
+															
+																<td colspan="2" bgcolor="#2aebcb">
+																
+																	<h2>
+																	
+															
+														
+																		<h:outputText value="#{msg['layout.entete']}" />
+																		
+																	</h2>
+																	<div align="left">
+																		<h:commandLink value="#{msg['layout.entete.langue1']}"
+																			actionListener="#{changeLocale.setFrenchLocale}" />
+																		<h:outputText value=" " />
+																		<h:commandLink value="#{msg['layout.entete.langue2']}"
+																			actionListener="#{changeLocale.setEnglishLocale}" />
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td style="width: 100px; height: 200px"
+																	bgcolor="#9a9fbf"></td>
+																<td style="width: 560px; height: 200px"><h:panelGroup rendered="#{form.form1Rendered}">
+																		<ui:include src="form1.xhtml" />
+																	</h:panelGroup> <h:panelGroup rendered="#{form.form2Rendered}">
+																		<ui:include src="form2.xhtml" />
+																	</h:panelGroup> <h:panelGroup rendered="#{form.form3Rendered}">
+																		<ui:include src="form3.xhtml" />
+																	</h:panelGroup> <h:panelGroup rendered="#{form.erreurRendered}">
+																		<ui:include src="erreur.xhtml" />
+																	</h:panelGroup></td>
+															</tr>
+														</table></div>
+															<div class="ui-block-title">
+															<h4 class="title"></h4>
+														</div>
+													</div>
+												</div>
+											</div>
+										</h:form>
+									</h:panelGroup>
+
+								</f:view>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</ui:define>
+</ui:composition>
+

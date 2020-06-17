@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <f:view locale="#{changeLocale.locale}">
+    <h:head>
+      <title>RdvTeachers</title>
+      <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body style="background-image: url('${request.contextPath}/resources/images/standard.jpg');">
+      <h:form id="formulaire">
+        <table style="width: 1200px">
+          <tr>
+            <td colspan="2" bgcolor="#ccccff">
+               <h2><h:outputText value="#{msg['layout.entete']}"/></h2>
+    <div align="left">
+      <h:commandLink value="#{msg['layout.entete.langue1']}" actionListener="#{changeLocale.setFrenchLocale}"/>
+      <h:outputText value=" "/>
+      <h:commandLink value="#{msg['layout.entete.langue2']}" actionListener="#{changeLocale.setEnglishLocale}"/>
+  </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 100px; height: 200px" bgcolor="#ffcccc">
+            </td>
+            <td>
+              <ui:insert name="contenu" >
+                <h2>Contenu</h2>
+              </ui:insert>
+            </td>
+          </tr>
+          <tr bgcolor="#ffcc66">
+            <td colspan="2">
+              <ui:include src="basdepage.xhtml"/>
+            </td>
+          </tr>         
+        </table>
+      </h:form>
+    </h:body>
+  </f:view>
+</html>

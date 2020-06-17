@@ -137,6 +137,11 @@ public String GoBackPlan() {
 		
 	return "/AffichagePlanning.xhtml?faces-redirect=true";
 		}
+public String GoFront(){
+	return "/RestoFront.xhtml?faces-redirect=true";
+}
+	
+
 		
 		
 

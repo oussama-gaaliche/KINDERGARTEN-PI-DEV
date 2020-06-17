@@ -1,0 +1,231 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="/template/templateFront.xhtml">
+	<ui:param name="page_name" value="creneauTeacher" />
+	<ui:define name="content">
+		<div
+			style="margin-left: 15%; margin-right: 5%; margin-bottom: auto; margin-top: 6%;">
+			<div class="container">
+				<div class="row">
+					<div class="container">
+						<div class="row">
+							<div
+								class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+								<h:panelGroup columns="2">
+									<h:form>
+										<div class="tab-content" id="myTabContent">
+											<div class="tab-pane fade show active" id="personal"
+												role="tabpanel" aria-labelledby="personal-tab">
+												<div class="ui-block">
+
+
+													<div class="ui-block-title">
+														<h6 class="title">Toutes vos creneaux</h6>
+													</div>
+													<h:dataTable styleClass="forums-table"
+														value="#{ControllerCreneauImpl.creneaux}" var="creneau"
+														border="1">
+
+														<h:column>
+															<f:facet name="header">
+																<h:outputText value="commence" />
+															</f:facet>
+															<h:outputText value="#{creneau.hdebut}:#{creneau.mdebut}" />
+														</h:column>
+														<h:column>
+															<f:facet name="header">
+																<h:outputText value="Se termine" />
+															</f:facet>
+															<h:outputText value="#{creneau.hfin}:#{creneau.mfin}" />
+														</h:column>
+														<h:column>
+															<f:facet name="header">
+																<h:outputText value="Action" />
+															</f:facet>
+															<div
+															style="margin-left: 25%; margin-right:25% ; margin-bottom: 5%;">
+
+																		<h:commandButton styleClass="btn btn-primary btn-sm"
+																action="#{ControllerCreneauImpl.removeCreneau(creneau.id)}"
+																value="Supprimer" />
+															<h:commandButton  styleClass="btn btn-secondary btn-sm"
+																action="#{ControllerCreneauImpl.displayCreneau(creneau)}"
+																value="Afficher" />
+																</div>
+														</h:column>
+														
+
+
+													</h:dataTable>
+												</div>
+											</div>
+										</div>
+									</h:form>
+								</h:panelGroup>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+		<div
+			style="margin-left: 15%; margin-right: 5%; margin-bottom: auto; margin-top: 2%;">
+			<div class="container">
+				<div class="row">
+
+					<!-- Main Content Post Versions -->
+
+
+
+
+					
+								<h:panelGroup columns="2">
+									<h:form>
+										<div class="tab-content" id="myTabContent">
+											<div class="tab-pane fade show active" id="personal"
+												role="tabpanel" aria-labelledby="personal-tab">
+												<div class="ui-block">
+
+
+													<div class="ui-block-title">
+														<h6 class="title">Ajouter un creneau</h6>
+													</div>
+													
+													<ul class="friends-harmonic">
+													
+			
+													<li>
+													<div
+														style="margin-left: 15%; margin-right: 40%; margin-bottom: 5%;"><h:outputText value="heure début"></h:outputText>
+													
+													<h:inputText
+														onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"
+														value="#{ControllerCreneauImpl.hdebut}">
+													</h:inputText></div></li>
+													<li><div
+														style="margin-left:15%; margin-right: 40%; margin-bottom: 5%;"><h:outputText value="minutes début"></h:outputText>
+													<h:inputText
+														onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"
+														value="#{ControllerCreneauImpl.mdebut}">
+													</h:inputText></div></li>
+
+
+													<li><div
+														style="margin-left:15%; margin-right: 40%; margin-bottom: 5%;">
+														<h:outputText value="heure fin"></h:outputText>
+													
+													<h:inputText
+														onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"
+														value="#{ControllerCreneauImpl.hfin}">
+													</h:inputText></div></li>
+													
+
+
+													<li><div
+														style="margin-left: 15%; margin-right: 40%; margin-bottom: 5%;"><h:outputText value="minutes fin "></h:outputText>
+													<h:inputText
+														onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"
+														value="#{ControllerCreneauImpl.mfin}">
+													</h:inputText></div></li></ul>
+													<div
+														style="margin-left: auto; margin-right: auto; margin-bottom: 5%;">
+
+														<h4>
+
+															<p:messages styleClass="bg-breez-light" for="somekey11" />
+														</h4>
+
+													</div>
+													<div
+														style="margin-left: auto; margin-right: auto; margin-bottom: 5%;">
+
+														<h4>
+
+															<p:messages styleClass="bg-breez-light" for="somekey12" />
+														</h4>
+
+													</div>
+													<div
+														style="margin-left: auto; margin-right: auto; margin-bottom: 5%;">
+
+														<h4>
+
+															<p:messages styleClass="bg-breez-light" for="somekey13" />
+														</h4>
+
+													</div>
+													<div
+														style="margin-left: auto; margin-right: auto; margin-bottom: 5%;">
+
+														<h4>
+
+															<p:messages styleClass="bg-breez-light" for="somekey14" />
+														</h4>
+
+													</div>
+																							<div
+														style="margin-left: auto; margin-right: auto; margin-bottom: 5%;">
+
+														<h4>
+
+															<p:messages styleClass="bg-breez-light" for="somekey15" />
+														</h4>
+
+													</div>
+
+
+
+
+
+
+
+
+
+													<div
+														style="margin-left: 30%; margin-right: 30%; margin-bottom: 5%;">
+														<h:commandButton
+															styleClass="btn btn-secondary btn-lg full-width"
+															value="Ajouter reclamation"
+															action="#{ControllerCreneauImpl.addCreneau()}" />
+															<h:commandButton
+															styleClass="btn btn-primary btn-lg full-width"
+															value="Mettre à jour"
+															action="#{ControllerCreneauImpl.updateCreneau()}" />
+													</div>
+
+
+
+
+
+
+
+
+												</div>
+
+											</div>
+										</div>
+
+
+									</h:form>
+
+								</h:panelGroup>
+							</div>
+						</div>
+					</div>
+
+
+
+
+	</ui:define>
+</ui:composition>

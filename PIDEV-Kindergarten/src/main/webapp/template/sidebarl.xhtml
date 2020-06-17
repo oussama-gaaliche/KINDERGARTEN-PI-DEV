@@ -41,7 +41,7 @@
 
 					<h:form>
 						<li><h:commandLink
-								action="#{userControllerfront.gottoAlluser()}"
+								action="#{PublicityController.gottoAlluser()}"
 								class="js-sidebar-open">
 								<svg class="olymp-happy-faces-icon left-menu-icon"
 									data-toggle="tooltip" data-placement="right"
@@ -60,21 +60,35 @@
 									<use xlink:href="#olymp-stats-icon"></use></svg>
 							</h:commandLink></li>
 					</h:form>
+				
+					<h:form>
+						<li><h:commandLink
+								action="#{ControllerReclamationImpl.goReclam()}"
+								class="js-sidebar-open">
+								<svg class="olymp-badge-icon left-menu-icon"
+									data-toggle="tooltip" data-placement="right"
+									data-original-title="Community Badges">
+									<use xlink:href="#olymp-badge-icon"></use></svg>
+							</h:commandLink></li>
+					</h:form>
 					
-					
+<h:form>
+						<li><h:commandLink
+								action="#{form.goRDV()}"
+								class="js-sidebar-open">
+								<svg class="olymp-headphones-icon left-menu-icon"
+									data-toggle="tooltip" data-placement="right"
+									data-original-title="MUSIC&amp;PLAYLISTS">
+									<use xlink:href="#olymp-headphones-icon"></use></svg>
+							</h:commandLink></li>
+					</h:form>
 
-
-					<li><a href="18-MusicAndPlaylists.html"> <svg
-								class="olymp-headphones-icon left-menu-icon"
-								data-toggle="tooltip" data-placement="right"
-								data-original-title="MUSIC&amp;PLAYLISTS">
-								<use xlink:href="#olymp-headphones-icon"></use></svg>
-					</a></li>
-					<li><a href="19-WeatherWidget.html"> <svg
+					<h:form>
+					<li><h:commandLink href="19-WeatherWidget.html" action="#{CommandeJsfController.retourAcheter()}"> <svg
 								class="olymp-weather-icon left-menu-icon" data-toggle="tooltip"
 								data-placement="right" data-original-title="WEATHER APP">
 								<use xlink:href="#olymp-weather-icon"></use></svg>
-					</a></li>
+					</h:commandLink></li></h:form>
 					
 					<h:form>
 					<li><h:commandLink

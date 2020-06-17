@@ -1,0 +1,184 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="/template/templateFront.xhtml">
+	<ui:param name="page_name" value="reclamationParent" />
+	<ui:define name="content">
+	<div style="margin-left: 15%; margin-right: 5%; margin-bottom:auto; margin-top:6%;">
+		<div class="container">
+			<div class="row">
+
+				<!-- Main Content Post Versions -->
+
+				
+
+
+					<div class="container">
+						<div class="row">
+							<div
+								class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+
+								<div class="tab-content" id="myTabContent">
+									<div class="tab-pane fade show active" id="personal"
+										role="tabpanel" aria-labelledby="personal-tab">
+										<div class="ui-block">
+
+
+                             <div class="ui-block-title" >
+							<h6 class="title">Toutes vos réclamations</h6>
+						                  </div>
+						                  </div>
+						
+											<h:panelGroup>
+												<h:form>
+													<c:forEach
+														items="#{ControllerReclamationImpl.reclamations}"
+														var="reclamation">
+														<div class="ui-block">
+															<!-- Post -->
+
+															<article class="hentry post">
+
+
+																<div class="post__author author vcard inline-items">
+
+
+
+																	<div class="author-date">
+																		<div class="h6 title">
+																			<h:outputText value="#{reclamation.typeReclamation}" />
+																		</div>
+																		<div class="post__date">
+																			<h:outputText value="#{reclamation.posted}" />
+
+																		</div>
+																	</div>
+
+
+																	<div class="more">
+																	<div
+															style="margin-left: 55%; margin-right: auto; margin-bottom: 5%;">
+
+																		<h:commandButton styleClass="btn btn-primary btn-sm"
+																			action="#{ControllerReclamationImpl.removeReclamation(reclamation.id)}"
+																			value="Supprimer" />
+																		<h:commandButton styleClass="btn btn-secondary btn-sm"
+																			action="#{ControllerReclamationImpl.displayReclamation(reclamation)}"
+																			value="Afficher" />
+
+
+
+																	</div>
+
+
+
+																</div>
+																</div>
+
+
+																<p>
+																	<h:outputText value="#{reclamation.body}" />
+																</p>
+
+
+
+															</article>
+
+															<!-- .. end Post -->
+														</div>
+													</c:forEach>
+												</h:form>
+											</h:panelGroup>
+											<h:panelGroup columns="2">
+												<h:form>
+													<div class="ui-block">
+														<div class="ui-block responsive-flex">
+															<div class="ui-block-title">
+																<div class="h6 title">
+																	<h:outputText value="Type de réclamation"></h:outputText>
+																</div>
+																<h:selectOneMenu
+																	value="#{ControllerReclamationImpl.typeReclamation}">
+																	<f:selectItem itemLabel="Choisir le type"
+																		itemValue="#{null}" />
+																	<f:selectItems
+																		value="#{ControllerReclamationImpl.typeReclamations}" />
+																</h:selectOneMenu>
+															</div>
+															<h:inputTextarea class="form-control"
+																value="#{ControllerReclamationImpl.body}"></h:inputTextarea>
+														</div>
+
+
+
+														<div
+															style="margin-left: auto; margin-right: auto; margin-bottom: 5%;">
+
+															<h4>
+
+																<p:messages styleClass="bg-breez-light" for="somekey" />
+															</h4>
+
+														</div>
+														<div
+															style="margin-left: auto; margin-right: auto; margin-bottom: 5%;">
+
+															<h4>
+
+																<p:messages styleClass="bg-breez-light" for="somekey1" />
+															</h4>
+
+														</div>
+														<div
+															style="margin-left: auto; margin-right: auto; margin-bottom: 5%;">
+
+															<h4>
+
+																<p:messages styleClass="bg-breez-light" for="somekey2" />
+															</h4>
+
+														</div>
+														<div
+															style="margin-left: 30%; margin-right: 30%; margin-bottom: 5%;">
+															<h:commandButton
+																styleClass="btn btn-secondary btn-lg full-width"
+																value="Ajouter reclamation"
+																action="#{ControllerReclamationImpl.addReclamation()}" />
+
+
+
+
+															<h:commandButton
+																styleClass="btn btn-primary btn-lg full-width"
+																value="Mettre A jour "
+																action="#{ControllerReclamationImpl.updateReclamation()}" />
+
+
+
+														</div>
+													</div>
+
+
+
+												</h:form>
+
+											</h:panelGroup>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		
+
+
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <body>
+    <h2><h:outputText value="#{msg['form1.titre']}"/></h2>
+    <h:panelGrid columns="3">
+      <h:panelGroup>
+      <div align="center"><h3><h:outputText value="#{msg['form1.teacher']}"/></h3></div>
+      </h:panelGroup>
+      <h:panelGroup>
+      <div align="center"><h3><h:outputText value="#{msg['form1.jour']}"/></h3></div>
+      </h:panelGroup>
+      <h:panelGroup/>
+      <h:selectOneMenu value="#{form.idTeacher}">  
+        <f:selectItems value="#{form.teachers}" var="teacher" itemLabel=" #{teacher.prenom} #{teacher.nom}" itemValue="#{teacher.id}"/>  
+      </h:selectOneMenu>              
+      <h:inputText id="jour" value="#{form.jour}"  required="true" requiredMessage="#{msg['form1.jour.required']}" converterMessage="#{msg['form1.jour.erreur']}">
+        <f:convertDateTime pattern="dd/MM/yyyy"/>
+      </h:inputText>
+      <h:message for="jour" styleClass="error"/>
+    </h:panelGrid>
+    <h:commandLink styleClass="btn btn-secondary btn-lg full-width" value="#{msg['form1.button.agenda']}" actionListener="#{form.getAgenda}"/>
+  </body>
+</html>
+

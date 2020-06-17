@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+  <f:view locale="#{changeLocale.locale}">
+    <h:head>
+      <title>JSF</title>
+      <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body style="background-image: url('${request.contextPath}/resources/images/standard.jpg');">
+      <h:form>
+        <h3><h:outputText value="#{msg['exception.header']}"/></h3>
+        <h:panelGrid columnClasses="col1,col2" columns="2" border="1">
+          <h:outputText value="#{msg['exception.httpCode']}"/>
+          <h:outputText value="#{requestScope['javax.servlet.error.status_code']}"/>
+          <h:outputText value="#{msg['exception.message']}"/>
+          <h:outputText value="#{requestScope['javax.servlet.error.exception']}"/>
+          <h:outputText value="#{msg['exception.requestUri']}"/>
+          <h:outputText value="#{requestScope['javax.servlet.error.request_uri']}"/>
+          <h:outputText value="#{msg['exception.servletName']}"/>
+          <h:outputText value="#{requestScope['javax.servlet.error.servlet_name']}"/>
+        </h:panelGrid>
+      </h:form>
+    </h:body>
+  </f:view>
+</html>

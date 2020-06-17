@@ -7,6 +7,11 @@ facesconfig_2_2.xsd"
 
 version="2.2">
 <application>
+<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+		<message-bundle>messages</message-bundle>
 <el-resolver>
 org.springframework.web.jsf.el.SpringBeanFacesELResolver
 </el-resolver>

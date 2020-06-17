@@ -311,5 +311,9 @@ public class ControllerReclamationImpl {
 		this.sender = sender;
 		this.recipient = recipient;
 	}
+	public String goReclam() {
+
+		return "/reclamationParent.xhtml?faces-redirect=true";
+	}
 
 }

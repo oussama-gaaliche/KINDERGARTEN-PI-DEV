@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <body>
+    <h2><h:outputText value="#{form.form3Titre}"/></h2>
+    
+    <h:panelGrid columns="2">
+     <div class="row">
+   
+				<div class="col col-lg-6 col-md-6 col-sm-12 col-12" >	
+				<div align="center">
+				
+      <h:outputText value="#{msg['form3.enfant']}"/></div></div>
+    
+   
+				<div class="col col-lg-6 col-md-6 col-sm-12 col-12">	
+      <h:selectOneMenu value="#{form.idEnfant}">
+        <f:selectItems value="#{form.enfants}" var="enfant" itemLabel=" #{enfant.prenom} #{enfant.nom}" itemValue="#{enfant.id}"/>
+      </h:selectOneMenu></div></div>
+      
+       
+      <h:panelGroup>
+    
+      <div class="row">
+   
+				<div class="col col-lg-6 col-md-6 col-sm-12 col-12">	
+        <h:commandButton styleClass="btn btn-secondary btn-lg full-width" value="#{msg['form3.valider']}" actionListener="#{form.validerRv}" /></div>
+        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+					
+        <h:commandButton styleClass="btn btn-primary btn-lg full-width" value="#{msg['form3.annuler']}" actionListener="#{form.annulerRv}"/></div>
+        </div>
+      </h:panelGroup>
+    </h:panelGrid>
+  </body>
+</html>
+
