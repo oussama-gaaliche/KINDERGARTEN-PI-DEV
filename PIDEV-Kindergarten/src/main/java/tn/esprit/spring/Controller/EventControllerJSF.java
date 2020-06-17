@@ -413,6 +413,7 @@ public void participateevent(int id_event) {
 }
 
 
+
 public void annulerparticipateevent(int id_event) throws Exception {
 	eventService.annuler_participation_User_Event(id_event);
 }

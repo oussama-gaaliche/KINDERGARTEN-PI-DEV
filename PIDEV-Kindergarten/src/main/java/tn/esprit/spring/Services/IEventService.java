@@ -19,6 +19,8 @@ public interface IEventService {
 	public void participer_parentjsf(int id_event);
 	public void interesser_parentjsf(int id_event);
     public 	void deleteEvent(int id);
+    
+    
 	
 	
 	public Event retrieveEvent(int id);
